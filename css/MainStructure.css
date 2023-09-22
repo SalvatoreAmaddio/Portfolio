@@ -1,0 +1,177 @@
+/*HeaderPanel*/
+#HeaderPanel {
+    background-color: var(--headerpanelbackground);
+    padding: 0em;
+    border: 1px solid black;
+    color: var(--white);
+}
+
+#HeaderPanel section {
+    color: inherit;
+    background-color: inherit;
+    text-align: center;
+    border: 1px solid black;
+}
+
+#HeaderPanel section h1 {
+    color: inherit;
+    background-color: inherit;  
+    padding-bottom: 1.3%;
+    padding-top: 1.3%;
+}
+
+/*GoHome*/
+#GoHome {
+    position: absolute;
+    margin-top: 0.65rem;
+    margin-left: 0.5rem;
+    margin-bottom: 0.65rem;
+    z-index: 1;
+    width: 4vw;
+    min-width: 2.9rem;
+    max-width: 3.5rem;
+    height: auto;
+    max-height: 3.5rem;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+#GoHome img 
+{ 
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0.2rem;
+    padding: 0.1rem;
+    width: 70%;
+    height: 70%;
+}
+
+/*Layer*/
+.Layer {
+    margin-top: 1em;
+    padding: 1em;
+    text-align: center;
+    border: 1px solid black;
+    background-color: var(--navbarbackground);
+    color: var(--white);
+    position: relative;
+    
+}
+
+.Layer h2 
+{
+    color: inherit;
+    background-color: inherit;
+}
+
+.Layer h3 {
+    text-transform: uppercase;
+    text-align: start;
+    color: inherit;
+    background-color: inherit;
+}
+
+/*LayerContent*/
+.LayerContent {
+    padding: 1em;
+    margin-top: 1em; 
+    overflow: hidden;
+    background-color: inherit;
+}
+
+.LayerContent ul {
+    list-style-type: none;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.LayerContent ul li {
+    float: left;
+    padding: 0.5em;
+    width: 24.93rem;
+    font-size: 2rem;
+    color: var(--white);
+    border: 1px solid black;
+    position: relative;
+}
+
+.LayerContent ul li a
+{ 
+    background-color: inherit;
+    color: var(--white);
+}
+
+.LayerContent ul li:hover .overlay { opacity: 1;}
+
+.overlay {
+    color: black;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    display: block;
+    padding: 0.5em;
+}
+
+/*ContactDetails*/
+#ContactDetails {
+    padding: 1em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    color: var(--white);
+    text-align: start;
+    background-color: inherit;
+}
+
+#ContactDetails div 
+{
+    background-color: inherit;
+    color: inherit;
+    overflow: hidden;
+    margin-bottom: 1em;
+    margin-top: 1em;
+}
+
+#ContactDetails div:last-of-type 
+{
+    margin-bottom: 0em;
+}
+
+#ContactDetails p {
+    background-color: inherit;
+    color: inherit;
+    font-size: 1.5em;
+}
+
+#ContactDetails img {
+    width: 30px;
+    height: 30px;
+    background-color: inherit;
+    margin-right: 1em;
+    float: left;
+}
+
+#ContactDetails img:nth-child(2) { top: 1em; }
+
+/*footer*/
+#footer {
+    margin-top: 1em;
+    border: 1px solid black;
+    text-align: center;
+    padding: 0.5em;
+    font-size: 0.8rem;
+    background-color: var(--headerpanelbackground);
+    color: var(--white);
+    clear: both;
+}
+
+#footer p {
+    color: inherit;
+    background-color: inherit;
+}

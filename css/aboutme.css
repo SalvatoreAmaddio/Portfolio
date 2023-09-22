@@ -1,0 +1,190 @@
+.Layer 
+{
+    text-align: start;
+    overflow: hidden;
+}
+
+#ColumnContainer 
+{
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: inherit;
+}
+
+/*AboutMeBio*/
+#AboutMeBio 
+{
+    width: 27rem;
+    border: 0.01em solid black;
+    padding: 0.5em;
+    text-align: start;
+    background-color: var(--backblue);
+    float: left;
+}
+
+#AboutMeBio div
+{
+    background-color: inherit;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    color: white;
+    font-size: 1.2rem;
+}
+
+#AboutMeBio div p {
+    background-color: inherit;
+    padding: 0.4em;
+    line-height: 1.6;
+}
+
+/*MyPicture*/
+#MyPicture 
+{
+    display: block;
+    border: 0.1em solid black;
+    width: 60%;
+    height:60%;
+    border-radius: 50%;
+    padding: 0.5em;
+    margin-top: 1em;
+    margin-left: auto;
+    margin-right: auto;    
+    background-color:var(--white);
+}
+
+/*ContactMeButton*/
+#ContactMeButton 
+{
+    width: 100%;
+    color: white;
+}
+
+#ContactMeButton a
+{
+    width: inherit;
+    display: inherit;
+    color: inherit;
+    padding: 1em;
+    text-decoration: none;
+    background-color: inherit;
+    border: 0.01em white solid;
+    font-weight: bold;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*PortfolioIntro*/
+#PortfolioIntro 
+{
+    float: left;
+    border: 0.01em solid black;
+    margin-left: 1em;
+    padding: 1em;
+    background-color:var(--backblue);
+    width: 27rem;
+    height: 33.36rem;
+}
+
+#PortfolioIntro h3 
+{
+    background-color: transparent;
+    text-align: center;
+}
+
+/*Projects*/
+#ProjectGroup 
+{
+    padding: 1em; 
+    background-color: inherit;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;  
+}
+
+.Project 
+{
+    float: left;
+    background-color: var(--white);
+    margin-left: 1.8em;
+    margin-bottom: 1.95em;
+    border: 0.1em solid black;
+    padding: 1em;
+    position: relative;
+}
+
+.Project img { background-color: transparent;}
+
+.Project:nth-child(3) , .Project:last-child { margin-bottom: 0.25em; }
+
+.Project p {
+    margin-bottom: 0.5em;
+    font-weight: bold;
+    background-color: transparent;
+    color: black;
+}
+
+.Project a 
+{
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+    background-color: transparent;
+    color: blue;
+}
+
+.Project span {
+    width: 100%;
+    display: block;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    padding: 0.2em;
+}
+
+/*MEDIA QUERIES*/
+@media screen and (min-width:0px) and (max-width:912px)
+{
+
+    #AboutMeBio, #PortfolioIntro
+    {
+        float: none;
+    }
+
+    #PortfolioIntro 
+    {
+        margin-left: 0em;
+        margin-top: 1em;
+    }
+}
+
+@media screen and (min-width:0px) and (max-width:410px)
+{
+    .Project
+    {
+        margin: 0em;
+        float: none;
+        text-align: center;
+    }
+
+    .Project:nth-of-type(1), .Project:nth-of-type(2), .Project:nth-of-type(3)    
+    {
+        margin-bottom:1em;
+    }
+
+}
+
+@media screen and (min-width:0px) and (max-width:458px)
+{
+    #ColumnContainer 
+    {
+        width: 100%;
+    }
+    
+    #AboutMeBio, #PortfolioIntro
+    {
+        width: 100%;
+        height: auto;
+    }
+}

@@ -1,0 +1,93 @@
+/*NavBar*/
+#NavBar {
+    overflow: hidden;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    background: var(--navbarbackground);
+    width: 100%;
+}
+
+#NavBar ul {
+    background-color: inherit;
+    list-style-type: none;
+}
+
+#NavBar ul li {
+    display: block;
+    background-color: inherit;
+    float: left;
+}
+
+#NavBar ul li a {
+    background-color: inherit;
+    font-weight: bold;
+    text-transform: uppercase;
+    display: block;
+    text-decoration: none;
+    color: var(--white);
+    text-align: center;
+    padding: 0.9em 0.9em;
+}
+
+#NavBar ul li a:hover { background-color:var(--navbarhover);}
+
+#NavBar ul #GroupOnTheRight
+{
+    float: right;
+    background-color: inherit;
+}
+
+#NavBar ul #GroupOnTheRight #GitGubIcon a
+{
+    padding-top:0.5em;
+    padding-bottom: 0.5em;
+}
+
+#NavBar ul #GroupOnTheRight #GitGubIcon a img {
+    display: block;
+    margin: 0px;
+    padding: 0px;
+    width: 2rem;
+    background-color: transparent;
+}
+
+/*Projects Dropdown*/
+#NavBar ul #GroupOnTheRight li .project_dropdown {
+    display: none;
+    width: 7.55rem;
+    background-color: inherit;
+    position: absolute;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+  
+#NavBar ul #GroupOnTheRight li .project_dropdown a
+{
+    text-align: start;
+    padding: 0.5em;
+}
+
+#NavBar ul #GroupOnTheRight li:hover .project_dropdown { display: block; }
+
+#NavBar ul li .project_dropdown a:hover { background-color:var(--navbarhover); }
+
+/*Hamburger*/
+#Hamburger {
+    display: none;
+    background-color: inherit;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+#Hamburger img {
+    background-color: transparent;
+    width: 2rem;
+    height: 2rem;
+}
+
+#HamburgerDropDown {
+    overflow: hidden;
+    background-color: inherit;
+    width: 100%;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}

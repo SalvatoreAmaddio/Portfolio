@@ -1,0 +1,231 @@
+.PresentationGalleryContainer 
+{
+    background-color: var(--white);
+}
+
+.PresentationContainer 
+{
+    color: black;
+    text-align: start;
+    padding: 1rem;
+    overflow: hidden;
+    background-color: #f8f8ff;
+}
+
+.SpecificationLogo, .Features  
+{
+    float: left;
+    border: 0.01rem solid black;
+    padding: 0.5rem;
+    background-color: var(--white);
+    overflow: hidden;
+}
+
+.Features 
+{
+    margin: 0rem 1rem;
+}
+
+.Features h4 
+{
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.Features h4, .Features ul , .Features ul li , .Features ul li span   
+{
+    background-color: inherit;
+}
+
+.Features ul li  
+{
+    margin-bottom: 0.5rem;
+}
+
+.Features ul li img 
+{
+    background-color: transparent;
+    margin-right: 1rem;
+    width: 1rem;
+}
+
+.Specification 
+{
+    background-color: inherit;
+}
+
+.Specification h3, p, strong 
+{
+    background-color: inherit;
+}
+
+.Specification span 
+{
+    font-size: 1.17em;
+    background-color: inherit;
+}
+
+.Logo 
+{
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0.5rem;
+    border: 0.01rem solid black;
+    width: 10rem;
+    height: 10rem;
+}
+
+.Description 
+{
+    margin-left: auto;
+    padding: 0.5rem;
+    border: 0.01rem solid black;
+    width: fit-content;
+    width: auto;
+    overflow: auto;
+    max-height: 20.6rem;
+}
+
+.Description p 
+{
+    line-height: 1.6;
+}
+
+.Description h4 
+{
+    text-align: center;
+    position: sticky;
+    top: -0.48rem;
+    background-color:inherit;
+    padding: 0.5rem;
+}
+
+.ImgGallery 
+{
+    text-align: center;
+    background-color: inherit;
+    color: black;
+}
+
+.ImgGallery h4 
+{
+    background-color: inherit;
+    padding: 1rem;
+}
+
+#Carousel1 
+{
+    padding: 0.3rem;
+    width: 100%;
+    border: 1px solid black;
+    background-color: black;
+    overflow: hidden;
+    color: white;
+}
+
+/*MEDIA QUERY*/
+
+@media screen and (min-width:0px) and (max-width:400px) 
+{
+
+    .Specification 
+    {
+        text-align: center;
+    }
+
+    .Specification h3 
+    {
+        text-align: center;
+    }
+}
+
+@media screen and (min-width:0px) and (max-width:600px) 
+{
+    .SpecificationLogo, .Features
+    {
+        float: none;
+        width: 100%;
+        margin-left: 0rem;
+        margin-bottom: 0.5rem;
+    }
+}
+
+@media screen and (min-width:0px) and (max-width:899px) 
+{
+    .PresentationContainer 
+    {
+        padding: 0.5rem;
+    }   
+
+    .Description 
+    {
+        margin-right: auto;
+        width: auto;
+    }
+}
+
+@media screen and (min-width:400px) and (max-width:900px) 
+{
+    .Logo 
+    {
+        float: left;
+        margin-right: 1rem;
+        margin-bottom: 0rem;
+    }
+
+    .Specification 
+    {
+        text-align: start;
+    }
+
+    .Specification h3 
+    {
+        text-align: start;
+    }
+}
+
+@media screen and (min-width:600px) and (max-width:900px) 
+{
+    .SpecificationLogo, .Features
+    {
+        float: left;
+        width: auto;
+        margin: 0rem;
+        margin-right: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .SpecificationLogo 
+    {
+        width: 70%;
+    }
+
+    .Description
+    {
+        clear: both;
+    }
+
+}
+
+
+@media screen and (min-width:900px)  
+{
+    .Logo 
+    {
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 1rem;
+    }
+
+    .SpecificationLogo, .Features 
+    {
+        width: auto;
+        margin-bottom: 0rem;
+    }
+
+    .Description
+    {
+        clear: none;
+    }
+}
