@@ -1,0 +1,173 @@
+@media screen and (max-width:824.5px)
+{
+    #ProgramList 
+    {
+        width: revert;
+        margin: 0;
+    }
+
+    #ProgramList li 
+    {
+        float: revert;
+        width: revert;
+    }
+}
+
+@media screen and (max-width:499.5px)
+{
+    #HeaderTitleContainer h1 
+    {
+        text-align: start;
+        width: fit-content;
+        padding-left: 0.5em;
+        float: left;
+    }
+
+    .GoHomeContainer div 
+    {
+        max-width: 3em;
+        max-height: 3em;
+        top: 8px;
+    }
+
+    .GoHomeContainer div img 
+    {
+        max-width: 1.5em;
+        max-width: 1.5em;
+    }
+
+    .Layer 
+    {
+        padding: 0.5em;
+    }
+
+    .Feature .Paragraph 
+    {
+        padding: 0.3em;
+    }
+}
+
+@media screen and (max-width:456.5px)
+{
+    #ContactDetails 
+    {
+        font-size: 0.9em;
+    }
+}
+
+@media screen and (max-width:425.5px)
+{
+    .Layer .Feature img 
+    {
+        float: none;
+    }
+
+    .TitleAndDescription h2 
+    {
+        text-align: center;
+    }
+
+    .WindowsOnlyContainer .WindowsOnly img 
+    {
+        position: relative;
+        top:8px;
+    }
+
+    .WindowsOnly 
+    {
+        text-align: center;
+        padding: 0 0.5em;
+    }
+}
+
+@media screen and (max-width:414.5px)
+{
+    #ContactDetails, #ContactDetailsContainer h3 
+    {
+        text-align: center;
+    }
+
+    #ContactDetails div 
+    {
+        margin-top: 0.5em;
+    }
+
+    #ContactDetails img 
+    {
+        float: none;
+        display: block;
+        margin: 0 auto;
+        margin-bottom: 0.3em;
+    }
+}
+
+@media screen and (max-width:369.5px)
+{
+    #HeaderTitleContainer h1 
+    {
+        font-size: 1.3em;
+    }
+
+    .GoHomeContainer div 
+    {
+        top: 5px;
+    }
+
+    #ProgramsIMake h2
+    {
+        font-size: 1.2em;
+    }
+
+    #ProgramList li 
+    {
+        font-size: 1.2em;
+        font-weight: bold;
+    }
+
+    #ContactDetails 
+    {
+        font-size: 0.8em;
+    }
+}
+
+@media screen and (max-width:359.5px)
+{    
+    .WindowsOnlyContainer .WindowsOnly img 
+    {
+        display: block;
+        margin: 0 auto;
+        top:0px;
+    }
+
+    .WindowsOnlyContainer .WindowsOnly span 
+    {
+        display: block;
+        line-height: 1.6;
+    }
+}
+
+@media screen and (max-width:329.5px)
+{
+    #ContactDetails 
+    {
+        font-size: 0.7em;
+    }
+}
+
+@media screen and (max-width:320.5px)
+{
+    #HeaderTitleContainer h1 
+    {
+        font-size: 1em;
+        padding: 1.15em 0;
+        padding-left: 1em;
+    }
+}
+
+@media screen and (max-width:290.5px)
+{
+    #ContactDetails 
+    {
+        font-size: 0.6em;
+    }
+}

@@ -1,0 +1,37 @@
+:root {
+    --white: #EDF1FF;
+    --navbarbackground: #34568B;
+    --backblue: #92B6D5;
+    --navbarhover:#92A8D1;
+    --headerpanelbackground: #0066b2;
+    
+    --desktopbackground:#CD212A;
+    --mobilebackground: #926AA6;
+    --webbackground: #0072B5;
+
+    --linearheader:linear-gradient(90deg, #4b6cb7 0%, #182848 100%);
+    --linearnavbar:linear-gradient(76deg, rgba(52,80,139,1) 52%, rgba(19,39,79,1) 100%);
+  }
+
+* 
+{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    background: white;
+}
+
+body {
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    height:100%;
+    background: var(--white);
+}
+
+main 
+{
+    background: inherit;
+}
+
+#Wrapper {
+    background: inherit;
+}

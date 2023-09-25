@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/SetPage.js"></script>
+    <link rel="stylesheet" href="css/desktop.css">
+    <title>Web Development</title>
+</head>
+
+<body>
+    <div id="Wrapper">
+        <header id="HeaderPanel">
+            <section id="HeaderTitleContainer">
+                <div class="GoHomeContainer">
+                        <a href="index.html">
+                            <div>
+                                <img src="img/logo.png"/>
+                            </div>
+                        </a>
+                </div>
+                <h1>Web Development</h1>
+            </section>
+    
+            <nav id="NavBar">
+                <a id="Hamburger" href="javascript:void(0);" onclick="myFunction()">
+                    <img src="img/hamburgericon.png"/>
+                </a>
+                <div id="HamburgerDropDown">                    
+                    <ul>
+                        <li><a href="aboutme.html">about me</a></li>
+                        <div id="GroupOnTheRight">
+                            <li>
+                                <a href="#">Projects</a>                    
+                                <div class="project_dropdown">
+                                    <a href="desktopprojects.html">Desktop</a>
+                                    <a href="#">Mobile</a>
+                                    <a href="#">Web</a>
+                                </div>
+                        </li>
+                        <li id="GitGubIcon">
+                            <a href="https://github.com/SalvatoreAmaddio" target="_blank">
+                                <img src="img/github.png" width="45px"/>    
+                            </a>
+                        </li>                    
+                        <li><a href="#ContactDetails" target="_self">Get in touch</a></li>
+    
+                        </div>    
+                    </ul>    
+                </div>
+            </nav>
+        </header>
+
+    <main>
+        <div class="Layer FeatureContainer">
+            <h2>Hey, I'm workin' on it</h2>
+            <img src="img/work_in_progress.png" id="WorkInProgress"/>
+            <h2>Come back later</h2>
+        </div>
+        
+
+        <div class="Layer" id="ProgramsIMake">
+            <h2>I also make Programs designed to run on</h2>
+            <div class="LayerContent">
+                <ul id="ProgramList">
+                    <li style="background-color: var(--desktopbackground);">Desktop
+                        <a class="overlay" href="desktop.html">Learn More</a>
+                    </li>
+                    <li style="background-color: var(--mobilebackground);">Mobile
+                        <a class="overlay" href="mobile.html">Learn More</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+</main>
+
+<div class="Layer" id="ContactDetailsContainer">
+    <h3>Get in touch!</h3>
+    <div id="ContactDetails">
+        <div>
+            <img src="img/whatsapp.webp"/>
+            <p>JS Failed</p>    
+        </div>
+
+        <div>
+            <img src="img/gmail.png"/>
+            <p>JS Failed</p>    
+        </div>
+    </div>
+</div>
+    
+        <footer id="footer">
+            <p>Copyright © 2023 Salvatore Amaddio Rivolta. All rights reserved.</p>
+        </footer>
+</div>     
+    <script src="js/code.js"></script>
+</body>
+</html>

@@ -1,0 +1,208 @@
+/*LogoContainer*/
+#LogoContainer {
+    text-align: center;
+    width: 100%;
+    margin-top: 1em;
+    background-color: inherit;
+}
+
+#LogoContainer h2, h1 
+{
+    background-color: inherit;
+}
+
+/*logo*/
+#logo 
+{
+    border: 0.1rem solid black;
+    width: 100%;
+    border-radius: 50%;
+    margin: 1em auto;
+    overflow: hidden;
+    max-width: 22em;
+    padding: 3.1em;
+    max-height: 22em;
+}
+
+#logo div 
+{
+    width: inherit;
+    max-width: 16em;
+    max-height: 16em;
+    margin: 0 auto;
+}
+
+#logo img {
+    width: inherit;
+    max-width: 11rem;
+    max-height: 11rem;
+    margin: 0 auto;
+}
+
+/*LayerContent*/
+.LayerContent img {
+    margin: 0 1em;
+    margin-bottom: 1em;
+    width: 9rem;
+    height: 9rem;
+}
+
+/*DB*/
+.SkillBelt h2
+{
+    display: inline;
+}
+
+.DBIcon {
+    width: 2rem;
+    height: 2rem;
+    position: relative;
+    background-color: inherit; 
+    color: inherit;
+    top: 0.5rem;
+}
+
+/*LayerContentImg*/
+.LayerContentImg
+{
+    padding-bottom: 0rem;
+    padding-left: 0rem;
+    padding-right: 0rem;
+}
+
+.LayerContentImg img 
+{
+    background: transparent;
+    background-color: transparent;
+}
+
+/*OTHERS*/
+.Round {
+    border: 0.01rem solid #000000;
+    border-radius: 4.5rem;
+    padding: 0.5em;
+}
+
+#MsAccessIcon {
+    padding: 0;
+}
+
+/*Media Query Logo Size*/
+@media screen and (max-width:499.5px) 
+{
+    #HeaderTitleContainer h1 
+    {
+        float: none;
+        width: auto;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width:392.5px) 
+{
+    .SkillBelt h2
+    {
+        font-size: 1.4em;
+    }
+}
+
+@media screen and (max-width: 369.5px) 
+{
+    .SkillBelt h2
+    {
+        font-size: 1.3em;
+    }
+}
+
+@media screen and (max-width:356.5px) 
+{
+    #LogoContainer h1  
+    {
+        font-size: 1.9em;
+    }
+
+    #LogoContainer h2  
+    {
+        font-size: 1.4em;
+    }
+
+    #logo 
+    {
+        max-width: 19em;
+        padding: 2em;
+        max-height: 19em;
+    }
+
+    #logo img {
+        max-width: 10rem;
+        max-height: 10rem;
+    }
+
+    #logo div h2 
+    {
+        font-size: 1.3em;
+    }
+
+    #logo div h3
+    {
+        font-size: 0.9em;
+    }
+}
+
+@media screen and (max-width: 346.5px) 
+{
+    .SkillBelt h2
+    {
+        font-size: 1.2em;
+    }
+}
+
+@media screen and (max-width: 324.5px) 
+{
+    .SkillBelt h2
+    {
+        font-size: 1.1em;
+    }
+}
+
+@media screen and (max-width:310.5px) 
+{
+    #LogoContainer h1  
+    {
+        font-size: 1.5em;
+    }
+
+    #LogoContainer h2  
+    {
+        font-size: 1.2em;
+    }
+
+    #logo 
+    {
+        max-width: 18em;
+        max-height: 18em;
+    }
+
+    #logo img {
+        max-width: 9rem;
+        max-height: 9rem;
+    }
+
+    #logo div h2 
+    {
+        font-size: 1.3em;
+    }
+
+    #logo div h3
+    {
+        font-size: 0.9em;
+    }
+}
+
+@media screen and (max-width: 302.5px) 
+{
+    .SkillBelt h2
+    {
+        font-size: 1em;
+    }
+}

@@ -1,0 +1,237 @@
+:root
+{
+    --colWidth:27rem;
+}
+
+.Layer 
+{
+    text-align: start;
+    overflow: hidden;
+}
+
+#ColumnContainer 
+{
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: inherit;
+}
+
+/*AboutMeBio*/
+#AboutMeBio 
+{
+    width: var(--colWidth);
+    border: 0.01em solid black;
+    padding: 0.5em;
+    text-align: start;
+    background-color: var(--backblue);
+    float: left;
+}
+
+#AboutMeBio div
+{
+    background-color: inherit;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    color: white;
+    font-size: 1.2rem;
+}
+
+#AboutMeBio div p {
+    background-color: inherit;
+    padding: 0.4em;
+    line-height: 1.6;
+}
+
+/*MyPicture*/
+#MyPicture 
+{
+    display: block;
+    border: 0.1em solid black;
+    width: 60%;
+    height:60%;
+    border-radius: 50%;
+    padding: 0.5em;
+    margin-top: 1em;
+    margin-left: auto;
+    margin-right: auto;    
+    background-color:var(--white);
+}
+
+/*ContactMeButton*/
+#ContactMeButton 
+{
+    width: 100%;
+    color: white;
+}
+
+#ContactMeButton a
+{
+    width: inherit;
+    display: inherit;
+    color: inherit;
+    padding: 1em;
+    text-decoration: none;
+    background-color: inherit;
+    border: 0.01em white solid;
+    font-weight: bold;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*PortfolioIntro*/
+#PortfolioIntro 
+{
+    float: left;
+    border: 0.01em solid black;
+    margin-left: 1em;
+    padding: 1em;
+    background-color:var(--backblue);
+    width: var(--colWidth);
+    height: 33.36rem;
+}
+
+#PortfolioIntro h3 
+{
+    background-color: transparent;
+    text-align: center;
+}
+
+/*Projects*/
+#ProjectGroup 
+{
+    padding: 1em; 
+    background-color: inherit;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;  
+}
+
+.Project 
+{
+    float: left;
+    background-color: var(--white);
+    margin-left: 1.8em;
+    margin-bottom: 1.95em;
+    border: 0.1em solid black;
+    padding: 1em;
+    position: relative;
+}
+
+.Project img { background-color: transparent;}
+
+.Project:nth-child(3) , .Project:last-child { margin-bottom: 0.25em; }
+
+.Project p {
+    margin-bottom: 0.5em;
+    font-weight: bold;
+    background-color: transparent;
+    color: black;
+}
+
+.Project a 
+{
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+    background-color: transparent;
+    color: blue;
+}
+
+.Project span {
+    width: 100%;
+    display: block;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    padding: 0.2em;
+}
+
+/*MEDIA QUERIES*/
+@media screen and (max-width:906.5px) 
+{
+    #AboutMeBio 
+    {
+        float: none;
+    }    
+
+    #PortfolioIntro 
+    {
+        float: none;
+        height: auto;
+        margin: 0em;
+        margin-top: 1em;
+    }
+}
+
+@media screen and (max-width:500.5px) 
+{
+    #AboutMeBio 
+    {
+        width: auto;
+    }    
+
+    #PortfolioIntro 
+    {
+        width: auto;
+    }
+
+    #ProjectGroup 
+    {
+        padding: 0em;
+        padding-top: 1em;
+    }
+
+    .Project 
+    {
+        float: none;
+        margin-left: 0em;
+        margin-bottom: 0.5em;
+    }
+
+    .Project:nth-child(3) 
+    {
+        margin-bottom: 0.5em;
+    }
+
+    .Project:last-child 
+    {
+        margin-bottom: 0em;
+    }
+}
+
+@media screen and (max-width:386.5px) 
+{
+    #PortfolioIntro 
+    {
+        padding: 0.5em;
+    }
+
+    #PortfolioIntro h3 
+    {
+        font-size: 1em;
+    }
+}
+
+@media screen and (max-width:321.5px) 
+{
+    #PortfolioIntro h3 
+    {
+        font-size: 0.9em;
+    }
+
+    .Project 
+    {
+        display: block;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width:292.5px) 
+{
+    #PortfolioIntro h3 
+    {
+        font-size: 0.85em;
+    }
+}
