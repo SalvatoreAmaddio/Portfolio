@@ -3,131 +3,251 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="js/SetPage.js"></script>
     <link rel="stylesheet" href="css/index.css">
     <title>SAR</title>
 </head>
-
 <body>
-    <div id="Wrapper">
-        <header id="HeaderPanel">
-            <section id="HeaderTitleContainer">
+    <div id="wrapper">
+
+        <header>
+            <div id="headerTitle">
                 <h1>Ciao!</h1>
-            </section>
-    
-            <nav id="NavBar">
-                <a id="Hamburger" href="javascript:void(0);" onclick="myFunction()">
-                    <img src="img/hamburgericon.png"/>
-                </a>
-                <div id="HamburgerDropDown">                    
-                    <ul>
-                        <li><a href="aboutme.html">about me</a></li>
-                        <div id="GroupOnTheRight">
-                            <li>
-                                <a href="#">Projects</a>                    
-                                <div class="project_dropdown">
-                                    <a href="desktopprojects.html">Desktop</a>
-                                    <a href="#">Mobile</a>
-                                    <a href="#">Web</a>
-                                </div>
-                        </li>
-                        <li id="GitGubIcon">
-                            <a href="https://github.com/SalvatoreAmaddio" target="_blank">
-                                <img src="img/github.png" width="45px"/>    
-                            </a>
-                        </li>                    
-                        <li><a href="#ContactDetails" target="_self">Get in touch</a></li>
-    
-                        </div>    
-                    </ul>    
-                </div>
-            </nav>
-        </header>
-    
-        <main>
-        <div id="LogoContainer">
-            <h2>Salvatore Amaddio Rivolta</h2>
-            <div id="logo">
-                <div>
-                    <img src="img/logo.png"/>
-                    <h2>SAR</h2>
-                    <h3>Complexity made easy</h3>    
-                </div>
             </div>
-            <h1>Software Developer</h1>
-        </div>
-        
-        <div class="Layer" id="ProgramsIMake">
-            <h2>I make Programs designed to run on</h2>
-            <div class="LayerContent">
-                <ul id="ProgramList">
-                    <li style="background-color: var(--desktopbackground);">Desktop
-                        <a class="overlay" href="desktop.html">Learn More</a>
-                    </li>
-                    <li style="background-color: var(--mobilebackground);">Mobile
-                        <a class="overlay" href="mobile.html">Learn More</a>
-                    </li>
-                    <li style="background-color: var(--webbackground);">Web
-                        <a class="overlay" href="web.html">Learn More</a>
-                    </li>
+        </header>
+        <nav>
+            <a id="hamburger">
+                <img src="img/hamburgericon.png">
+            </a>
+
+            <div id="hamburgerDropDown">
+                <ul id="navBarList">
+                    <div id="navBarLogo" class="responsiveImg" style="display: none;">
+                        <a href="#">
+                            <img src="img/navBarLogo.png" width="250px">
+                        </a>                
+                    </div>
+
+                    <div id="leftGroup">
+                        <li>
+                            <a href="aboutme.html">ABOUT ME</a>
+                            <span></span>
+                        </li>
+                    </div>
+
+                    <div id="rightGroup">
+                        <li>
+                        <a href="https://github.com/SalvatoreAmaddio" target="_blank">
+                            <div class="responsiveImg">
+                                <img src="img/github.png">
+                            </div>
+                        </a>
+                        </li>
+                        <li>
+                        <a href="https://www.linkedin.com/in/salvatore-amaddio-211a3710a/" target="_blank">
+                            <div class="responsiveImg">
+                                <img src="img/linkedin2.png">
+                            </div>
+                        </a>
+                        </li>
+                    </div>
+
+                    <div id="centerGroup">
+                        <li>
+                            <a href="desktop.html">DESKTOP</a>
+                            <span></span>
+                        </li>
+                        <li>
+                            <a href="mobile.html">MOBILE</a>
+                            <span></span>
+                        </li>
+                        <li>
+                            <a href="web.html">WEB</a>
+                            <span></span>
+                        </li>
+                    </div>
                 </ul>
             </div>
-        </div>
+        </nav>
 
-        <div class="Layer SkillBelt">
-            <h2>Programming Languages</h2>
-            <img class="DBIcon" src="img/coding.png">    
-            <div class="LayerContent LayerContentImg">
-                <img src="img/csharp.png"/>
-                <img src="img/java.png"/>
-                <img src="img/VB.png"/>
-                <img src="img/Python.png"/>
-                <img src="img/JS.png"/>
-                <img src="img/PHP.png"/>
-            </div>
-        </div>
+        <main>
+            <section id="intro" class="container">
+                    <div>
+                        <h2>Salvatore Amaddio Rivolta</h2>
+                        <div id="logoContainer">
+                            <img src="img/logo.png">
+                        </div>
+                        <h2>Software Developer</h2>
+                    </div>
+                        <a class="buttonStyle"  href="#getInTouch" target="_self">CONTACT ME</a>
+            </section>
 
-        <div class="Layer SkillBelt">
-                <h2>Databases</h2>
-                <img class="DBIcon" src="img/dbicon.png">    
-            <div class="LayerContent">
-                <img class="Round" src="img/mysql.svg"/>
-                <img id="MsAccessIcon" class="Round" src="img/MsAccess.png"/>
-                <img class="Round" src="img/SQLite.png"/>
-            </div>
-        </div>
+            <section id="products" class="container">
+                <div class="layer">
+                    <h2>I make programs designed to run on</h2>
+                    <div class="layerContent">
+                            <ul id="devEnv">
+                                <li>
+                                    <a href="desktop.html">
+                                        <div>
+                                            <p>DESKTOP</p>
+                                            <p>Learn More</p>
+                                        </div>    
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="mobile.html">
+                                    <div>
+                                        <p>MOBILE</p>
+                                        <p>Learn More</p>                                
+                                    </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="web.html">
+                                    <div>
+                                        <p>WEB</p>
+                                        <p>Learn More</p>                                
+                                    </div>
+                                    </a>
+                                </li>
+                            </ul>
+                    </div>
+                </div>
+            </section>
 
-        <div class="Layer SkillBelt">
-            <h2>Technologies</h2>
-            <div class="LayerContent LayerContentImg">
-                <img src="img/wpf.png"/>
-                <img id="MsAccessIcon" class="Round" src="img/MsAccess.png"/>
-                <img src="img/maui.png"/>
-                <img src="img/phpMyAdmin.png"/>
-            </div>
-        </div>
-    </main>
+            <section id="programLangs" class="container">
+                <div class="layer">
+                    <img src="img/coding.png">
+                    <h2>Programming Languages</h2>
+                    <div class="layerContent">
+                        <div class="skillBelt">
+                            <div class="skillContainer">
+                                <img src="img/csharp.png">
+                            </div>
+                            <div class="skillContainer">
+                                <img src="img/java.png">
+                            </div>
+                            <div class="skillContainer">
+                                <img src="img/vb.png">
+                            </div>
+                            <div class="skillContainer">
+                                <img src="img/js.png">
+                            </div>
+                            <div class="skillContainer">
+                                <img src="img/python.png">
+                            </div>
+                            <div class="skillContainer">
+                                <img src="img/php.png">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-    <div class="Layer" id="ContactDetailsContainer">
-        <h3>Get in touch!</h3>
-        <div id="ContactDetails">
-            <div>
-                <img src="img/whatsapp.webp"/>
-                <p>JS Failed</p>    
-            </div>
+            <section id="databases" class="container">
+                <div class="layer">
+                    <img src="img/db.png">
+                    <h2>Databases</h2>
+                    <div class="layerContent">
+                        <div class="skillBelt">
+                            <div class="skillContainer roundBorder">
+                                <img src="img/sqlite.png">
+                            </div>
+                            <div class="skillContainer roundBorder">
+                                <img src="img/mysql.svg">
+                            </div>
+                            <div class="skillContainer roundBorder">
+                                <img src="img/msaccess.png">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-            <div>
-                <img src="img/gmail.png"/>
-                <p>JS Failed</p>    
+            <section id="technologies" class="container">
+                <div class="layer">
+                    <h2>Technologies</h2>
+                    <div class="layerContent">
+                        <div class="skillBelt">
+                            <div class="skillContainer">
+                                <img src="img/wpf.png">
+                            </div>
+                            <div class="skillContainer">
+                                <img src="img/maui.png">
+                            </div>
+                            <div class="skillContainer">
+                                <img src="img/phpmyadmin.png">
+                            </div>
+
+                            <div class="skillContainer roundBorder">
+                                <img src="img/msaccess.png">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <section id="getInTouch" class="container">
+            <div class="layer">
+                <h2>Get in touch!</h2>
+                <div class="layerContent">
+                    <div id="gmailContainer">
+                        <img src="img/gmail.png">
+                    </div>
+                    <div id="formContainer">
+                        <div id="formTitle">
+                            <h3>Enquiries</h3>
+                        </div>
+                        <form>
+                            <div id="clientContactInfo">
+                                <label><span>*</span> Your Name:</label>
+                                <input type="text" required placeholder="Your Name...">
+                                <label><span>*</span> Your Email:</label>
+                                <input type="text" required placeholder="Your Email...">
+                                <label>Your Phone Number:</label>
+                                <input type="text" placeholder="Your Phone Number...">
+                            </div>
+                            <div id="clientMessage">
+                                <label><span>*</span> Let's talk:</label>
+                                <textarea required rows="7" placeholder="Your message..."></textarea>
+                            </div>
+
+                            <div id="mandatoryWarning">
+                                <p>Please note: fields marked with a <span>red</span> asteriks are mandatory.</p>
+                            </div>
+
+                            <input type="submit" value="SUBMIT">
+                        </form>
+                    </div>
+
+                    <div id="contactDetails">
+                        <h3>More ways of getting in touch</h3>
+                        <div class="skillBelt">
+                            <div class="contactContainer">
+                                <a href="https://www.linkedin.com/in/salvatore-amaddio-211a3710a/" target="_blank">
+                                    <img src="img/linkedin.png">
+                                </a>
+                                <p>Let's connect</p>
+                            </div>
+                            <div class="contactContainer">
+                                <img src="img/whatsapp.webp">
+                                <p>+44 7561 049 295</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
+        </section>
+
+        <footer>
+            <p></p>
+        </footer>
     </div>
-    
-    <footer id="footer">            
-            <p>Copyright © 2023 Salvatore Amaddio Rivolta. All rights reserved.</p>
-    </footer>
-</div>
 
-<script src="js/code.js"></script>
+    <script src="js/SAR/SAR.js"></script>
+    <script src="js/SAR/defaultTags.js"></script>
+    <script src="js/SAR/defaultPage.js"></script>
+    <script src="js/index.js"></script>
 </body>
 </html>

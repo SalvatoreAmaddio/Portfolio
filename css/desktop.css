@@ -1,185 +1,38 @@
-* 
+#promo h1
 {
-    color: black;
+    color: green;
 }
 
-/*Title*/
-.BannerContainer
+#devEnv li:nth-last-of-type(2) 
 {
-    padding: 0rem;
-    border: none;
+    background-color: var(--mobileBackground);
 }
 
-#Banner {
-    background-color: var(--white);
-    overflow: hidden;
-    position: relative;
-}
-
-#Banner img {
-    max-width: 10rem;
-    background-color: transparent;
-    float: left;
-}
-
-#BannerDescription 
+#devEnv li:nth-last-of-type(3) 
 {
-    background-color: inherit;
+    background-color: var(--webBackground);
+}
+
+.winOnly 
+{
     width: fit-content;
-    margin-top: 1.2em;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 1.2em;
-}
-
-#BannerDescription h2 {
-    text-transform: uppercase;
-    margin-bottom: 0.5em;
-    color: #017338;
-}
-
-#BannerDescription h3 {
-    text-align: inherit;
-    background-color: inherit;
-    text-transform: uppercase;
-    margin-bottom: 0.1em;
-}
-
-/*Features*/
-
-.Feature img {
-    float: left;
-    width: 240px;
-    height: 200px;
-    padding: 0.1em;
-    border: 0.001em solid black;
-    margin: 0.5em;
-}
-
-.TitleAndDescription 
-{
-    text-align: start;
-}
-
-.TitleAndDescription h2
-{
-    padding-top: 0.15em;
-}
-
-/*GoToProjects*/
-.GoToProjects {
-    text-align: end;
-    padding: 0.5em;
-    padding-right: 0.8em;
-}
-
-.GoToProjects a img {
-    border: none;
-    float: none;
-    display: inline;
-    text-align: end;
-    width: 20px;
-    height: 20px;
-    margin: 0px;    
-    padding: 0px;
-    position: relative;
-    top: 3px;
-    right: 5px;
-}
-
-/*Paragraph*/
-.Paragraph {
-    text-align: start;
-    padding: 0.5em;
-    font-size: 1.2rem;
-}
-
-.Paragraph p 
-{
-    line-height: 1.8;
-}
-
-/*Windows Only*/
-.WindowsOnlyContainer 
-{
-    padding-bottom: 0.3em;
-    font-size: 0.7rem;
     margin: 0 auto;
+    padding: 0.5rem;
+    font-size: 0.8rem;
 }
 
-.WindowsOnly 
+.winOnly img 
 {
-    margin: 0 auto;
-    width: fit-content;
-    overflow: hidden;
+    top:0.5rem;   
 }
-.WindowsOnly span 
+
+@media screen and (max-width:320.5px) 
 {
-    line-height: 2.2;
-}
-
-.WindowsOnly img 
-{
-    float: right;
-    border: none;
-    margin: 0;
-    margin-left: 0.5em;
-    max-width: 25px;
-    max-height: 25px;
-}
-
-/*OTHERS*/
-#WorkInProgress {
-    width: 100%;     
-    border: 0.1em solid black;  
-    margin-top: 1em; 
-    margin-bottom: 1em; 
-}
-
-/*MEDIA QUERIES*/
-
-@media screen and (max-width:614.5px)
-{
-    #BannerDescription h3 
+    .winOnly span:nth-child(2) 
     {
-        display: inline;
+        display: block;
+        position: static;
         width: fit-content;
-    }
-}
-
-@media screen and (max-width:524.5px)
-{
-    #BannerDescription h3 
-    {
-        font-size: 1em;
-    }
-}
-
-@media screen and (max-width:472.5px)
-{
-    #BannerDescription h3 
-    {
-        font-size: 0.9em;
-    }
-}
-
-@media screen and (max-width:442.5px)
-{
-    #Banner img
-    {
-        float: none;
-    }
-
-    #BannerDescription 
-    {
-        margin: 0em;
-    }
-}
-
-@media screen and (max-width:300.5px)
-{
-    #BannerDescription h2 
-    {
-        font-size: 1.2em;
+        margin: auto;
     }
 }

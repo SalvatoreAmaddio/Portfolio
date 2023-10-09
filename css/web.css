@@ -1,0 +1,36 @@
+#promo h1 
+{
+    color: var(--webBackground);
+}
+
+#devEnv li:nth-last-of-type(2) 
+{
+    background-color: var(--desktopBackground);
+}
+
+#devEnv li:nth-last-of-type(1) 
+{
+    background-color: var(--mobileBackground);
+}
+
+.layer h2:first-child 
+{
+    padding-bottom: 1rem;
+}
+
+.layer h2:last-child 
+{
+    padding-top: 1rem;
+}
+
+.layerContent 
+{
+    padding: 0rem;
+}
+
+.layerContent > img:first-child 
+{
+    width: 100%;
+    height: 23.5rem;
+    padding: inherit;
+}

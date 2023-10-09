@@ -1,9 +1,14 @@
-#BannerDescription h2 
+#promo h1 
 {
-    color: var(--headerpanelbackground);
+    color: var(--mobileBackground);
 }
 
-.Feature 
+#devEnv li:nth-last-of-type(2) 
 {
-    padding-bottom: 1em;
+    background-color: var(--desktopBackground);
+}
+
+#devEnv li:nth-last-of-type(3) 
+{
+    background-color: var(--webBackground);
 }

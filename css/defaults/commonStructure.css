@@ -1,0 +1,498 @@
+:root
+{
+    --gmailTop: -1.3rem;
+}
+
+/*HEADER*/
+header
+{
+    background-color: var(--headerFooterColor);
+    color: white;
+    padding: 0 0.5rem;
+}
+
+#headerTitle 
+{
+    padding: 1rem 1rem;
+    text-align: center;
+}
+
+#headerTitle h6 
+{
+    margin-top: 0.5rem;
+}
+
+#headerTitle img 
+{
+    width: 20rem;
+}
+
+/*FOOTER*/
+footer
+{
+    clear: both;
+    font-size: 0.8rem;
+    margin-top: 1rem;
+    text-align: center;
+    color: white;
+    padding: 0.5rem;
+    background-color: var(--headerFooterColor);
+}
+
+#intro 
+{
+    margin-top: 0rem;
+    padding-left: 0rem;
+    padding-right: 0rem;
+    padding-bottom: 0rem;
+}
+
+/*MAIN*/
+.container
+{
+    margin-top: 1rem;
+    line-height: 1.6;
+    text-align: center;
+    padding:1rem;
+}
+
+.layer 
+{
+    background-color: var(--mainColor);
+    color: var(--backgroundColor);
+    display: flow-root;
+}
+
+.layer img 
+{
+    width: 4rem;
+    height: 4rem;
+}
+
+.layerTitle 
+{
+    padding: 1rem;
+    position: sticky;
+    z-index: 99;
+    top: 3rem;
+    left: 0px;
+    width: 100%;
+    background-color: var(--mainColor);
+    color: var(--backgroundColor);
+}
+
+.layerContent
+{
+    display: flow-root;
+    background-color: inherit;
+    padding: 1rem;
+    color: inherit;
+    position: relative;
+    z-index: 1;
+}
+
+.buttonStyle 
+{
+    border-radius: 1rem;
+    display: block;
+    padding: 1rem;
+    width: fit-content;
+    font-weight: bold;
+    margin: 0.5rem auto;
+    text-decoration: none;
+    background-color: var(--headerFooterColor);
+    color: var(--backgroundColor);
+}
+
+.buttonStyle:hover 
+{
+    cursor: pointer;
+    background-color: var(--navbarbackground);
+}
+
+/*PRODUCTS*/
+#products, #getInTouch 
+{
+    border: 1px solid black;
+    background-color: var(--mainColor);
+}
+
+#products .layerContent 
+{
+    width: 100%;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    background-color: inherit;
+}
+
+#devEnv 
+{
+    list-style-type: none;
+    width: inherit;
+    display: flow-root;
+}
+
+#devEnv li 
+{
+    border: 1px solid black;
+    width: 33.33%;
+    float: left;
+}
+
+#devEnv li:first-of-type 
+{
+    background-color: var(--desktopBackground);
+}
+
+#devEnv li:nth-last-of-type(2)
+{
+    background-color: var(--mobileBackground);
+}
+
+#devEnv li:last-of-type
+{
+    background-color: var(--webBackground);
+}
+
+#devEnv li a 
+{
+    text-decoration: none;
+    width: 100%;
+    color: var(--backgroundColor);
+    background-color: inherit;
+    display: block;
+    padding: 1.5rem 1rem;
+}
+
+#devEnv li a div 
+{
+    position: relative;
+    background-color: inherit;
+    width: 100%;
+}
+
+#devEnv li a div p:first-child 
+{
+    position: inherit;
+}
+
+#devEnv li a div p:nth-child(2) 
+{
+    position: absolute;
+    background-color: inherit;
+    width: 100%;
+    left: 0px;
+    top: 0px;
+    opacity: 0;
+    transition: .2s;
+}
+
+#devEnv li a div p:nth-child(2):hover 
+{
+    opacity: 1;
+}
+
+.skillBelt 
+{
+    padding: 0rem;
+    display: flow-root;
+}
+
+/*GET IN TOUCH*/
+#getInTouch
+{
+    margin-top: 1rem;
+    display: flow-root;
+    text-align: start;
+    color: white;
+    background-color: var(--mainColor);
+}
+
+#getInTouch .layerContent 
+{
+    background-color: inherit;
+    color: inherit;
+}
+
+#getInTouch h2 
+{
+    margin-bottom: 1.5rem;    
+}
+
+@keyframes hello 
+{
+    0% 
+    {
+        top: 1rem;
+    }
+
+    100% 
+    {
+        top: var(--gmailTop);
+    }
+}
+
+#gmailContainer 
+{
+    position: absolute;
+    background-color: var(--mainColor);
+    top: 1rem;
+    margin-left: 0.3rem;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    z-index: 2;
+}
+
+#formContainer 
+{
+    border: 0.1rem solid var(--backgroundColor);
+    display: inherit;
+    background-color: inherit;
+    border-radius: 1rem;
+    padding: 1rem;
+    position: relative;
+    z-index: 2;
+}
+
+#formTitle 
+{
+    position: absolute;
+    width: 100%;
+    left: 0px;
+    top:-1rem
+}
+
+#formTitle h3 
+{
+    width: fit-content;
+    background-color: var(--mainColor);
+    padding: 0 1rem;
+    margin: 0 auto;
+}
+
+#clientMessage 
+{
+    float: right;
+}
+
+#clientContactInfo 
+{
+    float: left;
+}
+
+#clientContactInfo label 
+{
+    margin-top: 0.5rem;
+}
+
+#clientContactInfo label:first-child 
+{
+    margin-top: 0rem;
+}
+
+#clientContactInfo, #clientMessage 
+{
+    padding: 0.2rem 1rem;
+    border-radius: 1rem;
+    width: 50%;
+}
+
+form input, form label, form textarea 
+{
+    display: block;
+    width: 100%;
+}
+
+label 
+{
+    padding: 0.3rem;
+}
+
+input, textarea 
+{
+    color: black;
+    border: none;
+    border-radius: 1rem;
+    font-size: 1.1rem;
+    padding: 0.5rem;
+    overflow:auto;
+    resize:none;
+}
+
+input[type="submit"] 
+{
+    margin-top: 0.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: var(--backgroundColor);
+}
+
+input[type="submit"]:hover 
+{
+    background-color: #F0F0F0;
+}
+
+form span 
+{
+    color: red;
+    position: relative;
+    left: 0px;
+    top:0.2rem;
+}
+
+#mandatoryWarning 
+{
+    clear: both;
+    padding:0.5rem;
+    font-style: italic;
+    font-size: 0.8rem;
+}
+
+#mandatoryWarning span 
+{
+    position: initial;
+    font-weight: bolder;
+}
+
+#contactDetails 
+{
+    margin: auto;
+    width: fit-content;
+    margin-top: 3rem;
+    border: 0.1rem solid;
+    border-radius: 1rem;
+    position: relative;
+    text-align: center;
+}
+
+#contactDetails h3 
+{
+    position: absolute;
+    width: fit-content;
+    margin: 0 auto;
+    top:-1rem;
+    left: 0px;
+    right: 0px;
+    padding: 0rem 0.3rem;
+    background-color: var(--mainColor);
+}
+
+.contactContainer
+{
+    float: left;
+    position: relative;
+    margin-top: 1rem;
+    padding: 0.5rem 2rem;
+}
+
+.contactContainer img 
+{
+    width: 5rem;
+    height: 5rem;
+}
+
+/*MEDIA QUERY*/
+@media screen and (min-width:2000.5px) and (max-width:2560px)
+{
+    html 
+    {
+        font-size: 32px;
+    }
+}
+
+@media screen and (min-width:1440px) and (max-width:2000px)
+{
+    html 
+    {
+        font-size: 17px;
+    }
+}
+
+@media screen and (max-width:500.5px) 
+{
+    #headerPanel section 
+    {
+        padding: 1rem;
+    }
+
+    .layerTitle, .layerContent 
+    {
+        padding: 0.5rem;
+    }
+
+    #devEnv li 
+    {
+        float: none;
+        width: 100%;
+    }
+
+    #clientContactInfo, #clientMessage 
+    {
+        float: none;
+        width: 100%;
+    }
+
+    :root 
+    {
+        --gmailTop:-1.8rem;
+    }
+}
+
+@media screen and (max-width:425.5px) 
+{
+    html 
+    {
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width:375.5px) 
+{
+    html 
+    {
+        font-size: 13px;
+    }
+}
+
+@media screen and (max-width:354px)
+{
+    #contactDetails h3 
+    {
+        top: -2.3rem;
+        padding: 0rem;
+    }
+
+    .contactContainer 
+    {
+        padding: 0.5rem 1rem;   
+    }
+}
+
+@media screen and (max-width:320.5px) 
+{
+    html 
+    {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width:279.5px)
+{
+    #contactDetails
+    {
+        padding: 0.5rem;
+    }
+
+    #contactDetails h3 
+    {
+        position: static;
+    }
+
+    .contactContainer 
+    {
+        float: none;
+        margin: 0 auto;
+    }
+}

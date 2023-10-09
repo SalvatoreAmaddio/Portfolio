@@ -1,0 +1,69 @@
+:root
+{
+    --headerFooterColor:#0066b2;
+    --mainColor:#34568B;
+    --backgroundColor: #EDF1FF;
+    --navbarbackground: #0072B5;
+    --navbarhover:#34568B;
+    --backblue: #92B6D5;
+    --desktopBackground: #CD212A;
+    --mobileBackground: #926AA6;
+    --webBackground: #0072B5;
+}
+
+* 
+{
+    box-sizing: border-box;
+    padding: 0em;
+    margin: 0em;
+}
+
+body
+{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: var(--backgroundColor);
+}
+
+
+.responsiveImg 
+{
+    overflow: hidden;
+    width: 20vw;
+    height: 20vw;
+    margin: 0 auto;
+}
+
+.responsiveImg img 
+{
+    width: inherit;
+    height: inherit;
+    display: block;
+    margin: 0 auto;    
+}
+
+.ImgRoundBorder 
+{
+    border: 1px solid black;
+    overflow: hidden;
+    width: 20vw;
+    height: 20vw;
+    border-radius: 50%;
+}
+
+.ImgRoundBorder  img
+{
+    width: inherit;
+    height: inherit;
+    display: block;
+    margin: 0 auto;
+    /*padding: 0.5em;*/
+    border-radius: 50%;
+}
+
+.verticallyCentered
+{
+    width: 100%;
+    left: 0;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}

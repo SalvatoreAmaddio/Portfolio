@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/projects.css">
+    <title>Web Projects</title>
+
+    <style>
+        #devEnv li:nth-last-of-type(2) 
+        {
+            background-color: var(--desktopBackground);
+        }
+
+        #devEnv li:nth-last-of-type(1) 
+        {
+            background-color: var(--mobileBackground);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrapper">
+        <header>
+            <div id="headerTitle">
+                <h1>WEB PROJECTS</h1>
+            </div>
+        </header>
+
+        <nav>
+            <a id="hamburger">
+                <img src="img/hamburgericon.png">
+            </a>
+
+            <div id="hamburgerDropDown">
+                <ul id="navBarList">
+                    <div id="navBarLogo" class="responsiveImg" style="display: none;">
+                        <a href="index.html">
+                            <img src="img/navBarLogo.png" width="250px">
+                        </a>                
+                    </div>
+
+                    <div id="leftGroup">
+                        <li>
+                            <a href="aboutme.html">ABOUT ME</a>
+                            <span></span>
+                        </li>
+                    </div>
+
+                    <div id="rightGroup">
+                        <li>
+                        <a href="https://github.com/SalvatoreAmaddio" target="_blank">
+                            <div class="responsiveImg">
+                                <img src="img/github.png">
+                            </div>
+                        </a>
+                        </li>
+                        <li>
+                        <a href="https://www.linkedin.com/in/salvatore-amaddio-211a3710a/" target="_blank">
+                            <div class="responsiveImg">
+                                <img src="img/linkedin2.png">
+                            </div>
+                        </a>
+                        </li>
+                    </div>
+
+                    <div id="centerGroup">
+                        <li>
+                            <a href="desktop.html">DESKTOP</a>
+                            <span></span>
+                        </li>
+                        <li>
+                            <a href="mobile.html">MOBILE</a>
+                            <span></span>
+                        </li>
+                    </div>
+                </ul>
+            </div>
+        </nav>
+
+        <main>
+
+            <section id="intro" class="container">
+                <div class="layer">
+                    <div class="layerContent">
+                        <h1>Click on a project to see more about its features</h1>
+                    </div>
+                </div>
+            </section>
+
+            <section id="contactMeContainer" class="container">
+                <div class="layer">
+                    <div class="layerContent">
+                        <a class="buttonStyle" href="#getInTouch" target="_self">CONTACT ME</a>
+                    </div>
+                </div>
+            </section>
+
+            <section id="projectsContainer" class="container">
+                <div class="layer">
+                    <div class="layerContent">
+                        <div id="projects">
+                            <div class="project">
+                                <a href="https://salvatoreamaddio.github.io/DaveSmith/" target="_blank">
+                                    <div>
+                                        <p>Visit</p>
+                                    </div>
+                                </a>
+                                <img src="img/projects/web/ds.png">
+                                <p>Dave Smith</p>
+                            </div>
+
+                            <div class="project">
+                                <a href="https://salvatoreamaddio.github.io/DarkStarInk/" target="_blank">
+                                    <div>
+                                        <p>Visit</p>
+                                    </div>
+                                </a>
+                                <img src="img/projects/web/darkStarInk.ico">
+                                <p>Dark Star Ink</p>
+                            </div>
+
+                            <div class="project">
+                                <a href="https://salvatoreamaddio.github.io/SAPE/" target="_blank">
+                                    <div>
+                                        <p>Visit</p>
+                                    </div>
+                                </a>
+                                <img src="img/projects/web/sape.png">
+                                <p>SAPE</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="products" class="container">
+                <div class="layer">
+                    <h2>See also my projects for</h2>
+                    <div class="layerContent">
+                            <ul id="devEnv">
+                                <li>
+                                    <a href="desktopProjects.html">
+                                    <div>
+                                        <p>DESKTOP</p>
+                                        <p>Learn More</p>                                
+                                    </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="mobileProjects.html">
+                                    <div>
+                                        <p>MOBILE</p>
+                                        <p>Learn More</p>                                
+                                    </div>
+                                    </a>
+                                </li>
+                            </ul>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <section id="getInTouch" class="container">
+            <div class="layer">
+                <h2>Get in touch!</h2>
+                <div class="layerContent">
+                    <div id="gmailContainer">
+                        <img src="img/gmail.png">
+                    </div>
+                    <div id="formContainer">
+                        <div id="formTitle">
+                            <h3>Enquiries</h3>
+                        </div>
+                        <form>
+                            <div id="clientContactInfo">
+                                <label><span>*</span> Your Name:</label>
+                                <input type="text" required placeholder="Your Name...">
+                                <label><span>*</span> Your Email:</label>
+                                <input type="text" required placeholder="Your Email...">
+                                <label>Your Phone Number:</label>
+                                <input type="text" placeholder="Your Phone Number...">
+                            </div>
+                            <div id="clientMessage">
+                                <label><span>*</span> Let's talk:</label>
+                                <textarea required rows="7" placeholder="Your message..."></textarea>
+                            </div>
+
+                            <div id="mandatoryWarning">
+                                <p>Please note: fields marked with a <span>red</span> asteriks are mandatory.</p>
+                            </div>
+
+                            <input type="submit" value="SUBMIT">
+                        </form>
+                    </div>
+
+                    <div id="contactDetails">
+                        <h3>More ways of getting in touch</h3>
+                        <div class="skillBelt">
+                            <div class="contactContainer">
+                                <a href="https://www.linkedin.com/in/salvatore-amaddio-211a3710a/" target="_blank">
+                                    <img src="img/linkedin.png">
+                                </a>
+                                <p>Let's connect</p>
+                            </div>
+                            <div class="contactContainer">
+                                <img src="img/whatsapp.webp">
+                                <p>+44 7561 049 295</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p></p>
+        </footer>
+    </div>
+
+    <script src="js/SAR/SAR.js"></script>
+    <script src="js/SAR/defaultTags.js"></script>
+    <script src="js/SAR/defaultPage.js"></script>
+    <script src="js/index.js"></script>
+</body>
+</html>

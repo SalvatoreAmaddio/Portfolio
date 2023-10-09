@@ -1,0 +1,99 @@
+#devEnv li 
+{
+    width: 50%;
+    text-align: center;
+}
+
+#projectsContainer, #contactMeContainer 
+{
+    background-color: var(--mainColor);
+}
+
+#contactMeContainer 
+{
+    padding: 0rem;
+    background-color: transparent;
+}
+
+#contactMeContainer 
+{
+    position: sticky;
+    top:3.1rem;
+    z-index: 90;
+    background-color: var(--headerFooterColor);
+}
+
+#contactMeContainer .layerContent, #contactMeContainer .layer 
+{
+    padding: 0rem;
+    background-color: var(--headerFooterColor);
+}
+
+.buttonStyle 
+{
+    width: 100%;
+}
+
+#projects 
+{
+    display: flow-root;
+}
+
+.project 
+{
+    display: inline-block;
+    padding: 1rem;
+    border-radius: 1rem;
+    border: 0.01rem solid white; 
+    font-weight: bolder;
+    margin-right: 2rem;
+    position: relative;
+}
+
+.project img 
+{
+    width: 10rem;
+    background-color: white;
+    border-radius: 1rem;
+    max-width: 100%;
+    height: 10rem;
+}
+
+.project div 
+{
+    position: absolute;
+    top:0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    transition: .2s;
+    border-radius: 1rem;
+    background-color: rgba(255,255,255,0.5);
+    font-weight: bolder;
+    opacity: 0;
+}
+
+.project div:hover 
+{
+    opacity: 1;
+}
+
+.project div p 
+{
+    position: relative;
+    top:50%;
+    padding: 0.5rem;
+    color: black;
+    background-color: white;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+@media screen and (max-width: 500.5px) 
+{
+
+    #devEnv li 
+    {
+        width: 100%;
+    }
+}

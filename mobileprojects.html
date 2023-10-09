@@ -3,181 +3,199 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="js/SetPage.js"></script>
-    <link rel="stylesheet" href="css/desktopprojects.css">
-    <link rel="stylesheet" href="css/Gallery.css">
-    <title>Desktop Projects</title>
+    <link rel="stylesheet" href="css/projects.css">
+    <title>Mobile Projects</title>
 
     <style>
-        #MyPlanogramProjectLogo 
+        #devEnv li:nth-last-of-type(2) 
         {
-            padding: 0em;
+            background-color: var(--desktopBackground);
         }
-
     </style>
 </head>
 
 <body>
-<div id="Wrapper">
-    <header id="HeaderPanel">
-        <section id="HeaderTitleContainer">
-            <div class="GoHomeContainer">
-                    <a href="index.html">
-                        <div>
-                            <img src="img/logo.png"/>
-                        </div>
-                    </a>
+    <div id="wrapper">
+        <header>
+            <div id="headerTitle">
+                <h1>MOBILE PROJECTS</h1>
             </div>
-            <h1>Mobile Projects</h1>
-        </section>
+        </header>
 
-        <nav id="NavBar">
-            <a id="Hamburger" href="javascript:void(0);" onclick="myFunction()">
-                <img src="img/hamburgericon.png"/>
+        <nav>
+            <a id="hamburger">
+                <img src="img/hamburgericon.png">
             </a>
-            <div id="HamburgerDropDown">                    
-                <ul>
-                    <li><a href="aboutme.html">about me</a></li>
-                    <div id="GroupOnTheRight">
+
+            <div id="hamburgerDropDown">
+                <ul id="navBarList">
+                    <div id="navBarLogo" class="responsiveImg" style="display: none;">
+                        <a href="index.html">
+                            <img src="img/navBarLogo.png" width="250px">
+                        </a>                
+                    </div>
+
+                    <div id="leftGroup">
                         <li>
-                            <a href="#">Projects</a>                    
-                            <div class="project_dropdown">
-                                <a href="desktopprojects.html" target="_self">Desktop</a>
-                                <a href="#">Web</a>
-                            </div>
-                    </li>
-                    <li id="GitGubIcon">
-                        <a href="https://github.com/SalvatoreAmaddio" target="_blank">
-                            <img src="img/github.png" width="45px"/>    
-                        </a>
-                    </li>                    
-                    <li><a href="#ContactDetails" target="_self">Get in touch</a></li>
-
-                    </div>    
-                </ul>    
-            </div>
-        </nav>
-    </header>
-
-    <section id="PreMain">
-        <div class="Layer Introduction">
-            <h4>See some of the Mobile App I have developed</h4>
-        </div>
-
-        <div class="Layer ProjectBeltContainer">
-            <h5>Click on one of the logos below to know more</h5>
-            <div id="ProjectBelt" class="LayerContent LayerContentImg">
-            </div>
-        </div>
-    </section>
-
-    <main>
-        <div class="Layer">
-            <div class="PresentationGalleryContainer">
-                <div class="PresentationContainer">   
-                    <div class="SpecificationLogo">
-                        <div class="Logo">
-                            <img src="DesktopProjects/Betting.ico"/>
-                        </div>
-                        <div class="Specification">
-                            <h3>Sofware Name</h3>
-                            <p></p>
-                            <br>
-                            <h3>Made for</h3>
-                            <p></p>
-                            <br>
+                            <a href="aboutme.html">ABOUT ME</a>
                             <span></span>
-                        </div>
+                        </li>
                     </div>
-                    <div class="Features">
-                        <h3>Features</h3>
-                        <ul>
-                        </ul>
+
+                    <div id="rightGroup">
+                        <li>
+                        <a href="https://github.com/SalvatoreAmaddio" target="_blank">
+                            <div class="responsiveImg">
+                                <img src="img/github.png">
+                            </div>
+                        </a>
+                        </li>
+                        <li>
+                        <a href="https://www.linkedin.com/in/salvatore-amaddio-211a3710a/" target="_blank">
+                            <div class="responsiveImg">
+                                <img src="img/linkedin2.png">
+                            </div>
+                        </a>
+                        </li>
                     </div>
-                    <div class="Description">
-                            <h3>Description:</h3>
-                    </div>                    
-                    <div class="ImgGallery">
-                        <h3>Software Gallery</h3>
-                        <div class="CarouselStyle">
-                            <div class="carouselContainer"> 
-                                    <div class="carouselSlideContainer">
-                                            <div class="carouselSlide">
-                                            <div class="carouselImgTracker"></div>
-                                                <img>
-                                            </div>
-                                    </div>  
-                                    
-                                    <div class="carouselPrevNextCommands">
-                                        <a class="carouselPrev">&#10094;</a>
-                                        <a class="carouselNext">&#10095;</a>    
-                                    </div>
-                                    
-                                    <div class="carouselFullScreenAndTitle">
-                                        <span>JS Failed</span>
-                                            <a>
-                                                <img src="img/maximize.png"/>
-                                            </a>
-                                    </div>
-                            </div>
-                            
-                                
-                            <div class="carouselThumnbail">
-                                <div class="carouselColumns">
-                                        <img class="carouselThumnbailOpacity cursor" src="https://www.w3schools.com/howto/img_woods_wide.jpg" style="width:100%" alt="The Woods">
-                                    </div>
-                            </div>
-                                
-                            <div class="carouselModal">
-                                <span class="carouselModalClose">&times;</span>
-                                <img class="carouselModalImg">
-                                <div class="carouselModalCaption"></div>
-                            </div>
-                        </div>
+
+                    <div id="centerGroup">
+                        <li>
+                            <a href="desktop.html">DESKTOP</a>
+                            <span></span>
+                        </li>
+                        <li>
+                            <a href="web.html">WEB</a>
+                            <span></span>
+                        </li>
                     </div>
-                </div>    
-            </div>     
-        </div>
-        
-        <div class="Layer" id="ProgramsIMake">
-            <h2>See my work also on</h2>
-            <div class="LayerContent">
-                <ul id="ProgramList">
-                    <li style="background-color: var(--desktopbackground);">Desktop
-                        <a class="overlay" href="desktopprojects.html" target="_self">Learn More</a>
-                    </li>
-                    <li style="background-color: var(--webbackground);">Web
-                        <a class="overlay" href="">Learn More</a>
-                    </li>
                 </ul>
             </div>
-        </div>
-    </main>
+        </nav>
 
-    <div class="Layer" id="ContactDetailsContainer">
-        <h3>Get in touch!</h3>
-        <div id="ContactDetails">
-            <div>
-                <img src="img/whatsapp.webp"/>
-                <p>JS Failed</p>    
-            </div>
+        <main>
 
-            <div>
-                <img src="img/gmail.png"/>
-                <p>JS Failed</p>    
+            <section id="intro" class="container">
+                <div class="layer">
+                    <div class="layerContent">
+                        <h1>Click on a project to see more about its features</h1>
+                    </div>
+                </div>
+            </section>
+
+            <section id="contactMeContainer" class="container">
+                <div class="layer">
+                    <div class="layerContent">
+                        <a class="buttonStyle" href="#getInTouch" target="_self">CONTACT ME</a>
+                    </div>
+                </div>
+            </section>
+
+            <section id="projectsContainer" class="container">
+                <div class="layer">
+                    <div class="layerContent">
+                        <div id="projects">
+                            <div class="project">
+                                <a href="#">
+                                    <div>
+                                        <p>See Details</p>
+                                    </div>
+                                </a>
+                                <img src="img/projects/mobile/myplanogram.png">
+                                <p>MyPlanogram</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="products" class="container">
+                <div class="layer">
+                    <h2>See also my projects for</h2>
+                    <div class="layerContent">
+                            <ul id="devEnv">
+                                <li>
+                                    <a href="desktopProjects.html">
+                                    <div>
+                                        <p>DESKTOP</p>
+                                        <p>Learn More</p>                                
+                                    </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="webProjects.html">
+                                    <div>
+                                        <p>WEB</p>
+                                        <p>Learn More</p>                                
+                                    </div>
+                                    </a>
+                                </li>
+                            </ul>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <section id="getInTouch" class="container">
+            <div class="layer">
+                <h2>Get in touch!</h2>
+                <div class="layerContent">
+                    <div id="gmailContainer">
+                        <img src="img/gmail.png">
+                    </div>
+                    <div id="formContainer">
+                        <div id="formTitle">
+                            <h3>Enquiries</h3>
+                        </div>
+                        <form>
+                            <div id="clientContactInfo">
+                                <label><span>*</span> Your Name:</label>
+                                <input type="text" required placeholder="Your Name...">
+                                <label><span>*</span> Your Email:</label>
+                                <input type="text" required placeholder="Your Email...">
+                                <label>Your Phone Number:</label>
+                                <input type="text" placeholder="Your Phone Number...">
+                            </div>
+                            <div id="clientMessage">
+                                <label><span>*</span> Let's talk:</label>
+                                <textarea required rows="7" placeholder="Your message..."></textarea>
+                            </div>
+
+                            <div id="mandatoryWarning">
+                                <p>Please note: fields marked with a <span>red</span> asteriks are mandatory.</p>
+                            </div>
+
+                            <input type="submit" value="SUBMIT">
+                        </form>
+                    </div>
+
+                    <div id="contactDetails">
+                        <h3>More ways of getting in touch</h3>
+                        <div class="skillBelt">
+                            <div class="contactContainer">
+                                <a href="https://www.linkedin.com/in/salvatore-amaddio-211a3710a/" target="_blank">
+                                    <img src="img/linkedin.png">
+                                </a>
+                                <p>Let's connect</p>
+                            </div>
+                            <div class="contactContainer">
+                                <img src="img/whatsapp.webp">
+                                <p>+44 7561 049 295</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
+        </section>
+
+        <footer>
+            <p></p>
+        </footer>
     </div>
 
-    <footer id="footer">
-        <p>Copyright © 2023 Salvatore Amaddio Rivolta. All rights reserved.</p>
-    </footer>
-</div>
-
-    <script src="js/code.js"></script>
-    <script src="js/Carousel.js"></script>
-    <script src="js/Project.js"></script>
-    <script src="js/mobileprojects.js"></script>
+    <script src="js/SAR/SAR.js"></script>
+    <script src="js/SAR/defaultTags.js"></script>
+    <script src="js/SAR/defaultPage.js"></script>
+    <script src="js/index.js"></script>
 </body>
-
 </html>

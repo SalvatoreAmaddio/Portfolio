@@ -1,237 +1,160 @@
-:root
+main 
 {
-    --colWidth:27rem;
+    display: flow-root;
 }
 
-.Layer 
+.container 
 {
-    text-align: start;
+    padding: 0.5rem;
+}
+
+main .layer 
+{
+    background-color: var(--backblue);
+    color: var(--backgroundColor);
+    border-radius: 1rem;
+}
+
+main .layerContent 
+{
+    border-radius: 1rem;
+}
+
+#getInTouch
+{
+    clear: both;
+}
+
+#column1, #column2
+{
+    width: 50%;
+    margin-top: 1rem;
+    float: left;
+    background-color: var(--mainColor);
+}
+
+#column2 
+{
+    float: right;
+}
+
+#aboutMe, #storyLine, #projects, #techSkills 
+{
+    background-color: var(--mainColor);
+}
+
+#me 
+{
+    width: 14rem;
+    height: 14rem;
+    margin: 0 auto;
+    margin-bottom: .5rem;
+    max-width: 100%;
+    border-radius: 50%;
+    background-color: var(--backgroundColor);
     overflow: hidden;
 }
 
-#ColumnContainer 
-{
-    width: fit-content;
-    margin-left: auto;
-    margin-right: auto;
-    background-color: inherit;
+.layer #me img {
+    width: 14rem;
+    height: 14rem;
 }
 
-/*AboutMeBio*/
-#AboutMeBio 
+#description 
 {
-    width: var(--colWidth);
-    border: 0.01em solid black;
-    padding: 0.5em;
+    margin-top: .5rem;
+    margin-bottom: 1rem;
     text-align: start;
-    background-color: var(--backblue);
-    float: left;
 }
 
-#AboutMeBio div
+#techSkills ul 
 {
-    background-color: inherit;
-    margin-top: 1em;
-    margin-bottom: 1em;
-    color: white;
-    font-size: 1.2rem;
+    list-style-type: none;
+    border: 1px solid black;
+    text-align: start;
+    padding: 0.5rem;
 }
 
-#AboutMeBio div p {
-    background-color: inherit;
-    padding: 0.4em;
-    line-height: 1.6;
-}
-
-/*MyPicture*/
-#MyPicture 
+#projectContainer 
 {
-    display: block;
-    border: 0.1em solid black;
-    width: 60%;
-    height:60%;
-    border-radius: 50%;
-    padding: 0.5em;
-    margin-top: 1em;
-    margin-left: auto;
-    margin-right: auto;    
-    background-color:var(--white);
+    margin: 0 auto;
+    margin-top: 1rem;
+    width: 25rem;
+    max-width: 70%;
+    display: flow-root;
 }
 
-/*ContactMeButton*/
-#ContactMeButton 
+.projectType
 {
-    width: 100%;
-    color: white;
-}
-
-#ContactMeButton a
-{
-    width: inherit;
-    display: inherit;
-    color: inherit;
-    padding: 1em;
-    text-decoration: none;
-    background-color: inherit;
-    border: 0.01em white solid;
-    font-weight: bold;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/*PortfolioIntro*/
-#PortfolioIntro 
-{
-    float: left;
-    border: 0.01em solid black;
-    margin-left: 1em;
-    padding: 1em;
-    background-color:var(--backblue);
-    width: var(--colWidth);
-    height: 33.36rem;
-}
-
-#PortfolioIntro h3 
-{
-    background-color: transparent;
-    text-align: center;
-}
-
-/*Projects*/
-#ProjectGroup 
-{
-    padding: 1em; 
-    background-color: inherit;
-    margin-left: auto;
-    margin-right: auto;
-    overflow: hidden;  
-}
-
-.Project 
-{
-    float: left;
-    background-color: var(--white);
-    margin-left: 1.8em;
-    margin-bottom: 1.95em;
-    border: 0.1em solid black;
-    padding: 1em;
-    position: relative;
-}
-
-.Project img { background-color: transparent;}
-
-.Project:nth-child(3) , .Project:last-child { margin-bottom: 0.25em; }
-
-.Project p {
-    margin-bottom: 0.5em;
-    font-weight: bold;
-    background-color: transparent;
+    padding: 1rem;
+    background-color: var(--backgroundColor);
     color: black;
+    font-weight: bolder;
+    border-radius: 1rem;
+    width: fit-content;
+    display: flow-root;
+    margin-bottom: 1rem;
+    width: 10rem;
+    max-width: 100%;
+    position: relative;
+    overflow-wrap: break-word;
+    float: left;
 }
 
-.Project a 
+.projectType a 
 {
     text-decoration: none;
-    font-weight: bold;
-    font-size: 0.9rem;
-    background-color: transparent;
     color: blue;
 }
 
-.Project span {
-    width: 100%;
+.projectType p 
+{
+    text-align: start;
+}
+
+.projectType img 
+{
+    padding-top: 0.9rem;
+    max-width: 100%;
+    width: 9rem;
+    height: 9rem;
+}
+
+.projectType span 
+{
     display: block;
+    width: 100%;
+    margin: 0 auto;
     position: absolute;
-    bottom: 0px;
+    background-color: red;
     left: 0px;
-    padding: 0.2em;
+    bottom: 0px;
+    right: 0px;
+    padding: .3rem;
+    border-radius: 0rem 0rem 1rem 1rem;
 }
 
-/*MEDIA QUERIES*/
-@media screen and (max-width:906.5px) 
+#projectContainer .projectType:nth-of-type(even) 
 {
-    #AboutMeBio 
-    {
-        float: none;
-    }    
-
-    #PortfolioIntro 
-    {
-        float: none;
-        height: auto;
-        margin: 0em;
-        margin-top: 1em;
-    }
+    float: right;
 }
 
-@media screen and (max-width:500.5px) 
+#projectContainer .projectType:nth-of-type(1)  span
 {
-    #AboutMeBio 
-    {
-        width: auto;
-    }    
-
-    #PortfolioIntro 
-    {
-        width: auto;
-    }
-
-    #ProjectGroup 
-    {
-        padding: 0em;
-        padding-top: 1em;
-    }
-
-    .Project 
-    {
-        float: none;
-        margin-left: 0em;
-        margin-bottom: 0.5em;
-    }
-
-    .Project:nth-child(3) 
-    {
-        margin-bottom: 0.5em;
-    }
-
-    .Project:last-child 
-    {
-        margin-bottom: 0em;
-    }
+    background-color: var(--desktopBackground);
 }
 
-@media screen and (max-width:386.5px) 
+#projectContainer .projectType:nth-of-type(2)  span
 {
-    #PortfolioIntro 
-    {
-        padding: 0.5em;
-    }
-
-    #PortfolioIntro h3 
-    {
-        font-size: 1em;
-    }
+    background-color: var(--mobileBackground);
 }
 
-@media screen and (max-width:321.5px) 
+#projectContainer .projectType:nth-of-type(3)  span
 {
-    #PortfolioIntro h3 
-    {
-        font-size: 0.9em;
-    }
-
-    .Project 
-    {
-        display: block;
-        text-align: center;
-    }
+    background-color: var(--webBackground);
 }
 
-@media screen and (max-width:292.5px) 
+#projectContainer .projectType:nth-of-type(4)  span
 {
-    #PortfolioIntro h3 
-    {
-        font-size: 0.85em;
-    }
+    background-color: black;
 }
