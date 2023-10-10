@@ -101,7 +101,7 @@ main section
     text-decoration: none;
 }
 
-.cIt img, .winOnly img  
+.cIt img  
 {
     position: relative;
     left: 0px;

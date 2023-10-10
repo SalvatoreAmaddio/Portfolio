@@ -15,7 +15,8 @@
 
 .winOnly 
 {
-    width: fit-content;
+    width: 24.1rem;
+    border: 1px solid;
     margin: 0 auto;
     padding: 0.5rem;
     font-size: 0.8rem;
@@ -23,6 +24,9 @@
 
 .winOnly img 
 {
+    width: 1.5rem;
+    height: 1.5rem;
+    position: relative;
     top:0.5rem;   
 }
 
