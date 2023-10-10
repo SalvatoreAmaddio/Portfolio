@@ -1,3 +1,10 @@
+* 
+{
+    box-sizing: border-box;
+    padding: 0em;
+    margin: 0em;
+}
+
 :root
 {
     --headerFooterColor:#0066b2;
@@ -11,11 +18,9 @@
     --webBackground: #0072B5;
 }
 
-* 
+#wrapper 
 {
-    box-sizing: border-box;
-    padding: 0em;
-    margin: 0em;
+    background-color: var(--backgroundColor);
 }
 
 body
@@ -23,7 +28,6 @@ body
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     background-color: var(--backgroundColor);
 }
-
 
 .responsiveImg 
 {

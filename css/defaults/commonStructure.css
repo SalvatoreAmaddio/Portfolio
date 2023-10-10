@@ -454,6 +454,11 @@ form span
     {
         font-size: 13px;
     }
+
+    .buttonStyle 
+    {
+        border-radius: 0.6rem;
+    }
 }
 
 @media screen and (max-width:354px)
