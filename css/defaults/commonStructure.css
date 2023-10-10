@@ -440,15 +440,15 @@ form span
     }
 }
 
-@media screen and (max-width:425.5px) 
+@media screen and (max-width:437.5px) 
 {
     html 
     {
-        font-size: 15px;
+        font-size: 14px;
     }
 }
 
-@media screen and (max-width:375.5px) 
+@media screen and (max-width:382.5px) 
 {
     html 
     {
