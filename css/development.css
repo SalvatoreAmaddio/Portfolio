@@ -23,6 +23,25 @@
     border: none;
 }
 
+#columnsContainer 
+{
+    display: flow-root;   
+    position: relative;
+}
+
+#columnsContainer::after {
+    content: "";
+    border-radius: 1rem;
+    background-image: url(https://cdn.educba.com/academy/wp-content/uploads/2019/06/Step-3.jpg);
+    opacity: .2;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;   
+}
+
 #column1 
 {
     width: 30%;
@@ -31,10 +50,16 @@
     text-align: center;
 }
 
+.promoImgContainer img 
+{
+    width: 100%;
+    max-width: 14rem;
+    min-height: 13.5rem;
+}
+
 #column2 
 {
     width: 70%;
-    position: relative;
     height: 15rem;
     max-height: 15rem;
     float: right;
@@ -50,13 +75,8 @@
     left: 0%;
     top:50%;
     transform: translateY(-50%);
-}
-
-.promoImgContainer img 
-{
-    width: 100%;
-    max-width: 14rem;
-    min-height: 13.5rem;
+    text-shadow: 0px 0px 10px white;
+    font-family: 'Archivo Black', sans-serif;
 }
 
 .contactMeLink 

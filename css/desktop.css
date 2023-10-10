@@ -1,6 +1,8 @@
 #promo h1
 {
-    color: green;
+    color: #006B54;
+    font-weight: bolder;
+    text-shadow: -1px -1px 10px white, 1px 1px 10px white;
 }
 
 #devEnv li:nth-last-of-type(2) 
