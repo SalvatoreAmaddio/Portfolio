@@ -23,26 +23,44 @@
     border: none;
 }
 
+#column1 
+{
+    width: 30%;
+    max-width: 30%;
+    float: left;
+    text-align: center;
+}
+
+#column2 
+{
+    width: 70%;
+    float: right;
+}
+
 #promo 
 {
-    width: fit-content;
-    padding: 1rem;
-    margin: 0 auto;
+    max-width: 35rem;
+    padding: 0.8rem;
+    overflow-wrap: break-word;
     text-align: center;
-    -ms-transform: translateY(25%);
-    transform: translateY(25%);
 }
 
-#promo h1
+.promoImgContainer:nth-of-type(2) 
 {
-    margin-bottom: 0.5rem;
+    float: right;
 }
 
-.buttonStyle 
+.promoImgContainer img 
+{
+    float: none;
+    width: 100%;
+    max-width: 14rem;
+    min-height: 13.5rem;
+}
+
+.contactMeLink 
 {
     clear: both;
-    margin: 0rem auto;
-    margin-top: 0.5rem;
 }
 
 main section 
@@ -104,76 +122,26 @@ main section
     text-align: center;
 }
 
-@media screen and (max-width: 940.5px) 
-{
-    #promo 
-    {
-        float: left;
-    }
-}
-
-@media screen and (max-width: 768.5px) 
-{
-    #promo 
-    {
-        float: right;
-        width: 70%;
-        -ms-transform: translateY(10%);
-        transform: translateY(10%);
-    }
-}
-
 @media screen and (max-width: 693.5px) {
-    #rightGroup {
+    #rightGroup 
+    {
         top: 5.99rem;
     }
 
-    #promo 
-    {
-        width: 60%;
-        -ms-transform: initial;
-        transform: initial;
-        word-break: break-word;
-    }
-
-    #promo h2 
-    {
-        text-align: start;
-        display: inline;
-    }
-}
-
-@media screen and (max-width: 519.5px) 
-{
-    #promo 
-    {
-        width: 58%;
-        padding-top: 0rem;
-        padding-bottom: 0rem;
-    }
 }
 
 @media screen and (max-width: 500.5px) 
 {
+    #column1, #column2 
+    {
+        float: none;
+        width: 100%;
+        max-width: 100%;
+    }
+
     #intro .layerContent 
     {
         padding: 0rem 0rem;
-    }
-
-    #promo, #intro .layerContent > img:first-child { 
-        float: none;
-        padding: 0.5rem;
-    }
-
-    #promo 
-    {
-        width: 100%;
-    }
-    #intro .layerContent > img:first-child 
-    {
-        position: static;
-        margin: 0 auto;
-        display: block;
     }
 
     #devEnv li 
