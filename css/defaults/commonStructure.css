@@ -96,7 +96,7 @@ footer
     border-radius: 1rem;
     display: block;
     padding: 1rem;
-    width: fit-content;
+    width: 10rem;
     font-weight: bold;
     margin: 0.5rem auto;
     text-decoration: none;
@@ -397,10 +397,6 @@ form span
 /*MEDIA QUERY*/
 @media screen and (max-width:500.5px) 
 {
-    .buttonStyle 
-    {
-        padding: 0rem;
-    }
 
     #headerPanel section 
     {
