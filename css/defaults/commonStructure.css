@@ -424,14 +424,6 @@ form span
     }
 }
 
-@media screen and (max-width:384.5px) 
-{
-    .buttonStyle 
-    {
-        border-radius: 0.6rem;
-    }
-}
-
 @media screen and (max-width:320.5px)
 {
     #contactDetails h3 
