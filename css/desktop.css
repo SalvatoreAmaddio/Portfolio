@@ -26,7 +26,7 @@
     top:0.5rem;   
 }
 
-@media screen and (max-width:320.5px) 
+@media screen and (max-width:350.5px) 
 {
     .winOnly span:nth-child(2) 
     {
@@ -34,5 +34,13 @@
         position: static;
         width: fit-content;
         margin: auto;
+    }
+}
+
+@media screen and (max-width:320.5px) 
+{
+    .winOnly 
+    {
+        text-align: center;
     }
 }
