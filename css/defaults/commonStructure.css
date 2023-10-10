@@ -397,6 +397,11 @@ form span
 /*MEDIA QUERY*/
 @media screen and (max-width:500.5px) 
 {
+    .buttonStyle 
+    {
+        padding: 0rem;
+    }
+
     #headerPanel section 
     {
         padding: 1rem;
