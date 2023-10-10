@@ -26,21 +26,27 @@
     top:0.5rem;   
 }
 
-@media screen and (max-width:350.5px) 
-{
-    .winOnly span:nth-child(2) 
-    {
-        display: block;
-        position: static;
-        width: fit-content;
-        margin: auto;
-    }
-}
-
-@media screen and (max-width:320.5px) 
+@media screen and (max-width: 425.5px) 
 {
     .winOnly 
     {
+        font-size: 0.7rem;
+    }
+}
+@media screen and (max-width: 388.5px) 
+{
+    .winOnly span:last-child
+    {
+        display: block;
+        width: 100%;
         text-align: center;
+    }
+}
+
+@media screen and (max-width: 360.5px) 
+{
+    .winOnly 
+    {
+        font-size: 0.6rem;
     }
 }
