@@ -39,6 +39,11 @@ nav .responsiveImg
     display: flow-root;
 }
 
+#navBarList #home, #navBarList #goToGetInTouch  
+{
+    display: none;
+}
+
 #navBarList li {
     display: block;
     background-color: inherit;
@@ -175,6 +180,11 @@ nav .responsiveImg
 
 @media screen and (max-width: 693.5px)  {
  
+    #navBarList 
+    {
+        padding-bottom: 0.5rem;
+    }
+
     #navBarLogo 
     {
         display: none;
@@ -182,32 +192,21 @@ nav .responsiveImg
 
     #hamburger { display: block; }
 
-    #navBarList 
+    #navBarList #home, #navBarList #goToGetInTouch
     {
-        position: relative;
-    }
-
-    #leftGroup, #centerGroup, #rightGroup
-    {
-        float: left;
-        margin: initial;
-        position: relative;
-        left: 0px;
-        width: 100%;
-    }
-
-    #centerGroup 
-    {
-        z-index: 1;  
-        left: 0px;
-        bottom: 4.49rem;
+        display: block;
     }
 
     #rightGroup 
     {
-        z-index: 2;
-        left: 0px;
-        top: 9.99rem;
+        display: none;
+    }
+
+    #leftGroup, #centerGroup
+    {
+        float: left;
+        margin: initial;
+        width: 100%;
     }
 
     #navBarList li
@@ -216,16 +215,17 @@ nav .responsiveImg
         width: 100%;
     }
     
-    #rightGroup li 
-    {
-        width: fit-content;
-        float: left;
-    }
-
     nav .responsiveImg 
     {
         margin: 0em;
         margin-left: auto;
+    }
+
+    #navBarList li a 
+    {
+        text-align: start;
+        padding: 1rem;
+        width: 100%;
     }
 
     #hamburgerDropDown 
@@ -236,13 +236,6 @@ nav .responsiveImg
         left: 0em;
         padding-bottom: 0rem;
         z-index: 1;
-    }
-
-    #navBarList li a 
-    {
-        text-align: start;
-        padding: 1rem;
-        width: 100%;
     }
 
     .dropdownContent 
