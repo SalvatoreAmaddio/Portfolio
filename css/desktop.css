@@ -35,24 +35,33 @@
     .winOnly 
     {
         font-size: 0.7rem;
+        margin: 0;
+        width: auto;
     }
 }
 
-@media screen and (max-width: 388.5px) 
+@media screen and (max-width: 390.5px) 
 {
-    .winOnly span:last-child
+    .winOnly span 
     {
         display: block;
         width: 100%;
-        margin: 0px;
         text-align: center;
     }
 }
 
-@media screen and (max-width: 360.5px) 
+@media screen and (max-width: 362.5px) 
 {
     .winOnly 
     {
         font-size: 0.6rem;
+    }
+}
+
+@media screen and (max-width: 319.5px) 
+{
+    .winOnly 
+    {
+        font-size: 0.5rem;
     }
 }

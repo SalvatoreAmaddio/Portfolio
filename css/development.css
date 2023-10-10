@@ -1,6 +1,6 @@
 #intro 
 {
-    background-color:var(--backgroundColor)
+    background-color:var(--backgroundColor);
 }
 
 #intro .layer 
@@ -34,6 +34,10 @@
 #column2 
 {
     width: 70%;
+    position: relative;
+    border: 1px solid;
+    height: 15rem;
+    max-height: 15rem;
     float: right;
 }
 
@@ -43,6 +47,10 @@
     padding: 0.8rem;
     overflow-wrap: break-word;
     text-align: center;
+    position: relative;
+    left: 0%;
+    top:50%;
+    transform: translateY(-50%);
 }
 
 .promoImgContainer img 
