@@ -432,16 +432,17 @@ form span
     }
 }
 
-@media screen and (max-width:354px)
+@media screen and (max-width:320.5px)
 {
     #contactDetails h3 
     {
-        top: -2.3rem;
-        padding: 0rem;
+        position: static;
+        margin-top: 1rem;
     }
 
     .contactContainer 
     {
+        float: none;
         padding: 0.5rem 1rem;   
     }
 }
