@@ -105,7 +105,7 @@ main section
     position: relative;
     border: 1px solid black;
     margin-left: auto;
-    width: 15%;
+    text-align: end;
 }
 
 .cIt a 
