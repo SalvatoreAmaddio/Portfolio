@@ -102,7 +102,6 @@ footer
     text-decoration: none;
     background-color: var(--headerFooterColor);
     color: var(--backgroundColor);
-    color:red;
     text-align: center;
 }
 
