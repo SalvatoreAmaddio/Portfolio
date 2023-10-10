@@ -394,22 +394,6 @@ form span
 }
 
 /*MEDIA QUERY*/
-@media screen and (min-width:2000.5px) and (max-width:2560px)
-{
-    html 
-    {
-        font-size: 32px;
-    }
-}
-
-@media screen and (min-width:1440px) and (max-width:2000px)
-{
-    html 
-    {
-        font-size: 17px;
-    }
-}
-
 @media screen and (max-width:500.5px) 
 {
     #headerPanel section 
@@ -440,21 +424,8 @@ form span
     }
 }
 
-@media screen and (max-width:437.5px) 
-{
-    html 
-    {
-        font-size: 14px;
-    }
-}
-
 @media screen and (max-width:384.5px) 
 {
-    html 
-    {
-        font-size: 13px;
-    }
-
     .buttonStyle 
     {
         border-radius: 0.6rem;
@@ -472,32 +443,5 @@ form span
     .contactContainer 
     {
         padding: 0.5rem 1rem;   
-    }
-}
-
-@media screen and (max-width:320.5px) 
-{
-    html 
-    {
-        font-size: 12px;
-    }
-}
-
-@media screen and (max-width:279.5px)
-{
-    #contactDetails
-    {
-        padding: 0.5rem;
-    }
-
-    #contactDetails h3 
-    {
-        position: static;
-    }
-
-    .contactContainer 
-    {
-        float: none;
-        margin: 0 auto;
     }
 }
