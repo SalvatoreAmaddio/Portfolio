@@ -424,17 +424,38 @@ form span
     }
 }
 
-@media screen and (max-width:320.5px)
+@media screen  and (min-width:375.5px) and (max-width:425.5px)
+{
+    #contactDetails h3 
+    {
+        top: -2rem;
+        left: 0px;
+        width: 15rem;
+    }
+
+    .contactContainer:first-of-type 
+    {
+        padding-right: 1rem;
+    }
+
+    .contactContainer 
+    {
+        padding: 0.5rem 0.5rem;
+    }    
+}
+
+@media screen and (max-width:375.5px)
 {
     #contactDetails h3 
     {
         position: static;
+        padding: 0rem 0.4rem;
         margin-top: 1rem;
     }
 
     .contactContainer 
     {
         float: none;
-        padding: 0.5rem 1rem;   
+        padding: 0.5rem 0rem;
     }
 }
