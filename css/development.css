@@ -83,6 +83,11 @@ main section
     background-color: white;
 }
 
+.feature 
+{
+    position: relative;
+}
+
 .feature > img:first-child
 {
     float: left;
@@ -97,10 +102,10 @@ main section
 .cIt 
 {
     padding: 0.5rem;
-    width: fit-content;
-    max-width: 100%;
-    margin-left: auto;
     position: relative;
+    border: 1px solid black;
+    margin-left: auto;
+    width: 15%;
 }
 
 .cIt a 
