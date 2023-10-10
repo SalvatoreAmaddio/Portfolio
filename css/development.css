@@ -103,7 +103,6 @@ main section
 {
     padding: 0.5rem;
     position: relative;
-    border: 1px solid black;
     margin-left: auto;
     text-align: end;
 }
@@ -143,6 +142,13 @@ main section
         float: none;
         width: 100%;
         max-width: 100%;
+        height: auto;
+    }
+
+    #promo 
+    {
+        top:0%;
+        transform: translateY(0%);
     }
 
     #intro .layerContent 
