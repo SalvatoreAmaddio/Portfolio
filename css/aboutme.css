@@ -143,10 +143,15 @@ main .layerContent
     padding-bottom: 0.3rem;
 }
 
+#techSkills dl > div 
+{
+    background-color: rgba(137, 207, 240,0.2);
+    border-radius: 1rem;
+}
+
 #techSkills dl dd 
 {
     padding: 0.5rem;
-    background-color: rgba(137, 207, 240,0.2);
 }
 
 #techSkills dl dd img
