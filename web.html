@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/development.css">
     <link rel="stylesheet" href="css/web.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
     <title>Web Development</title>
 </head>
 <body>
@@ -79,13 +82,23 @@
             <section class="container" id="intro">
                 <div class="layer">
                     <div class="layerContent">
-                        <img src="img/web_ad.png">
-                        <div id="promo">
-                            <h1>READY TO GET YOUR BUSINESS ONLINE?</h1>
-                            <h2>REACH PEOPLE WORLDWIDE</h2>
-                            <h2>AND EXPAND.</h2>
+                        <div id="columnsContainer">
+                            <div id="column1">
+                                <div class="promoImgContainer">
+                                    <img src="img/web_ad.png">
+                                </div>    
+                            </div>
+
+                            <div id="column2">
+                                <div id="promo">
+                                    <h1>READY TO GET YOUR BUSINESS ONLINE?</h1>
+                                    <h2>REACH PEOPLE WORLDWIDE AND EXPAND.</h2>
+                                </div>
+                            </div>
                         </div>
-                        <a class="buttonStyle" href="#getInTouch" target="_self">CONTACT ME</a>
+                        <div class="contactMeLink">
+                            <a class="buttonStyle" href="#getInTouch" target="_self">CONTACT ME</a>
+                        </div>
                     </div>
                 </div>
             </section>
