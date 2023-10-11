@@ -464,3 +464,11 @@ form span
         width: 100%;
     }
 }
+
+@media screen and (max-width:302.5px) 
+{
+    #formTitle
+    {
+        position: static;
+    }
+}

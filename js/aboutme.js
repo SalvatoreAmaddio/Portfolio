@@ -2,6 +2,8 @@ class ResizerHelper
 {
     #column1;
     #column2;
+    #_breakPointHit = false;
+    
     constructor()
     {
         this.#column1 = document.getElementById("column1");
@@ -11,14 +13,34 @@ class ResizerHelper
     }
 
     #adjustColumn2Height() 
-    {
+    {   
+        if (this.#breakPoint) return;
         this.#column2Height = this.#column1.getBoundingClientRect().height;
+    }
+
+    get #hasBreakPointBeenHit() 
+    {
+        return this.#_breakPointHit;
+    }
+
+    set #hasBreakPointBeenHit(val) 
+    {
+        if (val) this.#column2Height="";        
+        this.#_breakPointHit=val;
+        return val;
+    }
+
+    get #breakPoint()
+    {
+        this.#hasBreakPointBeenHit = (window.innerWidth<=499.5);
+        return this.#hasBreakPointBeenHit;
     }
 
     set #column2Height(height) 
     {
-        this.#column2.style.height=`${height}px`;
-        this.#column2.style.maxHeight=`${height}px`;
+        let h = (height) ? `${height}px` : "";
+        this.#column2.style.height = h;
+        this.#column2.style.maxHeight = h;
     }
 }
 
