@@ -1,3 +1,16 @@
+#columnsContainer::after {
+    content: "";
+    border-radius: 1rem;
+    background-image: url(https://cdn.educba.com/academy/wp-content/uploads/2019/06/Step-3.jpg);
+    opacity: .2;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;   
+}
+
 #promo h1
 {
     color: #006B54;
