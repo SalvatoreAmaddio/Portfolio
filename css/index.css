@@ -46,24 +46,24 @@
     margin: var(--firstMargin);
 }
 
-.skillContainer:nth-last-of-type(2)
+.skillContainer:first-of-type+.skillContainer
 {
-    margin: var(--fifthMargin);
+    margin: var(--secondMargin);
 }
 
-.skillContainer:nth-last-of-type(3)
-{
-    margin: var(--fourthMargin);
-}
-
-.skillContainer:nth-last-of-type(4)
+.skillContainer:first-of-type+.skillContainer+.skillContainer
 {
     margin: var(--thirdMargin);
 }
 
-.skillContainer:nth-last-of-type(5)
+.skillContainer:first-of-type+.skillContainer+.skillContainer+.skillContainer
 {
-    margin: var(--secondMargin);
+    margin: var(--fourthMargin);
+}
+
+.skillContainer:first-of-type+.skillContainer+.skillContainer+.skillContainer+.skillContainer
+{
+    margin: var(--fifthMargin);
 }
 
 .skillContainer:last-of-type 
