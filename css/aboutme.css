@@ -164,6 +164,11 @@ main .layerContent
     top: 0.1rem;
 }
 
+#projects .layerContent
+{
+    padding-bottom: 0rem;
+}
+
 #projectContainer 
 {
     margin: 0 auto;
