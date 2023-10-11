@@ -147,6 +147,7 @@ main .layerContent
 {
     background-color: rgba(137, 207, 240,0.2);
     border-radius: 1rem;
+    box-shadow: 3px 3px 0px 2px black;
 }
 
 #techSkills dl dd 
