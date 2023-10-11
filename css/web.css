@@ -13,22 +13,22 @@
     background-color: var(--mobileBackground);
 }
 
-.layer h2:first-child 
+#ui h2:first-child 
 {
     padding-bottom: 1rem;
 }
 
-.layer h2:last-child 
+#ui h2:last-child 
 {
     padding-top: 1rem;
 }
 
-.layerContent 
+#ui .layerContent 
 {
     padding: 0rem;
 }
 
-.layerContent > img:first-child 
+#ui .layerContent > img:first-child 
 {
     width: 100%;
     height: 23.5rem;
