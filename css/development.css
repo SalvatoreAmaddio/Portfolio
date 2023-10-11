@@ -66,11 +66,6 @@
     font-family: 'Archivo Black', sans-serif;
 }
 
-.contactMeLink 
-{
-    clear: both;
-}
-
 main section 
 {    
     background-color: var(--mainColor);

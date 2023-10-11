@@ -47,6 +47,11 @@ footer
     padding-bottom: 0rem;
 }
 
+.contactMeLink 
+{
+    clear: both;
+}
+
 /*MAIN*/
 .container
 {
