@@ -16,13 +16,13 @@ main
 
 .container 
 {
+    margin-top: 0rem;
     padding: 0.5rem;
 }
 
 main .layer 
 {
     background-color: rgba(146, 182, 213, .35);
-    color: var(--backgroundColor);
     border-radius: 1rem;
 }
 
@@ -36,22 +36,30 @@ main .layerContent
     clear: both;
 }
 
+#columnsContainer 
+{
+    background-color: var(--mainColor);
+    margin-top: 1rem;
+    display: flow-root;
+    color: var(--backgroundColor);
+}
+
+#columnsContainer h2
+{
+    text-align: center;
+    padding: 1rem;
+}
+
 #column1, #column2
 {
     width: 50%;
-    margin-top: 1rem;
     float: left;
-    background-color: var(--mainColor);
+    background-color: inherit;
 }
 
 #column2 
 {
     float: right;
-}
-
-#aboutMe, #storyLine, #projects, #techSkills 
-{
-    background-color: var(--mainColor);
 }
 
 #me 
@@ -63,7 +71,9 @@ main .layerContent
     max-width: 100%;
     border-radius: 50%;
     background-color: var(--backgroundColor);
+    color: black;
     overflow: hidden;
+    position: relative;
 }
 
 .layer #me img {
@@ -193,6 +203,43 @@ main .layerContent
 .projectType:nth-of-type(4)  span
 {
     background-color: black;
+}
+
+.degree, .lang 
+{
+    text-align: start;
+}
+
+.degree a 
+{
+    color: blue;
+}
+
+.lang 
+{
+    display: flow-root;
+    height: 4rem;
+    max-height: 100%;
+}
+
+.lang img 
+{
+    display: block;
+    float: left;
+    margin-right: 1rem;
+}
+
+.lang p 
+{
+    position: relative;
+    top:50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.lang span 
+{
+    font-style: italic;
 }
 
 /*MEDIA QUERY*/
