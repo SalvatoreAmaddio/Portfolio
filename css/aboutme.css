@@ -58,6 +58,7 @@ main .layerContent
     float: left;
     background-color: inherit;
     position: relative;
+    padding-bottom: 1rem;
     z-index: 2;
 }
 
