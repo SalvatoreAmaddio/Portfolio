@@ -56,17 +56,19 @@ main .layerContent
     width: 50%;
     float: left;
     background-color: inherit;
+    position: relative;
+    z-index: 2;
 }
 
 #column2 
 {
     float: right;
+    z-index: 1;
 }
 
 #meContainer 
 {
     position: relative;
-    border: 1px solid black;
     width:16rem;
     max-width: 100%;
     margin: 0 auto;
@@ -88,15 +90,28 @@ main .layerContent
 #elegible 
 {
     position: absolute;
-    width: 9rem;
+    width: 20rem;
     max-width: 70%;
     border: 1px solid black;
-    padding: 0.5rem;
-    top: -1rem;
-    right: 0rem;
-    background-color: red;
+    padding: .5rem 2rem;
+    padding-left: .2rem;
+    top: -0.5rem;
+    right: -1.7rem;
+    background-color: #F6F6F6;
+    color: black;
     border-radius: 1rem;
     transform: rotate(35deg);
+    font-weight: bold;
+    z-index: 3;
+}
+
+#elegible img 
+{
+    position: absolute;
+    top:0.2rem;
+    right: 0.1rem;
+    width: 2rem;
+    height: 3.9rem;
 }
 
 .layer #me img {
@@ -293,13 +308,22 @@ main .layerContent
     }
 }
 
+@media screen and (max-width: 599.5px) and (min-width: 500.5px)
+{
+    #elegible 
+    {
+        top: -0.5rem;
+        right: -3rem;
+    }
+}
+
 @media screen and (max-width: 550.5px) {
     .layerTitle, .layerContent {
         padding: 0.5rem;
     }
 }
 
-@media screen and (max-width:499.5px) 
+@media screen and (max-width:500.5px) 
 {
     #column1, #column2 
     {
