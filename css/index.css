@@ -37,7 +37,6 @@
 /*PROGRAMMING LANGUAGES*/
 .skillContainer 
 {
-    border: 1px solid red;
     display: var(--displayMode)
 }
 
@@ -91,7 +90,7 @@
     padding: 0.5rem;
 }
 
-.roundBorder:last-of-type 
+.skillContainer:last-of-type .roundBorder 
 {
     background-color: #A13437;    
 }
@@ -135,12 +134,18 @@
     :root 
     {
         --displayMode: block;
-        --firstMargin: 1rem 0rem 1rem 0rem;
-        --secondMargin: 1rem 0rem 1rem 0rem;
-        --thirdMargin: 1rem 0rem 1rem 0rem;
-        --fourthMargin: 1rem 0rem 1rem 0rem;
-        --fifthMargin: 1rem 0rem 1rem 0rem;
-        --lastMargin: 1rem 0rem 1rem 0rem;
+        --firstMargin: 1rem auto;
+        --secondMargin: 1rem auto;
+        --thirdMargin: 1rem auto;
+        --fourthMargin: 1rem auto;
+        --fifthMargin: 1rem auto;
+        --lastMargin: 1rem auto;
+    }
+
+    .skillContainer .roundBorder 
+    {
+        width: fit-content;
+        margin: 0 auto;
     }
 }
 
