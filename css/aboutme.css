@@ -129,7 +129,6 @@ main .layerContent
 #techSkills dl 
 {
     list-style-type: none;
-    border: 1px solid black;
     text-align: start;
     padding: 0.5rem;
 }
