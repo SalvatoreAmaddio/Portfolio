@@ -15,14 +15,6 @@
     padding: 0;
 }
 
-#intro .layerContent > img:first-child 
-{
-    width: 13rem;
-    height: 13rem;
-    margin: 0;
-    border: none;
-}
-
 #columnsContainer 
 {
     display: flow-root;   

@@ -1,8 +1,8 @@
 * 
 {
     box-sizing: border-box;
-    padding: 0em;
-    margin: 0em;
+    padding: 0;
+    margin: 0;
 }
 
 :root
@@ -18,15 +18,16 @@
     --webBackground: #0072B5;
 }
 
-#wrapper 
-{
-    background-color: var(--backgroundColor);
-}
-
 body
 {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     background-color: var(--backgroundColor);
+}
+
+#wrapper 
+{
+    background-color: inherit;
+    font-family: inherit;
 }
 
 .responsiveImg 
@@ -45,25 +46,7 @@ body
     margin: 0 auto;    
 }
 
-.ImgRoundBorder 
-{
-    border: 1px solid black;
-    overflow: hidden;
-    width: 20vw;
-    height: 20vw;
-    border-radius: 50%;
-}
-
-.ImgRoundBorder  img
-{
-    width: inherit;
-    height: inherit;
-    display: block;
-    margin: 0 auto;
-    /*padding: 0.5em;*/
-    border-radius: 50%;
-}
-
+/*
 .verticallyCentered
 {
     width: 100%;
@@ -71,3 +54,4 @@ body
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
 }
+*/
