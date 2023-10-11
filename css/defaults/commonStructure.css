@@ -430,6 +430,11 @@ form span
 @media screen and (max-width:500.5px) 
 {
 
+    #getInTouch h2 
+    {
+        text-align: center;
+    }
+
     #headerPanel section 
     {
         padding: 1rem;
