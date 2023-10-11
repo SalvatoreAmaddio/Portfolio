@@ -48,7 +48,7 @@ main .layerContent
 {
     text-align: center;
     padding: 1rem;
-    padding-bottom: 3rem;
+    padding-bottom: 1.5rem;
 }
 
 #column1, #column2
@@ -265,12 +265,6 @@ main .layerContent
     font-style: italic;
 }
 
-@media screen and (max-width: 550.5px) {
-    .layerTitle, .layerContent {
-        padding: 0.5rem;
-    }
-}
-
 /*MEDIA QUERY*/
 @media screen and (max-width:1601.5px) 
 {
@@ -279,7 +273,6 @@ main .layerContent
         --secondMargin: 1rem 0rem 1rem 0rem;
     }
 }
-
 @media screen and (max-width:813.5px) 
 {
     :root 
@@ -300,11 +293,22 @@ main .layerContent
     }
 }
 
+@media screen and (max-width: 550.5px) {
+    .layerTitle, .layerContent {
+        padding: 0.5rem;
+    }
+}
+
 @media screen and (max-width:499.5px) 
 {
     #column1, #column2 
     {
         float: none;
         width: 100%;
+    }
+
+    #columnsContainer > h2
+    {
+        padding-bottom: 2rem;
     }
 }
