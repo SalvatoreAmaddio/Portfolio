@@ -39,7 +39,7 @@ nav .responsiveImg
     display: flow-root;
 }
 
-#navBarList #home, #navBarList #goToGetInTouch  
+#navBarList #goToGetInTouch  
 {
     display: none;
 }
