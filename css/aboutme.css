@@ -44,10 +44,11 @@ main .layerContent
     color: var(--backgroundColor);
 }
 
-#columnsContainer h2
+#columnsContainer > h2
 {
     text-align: center;
     padding: 1rem;
+    padding-bottom: 3rem;
 }
 
 #column1, #column2
@@ -62,6 +63,15 @@ main .layerContent
     float: right;
 }
 
+#meContainer 
+{
+    position: relative;
+    border: 1px solid black;
+    width:16rem;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
 #me 
 {
     width: 14rem;
@@ -73,7 +83,20 @@ main .layerContent
     background-color: var(--backgroundColor);
     color: black;
     overflow: hidden;
-    position: relative;
+}
+
+#elegible 
+{
+    position: absolute;
+    width: 9rem;
+    max-width: 70%;
+    border: 1px solid black;
+    padding: 0.5rem;
+    top: -1rem;
+    right: 0rem;
+    background-color: red;
+    border-radius: 1rem;
+    transform: rotate(35deg);
 }
 
 .layer #me img {
@@ -240,6 +263,12 @@ main .layerContent
 .lang span 
 {
     font-style: italic;
+}
+
+@media screen and (max-width: 550.5px) {
+    .layerTitle, .layerContent {
+        padding: 0.5rem;
+    }
 }
 
 /*MEDIA QUERY*/

@@ -472,3 +472,23 @@ form span
         position: static;
     }
 }
+
+@media screen and (max-width:259.5px) 
+{
+    #headerTitle {
+        padding: 0.5rem;
+    }
+}
+
+@media screen and (max-width:242.5px) 
+{
+    #headerTitle 
+    {
+        padding: 0rem;
+    }
+
+    header 
+    {
+        padding: 0rem;
+    }
+}
