@@ -146,7 +146,6 @@ main .layerContent
 #techSkills dl dd 
 {
     padding: 0.5rem;
-    border-bottom:0.01rem black solid;
     background-color: rgba(137, 207, 240,0.2);
 }
 
