@@ -119,7 +119,7 @@ class Form
 
     get #getInTouchAtTop()
     {
-        return document.getElementById("getInTouch").getBoundingClientRect().top<=65;
+        return document.getElementById("getInTouch").getBoundingClientRect().top<=100;
     }  
 
     #animateGmail() 
