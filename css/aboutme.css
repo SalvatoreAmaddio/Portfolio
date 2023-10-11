@@ -1,3 +1,14 @@
+:root 
+{
+    --displayMode: inline-block;
+    --firstMargin: 1rem 2rem 1rem 0rem;
+    --secondMargin: 1rem 2rem 1rem 0rem;
+    --thirdMargin: 1rem 2rem 1rem 0rem;
+    --lastMargin: 1rem 0rem 1rem 0rem;
+    --projectTypeWidth: 10rem;
+    --textAlign: inherit;
+}
+
 main 
 {
     display: flow-root;
@@ -79,19 +90,21 @@ main .layerContent
 {
     text-align: center;
     font-weight: bolder;
+    padding: 0rem 1rem;
 }
 
 #techSkills dl dd 
 {
-    padding: 0rem 1rem;
+    padding: inherit;
 }
 
 #projectContainer 
 {
     margin: 0 auto;
     margin-top: 1rem;
-    width: 25rem;
-    max-width: 70%;
+    width: 23rem;
+    max-width: 100%;
+    border: 1px solid black;
     display: flow-root;
 }
 
@@ -100,16 +113,33 @@ main .layerContent
     padding: 1rem;
     background-color: var(--backgroundColor);
     color: black;
-    font-weight: bolder;
     border-radius: 1rem;
-    width: fit-content;
-    display: flow-root;
-    margin-bottom: 1rem;
-    width: 10rem;
+    width: var(--projectTypeWidth);
     max-width: 100%;
+    font-weight: bolder;
+    display: var(--displayMode);
+    text-align: var(--textAlign);
     position: relative;
-    overflow-wrap: break-word;
-    float: left;
+}
+
+.projectType:first-of-type 
+{
+    margin: var(--firstMargin);
+}
+
+.projectType:nth-of-type(2)
+{
+    margin: var(--secondMargin);
+}
+
+.projectType:nth-of-type(3)
+{
+    margin: var(--thirdMargin);
+}
+
+.projectType:last-of-type 
+{
+    margin: var(--lastMargin);
 }
 
 .projectType a 
@@ -145,27 +175,60 @@ main .layerContent
     border-radius: 0rem 0rem 1rem 1rem;
 }
 
-#projectContainer .projectType:nth-of-type(even) 
-{
-    float: right;
-}
-
-#projectContainer .projectType:nth-of-type(1)  span
+.projectType:nth-of-type(1)  span
 {
     background-color: var(--desktopBackground);
 }
 
-#projectContainer .projectType:nth-of-type(2)  span
+.projectType:nth-of-type(2)  span
 {
     background-color: var(--mobileBackground);
 }
 
-#projectContainer .projectType:nth-of-type(3)  span
+.projectType:nth-of-type(3)  span
 {
     background-color: var(--webBackground);
 }
 
-#projectContainer .projectType:nth-of-type(4)  span
+.projectType:nth-of-type(4)  span
 {
     background-color: black;
+}
+
+/*MEDIA QUERY*/
+@media screen and (max-width:1601.5px) 
+{
+    :root 
+    {
+        --secondMargin: 1rem 0rem 1rem 0rem;
+    }
+}
+
+@media screen and (max-width:813.5px) 
+{
+    :root 
+    {
+       --displayMode:block;
+       --firstMargin: 1rem 0rem;
+       --secondMargin: 1rem 0rem;
+       --thirdMargin: 1rem 0rem;
+       --lastMargin: 1rem 0rem;   
+       --textAlign: start;
+       --projectTypeWidth: 100%;
+    }
+
+    .projectType a 
+    {
+        display: block;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width:500px) 
+{
+    #column1, #column2 
+    {
+        float: none;
+        width: 100%;
+    }
 }
