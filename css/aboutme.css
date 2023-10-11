@@ -10,7 +10,7 @@ main
 
 main .layer 
 {
-    background-color: var(--backblue);
+    background-color: rgba(146, 182, 213, .35);
     color: var(--backgroundColor);
     border-radius: 1rem;
 }
@@ -67,12 +67,23 @@ main .layerContent
     text-align: start;
 }
 
-#techSkills ul 
+#techSkills dl 
 {
     list-style-type: none;
     border: 1px solid black;
     text-align: start;
     padding: 0.5rem;
+}
+
+#techSkills dl dt 
+{
+    text-align: center;
+    font-weight: bolder;
+}
+
+#techSkills dl dd 
+{
+    padding: 0rem 1rem;
 }
 
 #projectContainer 

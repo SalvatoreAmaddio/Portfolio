@@ -7,6 +7,7 @@
     --thirdMargin: 1rem 2rem 1rem 0rem;
     --fourthMargin: 1rem 2rem 1rem 0rem;
     --fifthMargin: 1rem 2rem 1rem 0rem;
+    --sixthMargin: 1rem 2rem 1rem 0rem;
     --lastMargin: 1rem 0rem 1rem 0rem;
 }
 
@@ -63,6 +64,11 @@
 .skillContainer:first-of-type+.skillContainer+.skillContainer+.skillContainer+.skillContainer
 {
     margin: var(--fifthMargin);
+}
+
+.skillContainer:first-of-type+.skillContainer+.skillContainer+.skillContainer+.skillContainer+.skillContainer
+{
+    margin: var(--sixthMargin);
 }
 
 .skillContainer:last-of-type 
@@ -126,6 +132,7 @@
     {
         --secondMargin: 1rem 0rem 1rem 0rem;
         --fourthMargin: 1rem 0rem 1rem 0rem;
+        --sixthMargin: 1rem 0rem 1rem 0rem;
     }
 }
 
