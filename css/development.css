@@ -148,13 +148,6 @@ main section
     text-align: center;
 }
 
-@media screen and (max-width: 693.5px) {
-    #rightGroup 
-    {
-        top: 5.99rem;
-    }
-}
-
 @media screen and (max-width: 500.5px) 
 {
     #column1, #column2 

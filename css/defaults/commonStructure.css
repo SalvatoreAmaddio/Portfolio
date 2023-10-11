@@ -1,6 +1,6 @@
 :root
 {
-    --gmailTop: -1.3rem;
+    --gmailTop: -2.3rem;
 }
 
 /*HEADER*/
@@ -217,11 +217,6 @@ footer
     color: inherit;
 }
 
-#getInTouch h2 
-{
-    margin-bottom: 1.5rem;    
-}
-
 @keyframes hello 
 {
     0% 
@@ -233,6 +228,14 @@ footer
     {
         top: var(--gmailTop);
     }
+}
+
+#contactFormContainer 
+{
+    float: right;
+    position: relative;
+    width: 60%;
+    background-color: inherit;
 }
 
 #gmailContainer 
@@ -359,33 +362,28 @@ form span
 
 #contactDetails 
 {
-    margin: auto;
-    width: fit-content;
-    margin-top: 3rem;
+    float: left;
+    width: 33%;
     border: 0.1rem solid;
     border-radius: 1rem;
-    position: relative;
     text-align: center;
-}
-
-#contactDetails h3 
-{
-    position: absolute;
-    width: fit-content;
-    margin: 0 auto;
-    top:-1rem;
-    left: 0px;
-    right: 0px;
-    padding: 0rem 0.3rem;
-    background-color: var(--mainColor);
 }
 
 .contactContainer
 {
+    padding: 0.5rem;
+}
+
+.contactContainer:first-of-type
+{
     float: left;
-    position: relative;
-    margin-top: 1rem;
-    padding: 0.5rem 2rem;
+    width: 11rem;
+}
+
+.contactContainer:last-of-type
+{
+    float: right;
+    width: 8rem;
 }
 
 .contactContainer img 
@@ -395,6 +393,40 @@ form span
 }
 
 /*MEDIA QUERY*/
+@media screen and (max-width:978px) and (min-width:700.5px) 
+{
+    .contactContainer:first-of-type, .contactContainer:last-of-type
+    {
+        float: none;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:700px)
+{
+    #clientContactInfo, #clientMessage 
+    {
+        float: none;
+        width: 100%;
+    }
+
+    #contactDetails 
+    {
+        width: 100%;
+    }
+
+    #contactFormContainer 
+    {
+        margin-top: 3rem;
+        width: 100%;
+    }
+
+    :root 
+    {
+        --gmailTop:-2.3rem;
+    }
+}
+
 @media screen and (max-width:500.5px) 
 {
 
@@ -413,51 +445,13 @@ form span
         float: none;
         width: 100%;
     }
+}
 
-    #clientContactInfo, #clientMessage 
+@media screen and (max-width:355.5px) 
+{
+    .contactContainer:first-of-type, .contactContainer:last-of-type 
     {
         float: none;
         width: 100%;
-    }
-
-    :root 
-    {
-        --gmailTop:-1.8rem;
-    }
-}
-
-@media screen  and (min-width:375.5px) and (max-width:425.5px)
-{
-    #contactDetails h3 
-    {
-        top: -2rem;
-        left: 0px;
-        width: 15rem;
-    }
-
-    .contactContainer:first-of-type 
-    {
-        padding-right: 1rem;
-    }
-
-    .contactContainer 
-    {
-        padding: 0.5rem 0.5rem;
-    }    
-}
-
-@media screen and (max-width:375.5px)
-{
-    #contactDetails h3 
-    {
-        position: static;
-        padding: 0rem 0.4rem;
-        margin-top: 1rem;
-    }
-
-    .contactContainer 
-    {
-        float: none;
-        padding: 0.5rem 0rem;
     }
 }
