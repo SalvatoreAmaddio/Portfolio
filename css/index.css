@@ -50,12 +50,12 @@
     margin: var(--secondMargin);
 }
 
-.skillContainer:first-of-type+.skillContainer+.skillContainer
+.skillContainer:first-of-type+.skillContainer+:not(.skillContainer:last-of-type).skillContainer
 {
     margin: var(--thirdMargin);
 }
 
-.skillContainer:first-of-type+.skillContainer+.skillContainer+.skillContainer
+.skillContainer:first-of-type+.skillContainer+.skillContainer+:not(.skillContainer:last-of-type).skillContainer
 {
     margin: var(--fourthMargin);
 }
