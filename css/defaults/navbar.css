@@ -98,6 +98,11 @@ nav .responsiveImg
 
 #centerGroup
 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    bottom: 0px;
+    right: 0px;
     width: fit-content;
     margin: auto;
     display: flow-root;
@@ -171,6 +176,7 @@ nav .responsiveImg
      
     #centerGroup
     {
+        position: static;
         margin: 0;
     }
 }
