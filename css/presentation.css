@@ -54,11 +54,13 @@
     height: inherit;
 }
 
+/*TABLE*/
 .tableHeader th
 {
     text-align: center;  
     padding-top: .5rem;  
     padding-bottom:.5rem;
+    background-color: rgba(146, 182, 213, .3);
 }
 
 table 
@@ -89,6 +91,7 @@ table td
     display: block;
 }
 
+/*READER*/
 #readerTitle 
 {
     padding-bottom: .5rem;
@@ -103,12 +106,18 @@ table td
     max-height: 10rem;
 }
 
+/*MEDIA QUERY*/
 @media screen and (max-width:739.5px) and (min-width:519.5px)
 {
-    .container
+    #project
     {
         padding-left: 0rem;
         padding-right: 0rem;
+    }
+
+    #projectDescription 
+    {
+        margin: 0rem 1rem;
     }
 
     #col2, #col3 
@@ -145,6 +154,14 @@ table td
     #projectImgContainer 
     {
         height: 11rem;
+    }
+}
+
+@media screen and (max-width:519.5px) and (min-width:415px)
+{
+    #projectImgContainer 
+    {
+        min-width: 50%;
     }
 }
 
