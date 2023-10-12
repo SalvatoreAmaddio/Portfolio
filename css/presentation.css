@@ -73,7 +73,6 @@ table
 table th, table td 
 {
     text-align: start;
-    width: 50%;
     padding: 0.5rem;
     padding-top: 0rem;
 }
