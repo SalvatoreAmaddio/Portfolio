@@ -10,27 +10,30 @@
 
 #projectDetails, #projectDescription 
 {
-    border: 1px solid black;
-    border-radius: 1rem;
-    background-color: white;
     color: black;
     max-width: 100%;
     margin: 0 auto;
     margin-bottom: 1rem;
-    padding: 1rem;
     display: flow-root;
+}
+
+#projectDescription 
+{
+    background-color: white;    
+    padding: 1rem;
+    border-radius: 1rem;
 }
 
 #col1, #col2, #col3 
 {
     float: left;
     width: 33.33%;
-    border: 1px solid red;
 }
 
 #projectImgContainer, #projectInfos, #projectFeatures 
 {
     border: 1px solid black;
+    background-color: white;
     border-radius: 1rem;
     width: 80%;
     margin:0 auto;
@@ -113,6 +116,11 @@ table td
 
 @media screen and (max-width:719.5px)
 {
+    #projectDetails 
+    {
+        padding: .2rem;
+    }
+
     #col2, #col3 
     {
         font-size: .8rem;
@@ -128,7 +136,7 @@ table td
 {
     #col2, #col3 
     {
-        font-size: .79rem;
+        font-size: .74rem;
     }
 
     #projectInfos, #projectFeatures 
