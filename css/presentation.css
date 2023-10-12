@@ -1,0 +1,124 @@
+.layerContent 
+{
+    padding: 0;
+}
+
+.layerContentTitle 
+{
+    padding-top:0rem;
+}
+
+#projectDetails, #projectDescription 
+{
+    border: 1px solid black;
+    border-radius: 1rem;
+    background-color: white;
+    color: black;
+    max-width: 100%;
+    margin: 0 auto;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    padding-bottom: 0rem;
+    display: flow-root;
+}
+
+#projectImgContainer, #projectInfos, #projectFeatures 
+{
+    padding: inherit;
+    border: inherit;
+    border-radius: inherit;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+}
+
+#projectImgContainer 
+{
+    float: left;
+    max-width: 20%;
+}
+
+#projectFeatures 
+{
+    margin-right: 0;
+    max-width:40%;
+    float: right;
+}
+
+#projectInfos 
+{
+}
+
+#projectInfos, #projectFeatures 
+{
+    padding: 0.3rem;
+}
+
+#projectImgContainer img 
+{
+    width: 100%;
+    height: 100%;
+}
+
+.tableHeader 
+{
+    padding-bottom:0rem;
+}
+
+.tableHeader th
+{
+    text-align: center;    
+    padding-bottom:0rem;
+}
+
+table tr 
+{
+    padding: 0.3rem;
+    text-align: start;
+}
+
+table th, table td 
+{
+    text-align: start;
+    padding: 0.5rem;
+}
+
+.layer table img 
+{
+    width: 2rem;
+    height: 2rem;
+    padding: 0rem;
+    display: block;
+}
+
+.underline 
+{
+    background-color: black;
+    border-radius: 1rem;
+}
+
+.underline td 
+{
+    padding: 0.1rem;
+}
+
+#readerTitle 
+{
+    padding-bottom: .5rem;
+}
+
+#readerContent 
+{
+    text-align: start;
+    line-height: 1.6;
+    padding-bottom: .5rem;
+    overflow: auto;
+    max-height: 10rem;
+}
+
+@media screen and (max-width:865.5px) 
+{
+    .container 
+    {
+        font-size: 0.99rem;
+    }
+}
