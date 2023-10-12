@@ -76,7 +76,7 @@
     background-color: rgba(255, 255, 255, .5);
 }
 
-.overlayProject button
+.overlayProject button, .overlayProject a
 {
     color: inherit;
     display: block;
