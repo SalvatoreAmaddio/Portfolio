@@ -7,6 +7,11 @@
     <title>Mobile Projects</title>
 
     <style>
+        #intro span 
+        {
+            color: var(--mobileBackground);   
+        }  
+
         #devEnv li:nth-last-of-type(2) 
         {
             background-color: var(--desktopBackground);
@@ -109,9 +114,9 @@
                 <div class="layer">
                     <div class="layerContent">
                         <div class="layerContentTitle">
-                            <h2>EXPLORE SOME OF THE MOBILE APPS I'VE BUILT</h2>
-                            <h3>GET AN IDEA OF WHAT I CAN DEVELOP</h3>
-                            <h3>FOR YOU AND YOUR BUSINESS</h3>
+                            <h2>EXPLORE SOME OF THE <span>MOBILE APPS</span> I'VE BUILT</h2>
+                            <h3>GET AN IDEA OF WHAT <span>I</span> CAN DEVELOP</h3>
+                            <h3><span>FOR YOU</span> AND <span>YOUR BUSINESS</span></h3>
                         </div>
 
                         <div class="contactMeLink">
@@ -125,10 +130,11 @@
                 <div class="layer">
                     <div class="layerContent">
                         <h3>Click on a project to find out more</h3>
+                        <form action="projectPresentation.html" method="get">
                         <ul id="projectList">                            
                             <li>
                                 <div class="overlayProject">
-                                    <a href="#">Find out more</a>
+                                    <button type="submit" name="mobileID" value="1">Find out more</button>            
                                 </div>
                                 <div class="project">
                                     <img src="img/projects/mobile/myplanogram.png">
@@ -136,6 +142,7 @@
                                 </div>
                             </li>
                         </ul>
+                        </form>
                     </div>
                 </div>
             </section>
