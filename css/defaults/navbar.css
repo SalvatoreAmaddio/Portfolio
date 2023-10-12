@@ -58,6 +58,7 @@ nav .responsiveImg
     text-decoration: none;
     color: var(--white);
     text-align: center;
+    line-height: 1.6;
     padding: 1.1rem 0.9rem;
 }
 
@@ -99,6 +100,7 @@ nav .responsiveImg
 {
     width: fit-content;
     margin: auto;
+    display: flow-root;
 }
 
 #rightGroup
@@ -160,7 +162,7 @@ nav .responsiveImg
 }
 
 /*MEDIA QUERY*/
-@media screen and (max-width: 768.5px)  
+@media screen and (max-width: 800.5px)  
 {
     #navBarLogo 
     {
@@ -169,8 +171,6 @@ nav .responsiveImg
      
     #centerGroup
     {
-        display: flow-root;
-        width: fit-content;
         margin: 0;
     }
 }
