@@ -2,7 +2,7 @@ class NavBar
 {
     #me;
     #hamburgerDropDown;
-    #hamburger;
+    #hamburgerIcon;
     #showNavBarAt = 0;
     #navLogo;
     #links;
@@ -11,7 +11,7 @@ class NavBar
     {
         this.#me = document.getElementsByTagName("nav")[0];
         this.#hamburgerDropDown = document.getElementById("hamburgerDropDown");
-        this.#hamburger = document.getElementById("hamburger");
+        this.#hamburgerIcon = document.getElementById("hamburgerIcon");
         this.#navLogo = document.getElementById("navBarLogo");
         this.#showNavBarAt=showNavBarAt;
         this.#links = this.#me.getElementsByTagName("a");
@@ -20,7 +20,7 @@ class NavBar
         window.addEventListener('resize', ()=>this.#hideHamburgerDropDown());
         window.addEventListener('resize', () => this.#showNavLogo());
         window.addEventListener('scroll', () => this.#showNavLogo());
-        this.#hamburger.addEventListener("click",()=>this.#toggleHamburgerDropDown());
+        this.#hamburgerIcon.addEventListener("click",()=>this.#toggleHamburgerDropDown());
     }
 
     get #navBarAtTop() 
@@ -56,7 +56,7 @@ class NavBar
         switch(true) 
         {
             case IsNull(this.#hamburgerDropDown):
-            case IsNull(this.#hamburger):
+            case IsNull(this.#hamburgerIcon):
             case e.target.innerHTML.trim()=="MY WORK":
             return;
         }
@@ -64,11 +64,11 @@ class NavBar
         switch(false) 
         {
             case IsDisplayed(this.#hamburgerDropDown):
-            case IsDisplayed(this.#hamburger):
+            case IsDisplayed(this.#hamburgerIcon):
             return;    
         }
 
-        let clickedOnHamburger=this.#hamburger.contains(e.target);
+        let clickedOnHamburger=this.#hamburgerIcon.contains(e.target);
         if (!clickedOnHamburger)
             Hide(this.#hamburgerDropDown);
     }
@@ -86,9 +86,8 @@ class NavBar
     {
         try 
         {
-            let span=link.parentNode.lastElementChild;
-            let isSpan=span.tagName.toLowerCase() == 'span';
-            if (!isSpan) return;
+            let span=link.parentNode.getElementsByTagName("span")[0];
+            if (!span) return;
             span.className="animateSpan";       
         }
         catch {}
@@ -98,9 +97,8 @@ class NavBar
     {
         try 
         {
-            let span=link.parentNode.lastElementChild;
-            let isSpan=span.tagName.toLowerCase() == 'span';
-            if (!isSpan) return;
+            let span=link.parentNode.getElementsByTagName("span")[0];
+            if (!span) return;
             span.className="";
         }
         catch{}
