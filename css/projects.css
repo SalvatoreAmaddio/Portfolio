@@ -1,99 +1,109 @@
+:root 
+{
+    --displayMode: inline-block;
+    --firstMargin: 1rem 2rem 1rem 0rem;
+    --secondMargin: 1rem 2rem 1rem 0rem;
+    --thirdMargin: 1rem 2rem 1rem 0rem;
+    --fourthMargin: 1rem 2rem 1rem 0rem;
+    --fifthMargin: 1rem 2rem 1rem 0rem;
+    --sixthMargin: 1rem 2rem 1rem 0rem;
+    --lastMargin: 1rem 0rem 1rem 0rem;
+}
+
 #devEnv li 
 {
     width: 50%;
     text-align: center;
 }
 
-#projectsContainer, #contactMeContainer 
+#intro 
+{
+    background-color: var(--backgroundColor);
+    color: black;
+}
+
+#intro .layerContent 
+{
+    padding: 1rem;
+}
+
+.layerContent, #intro 
+{
+    padding: 0rem;
+}
+
+#projectContainer 
 {
     background-color: var(--mainColor);
 }
 
-#contactMeContainer 
+#projectList 
 {
-    padding: 0rem;
-    background-color: transparent;
-}
-
-#contactMeContainer 
-{
-    position: sticky;
-    top:3.1rem;
-    z-index: 90;
-    background-color: var(--headerFooterColor);
-}
-
-#contactMeContainer .layerContent, #contactMeContainer .layer 
-{
-    padding: 0rem;
-    background-color: var(--headerFooterColor);
-}
-
-.buttonStyle 
-{
-    width: 100%;
-}
-
-#projects 
-{
+    list-style-type: none;
     display: flow-root;
+    width: fit-content;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+#projectList li
+{
+    float: left;
+    position: relative;
+    padding: 1rem;
+    margin: 1rem 1rem 1rem 0rem;
+    border: 1px solid white;
+    border-radius: 1rem;
+}
+
+#projectList li:hover .overlayProject 
+{
+    display: block;
+}
+
+.overlayProject 
+{
+    position: absolute;
+    display: none;
+    border: inherit;
+    border-radius: inherit;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    color: black;
+    font-weight: bolder;
+    background-color: rgba(255, 255, 255, .5);
+}
+
+.overlayProject a
+{
+    color: inherit;
+    display: block;
+    background-color: white;
+    padding: 1rem;
+    position: relative;
+    top:50%;
+    transform: translateY(-50%);
+}
+
+#projectList li:last-child 
+{
+    margin-right: 0rem;
 }
 
 .project 
 {
-    display: inline-block;
     padding: 1rem;
-    border-radius: 1rem;
-    border: 0.01rem solid white; 
+    border-radius: inherit;
     font-weight: bolder;
-    margin-right: 2rem;
-    position: relative;
 }
 
 .project img 
 {
-    width: 10rem;
     background-color: white;
-    border-radius: 1rem;
-    max-width: 100%;
-    height: 10rem;
-}
-
-.project div 
-{
-    position: absolute;
-    top:0px;
-    left: 0px;
-    width: 100%;
-    height: 100%;
-    transition: .2s;
-    border-radius: 1rem;
-    background-color: rgba(255,255,255,0.5);
-    font-weight: bolder;
-    opacity: 0;
-}
-
-.project div:hover 
-{
-    opacity: 1;
-}
-
-.project div p 
-{
-    position: relative;
-    top:50%;
-    padding: 0.5rem;
-    color: black;
-    background-color: white;
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
-}
-
-@media screen and (max-width: 500.5px) 
-{
-
-    #devEnv li 
-    {
-        width: 100%;
-    }
+    border-radius: inherit;
+    padding: 1rem;
+    width: 8rem;
+    height: 8rem;
 }

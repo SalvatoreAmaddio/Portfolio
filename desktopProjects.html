@@ -16,19 +16,24 @@
         </header>
 
         <nav>
-            <a id="hamburger">
+            <a id="hamburgerIcon">
                 <img src="img/hamburgericon.png">
             </a>
 
             <div id="hamburgerDropDown">
                 <ul id="navBarList">
                     <div id="navBarLogo" class="responsiveImg" style="display: none;">
-                        <a href="https://salvatoreamaddio.co.uk">
+                        <a href="#">
                             <img src="img/navBarLogo.png" width="250px">
                         </a>                
                     </div>
 
                     <div id="leftGroup">
+                        <li id="home">
+                            <a href="https://salvatoreamaddio.co.uk">HOME</a>
+                            <span></span>
+                        </li>
+
                         <li>
                             <a href="aboutme.html">ABOUT ME</a>
                             <span></span>
@@ -53,16 +58,38 @@
                     </div>
 
                     <div id="centerGroup">
-                        <li>
+                        <li class="dropdown">
                             <a href="desktop.html">DESKTOP</a>
                             <span></span>
+                            <div class="dropdownContent">
+                                <div>
+                                    <a href="desktopProjects.html">DESKTOP PROJECTS</a>
+                                    <span></span>
+                                </div>
+                            </div>
                         </li>
-                        <li>
+                        <li class="dropdown">
                             <a href="mobile.html">MOBILE</a>
                             <span></span>
+                            <div class="dropdownContent">
+                                <div>
+                                    <a href="mobileProjects.html">MOBILE PROJECTS</a>
+                                    <span></span>
+                                </div>
+                            </div>
                         </li>
-                        <li>
+                        <li class="dropdown">
                             <a href="web.html">WEB</a>
+                            <span></span>
+                            <div class="dropdownContent">
+                                <div>
+                                    <a href="webProjects.html">WEB PROJECTS</a>
+                                    <span></span>
+                                </div>
+                            </div>
+                        </li>
+                        <li id="goToGetInTouch">
+                            <a href="#getInTouch">CONTACT ME</a>
                             <span></span>
                         </li>
                     </div>
@@ -71,46 +98,46 @@
         </nav>
 
         <main>
-            <section id="intro" class="container">
+
+            <section class="container" id="intro">
                 <div class="layer">
                     <div class="layerContent">
-                        <h1>Click on a project to see more about its features</h1>
-                    </div>
-                </div>
-            </section>
-
-            <section id="contactMeContainer" class="container">
-                <div class="layer">
-                    <div class="layerContent">
-                        <a class="buttonStyle" href="#getInTouch" target="_self">CONTACT ME</a>
-                    </div>
-                </div>
-            </section>
-
-            <section id="projectsContainer" class="container">
-                <div class="layer">
-                    <div class="layerContent">
-                        <div id="projects">
-                            <div class="project">
-                                <a href="#">
-                                    <div>
-                                        <p>See Details</p>
-                                    </div>
-                                </a>
-                                <img src="img/projects/desktop/betting.ico">
-                                <p>Betting System</p>
-                            </div>
-
-                            <div class="project">
-                                <a href="#">
-                                    <div>
-                                        <p>See Details</p>
-                                    </div>
-                                </a>
-                                <img src="img/projects/desktop/meter.png">
-                                <p>Meter System</p>
-                            </div>
+                        <div class="layerContentTitle">
+                            <h2>EXPLORE SOME OF THE PROJECTS I'VE BUILT</h2>
                         </div>
+
+                        <div class="contactMeLink">
+                            <a class="buttonStyle" href="#getInTouch" target="_self">CONTACT ME</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="projectContainer" class="container">
+                <div class="layer">
+                    <div class="layerContent">
+                        <h3>Click on a project to find out more</h3>
+                        <ul id="projectList">                            
+                            <li>
+                                <div class="overlayProject">
+                                    <a href="#">Find out more</a>
+                                </div>
+                                <div class="project">
+                                    <img src="img/projects/desktop/betting.ico">
+                                    <p>Betting System</p>
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="overlayProject">
+                                    <a href="#">Find out more</a>
+                                </div>
+                                <div class="project">
+                                    <img src="img/projects/desktop/meter.png">
+                                    <p>Meter System</p>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </section>
