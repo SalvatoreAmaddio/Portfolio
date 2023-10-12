@@ -18,39 +18,29 @@
     margin: 0 auto;
     margin-bottom: 1rem;
     padding: 1rem;
-    padding-bottom: 0rem;
     display: flow-root;
+}
+
+#col1, #col2, #col3 
+{
+    float: left;
+    width: 33.33%;
+    border: 1px solid red;
 }
 
 #projectImgContainer, #projectInfos, #projectFeatures 
 {
-    padding: inherit;
-    border: inherit;
-    border-radius: inherit;
-    margin-right: 1rem;
-    margin-bottom: 1rem;
+    border: 1px solid black;
+    border-radius: 1rem;
+    width: 80%;
+    margin:0 auto;
+    overflow-x:auto;
 }
 
 #projectImgContainer 
 {
-    float: left;
-    max-width: 20%;
-}
-
-#projectFeatures 
-{
-    margin-right: 0;
-    max-width:40%;
-    float: right;
-}
-
-#projectInfos 
-{
-}
-
-#projectInfos, #projectFeatures 
-{
-    padding: 0.3rem;
+    width: 15rem;
+    max-width: 100%;
 }
 
 #projectImgContainer img 
@@ -59,27 +49,31 @@
     height: 100%;
 }
 
-.tableHeader 
-{
-    padding-bottom:0rem;
-}
-
 .tableHeader th
 {
-    text-align: center;    
-    padding-bottom:0rem;
+    text-align: center;  
+    padding-top: .5rem;  
+    padding-bottom:.5rem;
 }
 
-table tr 
+table 
 {
-    padding: 0.3rem;
-    text-align: start;
+    max-width: 100%;
+    width: 100%;
+    border-spacing: 0px;
 }
 
 table th, table td 
 {
     text-align: start;
+    width: 50%;
     padding: 0.5rem;
+    padding-top: 0rem;
+}
+
+table td 
+{
+    padding-left: 0rem;
 }
 
 .layer table img 
@@ -88,17 +82,6 @@ table th, table td
     height: 2rem;
     padding: 0rem;
     display: block;
-}
-
-.underline 
-{
-    background-color: black;
-    border-radius: 1rem;
-}
-
-.underline td 
-{
-    padding: 0.1rem;
 }
 
 #readerTitle 
@@ -115,10 +98,41 @@ table th, table td
     max-height: 10rem;
 }
 
-@media screen and (max-width:865.5px) 
+@media screen and (max-width:815.5px)
 {
-    .container 
+    #col2, #col3 
     {
-        font-size: 0.99rem;
+        font-size: .9rem;
+    }
+
+    #projectInfos, #projectFeatures 
+    {
+        width: 85%;
+    }
+}
+
+@media screen and (max-width:719.5px)
+{
+    #col2, #col3 
+    {
+        font-size: .8rem;
+    }
+
+    #projectInfos, #projectFeatures 
+    {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width:630.5px)
+{
+    #col2, #col3 
+    {
+        font-size: .79rem;
+    }
+
+    #projectInfos, #projectFeatures 
+    {
+        width: 95%;
     }
 }
