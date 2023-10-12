@@ -45,6 +45,7 @@ footer
     padding-left: 0rem;
     padding-right: 0rem;
     padding-bottom: 0rem;
+    background-color: var(--backgroundColor);
 }
 
 .contactMeLink 
