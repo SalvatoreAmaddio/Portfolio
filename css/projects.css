@@ -107,3 +107,62 @@
     width: 8rem;
     height: 8rem;
 }
+
+@media screen and (max-width: 500.5px) 
+{
+    #intro .layerContent 
+    {
+        padding: 0rem 0rem;
+    }
+
+    #devEnv li 
+    {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 475.5px) 
+{
+    #projectList li 
+    {
+        float: none;
+        margin-right: 0rem;
+    }
+
+    #projectList 
+    {
+        padding: 0;
+    }
+}
+
+@media screen and (max-width: 444.5px) 
+{
+    #intro h3 
+    {
+        display: inline;
+    }
+}
+
+@media screen and (max-width:223.5px) 
+{
+    #projectContainer
+    {
+        padding: 0rem;
+    }
+}
+
+@media screen and (max-width:200.5px) 
+{
+    #projectList li 
+    {
+        padding: 0rem;
+    }
+}
+
+@media screen and (max-width:183.5px) 
+{
+    html 
+    {
+        font-size: 0.7rem;
+    }
+}
