@@ -468,6 +468,13 @@ main .layerContent
         padding-bottom: 2rem;
     }
 
+    .eventContainer
+    {
+        border: 1px solid black;
+        background-color: white;
+        border-radius: 1rem;
+    }
+
     .eventContainer .floated 
     {
         float: none;
@@ -477,6 +484,7 @@ main .layerContent
     .mileStone 
     {
         position: static;
+        margin-top: .5rem;
     }
 
     .event 
