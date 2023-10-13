@@ -10,6 +10,7 @@ class ProjectPage extends DefaultPage
 
 function send(evt) 
 {
+    sessionStorage.clear();
     let form = getForm(evt);
     sessionStorage.setItem(evt.name, evt.value);
     form.submit();
