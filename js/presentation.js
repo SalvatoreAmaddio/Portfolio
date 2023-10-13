@@ -117,9 +117,19 @@ class Project
         this.#projectFeatures[1].children[1].innerHTML=this.lang;
         this.#projectFeatures[2].children[1].innerHTML=this.tech;
         this.#projectFeatures[3].children[1].innerHTML=this.db;
-        this.#projectFeatures[4].children[1].innerHTML=this.useOffice;
-        this.#projectFeatures[5].children[1].innerHTML=this.usePDF;
-        this.#projectFeatures[6].children[1].innerHTML=this.isMultiUser;
+
+        if (!this.#isDesktop) 
+        {
+            this.#projectFeatures[4].style.display="none";
+            this.#projectFeatures[5].style.display="none";
+        } 
+        else 
+        {
+            this.#projectFeatures[4].children[1].innerHTML=this.useOffice;
+            this.#projectFeatures[5].children[1].innerHTML=this.usePDF;
+        }
+
+        this.#projectFeatures[6].children[1].innerHTML=this.isMultiUser;    
         this.#logo.src=this.#record[11];
     }
 
