@@ -466,6 +466,14 @@ form span
     }
 }
 
+@media screen and (max-width:425.5px) 
+{
+    #clientContactInfo, #clientMessage  
+    {
+        padding: 0.2rem 0rem;
+    }
+}
+
 @media screen and (max-width:355.5px) 
 {
     .contactContainer:first-of-type, .contactContainer:last-of-type 
