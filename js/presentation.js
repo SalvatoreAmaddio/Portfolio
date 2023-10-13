@@ -15,6 +15,13 @@ class Project
         ["2","Meter","2022","Rudy Williams","www.","C#","WPF","SQLite",true,true,false,"img/projects/desktop/meter.png","lorem"],
         ["3","MyPlanogram","2022/2023","Carole Crockett","www.","C#","MAUI","MySQL",false,false,true,"img/projects/mobile/myplanogram.png","lorem"]
     ];
+    #images=
+    [
+        ["1",""],
+        ["1",""],
+        ["1",""],
+        ["1",""],
+    ];
 
     constructor() 
     {
@@ -122,7 +129,7 @@ class Project
         {
             this.#projectFeatures[4].style.display="none";
             this.#projectFeatures[5].style.display="none";
-        } 
+        }
         else 
         {
             this.#projectFeatures[4].children[1].innerHTML=this.useOffice;
@@ -139,4 +146,14 @@ class Project
     }
 }
 
-new Project();
+class PresentationPage extends DefaultPage
+{
+    constructor()
+    {
+        super("Salvatore Amaddio Rivolta", 651.5);
+        this.addForm(new Form());
+        new Project();
+    }
+}
+
+new PresentationPage();
