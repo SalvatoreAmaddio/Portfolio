@@ -145,7 +145,7 @@ nav .responsiveImg
 
 .dropdownContent a:hover { background-color:var(--navbarhover); }
 
-#centerGroup .onTouchScreen
+#centerGroup #onTouchScreen
 {
     display: none;
 }
@@ -338,7 +338,7 @@ nav .responsiveImg
 {
     .dropdownContent, .dropdown:hover .dropdownContent { display: none; }
 
-    #centerGroup .onTouchScreen
+    #centerGroup #onTouchScreen
     {
         display: block;
     }

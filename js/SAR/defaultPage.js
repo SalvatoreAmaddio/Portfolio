@@ -3,17 +3,15 @@ class NavBar
     #me;
     #hamburgerDropDown;
     #hamburgerIcon;
-    #showNavBarAt = 0;
     #navLogo;
     #links;
 
-    constructor(showNavBarAt=0)
+    constructor()
     {
         this.#me = document.getElementsByTagName("nav")[0];
         this.#hamburgerDropDown = document.getElementById("hamburgerDropDown");
         this.#hamburgerIcon = document.getElementById("hamburgerIcon");
         this.#navLogo = document.getElementById("navBarLogo");
-        this.#showNavBarAt=showNavBarAt;
         this.#links = this.#me.getElementsByTagName("a");
         this.#setMouseOverAnimation();
         window.addEventListener('click', (e)=>this.#clickOutsideBurgerDropdown(e));
@@ -28,15 +26,15 @@ class NavBar
         return this.#me.getBoundingClientRect().top==0;
     }
 
-    get #navBarIsVisible() 
-    {
-        return window.innerWidth >= this.#showNavBarAt;
-    }
-
     #showNavLogo()
     {
         this.#navLogo.style.display = "none";
-        if (this.#navBarAtTop && this.#navBarIsVisible) this.#navLogo.style.display = "block";
+        if (this.#navBarAtTop && (!this.isResponsive)) this.#navLogo.style.display = "block";
+    }
+
+    get isResponsive()
+    {
+        return (window.getComputedStyle(this.#hamburgerIcon, null).getPropertyValue("display")=="none") ? false : true;
     }
 
     #toggleHamburgerDropDown()
@@ -48,7 +46,8 @@ class NavBar
 
     #hideHamburgerDropDown()
     {
-        this.#hamburgerDropDown.style.display= (window.innerWidth > this.#showNavBarAt) ? "block" : "none"
+        console.log(this.isResponsive);
+        this.#hamburgerDropDown.style.display= this.isResponsive ? "none" : "block"
     }
 
     #clickOutsideBurgerDropdown(e)
@@ -146,10 +145,10 @@ class DefaultPage
     #carousels = [];
     #forms = [];
 
-    constructor(websiteName, showNavBarAt)
+    constructor(websiteName)
     {
         this.#websiteName = websiteName;
-        this.#navBar = new NavBar(showNavBarAt);
+        this.#navBar = new NavBar();
         this.#updateCopirightYear();
     }
 

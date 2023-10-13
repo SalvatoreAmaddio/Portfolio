@@ -50,7 +50,7 @@ class AboutPage extends DefaultPage
     #resizerHelper = new ResizerHelper();    
     constructor()
     {
-        super("Salvatore Amaddio Rivolta", 651.5);
+        super("Salvatore Amaddio Rivolta");
         this.addForm(new Form());
     }
 }
