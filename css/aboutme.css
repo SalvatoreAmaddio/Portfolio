@@ -315,8 +315,7 @@ main .layerContent
 #eventLayer 
 {
     width: 100%;
-    background-color: white;
-    border: 1px solid black;
+    border: 1px solid transparent;
     position: relative;
 }
 
@@ -325,7 +324,7 @@ main .layerContent
     width: .2rem;
     height: 100%;
     padding: .1rem;
-    background-color: red;
+    background-color: white;
     position: absolute;
     left: 0px;
     top:0px;
@@ -341,7 +340,6 @@ main .layerContent
     width: 100%;
     color: black;
     margin: 1rem 0;
-    border: 1px solid red;
     position: relative;
     display: flow-root;
 }
@@ -373,7 +371,7 @@ main .layerContent
     height: .1rem;
     z-index: 1;
     padding: .1rem;
-    background-color: red;
+    background-color: white;
 }
 
 .mileStone p 
@@ -388,7 +386,6 @@ main .layerContent
     width: 50%;
     height: 100%;
     max-height: 100%;
-    border: 1px solid red;
     position: relative;
 }
 
@@ -408,7 +405,6 @@ main .layerContent
     width: 70%;
     position: relative;
     margin-left: auto;
-    border: 1px solid red;
     background-color: white;
     border-radius: 1rem;
     padding: 1rem;
@@ -470,5 +466,26 @@ main .layerContent
     #columnsContainer > h2
     {
         padding-bottom: 2rem;
+    }
+
+    .eventContainer .floated 
+    {
+        float: none;
+        width: 100%;
+    }
+
+    .mileStone 
+    {
+        position: static;
+    }
+
+    .event 
+    {
+        width: 100%;
+    }
+
+    .arrow 
+    {
+        display: none;
     }
 }
