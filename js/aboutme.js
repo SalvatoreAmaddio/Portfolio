@@ -32,7 +32,7 @@ class ResizerHelper
 
     get #breakPoint()
     {
-        this.#hasBreakPointBeenHit = (window.innerWidth<=499.5);
+        this.#hasBreakPointBeenHit = (window.innerWidth<=500.5);
         return this.#hasBreakPointBeenHit;
     }
 

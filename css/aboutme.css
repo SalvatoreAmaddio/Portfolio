@@ -480,7 +480,7 @@ main .layerContent
     .eventContainer
     {
         border: 1px solid black;
-        padding: 0.5rem;
+        padding: 0.5rem 0rem;
         padding-top: 0.7rem;
         background-color: white;
         border-radius: 1rem;
@@ -495,14 +495,19 @@ main .layerContent
     }
     .eventContainer .floated 
     {
-        float: none;
+        float: none;        
         width: 100%;
     }
 
     .mileStone 
     {
         position: static;
-        margin-top: .5rem;
+        margin-top: .3rem;
+        font-weight: bolder;
+        width: 100%;
+        text-align: center;
+        background-color: var(--backgroundColor);
+        border-radius: 1rem 1rem 0rem 0rem;
     }
 
     .event 
@@ -515,12 +520,6 @@ main .layerContent
     .event img, .event p 
     {
         float: none;
-    }
-
-    #storyLine 
-    {
-        max-height: initial;
-        height: initial;
     }
 
     .arrow 
@@ -580,5 +579,11 @@ main .layerContent
     #columnsContainer > h2
     {
         padding-bottom: 2rem;
+    }
+
+    #storyLine 
+    {
+        max-height: initial;
+        height: initial;
     }
 }
