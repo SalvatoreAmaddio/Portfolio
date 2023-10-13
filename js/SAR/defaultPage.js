@@ -107,13 +107,22 @@ class NavBar
 
 class Form 
 {
-    #form = document.getElementById("bookingForm");
-    #gmailLogo =  document.getElementById("gmailContainer");
+    #me;
+    #gmailLogo;
 
     constructor()
     {
+        this.#me = document.getElementById("formContainer").children[1];
+        this.#gmailLogo =  document.getElementById("gmailContainer");
         window.addEventListener('scroll', () => this.#animateGmail());
+        this.#me.addEventListener('submit',()=> this.#submitForm());
     }    
+
+    #submitForm() {  
+        //        this.#form.submit();
+    this.#me.reset(); 
+    return false;
+    }
 
     get #getInTouchAtTop()
     {
