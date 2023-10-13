@@ -119,9 +119,9 @@ class Form
     }    
 
     #submitForm() {  
-        //        this.#form.submit();
-    this.#me.reset(); 
-    return false;
+        this.#me.submit();
+        this.#me.reset();
+        return false;
     }
 
     get #getInTouchAtTop()
