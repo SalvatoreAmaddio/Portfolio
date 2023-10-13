@@ -497,10 +497,20 @@ main .layerContent
     .eventContainer
     {
         border: 1px solid black;
+        padding: 0.5rem;
+        padding-top: 0.7rem;
         background-color: white;
         border-radius: 1rem;
+        margin: 1rem 0;
+        display: block;
     }
 
+    
+
+    .eventContainer:nth-of-type(even) .floated 
+    {
+        float: none;
+    }
     .eventContainer .floated 
     {
         float: none;
@@ -516,6 +526,7 @@ main .layerContent
     .event 
     {
         width: 100%;
+        padding: 0;
         text-align: center;
     }
 
