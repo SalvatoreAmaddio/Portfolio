@@ -178,18 +178,27 @@ td a
         margin-bottom: 1rem;
     }
 
-    td, th 
+    td, th , tr
     {
         display: block;
         text-align: center;
         width: 100%;
     }
 
+    .tableHeader 
+    {
+        padding: 0;
+    }
+
+    tr 
+    {
+        padding: .5rem;
+    }
+
     table td, table th
     {
         text-align: center;
-        padding-right:0;
-        padding-left: 0;
+        padding:0;
     }
 
     table td a img
