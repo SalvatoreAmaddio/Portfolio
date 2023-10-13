@@ -431,10 +431,25 @@ main .layerContent
     width: 70%;
     position: relative;
     margin-left: auto;
+    display: flow-root;
     background-color: white;
     border-radius: 1rem;
-    padding: 1rem;
+    padding: .5rem;
     z-index: 2;
+}
+
+.event p 
+{
+    float: left;
+}
+
+.event img 
+{
+    float: right;
+    display: block;
+    margin: 0 auto;
+    max-width: 2rem;
+    max-height: 2rem;
 }
 
 /*MEDIA QUERY*/
