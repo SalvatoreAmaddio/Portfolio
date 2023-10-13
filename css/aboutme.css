@@ -446,6 +446,49 @@ main .layerContent
     }
 }
 
+@media screen and (max-width:901.5px) 
+{
+    .eventContainer
+    {
+        border: 1px solid black;
+        padding: 0.5rem;
+        padding-top: 0.7rem;
+        background-color: white;
+        border-radius: 1rem;
+        margin: 1rem 0;
+        display: block;
+        z-index: 2;
+    }
+
+    .eventContainer:nth-of-type(even) .floated 
+    {
+        float: none;
+    }
+    .eventContainer .floated 
+    {
+        float: none;
+        width: 100%;
+    }
+
+    .mileStone 
+    {
+        position: static;
+        margin-top: .5rem;
+    }
+
+    .event 
+    {
+        width: 100%;
+        padding: 0;
+        text-align: center;
+    }
+
+    .arrow 
+    {
+        display: none;
+    }
+}
+
 @media screen and (max-width:813.5px) 
 {
     :root 
@@ -492,46 +535,5 @@ main .layerContent
     #columnsContainer > h2
     {
         padding-bottom: 2rem;
-    }
-
-    .eventContainer
-    {
-        border: 1px solid black;
-        padding: 0.5rem;
-        padding-top: 0.7rem;
-        background-color: white;
-        border-radius: 1rem;
-        margin: 1rem 0;
-        display: block;
-    }
-
-    
-
-    .eventContainer:nth-of-type(even) .floated 
-    {
-        float: none;
-    }
-    .eventContainer .floated 
-    {
-        float: none;
-        width: 100%;
-    }
-
-    .mileStone 
-    {
-        position: static;
-        margin-top: .5rem;
-    }
-
-    .event 
-    {
-        width: 100%;
-        padding: 0;
-        text-align: center;
-    }
-
-    .arrow 
-    {
-        display: none;
     }
 }
