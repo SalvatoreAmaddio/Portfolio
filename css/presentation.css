@@ -82,6 +82,11 @@ table td
     padding-left: 0rem;
 }
 
+td a 
+{
+    display: block;
+}
+
 .layer table img 
 {
     width: 2rem;
@@ -171,5 +176,22 @@ table td
         float: none;
         width: 100%;
         margin-bottom: 1rem;
+    }
+
+    td, th 
+    {
+        display: block;
+        text-align: center;
+        width: 100%;
+    }
+
+    table td, table th
+    {
+        text-align: center;
+    }
+
+    table td a img
+    {
+        margin: 0 auto;
     }
 }
