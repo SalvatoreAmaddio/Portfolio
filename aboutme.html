@@ -229,6 +229,18 @@
                         <div class="layer">
                             <div class="layerContent">
                                 <h2>Story Line</h2>
+                                <div id="storyContent">
+                                    <div id="startStory">
+                                    </div>
+                                    
+                                    <div id="eventLayer">
+                                        <div id="eventLine">
+                                        </div>
+                                    </div>
+
+                                    <div id="startStory">
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </section>    
@@ -263,25 +275,29 @@
                             <div id="formTitle">
                                 <h3>Enquiries</h3>
                             </div>
-                            <form>
-                                <div id="clientContactInfo">
+                            
+                            <form method="post" autocomplete="on" action="https://formsubmit.co/4898ac352205c1ec9a3882791103a927"
+                            >                            
+                                <div id="clientContactInfo">                                    
+                                    <input type="hidden" name="_next" value="https://salvatoreamaddio.co.uk/thankyou.html">
+                                    <input type="hidden" name="_captcha" value="false">
+                                    <input type="hidden" name="_template" value="table">                                    
                                     <label><span>*</span> Your Name:</label>
-                                    <input type="text" required placeholder="Your Name...">
+                                    <input type="text" id="fname" name="firstname" placeholder="Your name.." required> 
                                     <label><span>*</span> Your Email:</label>
-                                    <input type="text" required placeholder="Your Email...">
-                                    <label>Your Phone Number:</label>
-                                    <input type="text" placeholder="Your Phone Number...">
+                                    <input type="email" id="email" name="email" placeholder="youremailaddress@example.com" required>                                    <label>Your Phone Number:</label>
+                                    <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="+44 #### ### ###">
                                 </div>
                                 <div id="clientMessage">
                                     <label><span>*</span> Let's talk:</label>
-                                    <textarea required rows="7" placeholder="Your message..."></textarea>
+                                    <textarea placeholder="Your Message" id="message" name="message" rows="7" required></textarea>
                                 </div>
 
                                 <div id="mandatoryWarning">
                                     <p>Please note: fields marked with a <span>red</span> asteriks are mandatory.</p>
                                 </div>
 
-                                <input type="submit" value="SUBMIT">
+                                <input type="button" id="btnsubmit" value="SUBMIT">
                             </form>
                         </div>
                     </div>

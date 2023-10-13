@@ -302,6 +302,51 @@ main .layerContent
     font-style: italic;
 }
 
+#startStory 
+{
+    width: 4rem;
+    height: 4rem;
+    padding: 4rem;
+    border-radius: 50%;
+    margin: 0 auto;
+    background-color: white;
+}
+
+#eventLayer 
+{
+    width: 100%;
+    background-color: white;
+    border: 1px solid black;
+    position: relative;
+}
+
+#eventLine 
+{
+    width: .2rem;
+    height: 100%;
+    padding: .3rem;
+    background-color: red;
+    position: absolute;
+    left: 0px;
+    top:0px;
+    bottom: 0px;
+    right: 0px;
+    margin: 0 auto;
+}
+
+.checkpoint 
+{
+    width: 1rem;
+    height: 1rem;
+    background-color: white;
+    border: 1px solid black;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    margin: 1rem auto;
+    border-radius: 50%;    
+}
+
 /*MEDIA QUERY*/
 @media screen and (max-width:1601.5px) 
 {
@@ -310,6 +355,7 @@ main .layerContent
         --secondMargin: 1rem 0rem 1rem 0rem;
     }
 }
+
 @media screen and (max-width:813.5px) 
 {
     :root 
