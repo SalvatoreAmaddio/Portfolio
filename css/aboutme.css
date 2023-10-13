@@ -314,6 +314,7 @@ main .layerContent
 
 #eventLayer 
 {
+    display: flow-root;
     width: 100%;
     background-color: white;
     border: 1px solid black;
@@ -332,6 +333,22 @@ main .layerContent
     bottom: 0px;
     right: 0px;
     margin: 0 auto;
+}
+
+.event 
+{
+    padding: 1rem;
+    width: 50%;
+    color: black;
+    float: left;
+    margin: 1rem 0;
+    border: 1px solid red;
+    clear: both;
+}
+
+.event:nth-of-type(even) 
+{
+    float: right;
 }
 
 .checkpoint 
