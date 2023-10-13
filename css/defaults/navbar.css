@@ -145,7 +145,7 @@ nav .responsiveImg
 
 .dropdownContent a:hover { background-color:var(--navbarhover); }
 
-#centerGroup .dropdownMoved
+#centerGroup .onTouchScreen
 {
     display: none;
 }
@@ -186,7 +186,7 @@ nav .responsiveImg
     }
 }
 
-@media screen and (max-width: 651.5px)  
+@media screen and (max-width: 651.5px) and (pointer:fine) 
 {
  
     #navBarList 
@@ -260,24 +260,86 @@ nav .responsiveImg
     }
 }
 
-@media (pointer:coarse) and (max-width: 651.5px)   
+@media screen and (max-width: 731.5px) and (pointer:coarse) 
 {
-    .dropdownContent, .dropdown:hover .dropdownContent { display: none; }
-
-    #centerGroup li 
+ 
+    #navBarList 
     {
-        width: 50%;
+        padding-bottom: 0.5rem;
     }
 
-    #centerGroup li:last-of-type 
+    #navBarLogo 
     {
+        display: none;
+    }
+
+    #hamburgerIcon { display: block; }
+
+    #navBarList #home, #navBarList #goToGetInTouch
+    {
+        display: block;
+    }
+
+    #rightGroup 
+    {
+        display: none;
+    }
+
+    #leftGroup, #centerGroup
+    {
+        float: left;
+        margin: initial;
         width: 100%;
     }
 
-    #centerGroup .dropdownMoved
+    #navBarList li
+    {
+        float: none;
+        width: 100%;
+    }
+    
+    nav .responsiveImg 
+    {
+        margin: 0em;
+        margin-left: auto;
+    }
+
+    #navBarList li a 
+    {
+        text-align: start;
+        padding: 1rem;
+        width: 100%;
+    }
+
+    #hamburgerDropDown 
+    {
+        display: none;
+        position: absolute;
+        overflow: visible;
+        left: 0em;
+        padding-bottom: 0rem;
+        z-index: 1;
+    }
+
+    .dropdownContent 
+    {
+        left: 7rem;
+        top: 0rem;   
+    }
+
+    #navBarList .dropdownContent a {
+        text-align: start;
+        padding: 1rem;
+        width: 100%;
+    }
+}
+
+@media (pointer:coarse)   
+{
+    .dropdownContent, .dropdown:hover .dropdownContent { display: none; }
+
+    #centerGroup .onTouchScreen
     {
         display: block;
-        width: 50%;
-        float: right;
     }
 }
