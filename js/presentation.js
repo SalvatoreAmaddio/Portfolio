@@ -150,7 +150,7 @@ class PresentationPage extends DefaultPage
 {
     constructor()
     {
-        super("Salvatore Amaddio Rivolta", 651.5);
+        super("Salvatore Amaddio Rivolta");
         this.addForm(new Form());
         new Project();
     }
