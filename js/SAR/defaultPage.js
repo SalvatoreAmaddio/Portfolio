@@ -109,19 +109,21 @@ class Form
 {
     #me;
     #gmailLogo;
+    #submitButton;
 
     constructor()
     {
         this.#me = document.getElementById("formContainer").children[1];
         this.#gmailLogo =  document.getElementById("gmailContainer");
         window.addEventListener('scroll', () => this.#animateGmail());
-        this.#me.addEventListener('submit',()=> this.#submitForm());
+        this.#submitButton = document.getElementById("btnsubmit");
+        this.#submitButton.addEventListener('click', () => this.#submitForm());
     }    
 
-    #submitForm() {  
+    #submitForm() 
+    {
         this.#me.submit();
         this.#me.reset();
-        return false;
     }
 
     get #getInTouchAtTop()
