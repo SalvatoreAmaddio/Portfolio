@@ -1,6 +1,7 @@
 #columnsContainer 
 {
     display: flow-root;   
+    font-family: inherit;
 }
 
 #column1 
@@ -9,6 +10,7 @@
     max-width: 30%;
     float: left;
     text-align: center;
+    font-family: inherit;
 }
 
 #column2 
@@ -17,6 +19,7 @@
     height: 15rem;
     max-height: 15rem;
     float: right;
+    font-family: inherit;
 }
 
 .promoImgContainer img 
@@ -25,7 +28,6 @@
     max-width: 14rem;
     min-height: 13.5rem;
 }
-
 
 #promo 
 {
@@ -38,6 +40,7 @@
     top:50%;
     transform: translateY(-50%);
     text-shadow: 0px 0px 10px white;
+    font-family: inherit;
 }
 
 #promo h1
@@ -110,6 +113,7 @@ main section
     text-align: center;
 }
 
+/*MEDIA QUERY*/
 @media screen and (max-width: 500.5px) 
 {
     #column1, #column2 
