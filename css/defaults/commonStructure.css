@@ -40,8 +40,9 @@ footer
     margin-top: 1rem;
     text-align: center;
     color: white;
-    padding: 0.5rem;
+    padding: 0.8rem;
     background-color: var(--headerFooterColor);
+    letter-spacing: .02rem;
 }
 
 #intro 
@@ -152,6 +153,12 @@ footer
     background-color: var(--mainColor);
 }
 
+#products .layer
+{
+    text-transform: uppercase;
+    letter-spacing: 3.2px;
+}
+
 #products .layerContent 
 {
     width: 100%;
@@ -251,6 +258,11 @@ footer
     background-color: var(--mainColor);
 }
 
+#getInTouch h2, #formTitle h3
+{
+    letter-spacing: 0.15rem;
+}
+
 #getInTouch .layerContent 
 {
     background-color: inherit;
@@ -276,6 +288,7 @@ footer
     position: relative;
     width: 60%;
     background-color: inherit;
+    text-align: start;
 }
 
 #gmailContainer 
@@ -314,7 +327,6 @@ footer
     background-color: var(--mainColor);
     padding: 0 1rem;
     margin: 0 auto;
-    letter-spacing: 0.15rem;
 }
 
 #clientMessage 
@@ -425,6 +437,7 @@ form span
 {
     float: right;
     width: 8rem;
+    letter-spacing: .1rem;
 }
 
 .contactContainer img 
