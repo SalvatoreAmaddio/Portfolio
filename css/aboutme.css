@@ -9,6 +9,11 @@
     --textAlign: inherit;
 }
 
+header 
+{
+    letter-spacing: .1rem;
+}
+
 h2, strong, dt, .projectType a 
 {
     letter-spacing: .1rem;
@@ -539,7 +544,7 @@ main .layerContent
     }
 }
 
-@media screen and (max-width: 583.5px)
+@media screen and (max-width: 958.5px)
 {
     header 
     {
@@ -578,7 +583,7 @@ main .layerContent
     }
 }
 
-@media screen and (max-width:404.5px) 
+@media screen and (max-width:419.5px) 
 {
     header 
     {
