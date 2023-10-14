@@ -9,7 +9,7 @@
     --textAlign: inherit;
 }
 
-h2, strong, dt 
+h2, strong, dt, .projectType a 
 {
     letter-spacing: .1rem;
 }
