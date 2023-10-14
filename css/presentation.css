@@ -23,7 +23,7 @@ header
 #projectDescription 
 {
     background-color: white;    
-    padding: 1rem;
+    padding-bottom: 1rem;
     border-radius: 1rem;
 }
 
@@ -60,12 +60,13 @@ header
 }
 
 /*TABLE*/
-.tableHeader th
+.tableHeader th, #readerTitle
 {
     text-align: center;  
     padding-top: .5rem;  
     padding-bottom:.5rem;
     background-color: rgba(146, 182, 213, .3);
+    letter-spacing: .1rem;
 }
 
 table 
@@ -82,7 +83,7 @@ th, td
     padding-top: 0rem;
 }
 
-th 
+th, h3 
 {
     letter-spacing: .1rem;
 }
@@ -106,16 +107,21 @@ td a
 }
 
 /*READER*/
+#reader 
+{
+    border-radius: 1rem;
+}
+
 #readerTitle 
 {
-    padding-bottom: .5rem;
+    border-radius: 1rem 1rem 0 0;
 }
 
 #readerContent 
 {
     text-align: start;
     line-height: 1.6;
-    padding-bottom: .5rem;
+    padding: .5rem;
     overflow: auto;
     max-height: 10rem;
 }
