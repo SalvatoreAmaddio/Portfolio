@@ -11,6 +11,11 @@
     --lastMargin: 1rem 0rem 1rem 0rem;
 }
 
+header 
+{
+    letter-spacing: .9rem;
+}
+
 #logoContainer 
 {
     margin: 0.5rem auto;
@@ -25,6 +30,12 @@
     background-color: inherit;
     width: var(--logoSize);
     height: var(--logoSize);
+}
+
+main 
+{
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
 }
 
 .layerContent 

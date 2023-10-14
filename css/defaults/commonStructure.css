@@ -314,6 +314,7 @@ footer
     background-color: var(--mainColor);
     padding: 0 1rem;
     margin: 0 auto;
+    letter-spacing: 0.15rem;
 }
 
 #clientMessage 
