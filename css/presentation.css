@@ -31,6 +31,12 @@ header
 {
     float: left;
     width: 33.33%;
+    border: 1px solid red;
+}
+
+#col3 
+{
+    float: right;
 }
 
 #projectImgContainer, #projectInfos, #projectFeatures 
@@ -44,10 +50,9 @@ header
 
 #projectImgContainer 
 {
-    width: 20%;
-    min-width: 80%;
+    width: 16rem;
+    height: 16rem; 
     max-width: 100%;
-    height: 16rem;
     overflow: hidden;
     border: 1px solid black;
 }
@@ -145,8 +150,16 @@ td a
         font-size: .9rem;
     }
 
+    #projectDetails 
+    {
+        margin: 0 auto;
+        margin-bottom: 1rem;
+        width: 95%;
+    }
+
     #projectImgContainer 
     {
+        width: 13rem;
         height: 13rem;
     }
 }
@@ -210,7 +223,7 @@ td a
     {
         padding: .5rem;
     }
-    
+
     tr:not(:first-of-type) 
     {
         border-bottom: 1px solid;
