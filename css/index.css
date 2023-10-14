@@ -11,7 +11,6 @@
     --lastMargin: 1rem 0rem 1rem 0rem;
 }
 
-/*INTRO*/
 #logoContainer 
 {
     margin: 0.5rem auto;
@@ -26,6 +25,11 @@
     background-color: inherit;
     width: var(--logoSize);
     height: var(--logoSize);
+}
+
+.layerContent 
+{
+    text-align: center;
 }
 
 /*PRODUCTS*/
