@@ -31,7 +31,6 @@ header
 {
     float: left;
     width: 33.33%;
-    border: 1px solid red;
 }
 
 #col3 
@@ -50,8 +49,7 @@ header
 
 #projectImgContainer 
 {
-    width: 16rem;
-    height: 16rem; 
+    width: 60%;
     max-width: 100%;
     overflow: hidden;
     border: 1px solid black;
@@ -149,19 +147,6 @@ td a
     {
         font-size: .9rem;
     }
-
-    #projectDetails 
-    {
-        margin: 0 auto;
-        margin-bottom: 1rem;
-        width: 95%;
-    }
-
-    #projectImgContainer 
-    {
-        width: 13rem;
-        height: 13rem;
-    }
 }
 
 @media screen and (max-width:655.5px) and (min-width:519.5px)
@@ -170,11 +155,6 @@ td a
     {
         font-size: .8rem;
     }
-
-    #projectImgContainer 
-    {
-        height: 12rem;
-    }
 }
 
 @media screen and (max-width:584.5px) and (min-width:519.5px)
@@ -182,11 +162,6 @@ td a
     #projectImgContainer, #projectInfos, #projectFeatures
     {
         width: 90%;
-    }
-
-    #projectImgContainer 
-    {
-        height: 11rem;
     }
 }
 
