@@ -49,11 +49,6 @@
     text-shadow: -1px -1px 10px white, 1px 1px 10px white;
 }
 
-main section 
-{    
-    background-color: var(--mainColor);
-}
-
 .container
 {
     padding: 1rem 0.5rem;
@@ -62,9 +57,7 @@ main section
 .layerContent
 {
     color: black;
-    padding: 1rem;
     padding-bottom: 0.1rem;
-    text-align: start;
     background-color: white;
 }
 
