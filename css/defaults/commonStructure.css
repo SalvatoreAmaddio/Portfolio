@@ -148,10 +148,12 @@ footer
     list-style-type: none;
     width: inherit;
     display: flow-root;
+    font-family: 'Archivo Black', sans-serif;
 }
 
 #devEnv li 
 {
+    font-family: inherit;
     border: 1px solid black;
     width: 33.33%;
     float: left;
@@ -172,11 +174,6 @@ footer
     background-color: var(--webBackground);
 }
 
-#devEnv p 
-{
-    font-family: 'Archivo Black', sans-serif;
-}
-
 #devEnv li a 
 {
     text-decoration: none;
@@ -185,7 +182,7 @@ footer
     background-color: inherit;
     display: block;
     padding: 1.5rem 1rem;
-    font-family: 'Archivo Black', sans-serif;
+    font-family: inherit;
 }
 
 #devEnv li a div 
@@ -193,11 +190,13 @@ footer
     position: relative;
     background-color: inherit;
     width: 100%;
+    font-family: inherit;
 }
 
 #devEnv li a div p:first-child 
 {
     position: inherit;
+    font-family: inherit;
 }
 
 #devEnv li a div p:nth-child(2) 
@@ -209,6 +208,7 @@ footer
     top: 0px;
     opacity: 0;
     transition: .2s;
+    font-family: inherit;
 }
 
 #devEnv li a div p:nth-child(2):hover 
