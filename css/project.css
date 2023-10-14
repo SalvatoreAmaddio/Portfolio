@@ -1,4 +1,116 @@
+main section:last-of-type .layerContent 
+{
+    padding: 0rem;
+}
+
 #projectContainer 
 {
-    border: 1px solid red;
+    width: fit-content;
+    margin: 0 auto;
+    display: flow-root;
+}
+
+.projectType 
+{
+    float: left;
+    border-radius: 1rem;
+    width: fit-content;
+    padding: 2rem;
+    margin: 1rem 2rem;
+    margin-left: 0rem;
+    font-weight: bolder;
+    color: black;
+    background-color: var(--backgroundColor);
+    position: relative;
+}
+
+.projectType span 
+{
+    width: 100%;
+    border-radius: 0 0 1rem 1rem;
+    padding: .3rem;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+.projectType:first-of-type span 
+{
+    background-color: var(--desktopBackground);
+}
+
+.projectType:nth-of-type(2) span 
+{
+    background-color: var(--mobileBackground);
+}
+
+.projectType:last-of-type span 
+{
+    background-color: var(--webBackground);
+}
+
+.projectType:last-of-type 
+{
+    margin-right: 0rem;
+}
+
+.projectType a 
+{
+    color: blue;
+    text-decoration: none;
+}
+
+.projectType img 
+{
+    width: 9rem;
+    max-width: 100%;
+    height: 9rem;
+}
+
+/*MEDIA QUERIES*/
+
+@media screen and (max-width:752.5px) and (min-width:500.5px)
+{
+    #projectContainer 
+    {
+        width: 100%;
+    }
+    
+    .projectType 
+    {
+        width: 30%;
+        padding: 1rem;
+    }
+
+    .projectType:nth-of-type(2) 
+    {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .projectType:last-of-type 
+    {
+        float: right;
+    }
+}
+
+@media screen and (max-width:500.5px)
+{
+    .projectType 
+    {
+        width: 100%;
+        margin-top: .5rem;
+        margin-bottom: .5rem;
+        margin-right: 0rem;
+    }       
+
+    .projectType:first-of-type
+    {
+        margin-top: 0rem;
+    }
+
+    .projectType:last-of-type 
+    {
+        margin-bottom: 0rem;
+    }
 }
