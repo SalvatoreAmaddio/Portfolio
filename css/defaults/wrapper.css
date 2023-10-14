@@ -36,7 +36,7 @@ body
     font-family: inherit;
 }
 
-h1, h2, h3 
+h1, h2, h3,input[type="submit"], input[type="button"] 
 {
     font-family: 'Archivo Black', sans-serif;
 }

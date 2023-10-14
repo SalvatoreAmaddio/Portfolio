@@ -47,6 +47,7 @@ footer
     padding-bottom: 0rem;
     background-color: var(--backgroundColor);
     color: black;
+    font-family: 'Archivo Black', sans-serif;
 }
 
 .contactMeLink 
@@ -70,6 +71,7 @@ footer
     background-color: inherit;
     color: inherit;
     display: flow-root;
+    font-family: inherit;
 }
 
 .layer img 
@@ -98,12 +100,14 @@ footer
     color: inherit;
     position: relative;
     z-index: 1;
+    font-family: inherit;
 }
 
 .layerContentTitle 
 {
     color: inherit;
     padding: 1rem;
+    font-family: inherit;
 }
 
 .buttonStyle 
@@ -118,6 +122,7 @@ footer
     background-color: var(--headerFooterColor);
     color: var(--backgroundColor);
     text-align: center;
+    font-family: 'Archivo Black', sans-serif;
 }
 
 .buttonStyle:hover 
@@ -352,6 +357,7 @@ input[type="submit"], input[type="button"]
     font-weight: bold;
     cursor: pointer;
     background-color: var(--backgroundColor);
+
 }
 
 input[type="submit"]:hover, input[type="button"]:hover

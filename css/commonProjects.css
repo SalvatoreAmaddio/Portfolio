@@ -16,17 +16,6 @@
     text-align: center;
 }
 
-#intro 
-{
-    background-color: var(--backgroundColor);
-    color: black;
-}
-
-#intro .layerContent 
-{
-    padding: 1rem;
-}
-
 .layerContent, #intro 
 {
     padding: 0rem;
