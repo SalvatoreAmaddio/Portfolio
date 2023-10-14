@@ -1,3 +1,8 @@
+header 
+{
+    letter-spacing: .4rem;
+}
+
 main section:last-of-type .layerContent 
 {
     padding: 0rem;
@@ -122,9 +127,18 @@ main section:last-of-type .layerContent
     }
 }
 
-@media screen and (max-width:404.5px) 
+@media screen and (max-width:470.5px) 
 {
     header 
     {
+        font-size: 2rem;
+    }   
+}
+
+@media screen and (max-width:346.5px) 
+{
+    header 
+    {
+        font-size: 1rem;
     }   
 }

@@ -1,3 +1,8 @@
+header 
+{
+    letter-spacing: .4rem;
+}
+
 .layerContent 
 {
     padding: 0;
@@ -204,5 +209,21 @@ td a
     table td a img
     {
         margin: 0 auto;
+    }
+}
+
+@media screen and (max-width:464.5px)
+{
+    header 
+    {
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width:340.5px)
+{
+    header 
+    {
+        font-size: 1rem;
     }
 }
