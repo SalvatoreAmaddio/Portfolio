@@ -65,6 +65,7 @@ footer
 .contactMeLink 
 {
     font-family: inherit;
+    letter-spacing: .1rem;
     clear: both;
 }
 

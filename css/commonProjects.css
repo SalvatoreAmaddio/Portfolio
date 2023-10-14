@@ -10,6 +10,11 @@
     --lastMargin: 1rem 0rem 1rem 0rem;
 }
 
+header 
+{
+    letter-spacing: .1rem;
+}
+
 #devEnv li 
 {
     width: 50%;
@@ -29,6 +34,7 @@
 #projectContainer .layerContentTitle
 {
     padding: 0rem;
+    letter-spacing: .1rem;
 }
 
 #projectList 
@@ -108,7 +114,7 @@
     height: 8rem;
 }
 
-@media screen and (max-width:514.5px)
+@media screen and (max-width:526.5px)
 {
     header 
     {
@@ -151,7 +157,7 @@
     }
 }
 
-@media screen and (max-width: 358.5px) 
+@media screen and (max-width: 371.5px) 
 {
     header 
     {
