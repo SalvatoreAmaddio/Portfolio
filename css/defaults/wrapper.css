@@ -13,6 +13,7 @@ html
 
 :root
 {
+    --titleFont:  'Archivo Black', sans-serif;
     --headerFooterColor:#0066b2;
     --mainColor:#34568B;
     --backgroundColor: #EDF1FF;
@@ -36,9 +37,9 @@ body
     font-family: inherit;
 }
 
-h1, h2, h3,input[type="submit"], input[type="button"] 
+h1, h2, h3,input[type="submit"], input[type="button"], dt, dd, strong 
 {
-    font-family: 'Archivo Black', sans-serif;
+    font-family: var(--titleFont);
 }
 
 .responsiveImg 

@@ -34,6 +34,11 @@ main .layerContent
     height: 100%;
 }
 
+.layerContent h2 
+{
+    text-align: center;
+}
+
 #getInTouch
 {
     clear: both;
@@ -224,6 +229,7 @@ main .layerContent
 {
     text-decoration: none;
     color: blue;
+    font-family: var(--titleFont);
 }
 
 .projectType p 
@@ -281,6 +287,7 @@ main .layerContent
 .degree a 
 {
     color: blue;
+    font-family: var(--titleFont);
 }
 
 .lang 
@@ -310,13 +317,13 @@ main .layerContent
     font-style: italic;
 }
 
+/*story*/
 #storyContent 
 {
     padding: 0.5rem 0;
     color: black;
 }
 
-/*story*/
 #startStory 
 {
     width: 6rem;
