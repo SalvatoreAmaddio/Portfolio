@@ -36,16 +36,19 @@ header
 
 #promo 
 {
-    max-width: 35rem;
-    padding: 0.8rem;
-    overflow-wrap: break-word;
+    font-size: 1.4rem;
+    font-family: inherit;
+
     text-align: center;
+    text-shadow: 0px 0px 10px white;
+
+    max-width: 100%;
+    padding: 0.5rem;
+    overflow-wrap: break-word;
     position: relative;
     left: 0%;
     top:50%;
     transform: translateY(-50%);
-    text-shadow: 0px 0px 10px white;
-    font-family: inherit;
 }
 
 #promo h1
