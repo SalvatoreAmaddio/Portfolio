@@ -75,14 +75,19 @@ table
     border-spacing: 0px;
 }
 
-table th, table td 
+th, td 
 {
     text-align: start;
     padding: 0.5rem;
     padding-top: 0rem;
 }
 
-table td 
+th 
+{
+    letter-spacing: .1rem;
+}
+
+td 
 {
     padding-left: 0rem;
 }
