@@ -26,6 +26,11 @@
     background-color: var(--mainColor);
 }
 
+#projectContainer .layerContentTitle
+{
+    padding: 0rem;
+}
+
 #projectList 
 {
     list-style-type: none;

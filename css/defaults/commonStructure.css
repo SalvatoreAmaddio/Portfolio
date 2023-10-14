@@ -91,6 +91,15 @@ footer
     width: 100%;
     background-color: var(--mainColor);
     color: inherit;
+    text-align: center;
+}
+
+.layerContentTitle 
+{
+    color: inherit;
+    padding: 1rem;
+    font-family: inherit;
+    text-align: center;
 }
 
 .layerContent
@@ -103,13 +112,6 @@ footer
     z-index: 1;
     font-family: inherit;
     text-align: start;
-}
-
-.layerContentTitle 
-{
-    color: inherit;
-    padding: 1rem;
-    font-family: inherit;
 }
 
 .buttonStyle 
