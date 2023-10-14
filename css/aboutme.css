@@ -102,33 +102,6 @@ main .layerContent
     overflow: hidden;
 }
 
-#elegible 
-{
-    position: absolute;
-    width: 20rem;
-    max-width: 70%;
-    border: 1px solid black;
-    padding: .5rem 2rem;
-    padding-left: .2rem;
-    top: -0.5rem;
-    right: -1.7rem;
-    background-color: #F6F6F6;
-    color: black;
-    border-radius: 1rem;
-    transform: rotate(35deg);
-    font-weight: bold;
-    z-index: 3;
-}
-
-#elegible img 
-{
-    position: absolute;
-    top:0.2rem;
-    right: 0.1rem;
-    width: 2rem;
-    height: 3.9rem;
-}
-
 .layer #me img {
     width: 14rem;
     height: 14rem;
