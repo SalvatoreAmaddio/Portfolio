@@ -28,9 +28,10 @@
 
 .winOnly 
 {
-    width: 24.1rem;
+    width: 90%;
+    text-align: center;
     margin: 0 auto;
-    padding: 0.5rem;
+    padding: 0.5rem 0;
     font-size: 0.8rem;
 }
 
@@ -42,38 +43,19 @@
     top:0.5rem;   
 }
 
-@media screen and (max-width: 425.5px) 
+@media screen and (max-width: 456.5px) 
 {
     .winOnly 
     {
-        font-size: 0.7rem;
-        margin: 0;
-        width: auto;
+        width: 100%;
     }
 }
 
-@media screen and (max-width: 390.5px) 
+@media screen and (max-width: 414.5px) 
 {
     .winOnly span 
     {
         display: block;
-        width: 100%;
         text-align: center;
-    }
-}
-
-@media screen and (max-width: 362.5px) 
-{
-    .winOnly 
-    {
-        font-size: 0.6rem;
-    }
-}
-
-@media screen and (max-width: 319.5px) 
-{
-    .winOnly 
-    {
-        font-size: 0.5rem;
     }
 }
