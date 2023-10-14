@@ -3,6 +3,11 @@ main section:last-of-type .layerContent
     padding: 0rem;
 }
 
+#projectContainerBackground 
+{
+    background-color:#6487B0;
+}
+
 #projectContainer 
 {
     width: fit-content;
@@ -72,6 +77,7 @@ main section:last-of-type .layerContent
 
 @media screen and (max-width:752.5px) and (min-width:500.5px)
 {
+
     #projectContainer 
     {
         width: 100%;
