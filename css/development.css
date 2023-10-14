@@ -114,11 +114,6 @@ main section
     height: 1.5rem;
 }
 
-#devEnv a, #devEnv p 
-{
-    font-family: 'Archivo Black', sans-serif;
-}
-
 #devEnv li 
 {
     width: 50%;

@@ -172,6 +172,11 @@ footer
     background-color: var(--webBackground);
 }
 
+#devEnv p 
+{
+    font-family: 'Archivo Black', sans-serif;
+}
+
 #devEnv li a 
 {
     text-decoration: none;
@@ -180,6 +185,7 @@ footer
     background-color: inherit;
     display: block;
     padding: 1.5rem 1rem;
+    font-family: 'Archivo Black', sans-serif;
 }
 
 #devEnv li a div 
