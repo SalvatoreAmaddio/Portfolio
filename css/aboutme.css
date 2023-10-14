@@ -9,6 +9,11 @@
     --textAlign: inherit;
 }
 
+h2, strong, dt 
+{
+    letter-spacing: .1rem;
+}
+
 main 
 {
     display: flow-root;
@@ -309,6 +314,7 @@ main .layerContent
     font-weight: bolder;
     position: relative;
     z-index: 1;
+    letter-spacing: .1rem;
 }
 
 #startStory p 
