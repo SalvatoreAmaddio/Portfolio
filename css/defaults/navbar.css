@@ -24,6 +24,11 @@ nav .responsiveImg
     float: left;
 }
 
+nav a 
+{
+    font-family: 'Archivo Black', sans-serif;
+}
+
 #navBarLogo a 
 {
     cursor: pointer;

@@ -4,6 +4,11 @@ class DefaultTags {
     #iconLink = document.createElement('link');
     #scripts = ['SAR/SAR','SAR/carousel','SAR/defaultPage'];
     #initMeta = document.head.getElementsByTagName("meta")[1];
+    #fonts = 
+    [
+        "https://fonts.googleapis.com/css2?family=Jost:wght@400;900&display=swap",
+        "https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap"
+    ];
 
     #defCSS = ["defaults/wrapper",
               "defaults/commonStructure",
@@ -21,6 +26,8 @@ class DefaultTags {
         this.#setAuthor();
         this.#setIcon();
         this.#setDefaultCSS();
+        this.#setDefaultFonts();
+        this.#loadPreconnect();
     }
 
 
@@ -56,6 +63,22 @@ class DefaultTags {
         this.#meta.after(this.#iconLink);
     }
 
+    #loadPreconnect() 
+    {
+        let before=this.#iconLink;
+     
+        let link = document.createElement('link');
+        link.rel = 'preconnect';
+        link.href = "https://fonts.gstatic.com";
+        link.crossOrigin="";
+        before.after(link);    
+
+        link = document.createElement('link');
+        link.rel = 'preconnect';
+        link.href = "https://fonts.googleapis.com";     
+        before.after(link);    
+    }
+
     #setDefaultCSS()
     {
         let link;
@@ -65,6 +88,20 @@ class DefaultTags {
             link = document.createElement('link');
             link.rel = 'stylesheet';
             link.href = `css/${this.#defCSS[i]}.css`;
+            before.after(link);    
+            before = link;
+        }
+    }
+
+    #setDefaultFonts()
+    {
+        let link;
+        let before=this.#iconLink;
+        for(let i=0; i < this.#fonts.length; i++) 
+        {
+            link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.href = this.#fonts[i];
             before.after(link);    
             before = link;
         }

@@ -54,7 +54,6 @@
     top:50%;
     transform: translateY(-50%);
     text-shadow: 0px 0px 10px white;
-    font-family: 'Archivo Black', sans-serif;
 }
 
 main section 
@@ -113,6 +112,11 @@ main section
     top:0.2rem;
     width: 1.5rem;
     height: 1.5rem;
+}
+
+#devEnv a, #devEnv p 
+{
+    font-family: 'Archivo Black', sans-serif;
 }
 
 #devEnv li 
