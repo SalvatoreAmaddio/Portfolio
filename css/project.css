@@ -100,7 +100,7 @@ main section:last-of-type .layerContent
         float: right;
     }
 }
-
+  
 @media screen and (max-width:500.5px)
 {
     .projectType 
@@ -120,4 +120,11 @@ main section:last-of-type .layerContent
     {
         margin-bottom: 0rem;
     }
+}
+
+@media screen and (max-width:404.5px) 
+{
+    header 
+    {
+    }   
 }
