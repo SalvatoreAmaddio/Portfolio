@@ -9,16 +9,20 @@ header
     background-color: var(--headerFooterColor);
     color: white;
     padding: 0 0.5rem;
+    font-family: var(--titleFont);
+    font-size: 1rem;
 }
 
 #headerTitle 
 {
     padding: 1rem 1rem;
     text-align: center;
+    font-family: inherit;
 }
 
 #headerTitle h6 
 {
+    font-family: inherit;
     margin-top: 0.5rem;
 }
 

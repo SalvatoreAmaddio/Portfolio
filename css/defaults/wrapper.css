@@ -1,6 +1,6 @@
 :root
 {
-    --titleFont:  'Archivo Black', sans-serif;
+    --titleFont:  'Righteous', sans-serif,'Archivo Black', sans-serif;
     --normalFont : 'Roboto', sans-serif;
     --headerFooterColor:#0066b2;
     --mainColor:#34568B;
