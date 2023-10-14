@@ -201,7 +201,7 @@ td a
         width: 100%;
     }
 
-    .tableHeader 
+    .tableHeader, td, th 
     {
         padding: 0;
     }
@@ -210,11 +210,10 @@ td a
     {
         padding: .5rem;
     }
-
-    table td, table th
+    
+    tr:not(:first-of-type) 
     {
-        text-align: center;
-        padding:0;
+        border-bottom: 1px solid;
     }
 
     table td a img
