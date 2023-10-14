@@ -37,7 +37,7 @@ body
     font-family: inherit;
 }
 
-h1, h2, h3,input[type="submit"], input[type="button"], dt, dd, strong 
+h1, h2, h3,input[type="submit"], input[type="button"], dt, dd, strong, th 
 {
     font-family: var(--titleFont);
 }

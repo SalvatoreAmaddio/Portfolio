@@ -548,6 +548,11 @@ main .layerContent
        --projectTypeWidth: 100%;
     }
 
+    .projectType:first-of-type 
+    {
+        margin-top: 0rem;
+    }
+
     .projectType a 
     {
         display: block;

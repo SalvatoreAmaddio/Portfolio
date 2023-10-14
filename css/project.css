@@ -57,6 +57,7 @@ main section:last-of-type .layerContent
 .projectType a 
 {
     color: blue;
+    font-family: var(--titleFont);
     text-decoration: none;
 }
 
