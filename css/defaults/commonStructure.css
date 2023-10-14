@@ -10,7 +10,8 @@ header
     color: white;
     padding: 0 0.5rem;
     font-family: var(--titleFont);
-    font-size: 1rem;
+    font-size: 3rem;
+    overflow-wrap: break-word;
 }
 
 #headerTitle 

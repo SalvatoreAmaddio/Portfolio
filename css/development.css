@@ -106,7 +106,16 @@
     text-align: center;
 }
 
+
 /*MEDIA QUERY*/
+@media screen and (max-width: 616.5px) 
+{
+    header 
+    {
+        font-size: 2rem;
+    }
+}
+
 @media screen and (max-width: 500.5px) 
 {
     #column1, #column2 
@@ -134,8 +143,13 @@
     }
 }
 
-@media screen and (max-width:425.5px)
+@media screen and (max-width:426.5px)
 {
+    header 
+    {
+        font-size: 1rem;
+    }
+
     .feature > img:first-child
     {
         float: none;

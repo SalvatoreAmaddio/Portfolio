@@ -265,7 +265,7 @@ nav a
     }
 }
 
-@media screen and (max-width: 731.5px) and (pointer:coarse) 
+@media screen and (max-width: 772.5px) and (pointer:coarse) /*TOUCH SCREEN*/
 {
  
     #navBarList 
