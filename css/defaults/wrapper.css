@@ -1,19 +1,7 @@
-html 
-{
-    font-family: 'Jost', sans-serif;
-}
-
-* 
-{
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-    font-family: 'Jost', sans-serif;
-}
-
 :root
 {
     --titleFont:  'Archivo Black', sans-serif;
+    --normalFont : 'Roboto', sans-serif;
     --headerFooterColor:#0066b2;
     --mainColor:#34568B;
     --backgroundColor: #EDF1FF;
@@ -23,6 +11,19 @@ html
     --desktopBackground: #CD212A;
     --mobileBackground: #926AA6;
     --webBackground: #0072B5;
+}
+
+html 
+{
+    font-family: var(--normalFont);
+}
+
+* 
+{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: var(--normalFont)
 }
 
 body

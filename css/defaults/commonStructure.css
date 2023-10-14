@@ -47,7 +47,12 @@ footer
     padding-bottom: 0rem;
     background-color: var(--backgroundColor);
     color: black;
-    font-family: 'Archivo Black', sans-serif;
+    font-family: var(--titleFont);
+}
+
+#intro span 
+{
+    font-family: inherit;
 }
 
 .contactMeLink 
