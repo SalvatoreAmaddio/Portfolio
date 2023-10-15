@@ -28,11 +28,6 @@ header
     margin: 0 auto;
 }
 
-.layerContent, #intro 
-{
-    padding: 0rem;
-}
-
 #projectContainer 
 {
     background-color: var(--mainColor);
