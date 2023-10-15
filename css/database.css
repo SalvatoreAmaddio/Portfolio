@@ -91,10 +91,14 @@ header
 #options 
 {
     color: white;
-    margin-top: 1rem;
     position: sticky;
     top: 3.5rem;
     z-index: 3;
+}
+
+#options .layerTitle
+{
+    padding: 0;
 }
 
 #devEnv 
