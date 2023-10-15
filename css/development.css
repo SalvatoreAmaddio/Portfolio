@@ -36,7 +36,6 @@ header
 
 #promo 
 {
-    font-size: 1.4rem;
     font-family: inherit;
     text-align: center;
     text-shadow: 0px 0px 10px white;
@@ -52,7 +51,13 @@ header
 #promo h1
 {
     font-weight: bolder;
+    font-size: 2.2rem;
     text-shadow: -1px -1px 10px white, 1px 1px 10px white;
+}
+
+#promo h2 
+{
+    font-size: 1.8rem;
 }
 
 .container
@@ -125,26 +130,17 @@ header
 /*MEDIA QUERY*/
 @media screen and (max-width: 939.5px) and (min-width: 500.5px) 
 {
-    #promo 
-    {
-        font-size: 1.3rem;
-    }
+
 }
 
 @media screen and (max-width: 879.5px) and (min-width: 500.5px) 
 {
-    #promo 
-    {
-        font-size: 1.2rem;
-    }
+
 }
 
 @media screen and (max-width: 819.5px) and (min-width: 500.5px) 
 {
-    #promo 
-    {
-        font-size: 1.1rem;
-    }
+
 }
 
 @media screen and (max-width: 704.5px) 
@@ -224,19 +220,11 @@ header
 
 @media screen and (max-width:348.5px)
 {
-    #promo 
-    {
-        font-size: 1.3rem;
-    }
+
 }
 
 @media screen and (max-width:325.5px)
 {
-    #promo 
-    {
-        font-size: 1.2rem;
-    }
-
     header 
     {
         letter-spacing: .1rem;
@@ -245,16 +233,10 @@ header
 
 @media screen and (max-width:304.5px)
 {
-    #promo 
-    {
-        font-size: 1.1rem;
-    }
+
 }
 
 @media screen and (max-width:282.5px)
 {
-    #promo 
-    {
-        font-size: 1rem;
-    }
+
 }
