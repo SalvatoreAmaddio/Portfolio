@@ -128,19 +128,12 @@ header
 
 
 /*MEDIA QUERY*/
-@media screen and (max-width: 939.5px) and (min-width: 500.5px) 
+@media screen and (max-width: 761.5px) and (min-width: 500.5px) 
 {
-
-}
-
-@media screen and (max-width: 879.5px) and (min-width: 500.5px) 
-{
-
-}
-
-@media screen and (max-width: 819.5px) and (min-width: 500.5px) 
-{
-
+    #promo h2
+    {
+        font-size: 1.5rem;
+    }
 }
 
 @media screen and (max-width: 704.5px) 
@@ -182,6 +175,14 @@ header
     }
 }
 
+@media screen and (max-width: 551.5px) and (min-width: 500.5px) 
+{
+    #promo h1
+    {
+        font-size: 1.9rem;
+    }
+}
+
 @media screen and (max-width:514.5px)
 {
     header 
@@ -218,9 +219,30 @@ header
     }
 }
 
-@media screen and (max-width:348.5px)
+@media screen and (max-width:363.5px)
 {
+    #promo h1
+    {
+        font-size: 2rem;
+    }
 
+    #promo h2
+    {
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width:334.5px)
+{
+    #promo h1
+    {
+        font-size: 1.9rem;
+    }
+
+    #promo h2
+    {
+        font-size: 1.4rem;
+    }
 }
 
 @media screen and (max-width:325.5px)
@@ -231,12 +253,15 @@ header
     }
 }
 
-@media screen and (max-width:304.5px)
+@media screen and (max-width:319.5px)
 {
+    #promo h1
+    {
+        font-size: 1.5rem;
+    }
 
-}
-
-@media screen and (max-width:282.5px)
-{
-
+    #promo h2
+    {
+        font-size: 1.2rem;
+    }
 }
