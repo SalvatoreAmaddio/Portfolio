@@ -46,7 +46,6 @@ class NavBar
 
     #hideHamburgerDropDown()
     {
-        console.log(this.isResponsive);
         this.#hamburgerDropDown.style.display= this.isResponsive ? "none" : "block"
     }
 
