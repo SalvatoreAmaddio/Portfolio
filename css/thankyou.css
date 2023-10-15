@@ -18,6 +18,7 @@ body
     background-color: var(--mainColor);
     color: white;
     padding: 1rem;
+    letter-spacing: .2rem;
     border: 2px solid;
     border-radius: 1rem;
     text-align: center;
@@ -56,4 +57,12 @@ body
 #submitted a:hover 
 {
     background-color: rgb(232, 232, 232);
+}
+
+@media screen and (max-width:437.5px) 
+{
+    #submitted h2 
+    {
+        display: inline;
+    }
 }
