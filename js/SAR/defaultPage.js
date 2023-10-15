@@ -73,8 +73,9 @@ class NavBar
 
     #setMouseOverAnimation()
     {
-        for(let i=0; i < this.#links.length; i++) 
+        for(let i=1; i < this.#links.length; i++) 
         {
+
             this.#links[i].addEventListener("mouseover",()=>this.#loadAnimation(this.#links[i]));            
             this.#links[i].addEventListener("mouseout",()=>this.#unloadAnimation(this.#links[i]));            
         }

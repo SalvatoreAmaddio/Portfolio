@@ -278,7 +278,7 @@ nav a
         margin: 0;
     }
 }
-@media screen and (max-width: 868.5px) and (pointer:coarse) /*TOUCH SCREEN*/
+@media screen and (max-width: 907.5px) and (pointer:coarse) /*TOUCH SCREEN*/
 {
  
     #navBarList 

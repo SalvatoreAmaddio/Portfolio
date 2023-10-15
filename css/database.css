@@ -102,6 +102,14 @@ header
     text-align: center;
 }
 
+@media screen and (max-width:907.5px) 
+{
+    #options 
+    {    
+        top: 3.2rem;
+    }
+}
+
 @media screen and (max-width:801.5px) 
 {
     .memeContainer 
@@ -115,7 +123,7 @@ header
     }
 }
 
-@media screen and (max-width:550.5px) 
+@media screen and (max-width:579.5px) 
 {
     header 
     {
@@ -125,7 +133,6 @@ header
 
 @media screen and (max-width:499.5px) 
 {
-
     .memeContainer 
     {
         width: 100%;
@@ -134,11 +141,6 @@ header
 
 @media screen and (max-width:425.5px) 
 {
-    #options 
-    {    
-        top: 3.2rem;
-    }
-
     .feature h2 
     {
         text-align: center;
@@ -157,7 +159,7 @@ header
     }
 }
 
-@media screen and (max-width:387.5px) 
+@media screen and (max-width:416.5px) 
 {
     header 
     {
