@@ -87,16 +87,19 @@ header
 {
     float: left;
     border-radius: 1rem;
-    padding: 0.2rem;
     width: 25%;
     min-width: 15rem;
     min-height: 15rem;
     height: 100%;
     margin-right: 1rem;
+}
+#featuresContainer section:nth-of-type(2) .feature >img:first-child 
+{
     border: 0.01rem solid;
+    padding: .2rem;
 }
 
-#featuresContainer section:nth-of-type(odd) .feature >img:first-child 
+#featuresContainer section:nth-of-type(even) .feature >img:first-child 
 {
     float: right;
     margin-right: 0;
