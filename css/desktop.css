@@ -16,6 +16,11 @@
     color: #006B54;
 }
 
+#promo span 
+{
+    color: var(--desktopBackground);
+}
+
 #devEnv li:nth-last-of-type(2) 
 {
     background-color: var(--mobileBackground);
