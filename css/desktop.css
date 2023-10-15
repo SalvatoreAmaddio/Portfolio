@@ -11,7 +11,7 @@
     z-index: -1;   
 }
 
-#promo h1
+#promo h1 span:last-child
 {
     color: #006B54;
 }

@@ -65,6 +65,11 @@ header
     padding: 1rem 0.5rem;
 }
 
+#intro .layerContent 
+{
+    background-color: inherit;
+}
+
 .layerContent
 {
     color: black;
