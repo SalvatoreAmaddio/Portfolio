@@ -21,6 +21,14 @@ header
     text-align: center;
 }
 
+#intro .layerContentTitle 
+{
+    font-size: 1.4rem;
+    border: 1px solid;
+    width: 100%;
+    margin: 0 auto;
+}
+
 .layerContent, #intro 
 {
     padding: 0rem;
@@ -114,6 +122,56 @@ header
     height: 8rem;
 }
 
+@media screen and (max-width:905.5px)
+{
+
+    #intro .layerContentTitle 
+    {
+        font-size: 1.3rem;
+    }
+
+    .layerContentTitle 
+    {
+        padding: 1rem .5rem;
+    }
+}
+
+@media screen and (max-width:832.5px)
+{
+
+    #intro .layerContentTitle 
+    {
+        font-size: 1.2rem;
+    }
+}
+
+@media screen and (max-width:774.5px)
+{
+
+    #intro .layerContentTitle 
+    {
+        font-size: 1.1rem;
+    }
+}
+
+@media screen and (max-width:717.5px)
+{
+
+    #intro .layerContentTitle 
+    {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width:660.5px) and (min-width:452.5px)
+{
+
+    #intro .layerContentTitle h2
+    {
+        font-size: 2rem;
+    }
+}
+
 @media screen and (max-width:526.5px)
 {
     header 
@@ -126,7 +184,7 @@ header
 {
     #intro .layerContent 
     {
-        padding: 0rem 0rem;
+        padding: 0rem;
     }
 
     #devEnv li 
@@ -149,6 +207,15 @@ header
     }
 }
 
+@media screen and (max-width:452.5px)
+{
+
+    #intro .layerContentTitle h2
+    {
+        font-size: 1.6rem;
+    }
+}
+
 @media screen and (max-width: 444.5px) 
 {
     #intro h3 
@@ -157,9 +224,54 @@ header
     }
 }
 
-@media screen and (max-width: 371.5px) 
+@media screen and (max-width: 372.5px) 
 {
     header 
+    {
+        font-size: 1rem;
+    }
+
+    #intro .layerContentTitle h2
+    {
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 352.5px) 
+{
+    #intro .layerContentTitle h2
+    {
+        font-size: 1.4rem;
+    }
+}
+
+@media screen and (max-width: 332.5px) 
+{
+    #intro .layerContentTitle h2
+    {
+        font-size: 1.3rem;
+    }
+}
+
+@media screen and (max-width: 313.5px) 
+{
+    #intro .layerContentTitle h2, #intro .layerContentTitle h3
+    {
+        font-size: 1.2rem;
+    }
+}
+
+@media screen and (max-width: 293.5px) 
+{
+    #intro .layerContentTitle h2, #intro .layerContentTitle h3
+    {
+        font-size: 1.1rem;
+    }
+}
+
+@media screen and (max-width: 273.5px) 
+{
+    #intro .layerContentTitle h2, #intro .layerContentTitle h3
     {
         font-size: 1rem;
     }
@@ -181,10 +293,3 @@ header
     }
 }
 
-@media screen and (max-width:183.5px) 
-{
-    html 
-    {
-        font-size: 0.7rem;
-    }
-}
