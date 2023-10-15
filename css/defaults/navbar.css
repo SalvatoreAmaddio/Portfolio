@@ -177,7 +177,7 @@ nav a
 }
 
 /*MEDIA QUERY*/
-@media screen and (max-width: 800.5px)  
+@media screen and (max-width: 800.5px) and (pointer:fine)  
 {
     #navBarLogo 
     {
@@ -265,6 +265,19 @@ nav a
     }
 }
 
+@media screen and (max-width: 916.5px) and (pointer:coarse)  
+{
+    #navBarLogo 
+    {
+        margin: 0.5rem 0rem;
+    }
+     
+    #centerGroup
+    {
+        position: static;
+        margin: 0;
+    }
+}
 @media screen and (max-width: 772.5px) and (pointer:coarse) /*TOUCH SCREEN*/
 {
  

@@ -1,0 +1,166 @@
+header 
+{
+    letter-spacing: .1rem;
+}
+
+.contactMeLink 
+{
+    padding: .5rem;
+}
+
+#promo 
+{
+    padding: 1rem;
+    text-align: center;
+    font-size: 2.2rem;
+}
+
+#promo h1 
+{
+    color: var(--databaseBackground);
+    letter-spacing: .2rem;
+    font-weight: bolder;
+    text-shadow: -1px -1px 10px white, 1px 1px 10px white;
+}
+
+#intro .layerContent 
+{
+    background-color: inherit;
+    padding: 1rem 0;
+}
+
+.layerContent 
+{
+    background-color: white;
+    border-radius: 1rem;
+}
+
+#meme 
+{
+    display: flow-root;
+    border: 1px solid black;
+    margin: 0 auto;
+}
+
+.memeContainer 
+{
+    float: left;
+    width: 33.33%;
+}
+
+.memeContainer img 
+{
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 100%;
+    min-height: 15rem;
+}
+
+.feature 
+{
+    color: black;
+    letter-spacing: .1rem;
+}
+
+.feature img:first-child
+{
+    display: block;
+    float: left;
+    border-radius: 1rem;
+    padding: 0.2rem;
+    width: 25%;
+    min-width: 15rem;
+    min-height: 15rem;
+    height: 100%;
+    margin-right: 1rem;
+    border: 0.01rem solid;
+}
+
+#featuresContainer section:nth-of-type(odd) .feature img:first-child 
+{
+    float: right;
+    margin-right: 0;
+}
+
+.content 
+{
+    padding-top: 0.5rem;
+}
+
+#options 
+{
+    color: white;
+    margin-top: 1rem;
+    position: sticky;
+    top: 3.5rem;
+    z-index: 3;
+}
+
+#devEnv 
+{
+    text-align: center;
+}
+
+@media screen and (max-width:801.5px) 
+{
+    .memeContainer 
+    {
+        width: 50%;
+    }
+
+    .memeContainer:last-of-type 
+    {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:550.5px) 
+{
+    header 
+    {
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width:499.5px) 
+{
+
+    .memeContainer 
+    {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:425.5px) 
+{
+    #options 
+    {    
+        top: 3.2rem;
+    }
+
+    .feature h2 
+    {
+        text-align: center;
+    }
+
+    #featuresContainer section:nth-of-type(odd) .feature img:first-child, 
+    .feature img:first-child 
+    {
+        float: none;
+        margin: 0 auto;        
+    }
+
+    .container 
+    {
+        padding: .5rem;
+    }
+}
+
+@media screen and (max-width:387.5px) 
+{
+    header 
+    {
+        font-size: 1rem;
+    }
+}
