@@ -171,11 +171,6 @@ main
     }
 }
 
-@media screen and (max-width:500.5px) 
-{
-
-}
-
 @media screen and (max-width:406.5px)
 {
     .skillBelt .skillContainer
@@ -183,5 +178,13 @@ main
         display: block;
         margin: 0 auto;
         margin-bottom: 1rem;
+    }
+}
+
+@media screen and (max-width:344.5px) 
+{
+    header 
+    {
+        font-size: 2rem;
     }
 }

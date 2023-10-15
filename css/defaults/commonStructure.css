@@ -549,14 +549,14 @@ form span
     }
 }
 
-@media screen and (max-width:259.5px) 
+@media screen and (max-width:269.5px) 
 {
     #headerTitle {
         padding: 0.5rem;
     }
 }
 
-@media screen and (max-width:242.5px) 
+@media screen and (max-width:253.5px) 
 {
     #headerTitle 
     {
