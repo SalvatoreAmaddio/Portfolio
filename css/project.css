@@ -1,3 +1,8 @@
+h3, .projectType a  
+{
+    letter-spacing: .1rem;
+}
+
 header 
 {
     letter-spacing: .4rem;
@@ -49,9 +54,19 @@ main section:last-of-type .layerContent
     background-color: var(--desktopBackground);
 }
 
+.projectType:first-of-type
+{
+   color: var(--desktopBackground);
+}
+
 .projectType:nth-of-type(2) span 
 {
     background-color: var(--mobileBackground);
+}
+
+.projectType:nth-of-type(2)
+{
+    color: var(--mobileBackground);
 }
 
 .projectType:last-of-type span 
@@ -61,6 +76,7 @@ main section:last-of-type .layerContent
 
 .projectType:last-of-type 
 {
+    color: var(--webBackground);
     margin-right: 0rem;
 }
 
