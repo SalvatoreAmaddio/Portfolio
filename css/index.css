@@ -1,14 +1,6 @@
 :root 
 {
     --logoSize: 16rem;
-    --displayMode: inline-block;
-    --firstMargin: 1rem 2rem 1rem 0rem;
-    --secondMargin: 1rem 2rem 1rem 0rem;
-    --thirdMargin: 1rem 2rem 1rem 0rem;
-    --fourthMargin: 1rem 2rem 1rem 0rem;
-    --fifthMargin: 1rem 2rem 1rem 0rem;
-    --sixthMargin: 1rem 2rem 1rem 0rem;
-    --lastMargin: 1rem 0rem 1rem 0rem;
 }
 
 header 
@@ -50,45 +42,16 @@ main
     background-color: var(--mainColor);
 }
 
+#programLangs .layerContent, #databases .layerContent, #technologies .layerContent 
+{
+    padding: 1rem 0rem;
+}
+
 /*PROGRAMMING LANGUAGES*/
 .skillContainer 
 {
-    display: var(--displayMode)
-}
-
-.skillContainer:first-of-type 
-{
-    margin: var(--firstMargin);
-}
-
-.skillContainer:first-of-type+.skillContainer
-{
-    margin: var(--secondMargin);
-}
-
-.skillContainer:first-of-type+.skillContainer+:not(.skillContainer:last-of-type).skillContainer
-{
-    margin: var(--thirdMargin);
-}
-
-.skillContainer:first-of-type+.skillContainer+.skillContainer+:not(.skillContainer:last-of-type).skillContainer
-{
-    margin: var(--fourthMargin);
-}
-
-.skillContainer:first-of-type+.skillContainer+.skillContainer+.skillContainer+.skillContainer
-{
-    margin: var(--fifthMargin);
-}
-
-.skillContainer:first-of-type+.skillContainer+.skillContainer+.skillContainer+.skillContainer+.skillContainer
-{
-    margin: var(--sixthMargin);
-}
-
-.skillContainer:last-of-type 
-{
-    margin: var(--lastMargin);
+    display: inline-block;
+    margin: 1rem .5rem;
 }
 
 .skillContainer img 
@@ -117,53 +80,8 @@ main
 }
 
 /*MEDIA QUERY*/
-@media screen and (max-width:1181.5px) and (min-width:1022.5px)
-{
-    :root
-    {
-        --fifthMargin: 1rem 0rem 1rem 0rem;
-    }
-}
-
-@media screen and (max-width:1022.5px) and (min-width:823.5px)
-{
-    :root
-    {
-        --fourthMargin: 1rem 0rem 1rem 0rem;
-    }
-}
-
-@media screen and (max-width:823.5px) and (min-width:624.5px)
-{
-    :root
-    {
-        --thirdMargin: 1rem 0rem 1rem 0rem;
-    }
-}
-
-@media screen and (max-width:624.5px) and (min-width:409.5px)
-{
-    :root
-    {
-        --secondMargin: 1rem 0rem 1rem 0rem;
-        --fourthMargin: 1rem 0rem 1rem 0rem;
-        --sixthMargin: 1rem 0rem 1rem 0rem;
-    }
-}
-
 @media screen and (max-width:409.5px)
 {
-    :root 
-    {
-        --displayMode: block;
-        --firstMargin: 1rem auto;
-        --secondMargin: 1rem auto;
-        --thirdMargin: 1rem auto;
-        --fourthMargin: 1rem auto;
-        --fifthMargin: 1rem auto;
-        --lastMargin: 1rem auto;
-    }
-
     .skillContainer .roundBorder 
     {
         width: fit-content;
@@ -178,6 +96,23 @@ main
         display: block;
         margin: 0 auto;
         margin-bottom: 1rem;
+    }
+
+    #programLangs, #databases, #technologies 
+    {
+        padding: 1rem 0rem;
+    }
+
+
+    #programLangs .layerContent, #databases .layerContent, #technologies .layerContent 
+    {
+        padding: 0rem;
+        padding-top: 1rem;
+    }
+
+    .skillContainer:last-of-type
+    {
+        margin-bottom: 0;
     }
 }
 
