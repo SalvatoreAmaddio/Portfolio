@@ -3,6 +3,11 @@
     letter-spacing: .2rem;
 }
 
+#projects h2 
+{
+    text-transform: uppercase;
+}
+
 #projectContainerBackground 
 {
     background-color:#6487B0;
