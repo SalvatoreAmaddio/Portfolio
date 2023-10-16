@@ -166,7 +166,7 @@ header
         margin-bottom: 0.5rem;
     }
 
-    #featuresContainer section:nth-of-type(odd) .feature >img:first-child 
+    #featuresContainer section:nth-of-type(even) .feature >img:first-child 
     {
         float: none;
         margin: 0 auto;
