@@ -70,7 +70,12 @@ header
     background-color: inherit;
 }
 
-.layerContent
+main 
+{
+    letter-spacing: 0.2rem;
+}
+
+#featuresContainer .layerContent
 {
     color: black;
     padding-bottom: 0.1rem;

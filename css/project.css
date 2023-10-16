@@ -1,17 +1,3 @@
-h3, .projectType a  
-{
-    letter-spacing: .1rem;
-}
-
-header 
-{
-    letter-spacing: .4rem;
-}
-
-main section:last-of-type .layerContent 
-{
-    padding: 0rem;
-}
 
 #projectContainerBackground 
 {
@@ -36,6 +22,9 @@ main section:last-of-type .layerContent
     margin-left: 0rem;
     font-weight: bolder;
     color: black;
+    letter-spacing: normal;
+    text-transform: uppercase;
+    text-align: start;
     background-color: var(--backgroundColor);
     position: relative;
 }
@@ -103,6 +92,7 @@ main section:last-of-type .layerContent
     #projectContainer 
     {
         width: 100%;
+        background-color: inherit;
     }
     
     .projectType 
