@@ -80,6 +80,7 @@ main
     color: black;
     padding-bottom: 0.1rem;
     background-color: white;
+    border-radius: 1rem;
 }
 
 .feature 

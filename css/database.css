@@ -3,6 +3,10 @@ header
     letter-spacing: .3rem;
 }
 
+.container {
+    padding: 1rem 0.5rem;
+}
+
 .contactMeLink 
 {
     padding: .5rem;
