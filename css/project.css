@@ -16,6 +16,7 @@ main section:last-of-type .layerContent
 #projectContainerBackground 
 {
     background-color:#6487B0;
+    border-radius: 1rem;
 }
 
 #projectContainer 
