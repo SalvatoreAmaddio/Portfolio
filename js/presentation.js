@@ -1,6 +1,7 @@
 class Project 
 {
     #projectName;
+    #responsiveProjectName;
     #isDesktop = true;
     #headerTitle;
     #logo;
@@ -27,6 +28,7 @@ class Project
     {
         this.#me=document.getElementById("project");
         this.#projectName=this.#me.getElementsByClassName("layerContentTitle")[0].children[0];
+        this.#responsiveProjectName = document.getElementById("responsiveTitle").children[0];
         this.#projectInfos=document.getElementById("projectInfos");
         let table=this.#projectInfos.children[0];
         this.#projectInfos = table.children[0].children;
@@ -112,6 +114,7 @@ class Project
     #fillUp()
     {
         this.#projectName.innerHTML=this.#record[1];
+        this.#responsiveProjectName.innerHTML=this.#record[1];
         document.title=this.#record[1];
         this.#headerTitle.innerHTML=`${this.projectType} Project`;
 

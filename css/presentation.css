@@ -13,6 +13,14 @@ header
     padding-top:0rem;
 }
 
+#responsiveTitle 
+{
+    display: none;
+    color: white;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
 #projectDetails, #projectDescription 
 {
     color: black;
@@ -180,6 +188,16 @@ td a
         float: none;
         width: 100%;
         margin-bottom: 1rem;
+    }
+
+    .layerContentTitle 
+    {
+        display: none;
+    }
+    
+    #responsiveTitle 
+    {
+        display: block;
     }
 
     td, th , tr

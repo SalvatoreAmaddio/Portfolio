@@ -160,119 +160,28 @@ main .layerContent
     top: 0.1rem;
 }
 
-#projects .layerContent
-{
-    padding-bottom: 0rem;
-}
-
+/*OVERRIDE PROJECTS CSS*/
 #projectContainer 
 {
-    margin: 0 auto;
+    width: 28.1rem;
     margin-top: 1rem;
-    width: 23rem;
     max-width: 100%;
-    display: flow-root;
-}
-
-.projectType
-{
-    padding: 1rem;
-    background-color: var(--backgroundColor);
-    color: black;
     border-radius: 1rem;
-    width: var(--projectTypeWidth);
-    max-width: 100%;
-    font-weight: bolder;
-    display: var(--displayMode);
-    text-align: var(--textAlign);
-    position: relative;
+    display: flow-root;
+    background-color: transparent;
 }
 
-.projectType:first-of-type 
+.projectType:nth-of-type(even) 
 {
-    margin: var(--firstMargin);
+    margin-right: 0rem;
 }
 
-.projectType:nth-of-type(2)
+.projectType:nth-of-type(odd) 
 {
-    margin: var(--secondMargin);
+    margin-right: 2rem;
 }
 
-.projectType:nth-of-type(3)
-{
-    margin: var(--thirdMargin);
-}
-
-.projectType:last-of-type 
-{
-    margin: var(--lastMargin);
-}
-
-.projectType a 
-{
-    text-decoration: none;
-    color: blue;
-    font-family: var(--titleFont);
-}
-
-.projectType p 
-{
-    text-align: start;
-}
-
-.projectType img 
-{
-    padding-top: 0.9rem;
-    max-width: 100%;
-    width: 9rem;
-    height: 9rem;
-}
-
-.projectType span 
-{
-    display: block;
-    width: 100%;
-    margin: 0 auto;
-    position: absolute;
-    background-color: red;
-    left: 0px;
-    bottom: 0px;
-    right: 0px;
-    padding: .3rem;
-    border-radius: 0rem 0rem 1rem 1rem;
-}
-
-.projectType:nth-of-type(1) 
-{
-    color: var(--desktopBackground);
-}
-
-.projectType:nth-of-type(1)  span
-{
-    background-color: var(--desktopBackground);
-}
-
-.projectType:nth-of-type(2) 
-{
-    color: var(--mobileBackground);
-}
-
-.projectType:nth-of-type(2)  span
-{
-    background-color: var(--mobileBackground);
-}
-
-.projectType:nth-of-type(3) 
-{
-    color: var(--webBackground);
-}
-
-.projectType:nth-of-type(3)  span
-{
-    background-color: var(--webBackground);
-}
-
-.projectType:nth-of-type(4)  span
+.projectType:last-of-type span 
 {
     background-color: black;
 }
@@ -473,11 +382,35 @@ main .layerContent
     }
 }
 
+@media screen and (max-width:991.5px) 
+{
+    .projectType:nth-of-type(odd) 
+    {
+        margin-right: 1rem;
+    }
+}
+
 @media screen and (max-width:976.5px)  and (min-width:901.5px) 
 {
     .event 
     {
         font-size: .9rem;
+    }
+}
+
+@media screen and (max-width:959.5px) 
+{
+    .projectType 
+    {
+        float: none;
+        width: 100%;
+        margin: 0;
+        margin-bottom: 1rem;
+    }
+
+    .projectType:last-of-type 
+    {
+        margin-bottom: 0rem;
     }
 }
 
@@ -545,17 +478,6 @@ main .layerContent
        --lastMargin: 1rem 0rem;   
        --textAlign: start;
        --projectTypeWidth: 100%;
-    }
-
-    .projectType:first-of-type 
-    {
-        margin-top: 0rem;
-    }
-
-    .projectType a 
-    {
-        display: block;
-        text-align: center;
     }
 }
 
