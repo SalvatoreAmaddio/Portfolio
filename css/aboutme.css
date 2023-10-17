@@ -488,6 +488,15 @@ main .layerContent
         text-align: center;
     }
 
+    .event a
+    {
+        display: block;
+        width: fit-content;
+        height: 2.8rem;
+        margin: 0 auto;
+        position: static;
+    }
+
     .event img, .event p 
     {
         float: none;
