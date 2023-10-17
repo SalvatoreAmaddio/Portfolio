@@ -128,7 +128,7 @@ footer
     text-align: start;
 }
 
-.buttonStyle 
+.buttonStyle, .downloadButton 
 {
     border-radius: 1rem;
     display: block;
@@ -143,7 +143,7 @@ footer
     font-family: 'Archivo Black', sans-serif;
 }
 
-.buttonStyle:hover 
+.buttonStyle:hover, .downloadButton:hover 
 {
     cursor: pointer;
     background-color: var(--navbarbackground);
