@@ -366,11 +366,43 @@ main .layerContent
     float: left;
 }
 
+.event a 
+{
+    display: inline-block;
+    border: 2px solid transparent;
+    border-radius: 50%;
+    padding: .29rem;
+    position: relative;
+    right: 0;
+    animation-name: hilight;
+    animation-duration: .5s;
+    background-color: var(--backgroundColor);
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-fill-mode: both;
+    animation-direction: alternate-reverse;
+    overflow: hidden;
+}
+
+@keyframes hilight
+{
+    0% 
+    {
+        border-color: var(--mainColor);
+    }
+
+    100% 
+    {
+        border-color: var(--desktopBackground);
+    }
+}
+
 .event img 
 {
     float: right;
     max-width: 2rem;
     max-height: 2rem;
+    background-color: inherit;
 }
 
 /*MEDIA QUERY*/
