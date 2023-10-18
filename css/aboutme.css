@@ -222,12 +222,14 @@ main .layerContent
 ul li 
 {
     padding: .5rem;
+    padding-bottom: 0;
 }
 
 #awards span 
 {
     font-style: italic;
     text-decoration: underline; 
+    letter-spacing: .05rem;
 }
 
 .degree, .lang 
