@@ -9,12 +9,7 @@
     --textAlign: inherit;
 }
 
-header 
-{
-    letter-spacing: .1rem;
-}
-
-h4, h2, strong, dt, .projectType a 
+h4, h2, h3, strong, dt, .projectType a, header 
 {
     letter-spacing: .1rem;
 }
@@ -123,6 +118,15 @@ main .layerContent
     margin-top: .5rem;
     margin-bottom: 1rem;
     text-align: start;
+}
+
+#description span 
+{
+    font-style: italic;
+    font-weight: bolder;
+    letter-spacing: .01rem;
+    text-shadow: 2px 2px black;
+    color: #F9F6EE;
 }
 
 #techSkills dl 
