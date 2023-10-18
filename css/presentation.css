@@ -1,3 +1,8 @@
+:root 
+{
+    --tabelHeaderBackground: rgba(146, 182, 213, .3);
+}
+
 header 
 {
     letter-spacing: .4rem;
@@ -11,6 +16,20 @@ header
 .layerContentTitle 
 {
     padding-top:0rem;
+}
+
+#downloadContainer 
+{
+    width: 60%;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.downloadButton 
+{
+    background-color: #DEE9F2;
+    width: 100%;
+    color: black;
 }
 
 #responsiveTitle 
@@ -76,7 +95,7 @@ header
     text-align: center;  
     padding-top: .5rem;  
     padding-bottom:.5rem;
-    background-color: rgba(146, 182, 213, .3);
+    background-color: var(--tabelHeaderBackground);
     letter-spacing: .1rem;
 }
 

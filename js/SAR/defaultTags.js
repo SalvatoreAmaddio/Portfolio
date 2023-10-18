@@ -11,7 +11,13 @@ class DefaultTags {
         "https://fonts.googleapis.com/css2?family=Righteous&display=swap"
     ];
 
-    #defCSS = ["defaults/wrapper",
+    #onlineCSS =
+    [
+        "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css",
+    ];
+
+    #defCSS = [
+              "defaults/wrapper",
               "defaults/commonStructure",
               "defaults/navbar",
             ];
@@ -84,6 +90,16 @@ class DefaultTags {
     {
         let link;
         let before=this.#iconLink;
+        
+        for(let i=0; i < this.#onlineCSS.length; i++) 
+        {
+            link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.href = `${this.#onlineCSS[i]}`;
+            before.after(link);    
+            before = link;
+        }       
+
         for(let i=0; i < this.#defCSS.length; i++) 
         {
             link = document.createElement('link');
