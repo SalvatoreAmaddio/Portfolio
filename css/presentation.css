@@ -18,6 +18,12 @@ header
     padding-top:0rem;
 }
 
+.layerTitle
+{
+    position: static;
+    padding-top: 0;
+}
+
 #downloadContainer 
 {
     width: 60%;
@@ -156,7 +162,22 @@ td a
     max-height: 10rem;
 }
 
+#carousel1 
+{
+    width: 40%;
+    max-width: 100%;    
+    margin: 0 auto;
+}
+
 /*MEDIA QUERY*/
+@media  screen and (max-width:600.5px)
+{
+    #carousel1 
+    {
+        width: 97%;
+    }
+}
+
 @media screen and (max-width:739.5px) and (min-width:519.5px)
 {
     #project
