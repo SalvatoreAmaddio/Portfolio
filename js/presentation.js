@@ -17,14 +17,11 @@ class Project
         ["2","Meter","2022","Rudy Williams","https://github.com/SalvatoreAmaddio/Meter","C#","WPF","SQLite",true,true,false,"img/projects/desktop/meter.png","lorem"],
         ["3","MyPlanogram","2022/2023","Carole Crockett","https://github.com/SalvatoreAmaddio/MyPlanogram","C#","MAUI","MySQL",false,false,true,"img/projects/mobile/myplanogram.png","lorem"]
     ];
-    #images=
-    [
-        ["1",""],
-        ["1",""],
-        ["1",""],
-        ["1",""],
-    ];
 
+    images=[];
+
+    #startingPath = "img/projects/desktop/";
+    
     constructor() 
     {
         this.#me=document.getElementById("project");
@@ -100,12 +97,21 @@ class Project
         return this.#YesOrNo(this.#record[10]);
     }
 
+    addImages(...imgs)
+    {
+        for(let i=0; i < imgs.length; i++) 
+        {
+            this.images.push(`${this.#startingPath}${imgs[i]}`);
+        }
+    }
+
     #fetch()
     {
         let item=sessionStorage.getItem("desktop");
 
         if (!item) 
         {
+            this.#startingPath.replace("desktop/","mobile/");
             this.#isDesktop = false;
             this.#downloadContainer.style.display="none";
             item = sessionStorage.getItem("mobile");
@@ -154,18 +160,17 @@ class Project
 
 class PresentationPage extends DefaultPage
 {
-    images = 
-    [
-    "img/img1.jpg",
-    "img/img2.jpg",
-    "img/img3.jpg",
-    ];
+    #project;
     constructor()
     {
         super("Salvatore Amaddio Rivolta");
         this.addForm(new Form());
-        this.addCarousel(new Carousel("carousel1", this.images));
-        new Project();
+        this.#project = new Project();
+        this.#project.addImages
+        (
+            "betting/"
+        );
+        this.addCarousel(new Carousel("carousel1", this.#project.images));
     }
 }
 
