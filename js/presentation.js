@@ -6,6 +6,7 @@ class Project
     #headerTitle;
     #logo;
     #description;
+    #downloadContainer;
     #me;
     #record;   
     #projectInfos; 
@@ -30,6 +31,7 @@ class Project
         this.#projectName=this.#me.getElementsByClassName("layerContentTitle")[0].children[0];
         this.#responsiveProjectName = document.getElementById("responsiveTitle").children[0];
         this.#projectInfos=document.getElementById("projectInfos");
+        this.#downloadContainer=document.getElementById("downloadContainer");
         let table=this.#projectInfos.children[0];
         this.#projectInfos = table.children[0].children;
         
@@ -105,6 +107,7 @@ class Project
         if (!item) 
         {
             this.#isDesktop = false;
+            this.#downloadContainer.style.display="none";
             item = sessionStorage.getItem("mobile");
         }
 
@@ -151,10 +154,17 @@ class Project
 
 class PresentationPage extends DefaultPage
 {
+    images = 
+    [
+    "img/img1.jpg",
+    "img/img2.jpg",
+    "img/img3.jpg",
+    ];
     constructor()
     {
         super("Salvatore Amaddio Rivolta");
         this.addForm(new Form());
+        this.addCarousel(new Carousel("carousel1", this.images));
         new Project();
     }
 }
