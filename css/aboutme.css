@@ -29,7 +29,7 @@ main .layer
 {
     background-color: rgba(146, 182, 213, .3);
     border-radius: 1rem;
-    color: white;
+    color:#FAF9F6;
     height: 100%;
 }
 
@@ -118,6 +118,11 @@ main .layerContent
     margin-top: .5rem;
     margin-bottom: 1rem;
     text-align: start;
+}
+
+#description p:last-child 
+{
+    text-align: center;
 }
 
 #description span 
