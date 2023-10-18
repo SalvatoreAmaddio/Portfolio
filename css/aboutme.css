@@ -203,7 +203,6 @@ main .layerContent
     display: flow-root;
     height: 4rem;
     max-height: 100%;
-    padding: 0.2rem;
 }
 
 .lang img 
@@ -225,6 +224,10 @@ main .layerContent
 {
     font-style: italic;
 }
+.lang:last-of-type 
+{
+    margin-top: 1rem;
+} 
 
 /*story*/
 #storyContent 
