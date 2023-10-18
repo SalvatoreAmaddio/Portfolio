@@ -101,7 +101,7 @@ class Project
     {
         for(let i=0; i < imgs.length; i++) 
         {
-            this.images.push(`${this.#startingPath}${imgs[i]}`);
+            this.images.push(`${this.#startingPath}${this.#record[1].toLowerCase()}/${imgs[i]}`);
         }
     }
 
@@ -168,8 +168,9 @@ class PresentationPage extends DefaultPage
         this.#project = new Project();
         this.#project.addImages
         (
-            "betting/"
+            "img1.jpg","img2.jpg","img3.jpg"
         );
+        
         this.addCarousel(new Carousel("carousel1", this.#project.images));
     }
 }
