@@ -66,12 +66,14 @@
 
 .tracker 
 {
-    width: 100%;
+    width: fit-content;
     position: absolute;
     z-index: 3;
     padding: 0.3rem;
     bottom: 0px;
     right: 0px;
+    left: 0px;
+    margin: 0 auto;
     cursor: pointer;
 }
 
@@ -92,7 +94,7 @@
 .tracker .currentThumbnail, .tracker .thumbnail:hover
 {
     opacity: 1;
-    border: 0.1rem solid;
+    border: 0.1rem solid black;
 }
 
 /*MEDIA QUERY*/
