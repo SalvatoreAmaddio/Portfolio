@@ -14,7 +14,7 @@ header
     letter-spacing: .1rem;
 }
 
-h2, strong, dt, .projectType a 
+h3, h2, strong, dt, .projectType a 
 {
     letter-spacing: .1rem;
 }
@@ -44,7 +44,7 @@ main .layerContent
     height: 100%;
 }
 
-.layerContent h2 
+.layerContent h2, .layerContent h3 
 {
     text-align: center;
 }
