@@ -219,7 +219,7 @@ main .layerContent
     list-style-type: disc;
 }
 
-ul li 
+#education ul li 
 {
     padding: .5rem;
     padding-bottom: 0;
