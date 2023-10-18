@@ -113,6 +113,7 @@ main .layerContent
 }
 
 .layer #me img {
+    padding-right: 1rem;
     width: 14rem;
     height: 14rem;
 }
