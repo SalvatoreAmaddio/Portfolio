@@ -14,7 +14,7 @@ header
     letter-spacing: .1rem;
 }
 
-h3, h2, strong, dt, .projectType a 
+h4, h2, strong, dt, .projectType a 
 {
     letter-spacing: .1rem;
 }
@@ -187,17 +187,57 @@ main .layerContent
     background-color: black;
 }
 
+#degreesContainer > ul
+{
+    list-style-type: none;
+}
+
+#awards 
+{
+    padding: .5rem;
+    margin-left: 2rem;
+    padding-bottom: 0;
+}
+
+#awards h4
+{
+    text-align: start;
+    font-style: italic;
+}
+
+#awards ul 
+{
+    list-style-type: disc;
+}
+
+ul li 
+{
+    padding: .5rem;
+}
+
+#awards span 
+{
+    font-style: italic;
+    text-decoration: underline; 
+}
+
 .degree, .lang 
 {
     text-align: start;
 }
 
-.degree a 
+.degree span 
+{
+    font-style: italic;
+}
+
+span a 
 {
     color: blue;
     font-family: var(--titleFont);
 }
 
+/*LANG*/
 .lang 
 {
     display: flow-root;
@@ -224,6 +264,7 @@ main .layerContent
 {
     font-style: italic;
 }
+
 .lang:last-of-type 
 {
     margin-top: 1rem;
@@ -449,6 +490,11 @@ main .layerContent
     {
         margin-bottom: 0rem;
     }
+
+    header 
+    {
+        font-size: 2rem;
+    }
 }
 
 @media screen and (max-width:901.5px) 
@@ -469,6 +515,7 @@ main .layerContent
     {
         float: none;
     }
+    
     .eventContainer .floated 
     {
         float: none;        
@@ -527,11 +574,29 @@ main .layerContent
     }
 }
 
-@media screen and (max-width: 958.5px)
+@media screen and (max-width:807.5px) 
 {
-    header 
+    #awards,  #awards li 
     {
-        font-size: 2rem;
+        margin-left: .5rem;
+        padding-left: 0;
+    }
+}
+
+@media screen and (max-width:744.5px) 
+{
+    #awards,  #awards li 
+    {
+        padding-right: 0;
+    }
+}
+
+@media screen and (max-width:712.5px) 
+{
+    #awards,  #awards li 
+    {
+        font-size: .9rem;
+        margin-left: 1rem;
     }
 }
 
