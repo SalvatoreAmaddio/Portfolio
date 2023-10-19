@@ -1,5 +1,28 @@
+class ProjectType {
+
+    static Desktop = new ProjectType(0);
+    static Mobile = new ProjectType(1);
+
+    constructor(id) 
+    {
+        this.id=id;
+    }
+
+    is(isDesktop) 
+    {
+
+        return (this.id==0) == isDesktop;
+    }
+
+    toString()
+    {
+        return this.id;
+    }
+}
+
 class Project 
 {
+    #projectID;
     #projectName;
     #responsiveProjectName;
     #isDesktop = true;
@@ -15,9 +38,9 @@ class Project
     #projectFeatures;
     #data=
     [
-        ["1","Betting","2023","Peter Randall","https://github.com/SalvatoreAmaddio/BettingDemo","C#","WPF","SQLite",true,false,false,"img/projects/desktop/betting.ico","lorem"],
-        ["2","Meter","2022","Rudy Williams","https://github.com/SalvatoreAmaddio/Meter","C#","WPF","SQLite",true,true,false,"img/projects/desktop/meter.png","lorem"],
-        ["3","MyPlanogram","2022/2023","Carole Crockett","https://github.com/SalvatoreAmaddio/MyPlanogram","C#","MAUI","MySQL",false,false,true,"img/projects/mobile/myplanogram.png","lorem"]
+        [ProjectType.Desktop,"1","Betting","2023","Peter Randall","https://github.com/SalvatoreAmaddio/BettingDemo","C#","WPF","SQLite",true,false,false,"img/projects/desktop/betting.ico","lorem"],
+        [ProjectType.Desktop,"2","Meter","2022","Rudy Williams","https://github.com/SalvatoreAmaddio/Meter","C#","WPF","SQLite",true,true,false,"img/projects/desktop/meter.png","lorem"],
+        [ProjectType.Mobile,"3","MyPlanogram","2022/2023","Carole Crockett","https://github.com/SalvatoreAmaddio/MyPlanogram","C#","MAUI","MySQL",false,false,true,"img/projects/mobile/myplanogram.png","lorem"]
     ];
 
     images=[];
@@ -54,9 +77,9 @@ class Project
         this.#dataNotFoundContainer.style.display="flow-root";
     }
 
-    get DataFound() 
+    get dataFound() 
     {
-        return (this.#record);
+        return (this.#data[this.#projectID]) && this.#data[this.#projectID][0].is(this.#isDesktop);
     }
 
     get projectType() 
@@ -71,87 +94,92 @@ class Project
 
     get year()
     {
-        return this.#record[2];
+        return this.#record[3];
     }
 
     get clientName()
     {
-        return this.#record[3];
+        return this.#record[4];
     }
 
     get gitHubLink()
     {
-        return this.#record[4];
+        return this.#record[5];
     }
 
     get lang()
     {
-        return this.#record[5];
+        return this.#record[6];
     }
 
     get tech()
     {
-        return this.#record[6];
+        return this.#record[7];
     }
 
     get db()
     {
-        return this.#record[7];
+        return this.#record[8];
     }
 
     get useOffice()
     {
-        return this.#YesOrNo(this.#record[8]);
+        return this.#YesOrNo(this.#record[9]);
     }
 
     get usePDF()
     {
-        return this.#YesOrNo(this.#record[9]);
+        return this.#YesOrNo(this.#record[10]);
     }
 
     get isMultiUser()
     {
-        return this.#YesOrNo(this.#record[10]);
+        return this.#YesOrNo(this.#record[11]);
     }
 
     addImages(...imgs)
     {
         for(let i=0; i < imgs.length; i++) 
         {
-            this.images.push(`${this.#startingPath}${this.#record[1].toLowerCase()}/${imgs[i]}`);
+            this.images.push(`${this.#startingPath}${this.#record[2].toLowerCase()}/${imgs[i]}`);
         }
     }
 
-    #fetch()
+    #getInputs()
     {
         let str=this.#projectInfos[5].children[1].children[0].href;
         let index = str.indexOf("?")+1;
         let result = str.substring(index).slice(0, -1);
         let values = result.split("=");
         this.#isDesktop = values[0]=="desktop";
+        return values[1]-1;
+    }
+
+    #fetch()
+    {
+        this.#projectID=this.#getInputs();
 
         if (!this.#isDesktop) 
         {
             this.#startingPath.replace("desktop/","mobile/");
             this.#isDesktop = false;
             this.#downloadContainer.style.display="none";
-            item = sessionStorage.getItem("mobile");
         }
 
-        this.#record = this.#data[values[1]-1];
-        if (!this.#record) 
+        if (!this.dataFound) 
         {
             return false;
         }
 
+        this.#record = this.#data[this.#projectID];
         return true;
     }
 
     #fillUp()
     {
-        this.#projectName.innerHTML=this.#record[1];
-        this.#responsiveProjectName.innerHTML=this.#record[1];
-        document.title=this.#record[1];
+        this.#projectName.innerHTML=this.#record[2];
+        this.#responsiveProjectName.innerHTML=this.#record[2];
+        document.title=this.#record[2];
         this.#headerTitle.innerHTML=`${this.projectType} Project`;
 
         this.#projectInfos[1].children[1].innerHTML=this.projectType;
@@ -176,7 +204,7 @@ class Project
         }
 
         this.#projectFeatures[6].children[1].innerHTML=this.isMultiUser;    
-        this.#logo.src=this.#record[11];
+        this.#logo.src=this.#record[12];
     }
 
     #YesOrNo(val)
@@ -194,7 +222,7 @@ class PresentationPage extends DefaultPage
         this.addForm(new Form());
         this.#project = new Project();
         
-        if (!this.#project.DataFound) return;
+        if (!this.#project.dataFound) return;
         this.#project.addImages
         (
             "img1.jpg","img2.jpg","img3.jpg"
