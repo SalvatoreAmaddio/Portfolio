@@ -8,6 +8,8 @@ class Project
     #description;
     #downloadContainer;
     #me;
+    #recordContainer;
+    #dataNotFoundContainer;
     #record;   
     #projectInfos; 
     #projectFeatures;
@@ -25,6 +27,8 @@ class Project
     constructor() 
     {
         this.#me=document.getElementById("project");
+        this.#recordContainer = document.getElementById("recordContainer");
+        this.#dataNotFoundContainer = document.getElementById("dataNotFoundContainer");
         this.#projectName=this.#me.getElementsByClassName("layerContentTitle")[0].children[0];
         this.#responsiveProjectName = document.getElementById("responsiveTitle").children[0];
         this.#projectInfos=document.getElementById("projectInfos");
@@ -38,8 +42,19 @@ class Project
         this.#projectFeatures = table.children[0].children;
 
         this.#logo = document.getElementById("projectImgContainer").children[0];
-        this.#fetch();
-        this.#fillUp();
+        if (this.#fetch()) 
+        {
+            this.#fillUp();
+            return;
+        } 
+
+        this.#recordContainer.style.display="none";
+        this.#dataNotFoundContainer.style.display="block";
+    }
+
+    get DataFound() 
+    {
+        return (this.#record);
     }
 
     get projectType() 
@@ -107,9 +122,13 @@ class Project
 
     #fetch()
     {
-        let item=sessionStorage.getItem("desktop");
+        let str=this.#projectInfos[5].children[1].children[0].href;
+        let index = str.indexOf("?")+1;
+        let result = str.substring(index).slice(0, -1);
+        let values = result.split("=");
+        this.#isDesktop = values[0]=="desktop";
 
-        if (!item) 
+        if (!this.#isDesktop) 
         {
             this.#startingPath.replace("desktop/","mobile/");
             this.#isDesktop = false;
@@ -117,7 +136,13 @@ class Project
             item = sessionStorage.getItem("mobile");
         }
 
-        this.#record = this.#data[item-1];
+        this.#record = this.#data[values[1]-1];
+        if (!this.#record) 
+        {
+            return false;
+        }
+
+        return true;
     }
 
     #fillUp()
@@ -166,6 +191,8 @@ class PresentationPage extends DefaultPage
         super("Salvatore Amaddio Rivolta");
         this.addForm(new Form());
         this.#project = new Project();
+        
+        if (!this.#project.DataFound) return;
         this.#project.addImages
         (
             "img1.jpg","img2.jpg","img3.jpg"

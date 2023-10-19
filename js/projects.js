@@ -7,15 +7,6 @@ class ProjectPage extends DefaultPage
     }
 }
 
-
-function send(evt) 
-{
-    sessionStorage.clear();
-    let form = getForm(evt);
-    sessionStorage.setItem(evt.name, evt.value);
-    form.submit();
-}
-
 function getForm(node)
 {
     let parent;
@@ -26,10 +17,8 @@ function getForm(node)
         if (parent.nodeName=="FORM") 
         {
             return parent;
-        } else 
-        {
-            node=parent;
-        }
+        } 
+        node=parent;
     }
 }
 

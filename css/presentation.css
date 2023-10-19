@@ -8,6 +8,21 @@ header
     letter-spacing: .4rem;
 }
 
+#dataNotFoundContainer 
+{
+    display: none;
+    background-color: #925AEF;
+}
+
+#dataNotFoundImgContainer img 
+{
+    width: 50%;
+    display: block;
+    max-width: 100%;
+    height: 20rem;
+    margin: 0 auto;
+}
+
 .layerContent 
 {
     padding: 0;
@@ -170,14 +185,6 @@ td a
 }
 
 /*MEDIA QUERY*/
-@media  screen and (max-width:600.5px)
-{
-    #carousel1 
-    {
-        width: 97%;
-    }
-}
-
 @media screen and (max-width:739.5px) and (min-width:519.5px)
 {
     #project
@@ -194,6 +201,22 @@ td a
     #col2, #col3 
     {
         font-size: .9rem;
+    }
+}
+
+@media  screen and (max-width:600.5px)
+{
+    #carousel1 
+    {
+        width: 97%;
+    }
+}
+
+@media  screen and (max-width:647.5px)
+{
+    #dataNotFoundImgContainer img
+    {
+        width: auto;
     }
 }
 
@@ -230,7 +253,7 @@ td a
         margin-bottom: 1rem;
     }
 
-    .layerContentTitle 
+    #recordContainer .layerContentTitle 
     {
         display: none;
     }
