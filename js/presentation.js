@@ -168,6 +168,7 @@ class Project
 
         if (!this.dataFound) 
         {
+            document.title="Wrong Input";
             return false;
         }
 
