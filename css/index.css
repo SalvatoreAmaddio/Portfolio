@@ -24,6 +24,24 @@ header
     height: var(--logoSize);
 }
 
+.contactMeLink 
+{
+    display: flow-root;
+    width: fit-content;
+    padding: 0 1rem;
+    margin: 0 auto;
+}
+
+.contactMeLink a 
+{
+    float: left;
+}
+
+.contactMeLink a:first-child 
+{
+    margin-right: .5rem;
+}
+
 main 
 {
     letter-spacing: 0.2rem;
