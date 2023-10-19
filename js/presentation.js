@@ -49,7 +49,9 @@ class Project
         } 
 
         this.#recordContainer.style.display="none";
-        this.#dataNotFoundContainer.style.display="block";
+        this.#me.style.paddingLeft=0;
+        this.#me.style.paddingRight=0;
+        this.#dataNotFoundContainer.style.display="flow-root";
     }
 
     get DataFound() 
