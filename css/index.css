@@ -134,6 +134,15 @@ main
     }
 }
 
+@media screen and (max-width:359.5px) 
+{
+    .contactMeLink a 
+    {
+        float: none;
+        margin: .5rem;
+    }
+}
+
 @media screen and (max-width:344.5px) 
 {
     header 
