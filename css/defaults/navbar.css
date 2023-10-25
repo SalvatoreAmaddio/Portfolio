@@ -64,6 +64,7 @@ nav a
     color: var(--white);
     text-align: center;
     line-height: 1.6;
+    letter-spacing: 1px;
     padding: 1.1rem 0.9rem;
 }
 
@@ -191,7 +192,7 @@ nav a
     }
 }
 
-@media screen and (max-width: 783.5px) and (pointer:fine) 
+@media screen and (max-width: 798.5px) and (pointer:fine) 
 {
  
     #navBarList 
@@ -278,7 +279,7 @@ nav a
         margin: 0;
     }
 }
-@media screen and (max-width: 907.5px) and (pointer:coarse) /*TOUCH SCREEN*/
+@media screen and (max-width: 913.5px) and (pointer:coarse) /*TOUCH SCREEN*/
 {
  
     #navBarList 
