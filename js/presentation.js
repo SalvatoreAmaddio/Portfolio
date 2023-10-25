@@ -46,7 +46,6 @@ class Project
     ];
 
     images=[];
-
     #startingPath = "img/projects/desktop/";
     
     descr()
@@ -96,7 +95,7 @@ class Project
 
     get dataFound() 
     {
-        return (this.#data[this.#projectID]) && this.#data[this.#projectID][0].is(this.#isDesktop);
+        return (this.#data) && this.#data.some(item => item[1] == this.#projectID);
     }
 
     get projectType() 
@@ -179,12 +178,16 @@ class Project
         let result = str.substring(index).slice(0, -1);
         let values = result.split("=");
         this.#isDesktop = values[0]=="desktop";
-        return values[1]-1;
+        return values[1];
     }
 
     #fetch()
     {
         this.#projectID=this.#getInputs();
+
+        this.#data=
+        this.#data.filter(item => (this.#isDesktop) ? item[0] == ProjectType.Desktop
+        : item[0] == ProjectType.Mobile);
 
         if (!this.#isDesktop) 
         {
@@ -199,7 +202,8 @@ class Project
             return false;
         }
 
-        this.#record = this.#data[this.#projectID];
+        this.#record = this.#data.find(item => item[1] == this.#projectID);
+        
         return true;
     }
 
