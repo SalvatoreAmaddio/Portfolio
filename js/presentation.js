@@ -29,7 +29,7 @@ class Project
     #isDesktop = true;
     #headerTitle;
     #logo;
-    #description;
+    #readerContent;
     #downloadContainer;
     #me;
     #recordContainer;
@@ -41,7 +41,7 @@ class Project
     [
         [ProjectType.Desktop,"1","Betting","2023","Peter Randall","https://github.com/SalvatoreAmaddio/BettingDemo","C#","WPF","SQLite",true,false,false,"img/projects/desktop/betting/betting.ico","lorem","#"],
         [ProjectType.Desktop,"2","Meter","2022","Rudy Williams","https://github.com/SalvatoreAmaddio/Meter","C#","WPF","SQLite",true,true,false,"img/projects/desktop/meter/meter.png","lorem","#"],
-        [ProjectType.Desktop,"3","FilmFlix","2023","JustIT","https://github.com/SalvatoreAmaddio/FilmFlixPythonProject","Python","Console","SQLite",false,false,false,"img/python.png","Ciao","downloads/FilmFlixPythonProject.zip"],
+        [ProjectType.Desktop,"3","FilmFlix","2023","JustIT","https://github.com/SalvatoreAmaddio/FilmFlixPythonProject","Python","Console","SQLite",false,false,false,"img/python.png",this.descr(),"downloads/FilmFlixPythonProject.zip"],
         [ProjectType.Mobile,"3","MyPlanogram","2022/2023","Carole Crockett","https://github.com/SalvatoreAmaddio/MyPlanogram","C#","MAUI","MySQL",false,false,true,"img/projects/mobile/myplanogram/myplanogram.png","lorem","#"]
     ];
 
@@ -49,6 +49,19 @@ class Project
 
     #startingPath = "img/projects/desktop/";
     
+    descr()
+    {
+        return "<p>FilmFlix is a console app project that I developed during my Web Developer's Bootcamp at Just IT."
+        + "It simply consist in a menu nagivation system where the user can view records and execute "
+        + "CRUD operations upone records such as:</p>"
+        + "<ul style='margin-top:.5rem; margin-bottom:.5rem; list-style-type:circle;'>"
+        + "<li>Add a new record</li>"
+        + "<li>Amend a record</li>"
+        + "<li>Delete a record</li>"
+        +"</ul>"
+        +"This file comes as an Executable. To test it you can press the download demo button. You will get a zip folder containing the FlimFixProject folder. Extract that folder onto your desktop."
+    }
+
     constructor() 
     {
         this.#me=document.getElementById("project");
@@ -60,7 +73,7 @@ class Project
         this.#downloadContainer=document.getElementById("downloadContainer");
         let table=this.#projectInfos.children[0];
         this.#projectInfos = table.children[0].children;
-        
+        this.#readerContent = document.getElementById("readerContent");
         this.#headerTitle = document.getElementById("headerTitle").children[0];
         this.#projectFeatures=document.getElementById("projectFeatures");
         table=this.#projectFeatures.children[0];
@@ -141,6 +154,11 @@ class Project
         return this.#YesOrNo(this.#record[11]);
     }
 
+    get description()
+    {
+        return this.#record[13];
+    }
+
     get downloadLink()
     {
         return this.#record[14];
@@ -201,7 +219,8 @@ class Project
         this.#projectFeatures[1].children[1].innerHTML=this.lang;
         this.#projectFeatures[2].children[1].innerHTML=this.tech;
         this.#projectFeatures[3].children[1].innerHTML=this.db;
-
+        
+        this.#readerContent.innerHTML = this.description;
         if (!this.#isDesktop) 
         {
             this.#projectFeatures[4].style.display="none";
