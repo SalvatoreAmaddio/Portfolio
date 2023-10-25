@@ -2,16 +2,29 @@ class ProjectType {
 
     static Desktop = new ProjectType(0);
     static Mobile = new ProjectType(1);
+    static Web = new ProjectType(2);
 
     constructor(id) 
     {
         this.id=id;
     }
 
-    is(isDesktop) 
+    isDesktop(isDesktop) 
     {
 
         return (this.id==0) == isDesktop;
+    }
+
+    isMobile(isMobile) 
+    {
+
+        return (this.id==1) == isMobile;
+    }
+
+    isWeb(isWeb) 
+    {
+
+        return (this.id==2) == isWeb;
     }
 
     toString()
@@ -20,7 +33,7 @@ class ProjectType {
     }
 }
 
-class Project 
+class ProjPresentationGenerator 
 {
     #downloadDemo
     #projectID;
@@ -203,7 +216,6 @@ class Project
         }
 
         this.#record = this.#data.find(item => item[1] == this.#projectID);
-        
         return true;
     }
 
@@ -254,7 +266,7 @@ class PresentationPage extends DefaultPage
     {
         super("Salvatore Amaddio Rivolta");
         this.addForm(new Form());
-        this.#project = new Project();
+        this.#project = new ProjPresentationGenerator();
         
         if (!this.#project.dataFound) return;
         this.#project.addImages
