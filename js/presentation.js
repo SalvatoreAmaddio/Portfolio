@@ -22,6 +22,7 @@ class ProjectType {
 
 class Project 
 {
+    #downloadDemo
     #projectID;
     #projectName;
     #responsiveProjectName;
@@ -38,10 +39,10 @@ class Project
     #projectFeatures;
     #data=
     [
-        [ProjectType.Desktop,"1","Betting","2023","Peter Randall","https://github.com/SalvatoreAmaddio/BettingDemo","C#","WPF","SQLite",true,false,false,"img/projects/desktop/betting/betting.ico","lorem"],
-        [ProjectType.Desktop,"2","Meter","2022","Rudy Williams","https://github.com/SalvatoreAmaddio/Meter","C#","WPF","SQLite",true,true,false,"img/projects/desktop/meter/meter.png","lorem"],
-        [ProjectType.Desktop,"3","FilmFlix","2023","JustIT","https://github.com/SalvatoreAmaddio/FilmFlixPythonProject","Python","Console","SQLite",false,false,false,"img/python.png","Ciao"],
-        [ProjectType.Mobile,"3","MyPlanogram","2022/2023","Carole Crockett","https://github.com/SalvatoreAmaddio/MyPlanogram","C#","MAUI","MySQL",false,false,true,"img/projects/mobile/myplanogram/myplanogram.png","lorem"]
+        [ProjectType.Desktop,"1","Betting","2023","Peter Randall","https://github.com/SalvatoreAmaddio/BettingDemo","C#","WPF","SQLite",true,false,false,"img/projects/desktop/betting/betting.ico","lorem","#"],
+        [ProjectType.Desktop,"2","Meter","2022","Rudy Williams","https://github.com/SalvatoreAmaddio/Meter","C#","WPF","SQLite",true,true,false,"img/projects/desktop/meter/meter.png","lorem","#"],
+        [ProjectType.Desktop,"3","FilmFlix","2023","JustIT","https://github.com/SalvatoreAmaddio/FilmFlixPythonProject","Python","Console","SQLite",false,false,false,"img/python.png","Ciao","downloads/FilmFlixPythonProject"],
+        [ProjectType.Mobile,"3","MyPlanogram","2022/2023","Carole Crockett","https://github.com/SalvatoreAmaddio/MyPlanogram","C#","MAUI","MySQL",false,false,true,"img/projects/mobile/myplanogram/myplanogram.png","lorem","#"]
     ];
 
     images=[];
@@ -64,6 +65,8 @@ class Project
         this.#projectFeatures=document.getElementById("projectFeatures");
         table=this.#projectFeatures.children[0];
         this.#projectFeatures = table.children[0].children;
+        
+        this.#downloadDemo = document.getElementById("downloadDemo");
 
         this.#logo = document.getElementById("projectImgContainer").children[0];
         if (this.#fetch()) 
@@ -138,6 +141,11 @@ class Project
         return this.#YesOrNo(this.#record[11]);
     }
 
+    get downloadLink()
+    {
+        return this.#record[14];
+    }
+
     addImages(...imgs)
     {
         for(let i=0; i < imgs.length; i++) 
@@ -201,6 +209,7 @@ class Project
         }
         else 
         {
+            this.#downloadDemo.href=this.downloadLink;
             this.#projectFeatures[4].children[1].innerHTML=this.useOffice;
             this.#projectFeatures[5].children[1].innerHTML=this.usePDF;
         }
