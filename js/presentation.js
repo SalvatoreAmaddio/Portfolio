@@ -59,7 +59,7 @@ class Project
         + "<li>Amend a record</li>"
         + "<li>Delete a record</li>"
         +"</ul>"
-        +"This file comes as an Executable. To test it you can press the download demo button. You will get a zip folder containing the FlimFixProject folder. Extract that folder onto your desktop."
+        +"This file comes as an Executable. To test it you can press the download demo button. You will get a zip folder containing the FlimFixProject folder. Extract that folder onto your desktop, open it and click on the main.exe file to run the program."
     }
 
     constructor() 
