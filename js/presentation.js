@@ -52,9 +52,9 @@ class Project
     descr()
     {
         return "<p>FilmFlix is a console app project that I developed during my Web Developer's Bootcamp at <a href='https://www.justit.co.uk/' target='_blank'>Just IT</a>. "
-        + "It simply consist in a menu nagivation system where the user can view records and execute "
-        + "CRUD operations upon records such as:</p>"
-        + "<ul style='margin-top:.5rem; margin-bottom:.5rem; list-style-type:circle;'>"
+        + "It simply consists in a menu nagivation system where the user can view records and execute "
+        + "CRUD operations upon such as:</p>"
+        + "<ul style='margin:.5rem 0; list-style-position: inside;'>"
         + "<li>Add a new record</li>"
         + "<li>Amend a record</li>"
         + "<li>Delete a record</li>"
