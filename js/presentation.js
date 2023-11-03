@@ -60,7 +60,7 @@ class ProjPresentationGenerator
 
     #images=
     [
-        [ProjectType.Desktop,"1","img1.jpg","img2.png","img3.png","img4.png"],
+        [ProjectType.Desktop,"1","img1.png","img2.png","img3.png","img4.png"],
         [ProjectType.Desktop,"2"],
         [ProjectType.Desktop,"3","img1.jpg","img2.jpg","img3.jpg"],
         [ProjectType.Mobile,"3"]
