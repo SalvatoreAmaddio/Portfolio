@@ -118,11 +118,28 @@
 
             <section class="container">
                     <div id="formContainer">
+                        <div id="formTitle">
+                            <h3>Report</h3>
+                        </div>
+
                         <form>
+                            <input type="hidden" name="_next" value="https://salvatoreamaddio.co.uk/thankyou.html">
+                            <input type="hidden" name="_captcha" value="false">
+                            <input type="hidden" name="_template" value="table">                                    
+
                                 <div id="softwareInfo">
                                     <p>Software Name: <span id="softwareName">XXXX</span></p>
                                     <p>Software Version: <span id="softwareVersion">XXXX</span></p>
                                     <p>Software Year: <span id="softwareYear">1994</span></p>    
+                                </div>
+
+                                <div id="clientContactInfo">
+                                    <label><span>*</span> Your Name:</label>
+                                    <input type="text" id="fname" name="firstname" placeholder="Your name.." required> 
+                                    <label><span>*</span> Your Email:</label>
+                                    <input type="email" id="email" name="email" placeholder="youremailaddress@example.com" required>                                    
+                                    <label>Your Phone Number:</label>
+                                    <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="+44 #### ### ###">
                                 </div>
 
                                 <div id="clientMessage">
@@ -133,7 +150,7 @@
                                 <div id="mandatoryWarning">
                                     <p>Please note: fields marked with a <span>red</span> asteriks are mandatory.</p>
                                 </div>
-                                
+
                                 <input type="button" id="btnsubmit" value="SUBMIT">
                         </form>
                     </div>

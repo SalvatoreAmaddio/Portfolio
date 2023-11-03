@@ -33,3 +33,24 @@
     width: 100%;
     padding: 0;
 }
+
+#clientContactInfo 
+{
+    display: flow-root;
+    float: none;
+    padding: 0;
+    width: 100%;
+}
+
+#clientContactInfo label
+{
+    width: 30%;
+    float: left;
+}
+
+#clientContactInfo input
+{
+    float: right;
+    margin-top: 0.5rem;
+    width: 50%;
+}
