@@ -111,11 +111,32 @@
         
         <main>
             <section id="intro" class="container">
-                    ciao
+                <div id="debuggingImgContainer">
+                    <img src="img/debugging.png"/>
+                </div>
             </section>
 
             <section class="container">
+                    <div id="formContainer">
+                        <form>
+                                <div id="softwareInfo">
+                                    <p>Software Name: <span id="softwareName">XXXX</span></p>
+                                    <p>Software Version: <span id="softwareVersion">XXXX</span></p>
+                                    <p>Software Year: <span id="softwareYear">1994</span></p>    
+                                </div>
 
+                                <div id="clientMessage">
+                                    <label><span>*</span> What happened?</label>
+                                    <textarea placeholder="Your Message" id="message" name="message" rows="7" required></textarea>
+                                </div>
+
+                                <div id="mandatoryWarning">
+                                    <p>Please note: fields marked with a <span>red</span> asteriks are mandatory.</p>
+                                </div>
+                                
+                                <input type="button" id="btnsubmit" value="SUBMIT">
+                        </form>
+                    </div>
             </section>
         </main>
 

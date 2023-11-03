@@ -1,0 +1,35 @@
+#headerTitle
+{
+    letter-spacing: 5px;
+}
+
+#debuggingImgContainer 
+{
+    border: 1px solid black;
+    padding: 1rem;
+}
+
+#debuggingImgContainer img 
+{
+    width: 20rem;
+}
+
+#formContainer
+{
+    text-align: start;
+    letter-spacing: 1px;
+    color: white;
+}
+
+#softwareInfo span 
+{
+    top: 0;
+    color: white;
+}
+
+#clientMessage 
+{
+    float: none;
+    width: 100%;
+    padding: 0;
+}
