@@ -58,30 +58,16 @@ class ProjPresentationGenerator
         [ProjectType.Mobile,"3","MyPlanogram","2022/2023","Carole Crockett","https://github.com/SalvatoreAmaddio/MyPlanogram","C#","MAUI","MySQL",false,false,true,"img/projects/mobile/myplanogram/myplanogram.png","lorem","#"]
     ];
 
-    images=[];
+    #images=
+    [
+        [ProjectType.Desktop,"1","img1.jpg","img2.jpg","img3.jpg"],
+        [ProjectType.Desktop,"2"],
+        [ProjectType.Desktop,"3","img1.jpg","img2.jpg","img3.jpg"],
+        [ProjectType.Mobile,"3"]
+    ];
+
+    projectImgs = [];
     #startingPath = "img/projects/desktop/";
-
-    BettingDescription()
-    {
-        return "<p>Betting is a desktop application that I developed for a client who operates in Horse Race Betting. The application manage Account Holders and Agencies' information and the bets that have been placed."
-        + "The client has provided his own algorithm that helps him to understand till what extent is still convenient to place a bet with a given agency. "
-        + "This algorithm has been implemented upon client's request and it warns the user when an Agency is no longer convenient.</p>"
-        + "<br><p>The user can also upload images that relate to the Agency's Logo and Promotional's banner that agencies publish from time to time.</p>"
-        + "<p>Furthermore, this application can also produce Excel Reports and provide some tools to filter the data based on what the client needed. Click the DEMO button to download a sample that you can use. Feel free to <a href='#getInTouch'>contact me</a> for any queries.</p>"
-    }
-
-    FilmFlixDescription()
-    {
-        return "<p>FilmFlix is a console app project that I developed during my Web Developer's Bootcamp at <a href='https://www.justit.co.uk/' target='_blank'>Just IT</a>. "
-        + "It simply consists in a menu nagivation system where the user can view records and execute "
-        + "CRUD operations upon such as:</p>"
-        + "<ul style='margin:.5rem 0; list-style-position: inside;'>"
-        + "<li>Add a new record</li>"
-        + "<li>Amend a record</li>"
-        + "<li>Delete a record</li>"
-        +"</ul>"
-        +"This file comes as an Executable. To test it you can press the download demo button. You will get a zip folder containing the FlimFixProject folder. Extract that folder onto your desktop, open it and click on the main.exe file to run the program."
-    }
 
     constructor() 
     {
@@ -106,6 +92,7 @@ class ProjPresentationGenerator
         if (this.#fetch()) 
         {
             this.#fillUp();
+            this.#fetchImgs();
             return;
         } 
 
@@ -113,6 +100,28 @@ class ProjPresentationGenerator
         this.#me.style.paddingLeft=0;
         this.#me.style.paddingRight=0;
         this.#dataNotFoundContainer.style.display="flow-root";
+    }
+
+    BettingDescription()
+    {
+        return "<p>Betting is a desktop application that I developed for a client who operates in Horse Race Betting. The application manage Account Holders and Agencies' information and the bets that have been placed."
+        + "The client has provided his own algorithm that helps him to understand till what extent is still convenient to place a bet with a given agency. "
+        + "This algorithm has been implemented upon client's request and it warns the user when an Agency is no longer convenient.</p>"
+        + "<br><p>The user can also upload images that relate to the Agency's Logo and Promotional's banner that agencies publish from time to time.</p>"
+        + "<p>Furthermore, this application can also produce Excel Reports and provide some tools to filter the data based on what the client needed. Click the DEMO button to download a sample that you can use. Feel free to <a href='#getInTouch'>contact me</a> for any queries.</p>"
+    }
+
+    FilmFlixDescription()
+    {
+        return "<p>FilmFlix is a console app project that I developed during my Web Developer's Bootcamp at <a href='https://www.justit.co.uk/' target='_blank'>Just IT</a>. "
+        + "It simply consists in a menu nagivation system where the user can view records and execute "
+        + "CRUD operations upon such as:</p>"
+        + "<ul style='margin:.5rem 0; list-style-position: inside;'>"
+        + "<li>Add a new record</li>"
+        + "<li>Amend a record</li>"
+        + "<li>Delete a record</li>"
+        +"</ul>"
+        +"This file comes as an Executable. To test it you can press the download demo button. You will get a zip folder containing the FlimFixProject folder. Extract that folder onto your desktop, open it and click on the main.exe file to run the program."
     }
 
     get dataFound() 
@@ -185,14 +194,6 @@ class ProjPresentationGenerator
         return this.#record[14];
     }
 
-    addImages(...imgs)
-    {
-        for(let i=0; i < imgs.length; i++) 
-        {
-            this.images.push(`${this.#startingPath}${this.#record[2].toLowerCase()}/${imgs[i]}`);
-        }
-    }
-
     #getInputs()
     {
         let str=this.#projectInfos[5].children[1].children[0].href;
@@ -201,6 +202,15 @@ class ProjPresentationGenerator
         let values = result.split("=");
         this.#isDesktop = values[0]=="desktop";
         return values[1];
+    }
+
+    #fetchImgs() 
+    {
+        this.#images = this.#images.filter(item => ((this.#isDesktop) ? item[0] == ProjectType.Desktop : item[0] == ProjectType.Mobile) && item[1]==this.#projectID)[0];
+        for(let i =2; i < this.#images.length; i++) 
+        {
+            this.projectImgs.push(`${this.#startingPath}${this.#record[2].toLowerCase()}/${this.#images[i]}`);            
+        }
     }
 
     #fetch()
@@ -276,13 +286,8 @@ class PresentationPage extends DefaultPage
         this.addForm(new Form());
         this.#project = new ProjPresentationGenerator();
         
-        if (!this.#project.dataFound) return;
-        this.#project.addImages
-        (
-            "img1.jpg","img2.jpg","img3.jpg"
-        );
-        
-        this.addCarousel(new Carousel("carousel1", this.#project.images));
+        if (!this.#project.dataFound) return;        
+        this.addCarousel(new Carousel("carousel1", this.#project.projectImgs));
     }
 }
 
