@@ -38,7 +38,7 @@ class ReportBugPage extends DefaultPage
         try 
         {
             this.#softwareName.innerHTML = data[1].split("=")[1].trim().replace("%20", " ");
-            this.#softwareVersion.innerHTML = data[2].split("=")[1].trim(); 
+            this.#softwareVersion.innerHTML = data[2].split("=")[1].trim().replace(":%20", " ").replace("%20", " "); 
             this.#softwareYear.innerHTML = data[3].split("=")[1].trim().replace("#","");  
 
             this.#sn.value = this.#softwareName.innerText;
