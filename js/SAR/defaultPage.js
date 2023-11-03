@@ -109,18 +109,43 @@ class Form
     #me;
     #gmailLogo;
     #submitButton;
+    #requiredFields;
 
     constructor()
     {
         this.#me = document.getElementById("formContainer").children[1];
-        this.#gmailLogo =  document.getElementById("gmailContainer");
-        window.addEventListener('scroll', () => this.#animateGmail());
+        this.#requiredFields = this.#me.querySelectorAll("[required]");
         this.#submitButton = document.getElementById("btnsubmit");
         this.#submitButton.addEventListener('click', () => this.#submitForm());
+        try 
+        {
+            this.#gmailLogo =  document.getElementById("gmailContainer");
+            window.addEventListener('scroll', () => this.#animateGmail());    
+        } catch
+        {
+
+        }
     }    
+
+    #checkRequirements()
+    {
+        for(let i=0; i < this.#requiredFields.length; i++) 
+        {
+            let field = this.#requiredFields[i].value;
+            if (field === "") 
+                return false;
+        }
+        return true;
+    }
 
     #submitForm() 
     {
+        let outcome = this.#checkRequirements();
+        if (!outcome) 
+        {
+            alert("Please, fill all mandatory fields.\nThey are marked with a red asteriks.");
+            return false;
+        }        
         this.#me.submit();
         this.#me.reset();
     }
@@ -132,7 +157,14 @@ class Form
 
     #animateGmail() 
     {
-       this.#gmailLogo.style.animationName=(this.#getInTouchAtTop) ? "hello" : "initial";
+        try 
+        {
+            this.#gmailLogo.style.animationName=(this.#getInTouchAtTop) ? "hello" : "initial";
+        }
+        catch
+        {
+
+        }
     }
 }
 

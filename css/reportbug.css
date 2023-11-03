@@ -3,6 +3,12 @@
     letter-spacing: 5px;
 }
 
+#intro
+{
+    margin: 0;
+    padding: 0;
+}
+
 #debuggingImgContainer 
 {
     border: 1px solid black;
@@ -14,11 +20,23 @@
     width: 20rem;
 }
 
+#reportBugContainer 
+{
+    display: block;
+}
+
 #formContainer
 {
     text-align: start;
     letter-spacing: 1px;
     color: white;
+}
+
+#softwareInfo 
+{
+    float: right;
+    width: fit-content;
+    padding: 1rem;
 }
 
 #softwareInfo span 
@@ -27,30 +45,40 @@
     color: white;
 }
 
+#clientContactInfo 
+{
+    float: left;
+    padding: 0;
+    width: fit-content;
+}
+
+#clientContactInfo table 
+{
+    width: 32rem;
+    max-width: 100%;
+}
+
+#clientContactInfo input 
+{
+    width: 100%;
+}
+
 #clientMessage 
 {
     float: none;
     width: 100%;
     padding: 0;
+    clear: both;
 }
 
-#clientContactInfo 
+#dataNotFoundContainer 
 {
-    display: flow-root;
-    float: none;
+    margin-top: 0;
     padding: 0;
-    width: 100%;
 }
 
-#clientContactInfo label
+#dataNotFoundContainer .layerContent 
 {
-    width: 30%;
-    float: left;
-}
-
-#clientContactInfo input
-{
-    float: right;
-    margin-top: 0.5rem;
-    width: 50%;
+    padding: 0;
+    padding-bottom: 1rem;
 }

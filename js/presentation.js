@@ -197,7 +197,6 @@ class ProjPresentationGenerator
     #fetch()
     {
         this.#projectID=this.#getInputs();
-
         this.#data=
         this.#data.filter(item => (this.#isDesktop) ? item[0] == ProjectType.Desktop
         : item[0] == ProjectType.Mobile);
