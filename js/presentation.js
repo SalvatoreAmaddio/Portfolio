@@ -52,16 +52,25 @@ class ProjPresentationGenerator
     #projectFeatures;
     #data=
     [
-        [ProjectType.Desktop,"1","Betting","2023","Peter Randall","https://github.com/SalvatoreAmaddio/BettingDemo","C#","WPF","SQLite",true,false,false,"img/projects/desktop/betting/betting.ico","lorem","#"],
+        [ProjectType.Desktop,"1","Betting","2023","Peter Randall","https://github.com/SalvatoreAmaddio/BettingDemo","C#","WPF","SQLite",true,false,false,"img/projects/desktop/betting/betting.ico",this.BettingDescription(),"downloads/Betting.exe"],
         [ProjectType.Desktop,"2","Meter","2022","Rudy Williams","https://github.com/SalvatoreAmaddio/Meter","C#","WPF","SQLite",true,true,false,"img/projects/desktop/meter/meter.png","lorem","#"],
-        [ProjectType.Desktop,"3","FilmFlix","2023","JustIT","https://github.com/SalvatoreAmaddio/FilmFlixPythonProject","Python","Console","SQLite",false,false,false,"img/projects/desktop/filmflix/filmflix.png",this.descr(),"downloads/FilmFlixPythonProject.zip"],
+        [ProjectType.Desktop,"3","FilmFlix","2023","JustIT","https://github.com/SalvatoreAmaddio/FilmFlixPythonProject","Python","Console","SQLite",false,false,false,"img/projects/desktop/filmflix/filmflix.png",this.FilmFlixDescription(),"downloads/FilmFlixPythonProject.zip"],
         [ProjectType.Mobile,"3","MyPlanogram","2022/2023","Carole Crockett","https://github.com/SalvatoreAmaddio/MyPlanogram","C#","MAUI","MySQL",false,false,true,"img/projects/mobile/myplanogram/myplanogram.png","lorem","#"]
     ];
 
     images=[];
     #startingPath = "img/projects/desktop/";
-    
-    descr()
+
+    BettingDescription()
+    {
+        return "<p>Betting is a desktop application that I developed for a client who operates in Horse Race Betting. The application manage Account Holders and Agencies' information and the bets that have been placed."
+        + "The client has provided his own algorithm that helps him to understand till what extent is still convenient to place a bet with a given agency. "
+        + "This algorithm has been implemented upon client's request and it warns the user when an Agency is no longer convenient.</p>"
+        + "<br><p>The user can also upload images that relate to the Agency's Logo and Promotional's banner that agencies publish from time to time.</p>"
+        + "<p>Furthermore, this application can also produce Excel Reports and provide some tools to filter the data based on what the client needed. Click the DEMO button to download a sample that you can use. Feel free to <a href='#getInTouch'>contact me</a> for any queries.</p>"
+    }
+
+    FilmFlixDescription()
     {
         return "<p>FilmFlix is a console app project that I developed during my Web Developer's Bootcamp at <a href='https://www.justit.co.uk/' target='_blank'>Just IT</a>. "
         + "It simply consists in a menu nagivation system where the user can view records and execute "
