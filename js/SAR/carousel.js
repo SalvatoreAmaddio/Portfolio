@@ -29,9 +29,12 @@ class ImgResizer
     #resize()
     {
         this.#context.clearRect(0,0,this.#canvas.width, this.#canvas.height);
+//        this.#canvas.width = window.getComputedStyle(this.#parentContainer, null).getPropertyValue('width').replace('px', '').trim();
+//        this.#canvas.height = window.getComputedStyle(this.#parentContainer, null).getPropertyValue('height').replace('px', '').trim();
         this.#canvas.width = window.getComputedStyle(this.#parentContainer, null).getPropertyValue('width').replace('px', '').trim();
         this.#canvas.height = window.getComputedStyle(this.#parentContainer, null).getPropertyValue('height').replace('px', '').trim();
-        this.#context.drawImage(this.#img, 0,0,this.#canvas.width, this.#canvas.height);
+
+        this.#context.drawImage(this.#img, 0,0,this.#img.width, this.#img.height);
     }
 }
 
