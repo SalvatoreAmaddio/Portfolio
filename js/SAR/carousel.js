@@ -94,7 +94,7 @@ class Carousel
         this.#thumbnailContainer = this.#me.getElementsByClassName("thumbnailContainer")[0];
         this.#nextButton = this.#me.getElementsByClassName("next")[0];
         this.#prevButton = this.#me.getElementsByClassName("prev")[0];
-        this.#images=imgs;
+        this.#images = imgs;
         this.#img.src = this.#images[0];
         this.#createThumbnail();
         this.currentThumbnail.className+=" active";
