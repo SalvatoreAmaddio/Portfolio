@@ -85,7 +85,7 @@ class Carousel
     onHold = 3000;
     #carouselModalView;
 
-    constructor(carouselID, ...imgs) 
+    constructor(carouselID, imgs) 
     {
         this.carouselID = carouselID;
         this.#me = document.getElementById(this.carouselID);
