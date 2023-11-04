@@ -89,10 +89,10 @@ footer
     font-family: inherit;
 }
 
-.layer img 
+.layer img :not(.carouselImg) 
 {
     width: 4rem;
-    height: 4rem;.
+    height: 4rem;
 }
 
 .layerTitle 
@@ -306,6 +306,12 @@ footer
     animation-duration: 1s;
     animation-fill-mode: forwards;
     z-index: 2;
+}
+
+#gmailContainer img 
+{
+    width: 4rem;
+    height: 4rem;
 }
 
 #formContainer 

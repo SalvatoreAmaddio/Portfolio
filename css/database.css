@@ -95,6 +95,7 @@ header
 #options 
 {
     color: white;
+    position: -webkit-sticky;
     position: sticky;
     top: 3.5rem;
     z-index: 3;

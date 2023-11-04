@@ -5,8 +5,9 @@ nav {
     background: var(--navbarbackground);
     width: 100%;
     color: white;
+    position: -webkit-sticky;
     position: sticky;
-    z-index: 100;
+    z-index: 99;
     top: 0px;
 }
 

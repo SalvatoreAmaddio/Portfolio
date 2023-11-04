@@ -47,10 +47,12 @@ class CarouselModalView
     #carousel;
     #modalImg;
     #closeModal;
+    #navBar;
 
     constructor(carousel) 
     {
         this.#carousel = carousel;
+        this.#navBar = document.getElementsByTagName("nav")[0];
         this.#modalView = this.#carousel.me.getElementsByClassName("carouselModalView")[0];
         this.#modalImg = this.#modalView.getElementsByClassName("carouselModalImg")[0];
         this.#closeModal = this.#modalView.getElementsByClassName("closeCarouselModalView")[0];
@@ -58,13 +60,17 @@ class CarouselModalView
         {
             this.#modalImg.src = "";
             this.#modalView.style.display = "none";       
+            this.#navBar.style.zIndex = 100;
+            document.body.style.overflow="initial";
         });
     }
 
     show() 
     {
         this.#modalImg.src = this.#carousel.src;
-        this.#modalView.style.display = "block";   
+        this.#navBar.style.zIndex = 0;
+        document.body.style.overflow="hidden";
+        this.#modalView.style.display = "block"; 
     }
 }
 

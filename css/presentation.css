@@ -167,6 +167,14 @@ td a
     width: 100%;
     max-width: 100%;    
     margin: 0 auto;
+    border-color: white;
+    color: white;
+}
+
+.thumbnailContainer 
+{
+    border: none;
+    background-color: inherit;
 }
 
 /*MEDIA QUERY*/
