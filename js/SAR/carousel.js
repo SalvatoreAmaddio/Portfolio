@@ -35,188 +35,195 @@ class ImgResizer
     }
 }
 
-class GoingTo {
+const GoTo = {
+    Next: 0,
+    Previous: 1,
+    Index: 3
+}
 
-    static next = new GoingTo(0)
-    static prev = new GoingTo(1)
-    static index = new GoingTo(2)
+class CarouselModalView 
+{
+    #modalView;
+    #carousel;
+    #modalImg;
+    #closeModal;
 
-    constructor(id) 
+    constructor(carousel) 
     {
-        this.id=id;
+        this.#carousel = carousel;
+        this.#modalView = this.#carousel.me.getElementsByClassName("carouselModalView")[0];
+        this.#modalImg = this.#modalView.getElementsByClassName("carouselModalImg")[0];
+        this.#closeModal = this.#modalView.getElementsByClassName("closeCarouselModalView")[0];
+        this.#closeModal.addEventListener("click",()=>
+        {
+            this.#modalImg.src = "";
+            this.#modalView.style.display = "none";       
+        });
     }
 
-    toString()
+    show() 
     {
-        return this.id;
+        this.#modalImg.src = this.#carousel.src;
+        this.#modalView.style.display = "block";   
     }
-
 }
 
 class Carousel 
 {
     #me;
-    #carouselImgContainer;
-    #carouselCanvas1;
-    #carouselCanvas2;
+    carouselID;
+    #carouselContent;
+    #img;
+    #position=0;
+    #intervalID = null;
+    #timeoutID = null;
+    #currentIndex = 0;
+    #images=[];
+    #thumbnailContainer;
     #prevButton;
     #nextButton;
-    #images
-    #tracker;
-    #index=0;
-    #interval=0;
-    #timeout=0;
-    #thumbnails=[];
-    #pos1 = 0;
-    #pos2 = -100;
-    #isStopped = false;
-    #speed=5;
-    #holdingTime=3000;
-    #resizer1;
-    #resizer2;
+    onHold = 3000;
+    #carouselModalView;
 
-    constructor(id,images)
+    constructor(carouselID, ...imgs) 
     {
-        this.#images=images
-        this.#me=document.getElementById(id);
-        this.#carouselImgContainer = document.getElementsByClassName("carouselImgContainer")[0];
-        this.#carouselCanvas1 = this.#carouselImgContainer.children[0];
-        this.#carouselCanvas2 = this.#carouselImgContainer.children[1];
-        this.#carouselCanvas1.style.right =`${this.#pos1}%`;
-        this.#carouselCanvas2.style.right =`${this.#pos2}%`;
-        this.#resizer1 = new ImgResizer(this.#images[this.#index],this.#carouselCanvas1,this.#carouselImgContainer);
-        this.#resizer2 = new ImgResizer(this.#images[this.#nextAvailableIndex()],this.#carouselCanvas2,this.#carouselImgContainer);
-        this.#prevButton = this.#me.getElementsByClassName("prevButton")[0];
-        this.#nextButton = this.#me.getElementsByClassName("nextButton")[0];
-        this.#tracker = this.#me.getElementsByClassName("tracker")[0];
+        this.carouselID = carouselID;
+        this.#me = document.getElementById(this.carouselID);
+        this.#carouselContent = this.#me.getElementsByClassName("carouselContent")[0];
+        this.#img = this.#me.getElementsByClassName("carouselImg")[0];;
+        this.#thumbnailContainer = this.#me.getElementsByClassName("thumbnailContainer")[0];
+        this.#nextButton = this.#me.getElementsByClassName("next")[0];
+        this.#prevButton = this.#me.getElementsByClassName("prev")[0];
+        this.#images=imgs;
+        this.#img.src = this.#images[0];
         this.#createThumbnail();
-        this.#prevButton.addEventListener("click",()=>{this.#goTo(GoingTo.prev)});
-        this.#nextButton.addEventListener("click",()=>{this.#goTo(GoingTo.next)});
-        this.#start();
+        this.currentThumbnail.className+=" active";
+        this.#carouselModalView = new CarouselModalView(this);
+
+        this.#img.addEventListener("click",()=>
+        {
+            this.stop();
+            this.#carouselModalView.show();
+        });
+
+        this.#prevButton.addEventListener("click",
+        () =>
+        {
+            this.move(GoTo.Previous);
+        }); 
+
+        this.#nextButton.addEventListener("click",
+        () =>
+        {
+            this.move(GoTo.Next);
+        }); 
+
+        this.start();
     }
 
-    #activateThumbnail() 
+    get me() 
     {
-        for(let i=0; i < this.#thumbnails.length; i++) 
-        {
+        return this.#me;
+    }
 
-            this.#thumbnails[i].classList.remove("currentThumbnail");
-            if (i==this.#index) 
-                this.#thumbnails[i].classList.add("currentThumbnail");
-        }
+    get src() 
+    {
+        return this.#img.src;
+    }
+
+    get currentThumbnail() 
+    {
+        return this.#thumbnailContainer.children[this.#currentIndex];
+    }
+
+    get imagesCount() 
+    {
+        return this.#images.length;
+    }
+
+    get breakPoint() 
+    {
+        return -Math.abs(window.innerWidth);
+    }
+
+    get BOF() 
+    {
+        return this.#currentIndex == 0;
+    }
+
+    get EOF() 
+    {
+        return this.#currentIndex == (this.imagesCount-1);
+    }
+
+    get #breakPointHit() 
+    {
+        return this.#position <= (-100 + this.#imgWidthPercentage(this.#img));
     }
 
     #createThumbnail() 
     {
-        let div;
-        for(let i=0; i < this.#images.length; i++) 
+        let span; 
+        for(let i=0; i < this.imagesCount; i++) 
         {
-            div=document.createElement("div");
-            div.className+="thumbnail";
-            div.addEventListener("click",
-            (e)=>
-                {
-                    this.#goTo(GoingTo.index, this.#thumbnails.indexOf(e.target));
-                }
-            );
-            this.#thumbnails.push(div);
-            this.#tracker.appendChild(div);
+            span = document.createElement("span");
+            span.className = "dot";   
+            span.addEventListener("click",()=>{this.move(GoTo.Index,i)});
+            this.#thumbnailContainer.appendChild(span); 
         }
     }
 
-    #stop()
+    start() 
     {
-        this.#isStopped = true;
-        clearInterval(this.#interval);
-        this.#carouselCanvas1.style.transition= "initial";
-        this.#carouselCanvas2.style.transition= "initial";
-        this.#pos1 = 0;
-        this.#pos2 = -100;
-        this.#carouselCanvas1.style.right =`${this.#pos1}%`;
-        this.#carouselCanvas2.style.right =`${this.#pos2}%`;
+        clearTimeout(this.#timeoutID);
+        this.#intervalID = setInterval(()=>{this.slide()}, 0);
     }
 
-    #start()
+    stop() 
     {
-        this.#isStopped = false;
-        this.#activateThumbnail();
-        this.#carouselCanvas1.style.transition= `5ms`;
-        this.#carouselCanvas2.style.transition= `5ms`;
-        this.#interval = setInterval(()=>{this.#slide()}, this.#speed);            
+        clearInterval(this.#intervalID);
     }
 
-    #slide()
+    #imgWidthPercentage(img) 
     {
-        if (this.#pos1 == 100 && this.#pos2==0) 
-        {
-            this.#pos1=0;
-            this.#pos2=-100;
-            this.#incrementIndex();
-            this.#resizer1.src = this.#images[this.#index];
-            this.#resizer2.src = this.#images[this.#nextAvailableIndex()];
-            this.#stop();
-            this.#timeout = setTimeout(() => {this.#start()}, this.#holdingTime);
-        }
-
-        if (!this.#isStopped) 
-        {
-            this.#pos1++;
-            this.#pos2++;
-        }
-
-        this.#carouselCanvas1.style.right =`${this.#pos1}%`;
-        this.#carouselCanvas2.style.right =`${this.#pos2}%`;            
-        this.#activateThumbnail();
+        let imgWidth =Math.abs(window.getComputedStyle(img).width.replace("px",""));
+        return -Math.abs((imgWidth / window.innerWidth) * 100);
     }
 
-    #incrementIndex()
+    move(goto, index=-1) 
     {
-        this.#index++;
+        this.currentThumbnail.classList.remove("active");
+        this.#currentIndex = (goto===3) ? index : (goto===0) ? ++this.#currentIndex : --this.#currentIndex;
         this.#correctIndex();
+        this.#img.src = this.#images[this.#currentIndex];
+        this.currentThumbnail.className+=" active";
     }
-
-    #decrementIndex()
+    
+    #correctIndex() 
     {
-        this.#index--;
-        this.#correctIndex();
-    }
+        if (this.#currentIndex < 0) 
+            this.#currentIndex = this.imagesCount-1;        
 
-    #correctIndex()
+        if (this.#currentIndex >= this.imagesCount) 
+            this.#currentIndex = 0;        
+    }
+    
+    slide() 
     {
-        if (this.#index >= this.#images.length) 
-        this.#index=0;
-
-        if (this.#index < 0) 
-        this.#index = this.#images.length-1;
-    }
-
-    #nextAvailableIndex()
-    {
-        let i = this.#index+1;
-        if (i>=this.#images.length) i=0;
-        return i;
-    }
-
-    #goTo(goingTo, index=0)
-    {  
-        clearTimeout(this.#timeout)
-        this.#stop();
-        switch(goingTo) 
+        if (this.#breakPointHit) 
         {
-            case GoingTo.next:
-                this.#incrementIndex();
-            break;
-            case GoingTo.prev:
-                this.#decrementIndex();                
-            break;
-            case GoingTo.index:
-                this.#index = index;               
-            break;
+            this.#position = Math.abs(this.#position);
+            this.move(GoTo.Next);
         }
-        
-        this.#resizer1.src = this.#images[this.#index];
-        this.#resizer2.src = this.#images[this.#nextAvailableIndex()];
-        this.#activateThumbnail();     
-        this.#timeout = setTimeout(() => {this.#start()}, this.#holdingTime);
+
+        if (this.#position == 0) 
+        {
+            this.stop();
+            this.#timeoutID = setTimeout(()=>
+            {this.start();},this.onHold);
+        }
+
+        this.#position--;
+        this.#img.style.left=`${this.#position}%`;   
     }
 }

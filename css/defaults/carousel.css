@@ -1,123 +1,135 @@
-:root 
+.carouselContainer 
 {
-    --carouselHeight:26rem;
-}
-
-.carousel 
-{
-    background-color: greenyellow;
-    position: relative;
+    padding: .5rem;
+    border: 1px solid black;
+    border-radius: 1rem;
     overflow: hidden;
 }
 
-.carouselImgContainer 
+.carouselContent
 {
+    height: 400px;
+    max-height: 100vw;
     position: relative;
-    display: flow-root;
-    height: var(--carouselHeight);
 }
 
-.carouselImgContainer canvas
+.carouselImg
 {
+    cursor: pointer;
+    position: relative;
+    transition: left 0s;
+    transition-timing-function: linear;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: block;
+    margin: 0 auto;
+    max-height: 100vw;
+    object-fit: fill;
+}
+
+.carouselButtons 
+{
+    cursor: pointer;
     display: block;
     position: absolute;
-    object-fit: cover;
-    width: 100%;
-    max-width: 100%;
-    height: inherit;
-}
-
-.carouselImgContainer img 
-{
-    display: none;
-}
-
-.prevButton, .nextButton
-{
-    position: absolute;
-    font-weight: bolder;
-    padding: 1rem;
-    font-size: 1.25rem;
-    top: 45%;
+    z-index: 2;
     color: black;
-    cursor: pointer;
-    z-index: 3;
-    background-color: white;
+    font-weight: bold;
     border-radius: 50%;
-    width: 4rem;
-    height: 4rem;
-    opacity: 0.7;
+    width: 2.5rem;
+    height: 2.5rem;
+    text-align: center;
+    padding: .5rem 0;
+    top: 50%;
 }
 
-.prevButton:hover, .nextButton:hover 
+.next
 {
-    opacity: 1;
-}
-
-.prevButton
-{
-    left: 0;
-}
-
-.nextButton 
-{
-    right: 0;
-}
-
-.tracker 
-{
-    width: fit-content;
-    position: absolute;
-    z-index: 3;
-    padding: 0.3rem;
-    bottom: 0px;
     right: 0px;
-    left: 0px;
-    margin: 0 auto;
-    cursor: pointer;
 }
 
-.tracker .thumbnail 
+.carouselButtons:hover 
 {
-    width: 1.5rem;
-    height: 1.5rem;
-    margin-right: 0.5rem;
+    border: 1px solid;
     background-color: white;
-    border: 0.01rem solid;
-    border-radius: 50%;
-    padding: 0.1rem;
-    display: inline-block;
-    opacity: 0.6;
 }
 
-
-.tracker .currentThumbnail, .tracker .thumbnail:hover
+.thumbnailContainer 
 {
-    opacity: 1;
-    border: 0.1rem solid black;
+    position: relative;
+    z-index: 1;
+    background-color: white;
+    margin-top: .5rem;
+    padding: .5rem;
+    border-radius: 1rem;
+    text-align: center;
+    border: 1px solid black;
 }
+
+.dot 
+{
+    width: 15px;
+    height: 15px;
+    margin: 0 .2rem;
+    display: inline-block;
+    border-radius: 50%;
+    border: 1px solid black;
+    transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover 
+{
+    background-color: #717171;
+}
+
+/*MODALS*/
+.carouselModalView {
+    display: none; 
+    position: fixed;
+    z-index: 2;
+    padding-top: 1rem; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+.closeCarouselModalView {
+    cursor: pointer;
+    position: fixed;
+    top: 15px;
+    right: 2.5%;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+  
+  .carouselModalImg {
+    margin: auto;
+    display: block;
+    width: 80%;
+    height: auto;
+  }
 
 /*MEDIA QUERY*/
-@media screen and (max-width:1024.5px) 
+@media screen and (max-width:500px) 
 {
-    :root
-    {
-        --carouselHeight:24rem;
+    .carouselModalView {
+        padding-top: 4rem;
     }
-}
+    .carouselModalImg {
+        width: 100%;
+    }
 
-@media screen and (max-width:375.5px) 
-{
-    :root
+    .carouselImg 
     {
-        --carouselHeight:23rem;
-    }
-}
-
-@media screen and (max-width:320.5px) 
-{
-    :root
-    {
-        --carouselHeight:22rem;
-    }
+        width: 100%;
+        height: auto;
+    } 
 }
