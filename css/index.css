@@ -24,6 +24,25 @@ header
     height: var(--logoSize);
 }
 
+#x 
+{
+    cursor: default;
+    position: absolute;
+    background-color: white;
+    border: 1px solid white;
+    padding: .35rem;
+    border-radius: 1rem;
+    top: 43%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 1px;
+    height: 1px;
+    display: block;
+    margin: 0 auto;
+    
+}
+
 .contactMeLink 
 {
     display: flow-root;
