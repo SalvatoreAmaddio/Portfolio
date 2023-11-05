@@ -1,0 +1,177 @@
+#headerTitle 
+{
+    letter-spacing: 3px;
+}
+
+#main 
+{
+    padding-bottom: 8.1%;
+    position: relative;
+}
+
+#title 
+{
+    width: 100%;
+    text-align: center;
+    letter-spacing: 2px;
+    padding: 2.2% 0;
+}
+
+#mainGroup 
+{
+    width: 100%;
+    text-align: center;
+}
+
+.group
+{
+    font-weight: bold;
+    color: black;
+    position: relative;
+    border: 1px solid black;
+    min-width: 10rem;
+    height: 10rem;
+    width: 10%;
+    text-align: center;
+    display: inline-block;
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+    overflow-wrap: break-word;
+}
+
+.group p 
+{
+    position: absolute;
+    padding: 1rem;
+    width: 100%;
+    left: 0;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.group p:last-child 
+{
+    display: none;
+    cursor: pointer;
+}
+
+.group:hover p:last-child 
+{
+    display: block;
+}
+
+.group:hover p:first-child 
+{
+    display: none;
+}
+
+#project 
+{
+    background: rgb(255,215,0);
+    background: linear-gradient(180deg, rgba(255,215,0,1) 0%, rgba(255,255,255,1) 100%);
+}
+
+#projectType 
+{
+    margin-left: 1rem;
+    background: rgb(58,180,168);
+    background: linear-gradient(90deg, rgba(58,180,168,1) 0%, rgba(255,255,255,1) 100%);
+}
+
+#client 
+{
+    margin-left: 1rem;
+    background: rgb(0,151,255);
+    background: linear-gradient(180deg, rgba(0,151,255,1) 0%, rgba(255,255,255,1) 100%);
+}
+
+#db 
+{
+    margin-left: 1rem;
+    background: rgb(255,0,0);
+    background: linear-gradient(180deg, rgba(255,0,0,1) 0%, rgba(255,255,255,1) 100%);
+}
+
+#os 
+{
+    margin-left: 1rem;
+    background: rgb(1,255,0);
+    background: linear-gradient(180deg, rgba(1,255,0,1) 0%, rgba(255,255,255,1) 100%);
+}
+
+#cpanel 
+{
+    margin-left: 1rem;
+    background: rgb(255,145,0);
+    background: linear-gradient(180deg, rgba(255,145,0,1) 0%, rgba(255,255,255,1) 100%);
+}
+
+footer 
+{
+    margin-top: 1px;
+}
+
+/*MEDIA*/
+@media screen and (max-width:1059.5px) and (min-width:551.5px) 
+{
+
+    #cpanel 
+    {
+        margin-right: 1rem;
+    }
+}
+
+@media screen and (max-width:425.5px)
+{
+    #headerTitle 
+    {
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width:551.5px) and (min-width:519.5px) 
+{
+    #os 
+    {
+        margin-left: 0;
+    }
+}
+
+@media screen and (min-width:339.5px) and (max-width:519.5px)
+{
+    #mainGroup .group:nth-of-type(odd)
+    {
+       margin-left: 0;
+       margin-right: 1rem;
+    }
+
+    #mainGroup .group:nth-of-type(even)
+    {
+       margin-left: 0;
+    }
+}
+
+@media screen and (max-width:339.5px)
+{
+    #project 
+    {
+        margin-top: .5rem;
+    }
+
+    #mainGroup .group
+    {
+       margin-left: 0;
+    }
+
+    #cpanel 
+    {
+        margin-bottom: 0;
+    }
+
+    #main 
+    {
+        padding-bottom: 1rem;
+    }
+}
