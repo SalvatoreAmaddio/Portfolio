@@ -66,7 +66,7 @@ class DefaultTags {
     #setIcon()
     {
         this.#iconLink.rel = 'icon';
-        this.#iconLink.href = 'img/logo.ico';
+        this.#iconLink.href = '/img/logo.ico';
         this.#meta.after(this.#iconLink);
     }
 
@@ -104,7 +104,7 @@ class DefaultTags {
         {
             link = document.createElement('link');
             link.rel = 'stylesheet';
-            link.href = `css/${this.#defCSS[i]}.css`;
+            link.href = `/css/${this.#defCSS[i]}.css`;
             before.after(link);    
             before = link;
         }
