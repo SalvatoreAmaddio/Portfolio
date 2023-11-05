@@ -1,5 +1,4 @@
 <?php include 'load.php';?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -43,8 +42,10 @@
                         <p>Manage</p>
                     </div>
                     <div class="group" id="cpanel">
-                        <p>CPanel</p>
-                        <p>Manage</p>
+                        <a href="https://sxb1plzcpnl503651.prod.sxb1.secureserver.net:2083/cpsess5552043358/frontend/paper_lantern/index.html?login=1&post_login=70012263913526" target="_blank">
+                            <p>CPanel</p>
+                            <p>Manage</p>
+                        </a>
                     </div>
                 </div>
             </section>

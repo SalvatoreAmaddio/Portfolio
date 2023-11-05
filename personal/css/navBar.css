@@ -1,0 +1,13 @@
+#centerGroup 
+{
+    border: 1px solid red;
+}
+
+@media screen and (max-width: 1080.5px)
+{
+    #centerGroup 
+    {
+        position: static;
+        margin: 0 auto;
+    }
+}
