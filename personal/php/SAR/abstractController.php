@@ -21,6 +21,16 @@ abstract class AbstractController
         $this->recordSource =  $this->db->recordSource;
     }
 
+    public function get($index,AbstractModel &$model) : AbstractModel
+    {
+        return $this->recordSource->get($index,$model);
+    }
+
+    public function recordCount() : int 
+    {
+        return $this->recordSource->recordCount();
+    }
+
     public abstract function Style();
 }
 ?>

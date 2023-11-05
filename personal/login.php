@@ -24,9 +24,9 @@
             <div id="loginContainer" class="layer">
             <form method="post" action="welcome.php">
                 <label>User Name</label>
-                    <input type="text"/>
+                    <input name="user" type="text" required/>
                 <label>Password</label>
-                    <input type="password"/>
+                    <input name="pwd" type="password" required/>
                 <input type="submit" value="GET IN"/> 
             </form>
             </div>
