@@ -21,18 +21,6 @@ class Access extends AbstractModel
         return $this->row;
     }
 
-    public function IsThis(string $user) : bool
-    {
-        if (strcmp($this->userName, $user) == 0) 
-            return true;        
-        return false;
-    }
-
-    public function checkPassword($pwd) : bool 
-    {
-        return strcmp($this->password, $pwd) == 0;
-    }
-
     public function IsEqual(AbstractModel $model) : bool 
     {
         if ($model instanceof OS) 

@@ -1,20 +1,20 @@
 <?php include 'load.php';?>
+<?php 
+    $controller = new DbController();
+    $controller->ReadPost();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" src="css/homeSection.css"/>
-    <title>OS</title>
+    <link rel="stylesheet" href="css/navBar.css"/>
+    <link rel="stylesheet" href="css/homeSection.css"/>
+    <title>DB</title>
 </head>
 
 <body>
     <div id="wrapper">
-        <header>
-            <div id="headerTitle">
-                <h1>OS</h1>
-            </div>
-        </header>
         <nav>
             <a id="hamburgerIcon">
                 <img src="/img/hamburgericon.png">
@@ -76,9 +76,17 @@
         <main>
             <section class="container">
                 <div class="layer" id="searchPanel">
-                    <input type="text" placeholder="Search..."/>
-                    <a>Search</a>
+                    <form>
+                        <button id="addNewButton">
+                            <img src="/img/plus.png">
+                        </button>
+                        <input type="text" name="s" id="s" placeholder="Search..." onkeyup="search(this.value)"/>
+                    </form>
                 </div>
+            </section>
+
+            <section id="dataContainer" class="container">
+                <?php $controller->run();?>
             </section>
         </main>
         <footer>
@@ -87,5 +95,20 @@
     </div>
 
 <?php LoadJS();?>
+
+<script>
+    let dataContainer = document.getElementById("dataContainer");
+
+    sender = new Sender("",(e)=>
+    {
+        dataContainer.innerHTML = '';
+        dataContainer.innerHTML = e;
+    });
+
+    function search(str) 
+    {
+        sender.send("search=" + str);
+    }
+</script>
 </body>
 </html>

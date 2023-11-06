@@ -1,10 +1,10 @@
 <?php
 class RecordSource 
 {
-    private $source = array(); 
+    public $source = array(); 
 
     public AbstractModel $model;
-    
+        
     public function get($index, AbstractModel &$model) : AbstractModel 
     {
         $model->readAssoc($this->source[$index]);
