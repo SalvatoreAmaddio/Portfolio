@@ -23,6 +23,9 @@ abstract class AbstractController
         $this->recordSource =  $this->db->recordSource;
     }
 
+    public abstract function style();
+    public abstract function drawHeader();
+
     public function recordCount() : int 
     {
         return $this->recordSource->recordCount();
@@ -33,12 +36,21 @@ abstract class AbstractController
         $this->recordSource->printSource();
     }
 
-    public function get(int $index,AbstractModel &$model) : AbstractModel
+    public function getByIndex(int $index) : AbstractModel
     {
-        return $this->recordSource->get($index,$model);
+        return $this->recordSource->get($index);
     }
 
-    public function filterByID($id) : AbstractModel
+    public function filterBy($callback)
+    {
+        $this->recordSource->source = array_values(array_filter($this->originalSource->source, 
+        function($record) use($callback) : bool 
+        {   
+            return $callback($record);
+        }));
+    }
+
+    public function getByID($id) : AbstractModel
     {
         $this->recordSource->source = array_values(array_filter($this->originalSource->source, 
         function($record) use($id) : bool 
@@ -52,7 +64,6 @@ abstract class AbstractController
                 return $this->recordSource->get(0);
     }
 
-    ////////
     public function ReadPost() 
     {
         if ($_SERVER["REQUEST_METHOD"] != "POST") return;
@@ -71,9 +82,7 @@ abstract class AbstractController
             echo "did not work";
     }
 
-
-    public abstract function style();
-
+    //DRAW DATA TABLE
     public function openTable() 
     {        
         echo "<form> <table id='displayer'>";
@@ -94,9 +103,10 @@ abstract class AbstractController
             </tr>";
     }
 
-    public function run() 
+    public function drawTable() 
     {
         $this->openTable();
+        $this->drawHeader();
         $this->drawData();
         $this->closeTable();
     }

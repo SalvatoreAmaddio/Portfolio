@@ -33,5 +33,10 @@ class AccessController extends AbstractController
     {
 
     }
+
+    public function drawHeader() 
+    {
+
+    }
 }
 ?>

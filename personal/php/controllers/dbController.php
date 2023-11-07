@@ -13,35 +13,25 @@ class DbController extends AbstractController
         if (isset($_REQUEST["search"])) 
         {
             $this->search = $_REQUEST['search'];
-            echo $this->run();
+            echo $this->drawTable();
         } 
         
         if (isset($_REQUEST["dbID"])) 
         {
-            $this->recordID = $_REQUEST['dbID'];
-            $this->filterByID();
              /** @var DB $obj */
-            $obj = $this->model;
+             $obj = $this->filterByID($_REQUEST['dbID']);
             echo $obj->Name;
         } 
         else echo "did not work";
     }
 
-    public function beforeLoop()
+    public function drawHeader()
     {
-        parent::beforeLoop();
         echo "<tr>
-                <th></th>
-                <th>Operating System</th>
-                <th colspan='2'>COMMANDS</th>
-            </tr>";
-    }
-
-    protected function filterBy($row) : bool 
-    {
-        $dbName = strtolower($row["dbName"]);
-        $criteria = strtolower($this->search);
-        return (str_contains($dbName, $criteria) == true);
+              <th></th>
+              <th>Operating System</th>
+              <th colspan='2'>COMMANDS</th>
+             </tr>";
     }
 
     public function style() 
@@ -62,6 +52,11 @@ class OsController extends AbstractController
     public function __construct() 
     {
         parent::__construct(new OS());
+    }
+
+    public function drawHeader()
+    {
+
     }
 
     public function Style() 

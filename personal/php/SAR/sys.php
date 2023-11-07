@@ -5,5 +5,10 @@ class Sys
     {
         echo "<br>";
     }
+
+    public static function toLower(string $str) : string 
+    {
+        return strtolower($str);
+    }
 }
 ?>

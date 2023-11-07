@@ -11,9 +11,18 @@
     </head>
     <body>
         <?php 
+            $search = "";
 
-            $record = $controller->filterByID(1);
-            echo DB::Cast($record)->Name;
+            $controller->filterBy(
+            function($record) use($search) : bool
+            {
+                $db = DB::cast($record);
+                $name = Sys::toLower($db->Name); 
+                $search = Sys::toLower($search); 
+                return true;
+            });
+
+            echo $controller->getByIndex(0);
         ?>
     </body>
 </html>
