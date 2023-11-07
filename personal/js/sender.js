@@ -49,7 +49,7 @@ class Sender
 
     send(data) 
     {
-        this.#http.open("POST",this.pagePath);
+        this.#http.open("POST",this.pagePath,true);
         this.#http.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
         this.#http.send(data);    
     }

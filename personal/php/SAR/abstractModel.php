@@ -16,6 +16,9 @@ abstract class AbstractModel {
     return "Select * FROM " . $this->tableName . ";";
   }
 
+  public abstract function bindTypeParams() : string;
+  public abstract function updateSQL();
+
   public function printRow() : string 
   {
         return implode(", ", $this->row);

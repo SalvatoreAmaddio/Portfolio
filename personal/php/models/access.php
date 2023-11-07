@@ -51,5 +51,14 @@ class Access extends AbstractModel
         return false;
     }
 
+    public function updateSQL() : string
+    {
+        return "";
+    }
+
+    public function bindTypeParams(): string
+    {
+        return "";
+    }
 }
 ?>

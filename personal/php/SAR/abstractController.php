@@ -51,14 +51,14 @@ abstract class AbstractController
                 return $this->recordSource->getByID($id);
     }
 
-    public function ReadPost() 
+    public function readPost() 
     {
         if ($_SERVER["REQUEST_METHOD"] != "POST") return;
-        $this->onSend();            
+        $this->onReceived();            
         exit();         
     }
 
-    public function onSend() 
+    public function onReceived() 
     {
         if (isset($_REQUEST["s"])) 
         {

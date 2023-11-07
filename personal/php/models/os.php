@@ -10,6 +10,11 @@ class OS extends AbstractTwoColumns
         return $os;
     }
 
+    public function updateSQL() : string
+    {
+        return "";
+    }
+    
     public static function Cast(AbstractModel $model) : OS
     {
             /** @var OS $obj */

@@ -24,6 +24,11 @@ class DB extends AbstractTwoColumns
         $this->Name = $row["dbName"];
     }
 
+    public function updateSQL() : string
+    {
+        return "UPDATE " . $this->tableName . " SET dbName = ? WHERE dbID=?;";
+    }
+
     public function asRow() : array 
     {
         if ($this->row==null) 

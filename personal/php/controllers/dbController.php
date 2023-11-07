@@ -6,7 +6,7 @@ class DbController extends AbstractController
         parent::__construct(new DB());
     }
 
-    public function onSend() 
+    public function onReceived() 
     {
         if (isset($_REQUEST["search"])) 
         {
@@ -18,12 +18,27 @@ class DbController extends AbstractController
                                 return Sys::contains($search,$db->Name,true);
                             });
             echo $this->drawTable();
+            return;
         } 
         
         if (isset($_REQUEST["dbID"])) 
         {
-            $obj = DB::Cast($this->getByID($_REQUEST['dbID']));
+            $this->model = $this->getByID($_REQUEST['dbID']);
+            $obj = DB::Cast($this->model);
+            $_SESSION["dbRecord"] = serialize($obj);
             echo $obj->Name;
+            return;
+        }
+
+        if (isset($_REQUEST["updateValue"])) 
+        {
+            if (isset($_SESSION["dbRecord"])) 
+            {
+                $db = unserialize($_SESSION['dbRecord']);
+                $this->db->update($db->dbName,$db->dbID);
+                unset($_SESSION["dbRecord"]);
+            }
+             return;
         }
     }
 
@@ -31,7 +46,7 @@ class DbController extends AbstractController
     {
         echo "<tr>
               <th></th>
-              <th>Operating System</th>
+              <th>Databases</th>
               <th colspan='2'>COMMANDS</th>
              </tr>";
     }
@@ -43,7 +58,7 @@ class DbController extends AbstractController
             <td class='selector'>➤</td>
             <td class='col1'>". $obj . "</td>
             <td class='command'><button class='editButton' onclick='onEditClicked(this)' value='" . $obj->ID . "'>EDIT</button></td>
-            <td class='command'><button class='deleteButton' value='" . $obj->ID . "'>DELETE</button></td>
+            <td class='command'><button class='deleteButton' onclick='onDeleteClicked(this)' value='" . $obj->ID . "'>DELETE</button></td>
         </tr>";
     }
 }

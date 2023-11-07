@@ -53,6 +53,20 @@
                 $this->recordSource->readRow($row);          
         }
 
+        //i - integer
+        //d - double
+        //s - string
+        //b - BLOB
+        public function update(mixed &...$vars) 
+        {
+            if (!$this->isConnected)
+                $this->connect();
+            $stmt = $this->conn->prepare($this->model->updateSQL());
+            $stmt->bind_param($this->model->bindTypeParams(),$vars);
+            $stmt->execute();
+            $stmt->close();
+        }
+
         function __destruct() 
         {
             try 

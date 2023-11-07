@@ -1,7 +1,8 @@
-<?php include 'load.php';?>
 <?php 
+    session_start();
+    include 'load.php';
     $controller = new DbController();
-    $controller->ReadPost();
+    $controller->readPost();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -94,30 +95,35 @@
             </footer>
         </div>
     <?php LoadJS();?>
+
     <script>
         dataContainer = document.getElementById("dataContainer");
         const formList = new FormList();
-        sender = new Sender();
+        formList.canUpdate();
 
         function search(str) 
         {
-            sender.onDataReceived((e)=>
-            {
-                dataContainer.innerHTML = '';
-                dataContainer.innerHTML = e;
-            });            
-            sender.send("search=" + str);
+            formList.sender.onDataReceived((e)=> dataContainer.innerHTML = e);            
+            formList.sender.send("search=" + str);
         }
 
         function onEditClicked(e)
         {
-            sender.onDataReceived((e)=>
-            {                
-                let newValue = prompt("Change Value", e.trim())
-                alert(newValue);
+            formList.sender.onDataReceived((e)=>
+            {
+                let newValue = prompt("Change Value", e.trim());
+                formList.storeUpdateValue(newValue);                
             });
+            
+            formList.sender.send("dbID=" + e.value)
+        }
 
-            sender.send("dbID=" + e.value)
+        function onDeleteClicked(e)
+        {
+        }
+
+        function onAddClicked(e)
+        {
         }
 
     </script>
