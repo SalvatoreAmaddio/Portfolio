@@ -1,4 +1,5 @@
 <?php
+namespace SAR;
 abstract class AbstractModel {
 
   protected $row = array();

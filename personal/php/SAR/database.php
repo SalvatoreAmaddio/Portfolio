@@ -1,4 +1,5 @@
 <?php
+namespace SAR;
     class Database
     {
         public string $user = 'root';
@@ -18,7 +19,7 @@
 
         public function connect() 
         {
-            $this->conn = new mysqli( $this->host,  $this->user,  $this->password,  $this->db,  $this->port,"mysql");
+            $this->conn = new \mysqli( $this->host,  $this->user,  $this->password,  $this->db,  $this->port,"mysql");
             if ($this->conn->connect_error) 
             {
                 die("Connection failed: " . $this->conn->connect_error);
@@ -34,7 +35,7 @@
                 $this->conn -> close();
                 $this->isConnected = false;
             }
-            catch (Exception $e) 
+            catch (\Exception $e) 
             {
                 echo "null";
             }
@@ -59,7 +60,7 @@
             {
                 $this->close();
             }
-            catch (Exception $e) 
+            catch (\Exception $e) 
             {
                     echo "null";
             }

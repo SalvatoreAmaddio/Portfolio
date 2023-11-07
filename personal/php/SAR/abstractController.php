@@ -1,4 +1,5 @@
 <?php
+namespace SAR;
 abstract class AbstractController 
 {
     protected RecordSource $originalSource;
@@ -36,7 +37,7 @@ abstract class AbstractController
 
     public function getByIndex(int $index) : AbstractModel
     {
-        return $this->recordSource->get($index);
+        return $this->recordSource->getByIndex($index);
     }
 
     public function filterBy($callback) : bool
@@ -47,9 +48,8 @@ abstract class AbstractController
 
     public function getByID($id) : AbstractModel
     {
-        $this->recordSource->setArray($this->originalSource->getByID($id));
         if ($this->recordCount() > 0) 
-                return $this->recordSource->get(0);
+                return $this->recordSource->getByID($id);
     }
 
     public function ReadPost() 

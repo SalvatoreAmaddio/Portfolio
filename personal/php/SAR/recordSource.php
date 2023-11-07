@@ -1,5 +1,6 @@
 <?php
-class RecordSource implements Iterator
+namespace SAR;
+class RecordSource implements \Iterator
 {
     private $pointer = 0;
     private $source = array(); 
@@ -15,7 +16,6 @@ class RecordSource implements Iterator
         $this->source = $array;
     }
     
-    ////
     public function current() 
     {
         return $this->source[$this->pointer];
@@ -41,7 +41,7 @@ class RecordSource implements Iterator
         // count() indicates how many items are in the list
         return $this->pointer < count($this->source);
      }
-    ///
+
     public function printSource() 
     {
         for($i=0; $i < $this->recordCount(); $i++) 
@@ -51,7 +51,7 @@ class RecordSource implements Iterator
         }
     }
     
-    public function get($index) : AbstractModel 
+    public function getByIndex($index) : AbstractModel 
     {
         return $this[$index];
     }
@@ -61,28 +61,33 @@ class RecordSource implements Iterator
         array_push($this->source, $this->model->create($row));
     }
 
-    public function addObject(AbstractModel $model) 
+    public function addRecord(AbstractModel $record) 
     {
-        array_push($this->source, $model->asRow());
+        array_push($this->source, $record);
     }
 
-    public function remove(AbstractModel $object) 
+    public function updateRecord(AbstractModel $record) 
     {
-        $index = $this->indexOf($object);
+        $index = $this->indexOf($record);
+        $this[$index] = $record;
+    }
+
+    public function deleteRecord(AbstractModel $record) 
+    {
+        $index = $this->indexOf($record);
         array_splice($this->source, $index, 1);
     }
 
     public function indexOf(AbstractModel $object) : int
     {
-        for($i=0; $i < $this->recordCount(); $i++) 
+        $index = -1;
+        foreach($this as $record) 
         {
-            $this->model->readAssoc($this->source[$i]);
+            $index++;
+            $this->model = $record;
             if ($this->model->IsEqual($object)) 
-            {
-                return $i;
-            }
+                return $index;
         }
-
         return -1;
     }
 
@@ -91,15 +96,17 @@ class RecordSource implements Iterator
         return count($this->source);
     }
 
-    public function getByID($id) : Array
+    public function getByID($id) : AbstractModel
     {
-        return array_values(array_filter($this->source, 
+        $temp_array = array_values(array_filter($this->source, 
         function($record) use($id) : bool 
         {  
             /** @var AbstractModel $obj */
             $obj = $record;
             return $obj->matchPK($id);
         }));
+        
+        return $temp_array[0];
     }
 
     public function filterBy($callback) : Array
