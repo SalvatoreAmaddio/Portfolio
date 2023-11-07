@@ -1,5 +1,5 @@
 <?php
-namespace SAR;
+
 class Sys 
 {
     public static function enter() 

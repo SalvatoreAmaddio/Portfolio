@@ -1,6 +1,6 @@
 <?php
-namespace SAR;
-class RecordSource implements \Iterator
+
+class RecordSource implements Iterator
 {
     private $pointer = 0;
     private $source = array(); 

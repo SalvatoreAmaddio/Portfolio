@@ -1,5 +1,4 @@
 <?php
-namespace SAR;
 abstract class AbstractController 
 {
     protected RecordSource $originalSource;
