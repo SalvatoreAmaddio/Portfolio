@@ -12,22 +12,19 @@ class DbController extends AbstractController
         {
             $search = $_REQUEST['search'];
             $this->filterBy(
-                function($record) use($search) : bool
-                {
-                    $db = DB::cast($record);
-                    $name = Sys::toLower($db->Name); 
-                    $search = Sys::toLower($search); 
-                    return str_contains($name,$search);
-                });
+                            function($record) use($search) : bool
+                            {
+                                $db = DB::cast($record);
+                                return Sys::contains($search,$db->Name,true);
+                            });
             echo $this->drawTable();
         } 
         
         if (isset($_REQUEST["dbID"])) 
         {
-             /** @var DB $obj */
-             $obj = $this->getByID($_REQUEST['dbID']);
+            $obj = DB::Cast($this->getByID($_REQUEST['dbID']));
             echo $obj->Name;
-        } 
+        }
         else echo "did not work";
     }
 
@@ -42,8 +39,7 @@ class DbController extends AbstractController
 
     public function style() 
     {
-        /** @var DB $obj */
-        $obj = $this->model;
+        $obj = DB::Cast($this->model);
         echo"<tr>
             <td class='selector'>➤</td>
             <td class='col1'>". $obj . "</td>

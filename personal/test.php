@@ -11,15 +11,13 @@
     </head>
     <body>
         <?php 
-            $search = "acc";
+            $search = "ite";
 
             $controller->filterBy(
                 function($record) use($search) : bool
                 {
                     $db = DB::cast($record);
-                    $name = Sys::toLower($db->Name); 
-                    $search = Sys::toLower($search); 
-                    return str_contains($name,$search);
+                    return Sys::contains($search,$db->Name,true);
                 });
 
             echo $controller->getByIndex(0);
