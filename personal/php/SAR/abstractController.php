@@ -5,8 +5,6 @@ abstract class AbstractController
     public RecordSource $recordSource;
     public AbstractModel $model;
     public Database $db;
-    public $recordID;
-    public $recordIDFieldName;
     
     public function __construct(AbstractModel $model) 
     {

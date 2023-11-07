@@ -1,25 +1,31 @@
 <?php
 class DbController extends AbstractController 
 {
-    private $search;
     public function __construct() 
     {
         parent::__construct(new DB());
-        $this->recordIDFieldName = "dbID";
     }
 
     public function onSend() 
     {
         if (isset($_REQUEST["search"])) 
         {
-            $this->search = $_REQUEST['search'];
+            $search = $_REQUEST['search'];
+            $this->filterBy(
+                function($record) use($search) : bool
+                {
+                    $db = DB::cast($record);
+                    $name = Sys::toLower($db->Name); 
+                    $search = Sys::toLower($search); 
+                    return str_contains($name,$search);
+                });
             echo $this->drawTable();
         } 
         
         if (isset($_REQUEST["dbID"])) 
         {
              /** @var DB $obj */
-             $obj = $this->filterByID($_REQUEST['dbID']);
+             $obj = $this->getByID($_REQUEST['dbID']);
             echo $obj->Name;
         } 
         else echo "did not work";

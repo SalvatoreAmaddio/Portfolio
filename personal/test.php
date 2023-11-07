@@ -11,16 +11,16 @@
     </head>
     <body>
         <?php 
-            $search = "";
+            $search = "acc";
 
             $controller->filterBy(
-            function($record) use($search) : bool
-            {
-                $db = DB::cast($record);
-                $name = Sys::toLower($db->Name); 
-                $search = Sys::toLower($search); 
-                return true;
-            });
+                function($record) use($search) : bool
+                {
+                    $db = DB::cast($record);
+                    $name = Sys::toLower($db->Name); 
+                    $search = Sys::toLower($search); 
+                    return str_contains($name,$search);
+                });
 
             echo $controller->getByIndex(0);
         ?>
