@@ -1,9 +1,6 @@
 <?php
 class AccessController extends AbstractController 
 {
-    private $userName;
-    private $pwd;
-
     public function __construct() 
     {
         parent::__construct(new Access());
@@ -11,22 +8,13 @@ class AccessController extends AbstractController
 
     public function checkCredentials($user, $pwd) : bool 
     {   
-        $this->userName = $user;
-        $this->pwd = $pwd;
-        $row = array_filter($this->recordSource->source, 
-        function($row) : bool
+        return $this->filterBy(
+        function($record) use($user, $pwd) : bool
         {
-            return $this->check($row);
+            $access = Access::Cast($record);
+            return (strcmp($access->userName, $user) == 0) 
+            && (strcmp($access->password, $pwd) == 0);
         });
-        $this->userName = "";
-        $this->pwd = "";
-        return count($row) > 0;
-    }
-
-    private function check($row) : bool 
-    {
-        return (strcmp($row["userName"], $this->userName) == 0) 
-        && (strcmp($row["password"], $this->pwd) == 0);
     }
 
     public function Style() 

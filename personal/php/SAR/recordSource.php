@@ -1,8 +1,8 @@
 <?php
-class RecordSource 
+class RecordSource implements Iterator
 {
-    public $source = array(); 
-
+    private $pointer = 0;
+    private $source = array(); 
     public AbstractModel $model;
     
     public function __construct(AbstractModel $model = null) 
@@ -10,18 +10,50 @@ class RecordSource
         $this->model = $model;
     }
 
+    public function setArray(Array $array) : void 
+    {
+        $this->source = $array;
+    }
+    
+    ////
+    public function current() 
+    {
+        return $this->source[$this->pointer];
+    }
+
+    public function key() 
+    {
+        return $this->pointer;
+    }
+
+    public function next() : void
+    {
+        $this->pointer++;
+    }
+
+    public function rewind() : void
+    {
+        $this->pointer = 0;
+    }
+    
+    public function valid() : bool
+    {
+        // count() indicates how many items are in the list
+        return $this->pointer < count($this->source);
+     }
+    ///
     public function printSource() 
     {
         for($i=0; $i < $this->recordCount(); $i++) 
         {
-            echo $this->source[$i];
+            echo $this[$i];
             Sys::Enter();
         }
     }
     
     public function get($index) : AbstractModel 
     {
-        return $this->source[$index];
+        return $this[$index];
     }
 
     public function readRow(Array $row) 
@@ -59,5 +91,24 @@ class RecordSource
         return count($this->source);
     }
 
+    public function getByID($id) : Array
+    {
+        return array_values(array_filter($this->source, 
+        function($record) use($id) : bool 
+        {  
+            /** @var AbstractModel $obj */
+            $obj = $record;
+            return $obj->matchPK($id);
+        }));
+    }
+
+    public function filterBy($callback) : Array
+    {
+        return array_values(array_filter($this->source, 
+        function($record) use($callback) : bool 
+        {   
+            return $callback($record);
+        }));
+    }
 }
 ?>

@@ -2,8 +2,8 @@
 class Access extends AbstractModel
 {
     protected int $userID;
-    protected string $userName;
-    protected string $password;
+    public string $userName;
+    public string $password;
     protected string $tableName = "credentials";
 
     public static function Cast(AbstractModel $model): Access

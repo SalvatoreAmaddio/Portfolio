@@ -25,7 +25,6 @@ class DbController extends AbstractController
             $obj = DB::Cast($this->getByID($_REQUEST['dbID']));
             echo $obj->Name;
         }
-        else echo "did not work";
     }
 
     public function drawHeader()

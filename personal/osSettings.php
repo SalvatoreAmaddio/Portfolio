@@ -86,7 +86,7 @@
                 </section>
 
                 <section id="dataContainer" class="container">
-                    <?php $controller->run();?>
+                    <?php $controller->drawTable();?>
                 </section>
             </main>
             <footer>

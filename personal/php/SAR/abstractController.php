@@ -39,25 +39,15 @@ abstract class AbstractController
         return $this->recordSource->get($index);
     }
 
-    public function filterBy($callback)
+    public function filterBy($callback) : bool
     {
-        $this->recordSource->source = array_values(array_filter($this->originalSource->source, 
-        function($record) use($callback) : bool 
-        {   
-            return $callback($record);
-        }));
+        $this->recordSource->setArray($this->originalSource->filterBy($callback));
+        return $this->recordCount() > 0;
     }
 
     public function getByID($id) : AbstractModel
     {
-        $this->recordSource->source = array_values(array_filter($this->originalSource->source, 
-        function($record) use($id) : bool 
-        {   
-            /** @var AbstractModel $obj */
-            $obj = $record;
-            return $obj->matchPK($id);
-        }));
-
+        $this->recordSource->setArray($this->originalSource->getByID($id));
         if ($this->recordCount() > 0) 
                 return $this->recordSource->get(0);
     }
@@ -113,7 +103,7 @@ abstract class AbstractController
     {
         if ($this->recordCount() > 0) 
         {
-            foreach($this->recordSource->source as &$record) 
+            foreach($this->recordSource as $record) 
             {
                 $this->model = $record;
                 $this->style();
