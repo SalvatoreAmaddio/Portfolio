@@ -5,14 +5,12 @@ abstract class AbstractController
     public RecordSource $recordSource;
     public AbstractModel $model;
     public Database $db;
-
+    public $recordID;
+    public $recordIDFieldName;
+    
     public function __construct(AbstractModel $model) 
     {
         $this->model = $model;
-        $this->originalSource = new RecordSource();
-        $this->originalSource->model = $model;
-        $this->recordSource = new RecordSource();
-        $this->recordSource->model = $model;
         $this->db = new Database($this->model);
         $this->db->connect();
         if (! $this->db->isConnected) 
@@ -21,10 +19,40 @@ abstract class AbstractController
             return;
         }
         $this->db->select();
-        $this->originalSource =  $this->db->recordSource;
+        $this->originalSource =  &$this->db->recordSource;
         $this->recordSource =  $this->db->recordSource;
     }
 
+    public function recordCount() : int 
+    {
+        return $this->recordSource->recordCount();
+    }
+
+    public function printSource() 
+    {
+        $this->recordSource->printSource();
+    }
+
+    public function get(int $index,AbstractModel &$model) : AbstractModel
+    {
+        return $this->recordSource->get($index,$model);
+    }
+
+    public function filterByID($id) : AbstractModel
+    {
+        $this->recordSource->source = array_values(array_filter($this->originalSource->source, 
+        function($record) use($id) : bool 
+        {   
+            /** @var AbstractModel $obj */
+            $obj = $record;
+            return $obj->matchPK($id);
+        }));
+
+        if ($this->recordCount() > 0) 
+                return $this->recordSource->get(0);
+    }
+
+    ////////
     public function ReadPost() 
     {
         if ($_SERVER["REQUEST_METHOD"] != "POST") return;
@@ -44,38 +72,14 @@ abstract class AbstractController
     }
 
 
-    public function get(int $index,AbstractModel &$model) : AbstractModel
-    {
-        return $this->recordSource->get($index,$model);
-    }
-
-    public function recordCount() : int 
-    {
-        return $this->recordSource->recordCount();
-    }
-
     public abstract function style();
 
-    public function beforeLoop() 
+    public function openTable() 
     {        
         echo "<form> <table id='displayer'>";
     }
 
-    protected function filterBy($row) : bool 
-    {
-        return true;
-    }
-
-    protected function runFilter() 
-    {
-        $this->recordSource->source = array_filter($this->originalSource->source,
-        function($row) : bool
-        {
-            return $this->filterBy($row);
-        });
-    }
-
-    public function afterLoop() 
+    public function closeTable() 
     {
         echo "</table></form>
         <div class='recordTracker'>
@@ -92,18 +96,22 @@ abstract class AbstractController
 
     public function run() 
     {
-        $this->beforeLoop();
-        $this->runFilter();
+        $this->openTable();
+        $this->drawData();
+        $this->closeTable();
+    }
+
+    public function drawData() 
+    {
         if ($this->recordCount() > 0) 
         {
-            foreach($this->recordSource->source as &$row) 
+            foreach($this->recordSource->source as &$record) 
             {
-                $this->model->readAssoc($row);
+                $this->model = $record;
                 $this->style();
             }
         } 
         else $this->onNoData();
-        $this->afterLoop();
     }
 }
 ?>

@@ -1,25 +1,25 @@
 class FormList
 {
-
     #dataContainer
-    #footer;
+    #onEditClicked;
 
     constructor() 
     {
         this.#dataContainer = document.getElementById("dataContainer");
-        this.#footer = document.getElementsByTagName("footer")[0];
+        let editButtons = this.#dataContainer.getElementsByClassName("editButton");
+
+        for(let i=0; i < editButtons.length; i++) 
+        {
+            editButtons[i].addEventListener("click",(e)=>
+            {
+                this.#onEditClicked(e.target);
+            });
+        }
     }
 
-    get isScrolling() 
+    onEditClicked(fn) 
     {
-        return document.documentElement.scrollHeight > this.footerBottom;
+        this.#onEditClicked = fn;
     }
 
-    get footerHeight() 
-    {
-        return this.#footer.getBoundingClientRect().height;
-    }
 }
-
-
-new FormList();

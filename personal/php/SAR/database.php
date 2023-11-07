@@ -43,15 +43,14 @@
         public function setModel(AbstractModel $model) 
         {
             $this->model = $model;
-            $this->recordSource = new RecordSource();
-            $this->recordSource->model = $model;
+            $this->recordSource = new RecordSource($this->model);
         }
 
         public function select() 
         {
             $results = $this->conn->query($this->model->selectAll());
             while($row = $results->fetch_assoc())
-                $this->recordSource->addRow($row);          
+                $this->recordSource->readRow($row);          
         }
 
         function __destruct() 

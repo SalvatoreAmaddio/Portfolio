@@ -2,6 +2,20 @@
 class DB extends AbstractTwoColumns
 {
     protected string $tableName = "dbs";
+    
+    public static function Cast(AbstractModel $model) : DB
+    {
+        /** @var DB $obj */
+        $obj = $model;
+        return $obj;
+    }
+    
+    public function create(array &$row) : DB
+    {
+        $os = new DB();
+        $os->readAssoc($row);
+        return $os;
+    }
 
     public function readAssoc(array &$row) 
     {

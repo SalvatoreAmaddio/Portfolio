@@ -12,6 +12,11 @@ abstract class AbstractTwoColumns extends AbstractModel
         $this->asRow();
     }
 
+    public function matchPK(int $id): bool
+    {
+        return $this->ID == $id;
+    }
+
     public abstract function readAssoc(array &$row); 
 
     public abstract function asRow() : array; 

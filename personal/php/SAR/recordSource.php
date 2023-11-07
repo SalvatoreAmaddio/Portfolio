@@ -4,16 +4,29 @@ class RecordSource
     public $source = array(); 
 
     public AbstractModel $model;
-        
-    public function get($index, AbstractModel &$model) : AbstractModel 
+    
+    public function __construct(AbstractModel $model = null) 
     {
-        $model->readAssoc($this->source[$index]);
-        return $model;
+        $this->model = $model;
     }
 
-    public function addRow(Array $row) 
+    public function printSource() 
     {
-        array_push($this->source, $row);
+        for($i=0; $i < $this->recordCount(); $i++) 
+        {
+            echo $this->source[$i];
+            Sys::Enter();
+        }
+    }
+    
+    public function get($index) : AbstractModel 
+    {
+        return $this->source[$index];
+    }
+
+    public function readRow(Array $row) 
+    {
+        array_push($this->source, $this->model->create($row));
     }
 
     public function addObject(AbstractModel $model) 
@@ -46,13 +59,5 @@ class RecordSource
         return count($this->source);
     }
 
-    public function print() 
-    {
-        for($i=0; $i < $this->recordCount(); $i++) 
-        {
-            echo implode(", ", $this->source[$i]);
-            echo "<br>";
-        }
-    }
 }
 ?>

@@ -3,18 +3,27 @@ class Sender
     #http = new XMLHttpRequest();
     #pageUrl;
     #thisPage = document.createElement("a");
+    #dataContainer;
     #responseFn;
 
     constructor(pageUrl="", fn="") 
     {
         this.#responseFn = fn;
+        this.#dataContainer = document.getElementById("dataContainer");
+        if (!this.#responseFn) 
+        {
+            this.#responseFn = (e)=>
+            {
+                this.#dataContainer.innerHTML = '';
+                this.#dataContainer.innerHTML = e;
+            }
+        }
+
         this.#thisPage.href = "#";
         this.#pageUrl = (pageUrl) ? pageUrl : this.currentPath;
         this.#http.onreadystatechange = () => {
             if (this.IsSuccesfull) 
-            {
-                this.#responseFn(this.#http.responseText);
-            }
+                this.#responseFn(this.#http.responseText);  
         };
     }
 
