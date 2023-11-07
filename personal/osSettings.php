@@ -81,7 +81,7 @@
                             <button id="addNewButton">
                                 <img src="/img/plus.png">
                             </button>
-                            <input type="text" name="s" id="s" placeholder="Search..." onkeyup="search(this.value)"/>
+                            <input type="text" name="s" id="searchBox" placeholder="Search..."/>
                         </form>
                     </div>
                 </section>
@@ -97,35 +97,18 @@
     <?php LoadJS();?>
 
     <script>
-        dataContainer = document.getElementById("dataContainer");
         const formList = new FormList();
-        formList.canUpdate();
-
-        function search(str) 
-        {
-            formList.sender.onDataReceived((e)=> dataContainer.innerHTML = e);            
-            formList.sender.send("search=" + str);
-        }
-
-        function onEditClicked(e)
+        formList.onEditClicked = (e) =>
         {
             formList.sender.onDataReceived((e)=>
             {
                 let newValue = prompt("Change Value", e.trim());
+                if (!newValue) return false;
                 formList.storeUpdateValue(newValue);                
             });
-            
-            formList.sender.send("dbID=" + e.value)
-        }
-
-        function onDeleteClicked(e)
-        {
-        }
-
-        function onAddClicked(e)
-        {
-        }
-
+            formList.sender.send("dbID=" + e)
+        };
+        formList.canUpdate();
     </script>
     </body>
 </html>

@@ -69,7 +69,7 @@ class RecordSource implements Iterator
     public function updateRecord(AbstractModel $record) 
     {
         $index = $this->indexOf($record);
-        $this[$index] = $record;
+        $this->source[$index] = $record;
     }
 
     public function deleteRecord(AbstractModel $record) 

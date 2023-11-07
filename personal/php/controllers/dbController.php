@@ -6,17 +6,25 @@ class DbController extends AbstractController
         parent::__construct(new DB());
     }
 
+    private function runSearch() 
+    {
+        if (!isset($_SESSION["search"])) return;
+        $search = $_SESSION["search"]; 
+        $this->filterBy(
+            function($record) use($search) : bool
+            {
+                $db = DB::cast($record);
+                return Sys::contains($search,$db->Name,true);
+            });
+    }
+
     public function onReceived() 
     {
         if (isset($_REQUEST["search"])) 
         {
             $search = $_REQUEST['search'];
-            $this->filterBy(
-                            function($record) use($search) : bool
-                            {
-                                $db = DB::cast($record);
-                                return Sys::contains($search,$db->Name,true);
-                            });
+            $_SESSION["search"] = $search; 
+            $this->runSearch();
             echo $this->drawTable();
             return;
         } 
@@ -32,13 +40,21 @@ class DbController extends AbstractController
 
         if (isset($_REQUEST["updateValue"])) 
         {
-            if (isset($_SESSION["dbRecord"])) 
+            if (is_null($_REQUEST["updateValue"])==false) 
             {
-                $db = unserialize($_SESSION['dbRecord']);
-                $this->db->update($db->dbName,$db->dbID);
-                unset($_SESSION["dbRecord"]);
+                if (isset($_SESSION["dbRecord"])) 
+                {
+                    $db = unserialize($_SESSION['dbRecord']);
+                    $db->Name = $_REQUEST["updateValue"];
+                    $_SESSION["search"] = $db->Name; 
+                    $this->db->update($db->Name,$db->ID);
+                    $this->recordSource->updateRecord($db);
+                    unset($_SESSION["dbRecord"]);
+                    $this->runSearch();
+                    echo $this->drawTable();
+                }
             }
-             return;
+            return;
         }
     }
 
@@ -55,11 +71,11 @@ class DbController extends AbstractController
     {
         $obj = DB::Cast($this->model);
         echo"<tr>
-            <td class='selector'>➤</td>
-            <td class='col1'>". $obj . "</td>
-            <td class='command'><button class='editButton' onclick='onEditClicked(this)' value='" . $obj->ID . "'>EDIT</button></td>
-            <td class='command'><button class='deleteButton' onclick='onDeleteClicked(this)' value='" . $obj->ID . "'>DELETE</button></td>
-        </tr>";
+                <td class='selector'>➤</td>
+                <td class='col1'>". $obj . "</td>
+                <td class='command'><button class='editButton' value='" . $obj->ID . "'>EDIT</button></td>
+                <td class='command'><button class='deleteButton' value='" . $obj->ID . "'>DELETE</button></td>
+            </tr>";
     }
 }
 

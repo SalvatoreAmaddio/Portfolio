@@ -57,12 +57,12 @@
         //d - double
         //s - string
         //b - BLOB
-        public function update(mixed &...$vars) 
+        public function update(&...$vars) 
         {
             if (!$this->isConnected)
                 $this->connect();
             $stmt = $this->conn->prepare($this->model->updateSQL());
-            $stmt->bind_param($this->model->bindTypeParams(),$vars);
+            $stmt->bind_param($this->model->bindTypeParams(),...$vars);
             $stmt->execute();
             $stmt->close();
         }
