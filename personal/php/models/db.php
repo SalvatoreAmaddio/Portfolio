@@ -29,6 +29,16 @@ class DB extends AbstractTwoColumns
         return "update " . $this->tableName . " SET dbName = ? WHERE dbID=?;";
     }
 
+    public function insertSQL() : string 
+    {
+        return "insert into " . $this->tableName . " (dbName) VALUES (?);";
+    }
+
+    public function deleteSQL() : string 
+    {
+        return "delete * from " . $this->tableName . " WHERE dbID=?;";
+    }
+
     public function asRow() : array 
     {
         if ($this->row==null) 

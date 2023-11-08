@@ -1,4 +1,5 @@
 <?php
+
 abstract class AbstractModel {
 
   protected $row = array();
@@ -13,12 +14,18 @@ abstract class AbstractModel {
 
   public function selectAll() : string 
   {
-    return "Select * FROM " . $this->tableName . ";";
+     return "Select * FROM " . $this->tableName . ";";
   }
 
-  public abstract function bindTypeParams() : string;
-  public abstract function updateSQL();
-
+//  case Insert 0;
+//  case Select 1;
+//  case Update 2;
+//  case Delete 3;
+  public abstract function bindTypeParams(int $query) : string;
+  public abstract function updateSQL() : string;
+  public abstract function deleteSQL() : string;
+  public abstract function insertSQL() : string;
+  
   public function printRow() : string 
   {
         return implode(", ", $this->row);

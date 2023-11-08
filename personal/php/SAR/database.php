@@ -57,12 +57,27 @@
         //d - double
         //s - string
         //b - BLOB
-        public function update(&...$vars) 
+
+        public function crud(int $query, &...$vars) 
         {
             if (!$this->isConnected)
                 $this->connect();
-            $stmt = $this->conn->prepare($this->model->updateSQL());
-            $stmt->bind_param($this->model->bindTypeParams(),...$vars);
+                switch ($query) {
+                    case 0:
+                        $stmt = $this->conn->prepare($this->model->insertSQL());
+                        $stmt->bind_param($this->model->bindTypeParams(0),...$vars);
+                    break;
+                    case 2:
+                        $stmt = $this->conn->prepare($this->model->updateSQL());
+                        $stmt->bind_param($this->model->bindTypeParams(2),...$vars);
+                    break;
+                    case 3:
+                        $stmt = $this->conn->prepare($this->model->deleteSQL());
+                        $stmt->bind_param($this->model->bindTypeParams(3),...$vars);
+                    break;
+                }
+
+            if (!isset($stmt)) return;
             $stmt->execute();
             $stmt->close();
         }

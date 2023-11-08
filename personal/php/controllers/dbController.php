@@ -50,7 +50,7 @@ class DbController extends AbstractController
             $this->model = $this->getByID($_REQUEST['deleteID']);
             $db = DB::Cast($this->model);
             $this->switchSearchValue($db);
-            //$this->db->delete($db->Name,$db->ID); <--- TO IMPLEMENT
+            $this->db->crud(3, $db->ID);
             $this->recordSource->deleteRecord($db);
             $this->runSearch();
             echo $this->drawTable();
@@ -75,7 +75,7 @@ class DbController extends AbstractController
                     $db = unserialize($_SESSION['toChange']);
                     $db->Name = $_REQUEST[$this->updateVal()];
                     $this->switchSearchValue($db);
-                    $this->db->update($db->Name,$db->ID);
+                    $this->db->crud(2, $db->Name,$db->ID);
                     $this->recordSource->updateRecord($db);
                     unset($_SESSION["toChange"]);
                     $this->runSearch();

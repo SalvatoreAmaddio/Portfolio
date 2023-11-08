@@ -17,9 +17,16 @@ abstract class AbstractTwoColumns extends AbstractModel
         return $this->ID == $id;
     }
 
-    public function bindTypeParams() : string 
+    public function bindTypeParams(int $query) : string 
     {
-        return "si";
+        switch ($query) {
+            case 0:
+                return "s";
+            case 2:
+                return "si";
+            case 3:
+                return "i";
+        }
     }
     
     public abstract function readAssoc(array &$row); 
