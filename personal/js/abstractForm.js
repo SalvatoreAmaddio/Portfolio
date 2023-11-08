@@ -5,6 +5,8 @@ class FormList
     #deleteButtons;
     #onEditClicked;
     #onDeleteClicked;
+    #onInsertClicked;
+    #addNewButton;
     #searchBox;
     #formName;
     sender;
@@ -16,6 +18,7 @@ class FormList
         this.#dataContainer = document.getElementById("dataContainer");
         this.#editButtons = this.#dataContainer.getElementsByClassName("editButton");
         this.#deleteButtons = this.#dataContainer.getElementsByClassName("deleteButton");
+        this.#addNewButton = document.getElementById("addNewButton");
         this.#searchBox = document.getElementById("searchBox");
         this.#loadEvents();
         if ((this.storedSearchKey) && (this.storedUpdateVal) && !this.storedUpdateVal.toLocaleLowerCase().includes(this.storedSearchKey.toLocaleLowerCase())) 
@@ -64,6 +67,15 @@ class FormList
         document.getElementById("formData").submit();
     }
 
+    redispaly() 
+    {
+        this.sender.onDataReceived((e)=>
+        {
+            this.displayData(e);
+            this.requery();
+        });
+    }
+
     #loadEvents() 
     {
         this.#searchBox.addEventListener("keyup",
@@ -73,6 +85,8 @@ class FormList
             this.storedSearchKey = e.target.value;      
             this.sender.send(`${this.#formName}search=${this.storedSearchKey}`);
         });
+
+        this.#addNewButton.addEventListener("click", (e)=> this.#onInsertClicked(e.target.parentNode.value));
 
         for(let i = 0; i < this.#editButtons.length; i++) 
         {
@@ -95,6 +109,11 @@ class FormList
     set onDeleteClicked(fn) 
     {
         this.#onDeleteClicked = fn;
+    }
+
+    set onInsertClicked(fn) 
+    {
+        this.#onInsertClicked = fn;
     }
 
     canUpdate() 
@@ -122,15 +141,23 @@ formList.onEditClicked = (e) =>
     formList.sender.send("updateID=" + e)
 };
 
+formList.onInsertClicked = (e) =>
+{
+    let newValue = prompt("Add New Record");
+    if (!newValue) 
+    {
+        alert("Value cannot be null.\nTry again.");
+        return false;
+    }                
+    formList.redispaly();
+    formList.sender.send("insertVal=" + newValue)
+};
+
 formList.onDeleteClicked = (e) => 
 {
     let conf = confirm("Are you sure you want to delete this record?");
     if (!conf) return false;
-    formList.sender.onDataReceived((e)=>
-    {
-        formList.displayData(e);
-        formList.requery();
-    });
+    formList.redispaly();
     formList.sender.send("deleteID=" + e)
 };
 

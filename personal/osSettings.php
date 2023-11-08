@@ -78,7 +78,7 @@
                 <section class="container">
                     <div class="layer" id="searchPanel">
                         <form>
-                            <button id="addNewButton">
+                            <button id="addNewButton" type="button">
                                 <img src="/img/plus.png">
                             </button>
                             <input type="text" name="s" id="searchBox" placeholder="Search..."/>

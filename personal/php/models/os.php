@@ -20,6 +20,11 @@ class OS extends AbstractTwoColumns
         return "delete * from " . $this->tableName . " WHERE osID=?;";
     }
 
+    public function insertSQL() : string 
+    {
+        return "";
+    }
+
     public static function Cast(AbstractModel $model) : OS
     {
             /** @var OS $obj */

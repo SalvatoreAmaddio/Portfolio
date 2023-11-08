@@ -36,7 +36,7 @@ class DB extends AbstractTwoColumns
 
     public function deleteSQL() : string 
     {
-        return "delete * from " . $this->tableName . " WHERE dbID=?;";
+        return "delete from " . $this->tableName . " WHERE dbID=?;";
     }
 
     public function asRow() : array 

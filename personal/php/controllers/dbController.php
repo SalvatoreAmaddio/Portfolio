@@ -57,6 +57,22 @@ class DbController extends AbstractController
             return;
         }
 
+        if (isset($_REQUEST["insertVal"])) 
+        {
+            if (!is_null($_REQUEST["insertVal"])) 
+            {
+                $this->model = new DB();
+                $db = DB::Cast($this->model);
+                $db->Name = $_REQUEST["insertVal"];
+                $this->switchSearchValue($db);
+                $this->db->crud(0, $db->Name);
+                $this->recordSource->addRecord($db);
+                $this->runSearch();
+                echo $this->drawTable();
+            }
+            return;
+        }
+
         if (isset($_REQUEST["updateID"])) 
         {
             $this->model = $this->getByID($_REQUEST['updateID']);
