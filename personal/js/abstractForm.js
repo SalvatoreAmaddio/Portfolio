@@ -11,9 +11,23 @@ class FormList
     #formName;
     sender;
 
-    constructor(formName="db") 
+    constructor() 
     {
-        this.#formName = formName;
+        const id = Number(window.location.href.split("path=")[1]);
+        switch(id) 
+        {
+            case 1:
+                this.#formName="db";
+            break;
+            case 2:
+                this.#formName="os";
+            break;
+            case 3:
+                this.#formName="projectType";
+            break;
+            default:return;
+        }
+
         this.sender = new Sender();
         this.#dataContainer = document.getElementById("dataContainer");
         this.#editButtons = this.#dataContainer.getElementsByClassName("editButton");
@@ -141,29 +155,37 @@ class FormList
 
 }
 
-const formList = new FormList();
-formList.onEditClicked = (e) =>
+class FormListTwoColumn extends FormList 
 {
-    formList.sender.onDataReceived((e)=>
+    constructor() 
     {
-        let newValue = prompt("Change Value", e.trim());
-        if (!newValue) return false;                
-        formList.storedUpdateVal = newValue;
-        formList.requery();
-    });
-    formList.sendUpdateID(e);
-};
+        super();
+        this.onEditClicked = (e) =>
+        {
+            this.sender.onDataReceived((e)=>
+            {
+                let newValue = prompt("Change Value", e.trim());
+                if (!newValue) return false;                
+                this.storedUpdateVal = newValue;
+                this.requery();
+            });
+            this.sendUpdateID(e);
+        };
 
-formList.onInsertClicked = (e) =>
-{
-    let newValue = prompt("Add New Record");
-    if (!newValue) 
-    {
-        alert("Value cannot be null.\nTry again.");
-        return false;
-    }                
-    formList.redispaly();
-    formList.sendNewVal(newValue);
-};
+        this.onInsertClicked = (e) =>
+        {
+            let newValue = prompt("Add New Record");
+            if (!newValue) 
+            {
+                return false;
+            }       
 
-formList.canUpdate();
+            this.redispaly();
+            this.sendNewVal(newValue);
+        };
+
+        this.canUpdate();
+    }
+}
+
+

@@ -2,7 +2,6 @@ class Sender
 {
     #http = new XMLHttpRequest();
     #pageUrl;
-    #thisPage = document.createElement("a");
     #dataContainer;
     #responseFn;
 
@@ -19,7 +18,6 @@ class Sender
             }
         }
 
-        this.#thisPage.href = "#";
         this.#pageUrl = (pageUrl) ? pageUrl : this.currentPath;
         this.#http.onreadystatechange = () => {
             if (this.IsSuccesfull) 
@@ -34,7 +32,7 @@ class Sender
 
     get currentPath() 
     {
-        return this.#thisPage.href.replace('#','');
+        return window.location.href;
     }
 
     get pagePath() 

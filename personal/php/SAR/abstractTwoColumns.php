@@ -29,6 +29,13 @@ abstract class AbstractTwoColumns extends AbstractModel
         }
     }
     
+    public static function Cast(AbstractModel $model) : AbstractTwoColumns
+    {
+            /** @var OS $obj */
+            $obj = $model;
+            return $obj;
+    }
+
     public abstract function readAssoc(array &$row); 
 
     public abstract function asRow() : array; 

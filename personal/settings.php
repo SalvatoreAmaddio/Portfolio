@@ -1,7 +1,22 @@
 <?php 
     session_start();
     include 'load.php';
-    $controller = new DbController();
+    $current_url = $_SERVER['REQUEST_URI'];
+    $url_components = parse_url($current_url);
+    parse_str($url_components['query'], $params);
+    $path = $params['path'];
+    $controller;
+    switch($path) 
+    {
+        case 1:
+            $controller = new DbController();
+        break;
+        case 2:
+            $controller = new OsController();
+        break;
+        default:
+            exit();
+    }
     $controller->readPost();
 ?>
 <!DOCTYPE html>
@@ -95,5 +110,8 @@
             </footer>
         </div>
     <?php LoadJS();?>
+        <script>
+            new FormListTwoColumn();
+        </script>        
     </body>
 </html>
