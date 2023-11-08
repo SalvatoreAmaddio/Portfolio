@@ -58,8 +58,9 @@
         //s - string
         //b - BLOB
 
-        public function crud(int $query, &...$vars) 
+        public function crud(int $query, &...$vars)
         {
+            $id = 0;
             if (!$this->isConnected)
                 $this->connect();
                 switch ($query) {
@@ -79,7 +80,9 @@
 
             if (!isset($stmt)) return;
             $stmt->execute();
+            $id = ($query==0) ? $stmt->insert_id : $stmt->affected_rows;
             $stmt->close();
+            return $id;
         }
 
         function __destruct() 

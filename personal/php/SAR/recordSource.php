@@ -53,7 +53,7 @@ class RecordSource implements Iterator
     
     public function getByIndex($index) : AbstractModel 
     {
-        return $this[$index];
+        return $this->source[$index];
     }
 
     public function readRow(Array $row) 
@@ -81,7 +81,7 @@ class RecordSource implements Iterator
     public function indexOf(AbstractModel $object) : int
     {
         $index = -1;
-        foreach($this as $record) 
+        foreach($this->source as $record) 
         {
             $index++;
             $this->model = $record;

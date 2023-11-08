@@ -145,12 +145,12 @@ abstract class AbstractController
     //DRAW DATA TABLE
     public function openTable() 
     {        
-        echo "<form id='formData'> <table id='displayer'>";
+        echo "<table id='displayer'>";
     }
 
     public function closeTable() 
     {
-        echo "</table></form>
+        echo "</table>
         <div class='recordTracker'>
             <p>Totals: " . $this->recordCount() . "</p>
         </div>";   

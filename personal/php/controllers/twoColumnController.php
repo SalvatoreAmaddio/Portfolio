@@ -59,7 +59,7 @@ abstract class TwoColumnController extends AbstractController
                 $record = AbstractTwoColumns::Cast($this->model);
                 $record->Name = ucfirst($this->requestedNewVal());
                 $this->switchSearchValue($record);
-                $this->db->crud(0, $record->Name);
+                $record->ID = $this->db->crud(0, $record->Name);
                 $this->recordSource->addRecord($record);
                 $this->runSearch();
                 echo $this->drawTable();

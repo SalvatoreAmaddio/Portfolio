@@ -89,18 +89,9 @@ class FormList
         sessionStorage.removeItem(`${this.#formName}updateVal`);
     }
 
-    requery() 
-    {
-        document.getElementById("formData").submit();
-    }
-
     redispaly() 
     {
-        this.sender.onDataReceived((e)=>
-        {
-            this.displayData(e);
-            this.requery();
-        });
+        this.sender.onDataReceived((e)=>this.displayData(e));
     }
 
     #loadEvents() 
@@ -167,7 +158,7 @@ class FormListTwoColumn extends FormList
                 let newValue = prompt("Change Value", e.trim());
                 if (!newValue) return false;                
                 this.storedUpdateVal = newValue;
-                this.requery();
+                this.canUpdate();
             });
             this.sendUpdateID(e);
         };
@@ -175,16 +166,10 @@ class FormListTwoColumn extends FormList
         this.onInsertClicked = (e) =>
         {
             let newValue = prompt("Add New Record");
-            if (!newValue) 
-            {
-                return false;
-            }       
-
+            if (!newValue) return false;
             this.redispaly();
             this.sendNewVal(newValue);
         };
-
-        this.canUpdate();
     }
 }
 
