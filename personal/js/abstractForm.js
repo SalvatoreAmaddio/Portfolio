@@ -16,7 +16,6 @@ class FormList
         this.#searchBox = document.getElementById("searchBox");
         this.#loadEvents();
         this.#searchBox.value =  this.storedSearchKey;
-        this.deleteStoredUpdateVal();
     }
 
     get storedSearchKey() 
@@ -26,7 +25,7 @@ class FormList
 
     set storedSearchKey(str) 
     {
-        return sessionStorage.setItem(`${this.#formName}search`,str);
+        sessionStorage.setItem(`${this.#formName}search`,str);
     }
 
     get storedUpdateVal() 
@@ -36,7 +35,7 @@ class FormList
 
     set storedUpdateVal(str) 
     {
-        return sessionStorage.setItem(`${this.#formName}updateVal`,str);
+        sessionStorage.setItem(`${this.#formName}updateVal`,str);
     }
 
     deleteStoredUpdateVal() 
@@ -81,8 +80,9 @@ class FormList
             if (this.storedSearchKey && !this.storedUpdateVal.includes(this.storedSearchKey)) 
                 this.storedSearchKey = this.storedUpdateVal;
 
-            this.sender.onDataReceived((e)=> this.#displayData(e));            
+            this.sender.onDataReceived((e)=> this.#displayData(e));    
             this.sender.send(`${this.#formName}updateVal=${this.storedUpdateVal}`);            
+            this.deleteStoredUpdateVal();
         }
     }
 

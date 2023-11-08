@@ -39,7 +39,7 @@ class DbController extends AbstractController
             return;
         }
 
-        if (isset($_REQUEST["$this->formName . updateVal"])) 
+        if (isset($_REQUEST[$this->formName . "updateVal"])) 
         {
             if (is_null($_REQUEST[$this->formName . "updateVal"])==false) 
             {
@@ -47,7 +47,7 @@ class DbController extends AbstractController
                 {
                     $db = unserialize($_SESSION['dbRecord']);
                     $db->Name = $_REQUEST[$this->formName . "updateVal"];
-                    if (strlen($_SESSION[$this->formName . "search"])>0) 
+                    if (isset($_SESSION[$this->formName . "search"]) && strlen($_SESSION[$this->formName . "search"])>0) 
                     {
                         if (!Sys::contains($_SESSION[$this->formName . "search"],$db->Name,true))
                             $_SESSION[$this->formName . "search"] = $db->Name; 
