@@ -2,7 +2,9 @@ class FormList
 {
     #dataContainer
     #editButtons;
+    #deleteButtons;
     #onEditClicked;
+    #onDeleteClicked;
     #searchBox;
     #formName;
     sender;
@@ -13,6 +15,7 @@ class FormList
         this.sender = new Sender();
         this.#dataContainer = document.getElementById("dataContainer");
         this.#editButtons = this.#dataContainer.getElementsByClassName("editButton");
+        this.#deleteButtons = this.#dataContainer.getElementsByClassName("deleteButton");
         this.#searchBox = document.getElementById("searchBox");
         this.#loadEvents();
         if ((this.storedSearchKey) && (this.storedUpdateVal) && !this.storedUpdateVal.toLocaleLowerCase().includes(this.storedSearchKey.toLocaleLowerCase())) 
@@ -66,16 +69,19 @@ class FormList
         this.#searchBox.addEventListener("keyup",
         (e)=>
         {
-            this.sender.onDataReceived((e)=> this.#displayData(e));       
+            this.sender.onDataReceived((e)=> this.displayData(e));       
             this.storedSearchKey = e.target.value;      
             this.sender.send(`${this.#formName}search=${this.storedSearchKey}`);
         });
 
         for(let i = 0; i < this.#editButtons.length; i++) 
+        {
             this.#editButtons[i].addEventListener("click", (e)=>this.#onEditClicked(e.target.parentNode.value));
+            this.#deleteButtons[i].addEventListener("click", (e)=>this.#onDeleteClicked(e.target.parentNode.value));            
+        }
     }
 
-    #displayData(e) 
+    displayData(e) 
     {
         this.#dataContainer.innerHTML = e;
         this.#loadEvents();
@@ -86,11 +92,16 @@ class FormList
         this.#onEditClicked = fn;
     }
 
+    set onDeleteClicked(fn) 
+    {
+        this.#onDeleteClicked = fn;
+    }
+
     canUpdate() 
     {
         if (this.storedUpdateVal) 
         {
-            this.sender.onDataReceived((e)=> this.#displayData(e));    
+            this.sender.onDataReceived((e)=> this.displayData(e));    
             this.sender.send(`${this.#formName}updateVal=${this.storedUpdateVal}`);            
             this.deleteStoredUpdateVal();
         }
@@ -110,4 +121,17 @@ formList.onEditClicked = (e) =>
     });
     formList.sender.send("dbID=" + e)
 };
+
+formList.onDeleteClicked = (e) => 
+{
+    let confirm = confirm("Are you sure you want to delete this record?");
+    if (!confirm) return false;
+    formList.sender.onDataReceived((e)=>
+    {
+        formList.displayData(e);
+        formList.requery();
+    });
+    formList.sender.send("dbID=" + e)
+};
+
 formList.canUpdate();
