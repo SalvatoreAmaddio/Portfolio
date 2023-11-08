@@ -21,6 +21,16 @@ abstract class AbstractController
         $this->recordSource =  $this->db->recordSource;
     }
 
+    protected function updateVal() : string 
+    {
+        return $this->formName . "updateVal";
+    }
+
+    protected function newVale() : string 
+    {
+        return $this->formName . "newVal";
+    }
+
     public abstract function style();
     public abstract function drawHeader();
 

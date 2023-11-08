@@ -95,21 +95,5 @@
             </footer>
         </div>
     <?php LoadJS();?>
-
-    <script>
-        const formList = new FormList();
-        formList.onEditClicked = (e) =>
-        {
-            formList.sender.onDataReceived((e)=>
-            {
-                let newValue = prompt("Change Value", e.trim());
-                if (!newValue) return false;                
-                formList.storedUpdateVal = newValue;
-                formList.requery();
-            });
-            formList.sender.send("dbID=" + e)
-        };
-        formList.canUpdate();
-    </script>
     </body>
 </html>

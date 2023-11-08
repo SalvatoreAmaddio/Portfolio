@@ -15,6 +15,9 @@ class FormList
         this.#editButtons = this.#dataContainer.getElementsByClassName("editButton");
         this.#searchBox = document.getElementById("searchBox");
         this.#loadEvents();
+        if ((this.storedSearchKey) && (this.storedUpdateVal) && !this.storedUpdateVal.toLocaleLowerCase().includes(this.storedSearchKey.toLocaleLowerCase())) 
+            this.storedSearchKey = this.storedUpdateVal;
+
         this.#searchBox.value =  this.storedSearchKey;
     }
 
@@ -36,6 +39,16 @@ class FormList
     set storedUpdateVal(str) 
     {
         sessionStorage.setItem(`${this.#formName}updateVal`,str);
+    }
+
+    get storedNewVal() 
+    {
+        return sessionStorage.getItem(`${this.#formName}newVal`);
+    }
+
+    set storedNewVal(str) 
+    {
+        sessionStorage.setItem(`${this.#formName}newVal`,str);
     }
 
     deleteStoredUpdateVal() 
@@ -77,9 +90,6 @@ class FormList
     {
         if (this.storedUpdateVal) 
         {
-            if (this.storedSearchKey && !this.storedUpdateVal.includes(this.storedSearchKey)) 
-                this.storedSearchKey = this.storedUpdateVal;
-
             this.sender.onDataReceived((e)=> this.#displayData(e));    
             this.sender.send(`${this.#formName}updateVal=${this.storedUpdateVal}`);            
             this.deleteStoredUpdateVal();
@@ -87,3 +97,17 @@ class FormList
     }
 
 }
+
+const formList = new FormList();
+formList.onEditClicked = (e) =>
+{
+    formList.sender.onDataReceived((e)=>
+    {
+        let newValue = prompt("Change Value", e.trim());
+        if (!newValue) return false;                
+        formList.storedUpdateVal = newValue;
+        formList.requery();
+    });
+    formList.sender.send("dbID=" + e)
+};
+formList.canUpdate();

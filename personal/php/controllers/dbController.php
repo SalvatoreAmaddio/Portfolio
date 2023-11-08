@@ -7,6 +7,11 @@ class DbController extends AbstractController
         $this->formName="db";
     }
 
+    protected function searchVal() : string 
+    {
+        return $this->formName."search";
+    }
+
     private function runSearch() 
     {
         if (!isset($_SESSION[$this->formName . "search"])) return;
@@ -19,12 +24,22 @@ class DbController extends AbstractController
             });
     }
 
+    private function switchSearchValue(AbstractTwoColumns $db) : bool
+    {
+        if (isset($_SESSION[$this->searchVal()]) && strlen($_SESSION[$this->searchVal()])>0) 
+        {
+            if (!Sys::contains($_SESSION[$this->searchVal()],$db->Name,true))
+                return $_SESSION[$this->searchVal()] = $db->Name; 
+        }
+        return false;
+    }
+
     public function onReceived() 
     {
-        if (isset($_REQUEST[$this->formName . "search"])) 
+        if (isset($_REQUEST[$this->searchVal()])) 
         {
-            $search = $_REQUEST[$this->formName . 'search'];
-            $_SESSION[$this->formName . "search"] = $search; 
+            $search = $_REQUEST[$this->searchVal()];
+            $_SESSION[$this->searchVal()] = $search; 
             $this->runSearch();
             echo $this->drawTable();
             return;
@@ -39,19 +54,15 @@ class DbController extends AbstractController
             return;
         }
 
-        if (isset($_REQUEST[$this->formName . "updateVal"])) 
+        if (isset($_REQUEST[$this->updateVal()])) 
         {
-            if (is_null($_REQUEST[$this->formName . "updateVal"])==false) 
+            if (!is_null($_REQUEST[$this->updateVal()])) 
             {
                 if (isset($_SESSION["dbRecord"])) 
                 {
                     $db = unserialize($_SESSION['dbRecord']);
-                    $db->Name = $_REQUEST[$this->formName . "updateVal"];
-                    if (isset($_SESSION[$this->formName . "search"]) && strlen($_SESSION[$this->formName . "search"])>0) 
-                    {
-                        if (!Sys::contains($_SESSION[$this->formName . "search"],$db->Name,true))
-                            $_SESSION[$this->formName . "search"] = $db->Name; 
-                    }
+                    $db->Name = $_REQUEST[$this->updateVal()];
+                    $this->switchSearchValue($db);
                     $this->db->update($db->Name,$db->ID);
                     $this->recordSource->updateRecord($db);
                     unset($_SESSION["dbRecord"]);
