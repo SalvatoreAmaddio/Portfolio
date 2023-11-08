@@ -1,37 +1,10 @@
 <?php
-class DbController extends AbstractController 
+class DbController extends TwoColumnController 
 {
     public function __construct() 
     {
         parent::__construct(new DB());
         $this->formName="db";
-    }
-
-    protected function searchVal() : string 
-    {
-        return $this->formName."search";
-    }
-
-    private function runSearch() 
-    {
-        if (!isset($_SESSION[$this->searchVal()])) return;
-        $search = $_SESSION[$this->searchVal()]; 
-        $this->filterBy(
-            function($record) use($search) : bool
-            {
-                $db = DB::cast($record);
-                return Sys::contains($search,$db->Name,true);
-            });
-    }
-
-    private function switchSearchValue(AbstractTwoColumns $db) : bool
-    {
-        if (isset($_SESSION[$this->searchVal()]) && strlen($_SESSION[$this->searchVal()])>0) 
-        {
-            if (!Sys::contains($_SESSION[$this->searchVal()],$db->Name,true))
-                return $_SESSION[$this->searchVal()] = $db->Name; 
-        }
-        return false;
     }
 
     public function onReceived() 
@@ -45,55 +18,54 @@ class DbController extends AbstractController
             return;
         } 
 
-        if (isset($_REQUEST["deleteID"])) 
+        if ($this->isDeleteIDRequested()) 
         {
-            $this->model = $this->getByID($_REQUEST['deleteID']);
-            $db = DB::Cast($this->model);
-            $this->switchSearchValue($db);
-            $this->db->crud(3, $db->ID);
-            $this->recordSource->deleteRecord($db);
+            $this->model = $this->recordToDelete();
+            $record = DB::Cast($this->model);
+            $this->switchSearchValue($record);
+            $this->db->crud(3, $record->ID);
+            $this->recordSource->deleteRecord($record);
             $this->runSearch();
             echo $this->drawTable();
             return;
         }
 
-        if (isset($_REQUEST["insertVal"])) 
+        if ($this->isNewValRequested()) 
         {
-            if (!is_null($_REQUEST["insertVal"])) 
+            if (!$this->isNewValNull()) 
             {
-                $this->model = new DB();
-                $db = DB::Cast($this->model);
-                $db->Name = $_REQUEST["insertVal"];
-                $this->switchSearchValue($db);
-                $this->db->crud(0, $db->Name);
-                $this->recordSource->addRecord($db);
+                $record = new DB();
+                $record->Name = ucfirst($this->requestedNewVal());
+                $this->switchSearchValue($record);
+                $this->db->crud(0, $record->Name);
+                $this->recordSource->addRecord($record);
                 $this->runSearch();
                 echo $this->drawTable();
             }
             return;
         }
 
-        if (isset($_REQUEST["updateID"])) 
+        if ($this->isUpdateIDRequested()) 
         {
-            $this->model = $this->getByID($_REQUEST['updateID']);
-            $db = DB::Cast($this->model);
-            $_SESSION["toChange"] = serialize($db);
-            echo $db->Name;
+            $this->model = $this->recordToUpdate();
+            $record = DB::Cast($this->model);
+            $this->storeObj($record);
+            echo $record->Name;
             return;
         }
 
-        if (isset($_REQUEST[$this->updateVal()])) 
+        if ($this->isUpdateValRequested()) 
         {
-            if (!is_null($_REQUEST[$this->updateVal()])) 
+            if (!$this->isUpdateValNull()) 
             {
-                if (isset($_SESSION["toChange"])) 
+                if ($this->isObjStored()) 
                 {
-                    $db = unserialize($_SESSION['toChange']);
-                    $db->Name = $_REQUEST[$this->updateVal()];
-                    $this->switchSearchValue($db);
-                    $this->db->crud(2, $db->Name,$db->ID);
-                    $this->recordSource->updateRecord($db);
-                    unset($_SESSION["toChange"]);
+                    $record = $this->getStoredObj();
+                    $record->Name = ucfirst($this->requestedUpdateVal());
+                    $this->switchSearchValue($record);
+                    $this->db->crud(2, $record->Name,$record->ID);
+                    $this->recordSource->updateRecord($record);
+                    $this->destroyStoredObj();
                     $this->runSearch();
                     echo $this->drawTable();
                 }

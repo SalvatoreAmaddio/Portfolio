@@ -21,6 +21,14 @@ class FormList
         this.#addNewButton = document.getElementById("addNewButton");
         this.#searchBox = document.getElementById("searchBox");
         this.#loadEvents();
+        this.onDeleteClicked = (e) => 
+        {
+            let conf = confirm("Are you sure you want to delete this record?");
+            if (!conf) return false;
+            this.redispaly();
+            this.sendDeleteID(e);
+        };
+
         if ((this.storedSearchKey) && (this.storedUpdateVal) && !this.storedUpdateVal.toLocaleLowerCase().includes(this.storedSearchKey.toLocaleLowerCase())) 
             this.storedSearchKey = this.storedUpdateVal;
 
@@ -47,14 +55,19 @@ class FormList
         sessionStorage.setItem(`${this.#formName}updateVal`,str);
     }
 
-    get storedNewVal() 
+    sendUpdateID(id) 
     {
-        return sessionStorage.getItem(`${this.#formName}newVal`);
+        this.sender.send(`${this.#formName}updateID=${id}`)
     }
 
-    set storedNewVal(str) 
+    sendNewVal(newValue) 
     {
-        sessionStorage.setItem(`${this.#formName}newVal`,str);
+        this.sender.send(`${this.#formName}newVal=${newValue}`);
+    }
+    
+    sendDeleteID(id) 
+    {
+        this.sender.send(`${this.#formName}deleteID=${id}`);
     }
 
     deleteStoredUpdateVal() 
@@ -138,7 +151,7 @@ formList.onEditClicked = (e) =>
         formList.storedUpdateVal = newValue;
         formList.requery();
     });
-    formList.sender.send("updateID=" + e)
+    formList.sendUpdateID(e);
 };
 
 formList.onInsertClicked = (e) =>
@@ -150,15 +163,7 @@ formList.onInsertClicked = (e) =>
         return false;
     }                
     formList.redispaly();
-    formList.sender.send("insertVal=" + newValue)
-};
-
-formList.onDeleteClicked = (e) => 
-{
-    let conf = confirm("Are you sure you want to delete this record?");
-    if (!conf) return false;
-    formList.redispaly();
-    formList.sender.send("deleteID=" + e)
+    formList.sendNewVal(newValue);
 };
 
 formList.canUpdate();

@@ -6,6 +6,7 @@ abstract class AbstractController
     public AbstractModel $model;
     public Database $db;
     protected $formName;
+
     public function __construct(AbstractModel $model) 
     {
         $this->model = $model;
@@ -21,16 +22,78 @@ abstract class AbstractController
         $this->recordSource =  $this->db->recordSource;
     }
 
-    protected function updateVal() : string 
+    public function storeObj($db)
     {
-        return $this->formName . "updateVal";
+        $_SESSION[$this->formName."storedObj"] = serialize($db);
     }
 
-    protected function newVale() : string 
+    public function getStoredObj()
     {
-        return $this->formName . "newVal";
+        return unserialize($_SESSION[$this->formName.'storedObj']);
     }
 
+    public function destroyStoredObj()
+    {
+        unset($_SESSION[$this->formName."storedObj"]);
+    }
+    
+    public function isObjStored() : bool
+    {
+        return isset($_SESSION[$this->formName."storedObj"]);
+    }
+
+    //DELETE
+    protected function isDeleteIDRequested() : bool
+    {
+        return isset($_REQUEST[$this->formName."deleteID"]);
+    }
+    protected function recordToDelete() : AbstractModel 
+    {
+        return $this->getByID($_REQUEST[$this->formName.'deleteID']);
+    }
+
+    //INSERT 
+    protected function requestedNewVal()  
+    {
+        return $_REQUEST[$this->formName ."newVal"];
+    }
+
+    protected function isNewValRequested() : bool 
+    {
+        return isset($_REQUEST[$this->formName . "newVal"]);
+    }
+
+    protected function isNewValNull() : bool 
+    {
+        return is_null($_REQUEST[$this->formName . "newVal"]);
+    }
+
+    //UPDATE
+    protected function isUpdateIDRequested() : bool
+    {
+        return isset($_REQUEST[$this->formName."updateID"]);
+    }
+
+    protected function recordToUpdate() : AbstractModel 
+    {
+        return $this->getByID($_REQUEST[$this->formName.'updateID']);
+    }
+
+    protected function isUpdateValRequested() : bool 
+    {
+        return isset($_REQUEST[$this->formName . "updateVal"]);
+    }
+
+    protected function isUpdateValNull() : bool 
+    {
+        return is_null($_REQUEST[$this->formName . "updateVal"]);
+    }
+
+    protected function requestedUpdateVal() 
+    {
+        return $_REQUEST[$this->formName . "updateVal"];
+    }
+    /////
     public abstract function style();
     public abstract function drawHeader();
 
