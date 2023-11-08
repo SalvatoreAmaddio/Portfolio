@@ -125,6 +125,6 @@ td:hover:not(.noData)
 .command button img
 {
     background-color: transparent;
-    width: 90%;
+    width: 70%;
     max-height: 2rem;
 }
