@@ -11,10 +11,19 @@ abstract class AbstractTwoColumns extends AbstractModel
         $this->Name = $name;
         $this->asRow();
     }
-
-    public function matchPK(int $id): bool
+    
+    public function readAssoc(array &$row) 
     {
-        return $this->ID == $id;
+        $this->row = $row;
+        $this->ID = $row[$this->tableName."ID"];
+        $this->Name = $row[$this->tableName."Name"];
+    }
+
+    public function asRow() : array 
+    {
+        if ($this->row==null) 
+            $this->row = array($this->tableName."ID" => &$this->ID, $this->tableName."Name" => &$this->Name);
+        return $this->row;
     }
 
     public function bindTypeParams(int $query) : string 
@@ -28,23 +37,39 @@ abstract class AbstractTwoColumns extends AbstractModel
                 return "i";
         }
     }
+
+    public function updateSQL() : string
+    {
+        return "update " . $this->tableName . " SET ".$this->tableName."Name = ? WHERE ".$this->tableName."ID=?;";
+    }
     
+    public function deleteSQL() : string 
+    {
+        return "delete * from " . $this->tableName . " WHERE ".$this->tableName."ID=?;";
+    }
+
+    public function insertSQL() : string 
+    {
+        return "insert into " . $this->tableName . " (".$this->tableName."Name) VALUES (?);";
+    }
+    
+    public function __toString()
+    {
+        return $this->Name;
+    }
+
+    public function matchPK(int $id): bool
+    {
+        return $this->ID == $id;
+    }
+
+    public abstract function IsEqual(AbstractModel $model) : bool;
+
     public static function Cast(AbstractModel $model) : AbstractTwoColumns
     {
             /** @var OS $obj */
             $obj = $model;
             return $obj;
     }
-
-    public abstract function readAssoc(array &$row); 
-
-    public abstract function asRow() : array; 
-
-    public function __toString()
-    {
-        return $this->Name;
-    }
-
-    public abstract function IsEqual(AbstractModel $model) : bool;
 }
 ?>

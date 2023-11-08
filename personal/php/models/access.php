@@ -5,18 +5,6 @@ class Access extends AbstractModel
     public string $userName;
     public string $password;
     protected string $tableName = "credentials";
-
-    public static function Cast(AbstractModel $model): Access
-    {
-       /** @var Access $obj */
-       $obj = $model;
-       return $obj;
-    }
-
-    public function matchPK(int $id): bool
-    {
-        return $this->userID == $id;
-    }
     
     public function create(array &$row) : Access
     {
@@ -40,15 +28,9 @@ class Access extends AbstractModel
         return $this->row;
     }
 
-    public function IsEqual(AbstractModel $model) : bool 
+    public function bindTypeParams(int $query): string
     {
-        if ($model instanceof OS) 
-        {
-            /** @var Access $obj */
-            $obj = $model;
-            return $this->userID == $obj->userID;
-        }
-        return false;
+        return "";
     }
 
     public function deleteSQL() : string 
@@ -66,9 +48,28 @@ class Access extends AbstractModel
         return "";
     }
 
-    public function bindTypeParams(int $query): string
+    public function matchPK(int $id): bool
     {
-        return "";
+        return $this->userID == $id;
     }
+    
+    public function IsEqual(AbstractModel $model) : bool 
+    {
+        if ($model instanceof OS) 
+        {
+            /** @var Access $obj */
+            $obj = $model;
+            return $this->userID == $obj->userID;
+        }
+        return false;
+    }
+
+    public static function Cast(AbstractModel $model): Access
+    {
+       /** @var Access $obj */
+       $obj = $model;
+       return $obj;
+    }
+
 }
 ?>
