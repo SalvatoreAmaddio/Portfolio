@@ -1,7 +1,7 @@
 <?php
 class DB extends AbstractTwoColumns
 {
-    protected string $tableName = "dbs";
+    protected string $tableName = "db";
         
     public function create(array &$row) : DB
     {

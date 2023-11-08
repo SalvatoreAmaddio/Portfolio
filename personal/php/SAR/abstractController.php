@@ -49,7 +49,7 @@ abstract class AbstractController
     }
     protected function recordToDelete() : AbstractModel 
     {
-        return $this->getByID($_REQUEST[$this->formName.'deleteID']);
+        return $this->getByID((int)$_REQUEST[$this->formName.'deleteID']);
     }
 
     //INSERT 

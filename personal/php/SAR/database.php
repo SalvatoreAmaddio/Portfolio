@@ -63,22 +63,21 @@
             $id = 0;
             if (!$this->isConnected)
                 $this->connect();
-                switch ($query) {
+                switch ($query) 
+                {
                     case 0:
                         $stmt = $this->conn->prepare($this->model->insertSQL());
-                        $stmt->bind_param($this->model->bindTypeParams(0),...$vars);
                     break;
                     case 2:
                         $stmt = $this->conn->prepare($this->model->updateSQL());
-                        $stmt->bind_param($this->model->bindTypeParams(2),...$vars);
                     break;
                     case 3:
                         $stmt = $this->conn->prepare($this->model->deleteSQL());
-                        $stmt->bind_param($this->model->bindTypeParams(3),...$vars);
                     break;
                 }
 
-            if (!isset($stmt)) return;
+            if (!isset($stmt)) return -1;
+            $stmt->bind_param($this->model->bindTypeParams($query),...$vars);
             $stmt->execute();
             $id = ($query==0) ? $stmt->insert_id : $stmt->affected_rows;
             $stmt->close();

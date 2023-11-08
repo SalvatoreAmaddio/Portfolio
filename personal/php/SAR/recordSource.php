@@ -96,14 +96,14 @@ class RecordSource implements Iterator
         return count($this->source);
     }
 
-    public function getByID($id) : AbstractModel
+    public function getByID(int $id) : AbstractModel
     {
         $temp_array = array_values(array_filter($this->source, 
         function($record) use($id) : bool 
         {  
             /** @var AbstractModel $obj */
             $obj = $record;
-            return $obj->matchPK($id);
+            return $obj->matchPK((int)$id);
         }));
         
         return $temp_array[0];
