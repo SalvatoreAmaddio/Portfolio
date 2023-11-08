@@ -5,7 +5,7 @@ abstract class AbstractController
     public RecordSource $recordSource;
     public AbstractModel $model;
     public Database $db;
-    
+    protected $formName;
     public function __construct(AbstractModel $model) 
     {
         $this->model = $model;
@@ -72,7 +72,7 @@ abstract class AbstractController
     //DRAW DATA TABLE
     public function openTable() 
     {        
-        echo "<form> <table id='displayer'>";
+        echo "<form id='formData'> <table id='displayer'>";
     }
 
     public function closeTable() 

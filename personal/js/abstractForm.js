@@ -5,19 +5,48 @@ class FormList
     #onEditClicked;
     #searchBox;
     #formName;
-    #tableForm;
     sender;
 
-    constructor(formName="") 
+    constructor(formName="db") 
     {
         this.#formName = formName;
         this.sender = new Sender();
         this.#dataContainer = document.getElementById("dataContainer");
-        this.#tableForm = this.#dataContainer.getElementsByTagName("form")[0];
         this.#editButtons = this.#dataContainer.getElementsByClassName("editButton");
         this.#searchBox = document.getElementById("searchBox");
         this.#loadEvents();
-        this.#searchBox.value =  sessionStorage.getItem("searchMe");
+        this.#searchBox.value =  this.storedSearchKey;
+        this.deleteStoredUpdateVal();
+    }
+
+    get storedSearchKey() 
+    {
+        return sessionStorage.getItem(`${this.#formName}search`);
+    }
+
+    set storedSearchKey(str) 
+    {
+        return sessionStorage.setItem(`${this.#formName}search`,str);
+    }
+
+    get storedUpdateVal() 
+    {
+        return sessionStorage.getItem(`${this.#formName}updateVal`);
+    }
+
+    set storedUpdateVal(str) 
+    {
+        return sessionStorage.setItem(`${this.#formName}updateVal`,str);
+    }
+
+    deleteStoredUpdateVal() 
+    {
+        sessionStorage.removeItem(`${this.#formName}updateVal`);
+    }
+
+    requery() 
+    {
+        document.getElementById("formData").submit();
     }
 
     #loadEvents() 
@@ -25,13 +54,13 @@ class FormList
         this.#searchBox.addEventListener("keyup",
         (e)=>
         {
-            this.sender.onDataReceived((e)=> this.#displayData(e));            
-            this.sender.send("search=" + e.target.value);
-            sessionStorage.setItem("searchMe",e.target.value);
+            this.sender.onDataReceived((e)=> this.#displayData(e));       
+            this.storedSearchKey = e.target.value;      
+            this.sender.send(`${this.#formName}search=${this.storedSearchKey}`);
         });
 
         for(let i = 0; i < this.#editButtons.length; i++) 
-        this.#editButtons[i].addEventListener("click", (e)=>this.#onEditClicked(e.target.value));
+            this.#editButtons[i].addEventListener("click", (e)=>this.#onEditClicked(e.target.value));
     }
 
     #displayData(e) 
@@ -45,22 +74,15 @@ class FormList
         this.#onEditClicked = fn;
     }
 
-    storeUpdateValue(str) 
-    {
-        if (!str) return;
-        sessionStorage.setItem("updateValue",str);
-        sessionStorage.setItem("searchMe",str);
-    }
-
     canUpdate() 
     {
-        if (sessionStorage.getItem("updateValue")) 
+        if (this.storedUpdateVal) 
         {
-            let temp_val = sessionStorage.getItem("updateValue");
-            if (!temp_val) return
+            if (this.storedSearchKey && !this.storedUpdateVal.includes(this.storedSearchKey)) 
+                this.storedSearchKey = this.storedUpdateVal;
+
             this.sender.onDataReceived((e)=> this.#displayData(e));            
-            sessionStorage.removeItem("updateValue");
-            this.sender.send("updateValue=" + temp_val);            
+            this.sender.send(`${this.#formName}updateVal=${this.storedUpdateVal}`);            
         }
     }
 

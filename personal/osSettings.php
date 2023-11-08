@@ -103,8 +103,9 @@
             formList.sender.onDataReceived((e)=>
             {
                 let newValue = prompt("Change Value", e.trim());
-                if (!newValue) return false;
-                formList.storeUpdateValue(newValue);                
+                if (!newValue) return false;                
+                formList.storeUpdateVal=newValue;
+                formList.requery();
             });
             formList.sender.send("dbID=" + e)
         };
