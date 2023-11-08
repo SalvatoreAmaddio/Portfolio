@@ -119,19 +119,19 @@ formList.onEditClicked = (e) =>
         formList.storedUpdateVal = newValue;
         formList.requery();
     });
-    formList.sender.send("dbID=" + e)
+    formList.sender.send("updateID=" + e)
 };
 
 formList.onDeleteClicked = (e) => 
 {
-    let confirm = confirm("Are you sure you want to delete this record?");
-    if (!confirm) return false;
+    let conf = confirm("Are you sure you want to delete this record?");
+    if (!conf) return false;
     formList.sender.onDataReceived((e)=>
     {
         formList.displayData(e);
         formList.requery();
     });
-    formList.sender.send("dbID=" + e)
+    formList.sender.send("deleteID=" + e)
 };
 
 formList.canUpdate();

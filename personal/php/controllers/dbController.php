@@ -14,8 +14,8 @@ class DbController extends AbstractController
 
     private function runSearch() 
     {
-        if (!isset($_SESSION[$this->formName . "search"])) return;
-        $search = $_SESSION[$this->formName . "search"]; 
+        if (!isset($_SESSION[$this->searchVal()])) return;
+        $search = $_SESSION[$this->searchVal()]; 
         $this->filterBy(
             function($record) use($search) : bool
             {
@@ -44,13 +44,25 @@ class DbController extends AbstractController
             echo $this->drawTable();
             return;
         } 
-        
-        if (isset($_REQUEST["dbID"])) 
+
+        if (isset($_REQUEST["deleteID"])) 
         {
-            $this->model = $this->getByID($_REQUEST['dbID']);
-            $obj = DB::Cast($this->model);
-            $_SESSION["dbRecord"] = serialize($obj);
-            echo $obj->Name;
+            $this->model = $this->getByID($_REQUEST['deleteID']);
+            $db = DB::Cast($this->model);
+            $this->switchSearchValue($db);
+            //$this->db->delete($db->Name,$db->ID); <--- TO IMPLEMENT
+            $this->recordSource->deleteRecord($db);
+            $this->runSearch();
+            echo $this->drawTable();
+            return;
+        }
+
+        if (isset($_REQUEST["updateID"])) 
+        {
+            $this->model = $this->getByID($_REQUEST['updateID']);
+            $db = DB::Cast($this->model);
+            $_SESSION["toChange"] = serialize($db);
+            echo $db->Name;
             return;
         }
 
@@ -58,14 +70,14 @@ class DbController extends AbstractController
         {
             if (!is_null($_REQUEST[$this->updateVal()])) 
             {
-                if (isset($_SESSION["dbRecord"])) 
+                if (isset($_SESSION["toChange"])) 
                 {
-                    $db = unserialize($_SESSION['dbRecord']);
+                    $db = unserialize($_SESSION['toChange']);
                     $db->Name = $_REQUEST[$this->updateVal()];
                     $this->switchSearchValue($db);
                     $this->db->update($db->Name,$db->ID);
                     $this->recordSource->updateRecord($db);
-                    unset($_SESSION["dbRecord"]);
+                    unset($_SESSION["toChange"]);
                     $this->runSearch();
                     echo $this->drawTable();
                 }
@@ -90,7 +102,7 @@ class DbController extends AbstractController
                 <td class='selector'>➤</td>
                 <td class='col1'>". $obj . "</td>
                 <td class='command'><button type='button' class='editButton' value='" . $obj->ID . "'><img src='/img/save_blue.png'></button></td>
-                <td class='command'><button class='deleteButton' value='" . $obj->ID . "'><img src='/img/delete.png'></button></td>
+                <td class='command'><button type='button' class='deleteButton' value='" . $obj->ID . "'><img src='/img/delete.png'></button></td>
             </tr>";
     }
 }
