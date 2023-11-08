@@ -78,8 +78,8 @@ class DbController extends AbstractController
         echo"<tr>
                 <td class='selector'>➤</td>
                 <td class='col1'>". $obj . "</td>
-                <td class='command'><button type='button' class='editButton' value='" . $obj->ID . "'>EDIT</button></td>
-                <td class='command'><button class='deleteButton' value='" . $obj->ID . "'>DELETE</button></td>
+                <td class='command'><button type='button' class='editButton' value='" . $obj->ID . "'><img src='/img/save_blue.png'></button></td>
+                <td class='command'><button class='deleteButton' value='" . $obj->ID . "'><img src='/img/delete.png'></button></td>
             </tr>";
     }
 }

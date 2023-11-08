@@ -59,7 +59,7 @@ class FormList
         });
 
         for(let i = 0; i < this.#editButtons.length; i++) 
-            this.#editButtons[i].addEventListener("click", (e)=>this.#onEditClicked(e.target.value));
+            this.#editButtons[i].addEventListener("click", (e)=>this.#onEditClicked(e.target.parentNode.value));
     }
 
     #displayData(e) 

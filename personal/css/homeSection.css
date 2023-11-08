@@ -96,15 +96,17 @@ td:hover:not(.noData)
 .command 
 {
     min-width: 1rem;
-    width: 10%;
+    width: 4%;
+    border: none;
 }
 
 .command button 
 {
     display: block;
     width: 100%;
-    padding: .5rem 0;
-    font-weight: bold;
+    padding: 0;
+    background-color: transparent;
+    border: none;
 }
 
 .noData 
@@ -118,4 +120,11 @@ td:hover:not(.noData)
     padding: .5rem;
     margin-top: 1rem;
     text-align: start;
+}
+
+.command button img
+{
+    background-color: transparent;
+    width: 90%;
+    max-height: 2rem;
 }
