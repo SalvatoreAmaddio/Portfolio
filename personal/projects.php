@@ -127,7 +127,7 @@
                     <td>Mobile</td>
                     <td class="responsiveRow">Name:</td>
                     <td>MyPlanogram</td>
-                    <td class="responsiveRow">Version:</td>
+                    <td class="responsiveRow">Ver:</td>
                     <td>1.0.0.0</td>
                     <td class="responsiveRow">OS:</td>
                     <td>Android / IOS</td>
@@ -135,17 +135,17 @@
                     <td>2023</td>
                     <td class="responsiveRow">Client:</td>
                     <td>Carole Crockett</td>
-                    <td class="responsiveRow">Lang:</td>
+                    <td class="responsiveRow"><img src="/img/coding.png"></td>
                     <td>C#</td>
                     <td class="responsiveRow">Tech:</td>
                     <td>MAUI</td>
-                    <td class="responsiveRow">DB:</td>
+                    <td class="responsiveRow"><img src="/img/db.png"></td>
                     <td>MySQL</td>
-                    <td class="responsiveRow"><img src="/img/office.jpg"></td>
+                    <td class="responsiveRow"><img src="/img/officeIcon.png"></td>
                     <td>Yes</td>
                     <td class="responsiveRow"><img src="/img/pdf.png"></td>
                     <td>Yes</td>
-                    <td class="responsiveRow">Multi User:</td>
+                    <td class="responsiveRow"><img src="/img/users.png"></td>
                     <td>Yes</td>
                     <td class="command"><button type="button" class="editButton" value="3"><img src="/img/save_blue.png"></button></td>
                     <td class="command"><button type="button" class="deleteButton" value="3"><img src="/img/delete.png"></button></td>

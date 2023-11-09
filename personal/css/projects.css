@@ -41,9 +41,10 @@ td
 
 .responsiveRow img
 {
-    width: 2rem;
-    height: 2rem;
+    width:1.48rem;
+    height: 1.48rem;
     display: block;
+    margin: auto;
 }
 
 td, th 
@@ -132,7 +133,7 @@ td, th
         max-width: 100%;
         border: 1px solid;
         padding: 0;
-        display: inline-block;
+        display: none;
     }
 
     table, tbody 
@@ -144,7 +145,8 @@ td, th
     .responsiveRow, td
     {
         padding-left: .3rem;
-        display: inline-block;
+        display: block;
+        float: left;
         width: 70%;
         border-bottom: 1px solid;
     }
@@ -180,31 +182,5 @@ td, th
     tr 
     {
         padding: 1rem .5rem;
-    }
-}
-
-@media screen and (max-width:326.5px)
-{
-
-    tr .responsiveRow:nth-of-type(24) 
-    {
-        padding-top: 0;
-        padding-bottom: 0;
-    }
-}
-
-@media screen and (max-width:294.5px)
-{
-    .responsiveRow, td 
-    {
-        font-size: .7rem;
-    }
-}
-
-@media screen and (max-width:242.5px)
-{
-    .responsiveRow, td 
-    {
-        font-size: .6rem;
     }
 }
