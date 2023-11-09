@@ -43,11 +43,6 @@ abstract class AbstractTwoColumns extends AbstractModel
         return "update " . $this->tableName . " SET ".$this->tableName."Name = ? WHERE ".$this->tableName."ID=?;";
     }
     
-    public function deleteSQL() : string 
-    {
-        return "delete from " . $this->tableName . " WHERE ".$this->tableName."ID = ?;";
-    }
-
     public function insertSQL() : string 
     {
         return "insert into " . $this->tableName . " (".$this->tableName."Name) VALUES (?);";
