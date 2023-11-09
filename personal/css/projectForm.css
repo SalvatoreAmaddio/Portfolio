@@ -1,0 +1,66 @@
+select 
+{
+    color: black;
+    border: none;
+    border-radius: 1rem;
+    font-size: 1.1rem;
+    padding: 0.5rem;
+    display: block;
+}
+
+#data 
+{
+    display: flow-root;
+}
+
+#group1, #group2, #group3 
+{
+    border-radius: 1rem;
+    width: 33.33%;
+    float: left;
+    margin-bottom: 1rem;
+    margin-right: 1rem;
+}
+
+#group3 
+{
+    width: 20.33%;
+    margin-right: 0;
+}
+
+table 
+{
+    width: 100%;
+    border: 1px solid;
+    border-radius: 1rem;
+    border-spacing: 0;
+    overflow: hidden;
+    padding-bottom: .5rem;
+}
+
+th 
+{
+    border-radius: 0,0,1rem,1rem;
+    background-color: rgba(146, 182, 213, .3);
+    padding: 1rem;
+}
+
+label, input, select, td
+{
+    min-width: 50%;
+    max-width: 50%;
+    width: 50%;
+    text-align: start;
+}
+
+#descriptionContainer 
+{
+    border: 1px solid;
+    border-radius: 1rem;
+    clear: both;
+}
+
+#descriptionContainer textarea 
+{
+    width: 100%;
+}
