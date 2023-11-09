@@ -133,9 +133,12 @@ td, th
     {
         width: 50%;
         max-width: 100%;
-        border: 1px solid;
         padding: 0;
-        display: none;
+        margin-top: .7rem;
+    }
+    .command button img 
+    {
+        width: 20%;
     }
 
     table, tbody 
