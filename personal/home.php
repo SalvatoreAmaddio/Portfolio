@@ -16,7 +16,8 @@
                     </div>
 
                     <div id="exit">
-                        EXIT
+                        <img src="/img/logout.png">
+                        <p>Logout</p>
                     </div>
             </header>
             <main>

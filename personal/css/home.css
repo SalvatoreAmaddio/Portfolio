@@ -18,12 +18,21 @@ header
 #exit 
 {
     position: absolute;
-    border: 1px solid;
     font-size: 1rem;
     top: 0;
     right: 0;
     bottom: 0;
-    padding: 1rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+}
+
+#exit img 
+{
+    display: block;
+    margin: auto;
+    max-width: 100%;
+    width: 2.4rem;
+    height: 2.4rem;
 }
 
 #main 
@@ -147,14 +156,6 @@ footer
     }
 }
 
-@media screen and (max-width:425.5px)
-{
-    #headerTitle 
-    {
-        font-size: 1.5rem;
-    }
-}
-
 @media screen and (max-width:551.5px) and (min-width:519.5px) 
 {
     #os 
@@ -198,4 +199,12 @@ footer
     {
         padding-bottom: 1rem;
     }
+}
+
+@media screen and (max-width:269.5px) 
+{
+    #exit p:last-of-type
+    {
+        display: none;
+    }    
 }
