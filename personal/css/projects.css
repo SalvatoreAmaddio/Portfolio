@@ -1,21 +1,26 @@
-body 
-{
-    background-color: red;
-}
-
 table
 {
     border-spacing: 0;
     width: 100%;
+    border-collapse: collapse;
 }
 
 th 
 {
     border: 1px solid;
+    background-color: lightgray;
+    color: black;
+    border-bottom: none;
     padding: .5rem;
     font-size: .9rem;
     letter-spacing: 2px;
     overflow-wrap: break-word;
+    font-size: .9rem;
+}
+
+th:first-of-type 
+{
+    border: none;
 }
 
 td 
@@ -26,6 +31,7 @@ td
     border-top: none;
     padding: .5rem .1rem;
     overflow-wrap: break-word;
+    font-size: .9rem;
 }
 
 .responsiveRow 
@@ -47,11 +53,6 @@ td
     height: 1.48rem;
     display: block;
     margin: auto;
-}
-
-td, th 
-{
-    font-size: .9rem;
 }
 
 .proLang 
