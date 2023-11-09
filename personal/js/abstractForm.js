@@ -18,12 +18,15 @@ class FormList
         {
             case 1:
                 this.#formName="db";
+                document.title="DB";
             break;
             case 2:
                 this.#formName="os";
+                document.title="OS";
             break;
             case 3:
-                this.#formName="projectType";
+                this.#formName="projecttype";
+                document.title="Project Type";
             break;
             default:return;
         }
@@ -171,6 +174,7 @@ class FormListTwoColumn extends FormList
             this.sendNewVal(newValue);
         };
     }
+
 }
 
 

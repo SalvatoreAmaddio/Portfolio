@@ -45,7 +45,7 @@ abstract class AbstractTwoColumns extends AbstractModel
     
     public function deleteSQL() : string 
     {
-        return "delete * from " . $this->tableName . " WHERE ".$this->tableName."ID=?;";
+        return "delete from " . $this->tableName . " WHERE ".$this->tableName."ID = ?;";
     }
 
     public function insertSQL() : string 

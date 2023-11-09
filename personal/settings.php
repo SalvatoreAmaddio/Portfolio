@@ -9,10 +9,13 @@
     switch($path) 
     {
         case 1:
-            $controller = new DbController();
+            $controller = new DBController();
         break;
         case 2:
-            $controller = new OsController();
+            $controller = new OSController();
+        break;
+        case 3:
+            $controller = new ProjectTypeController();
         break;
         default:
             exit();
@@ -31,6 +34,7 @@
 
     <body>
         <div id="wrapper">
+
             <nav>
                 <a id="hamburgerIcon">
                     <img src="/img/hamburgericon.png">
@@ -38,7 +42,7 @@
 
                 <div id="hamburgerDropDown">
                     <ul id="navBarList">
-                        <div id="navBarLogo" class="responsiveImg" style="display: none;">
+                        <div id="navBarLogo" class="responsiveImg">
                             <a href="#">
                                 <img src="/img/navBarLogo.png" width="250px">
                             </a>                
@@ -58,6 +62,7 @@
                                     <img src="/img/cpanel_logo.png">
                                 </div>
                             </a>
+                            <span></span>
                             </li>
                         </div>
 
@@ -89,6 +94,7 @@
                     </ul>
                 </div>
             </nav>
+
             <main>
                 <section class="container">
                     <div class="layer" id="searchPanel">
@@ -109,6 +115,15 @@
         </div>
     <?php LoadJS();?>
         <script>
+            class SettingPage extends DefaultPage
+            {
+                constructor()
+                {
+                    super("Salvatore Amaddio Rivolta");
+                    this.navBar.isNavLogoEnabled=false;
+                }
+            }
+            new SettingPage();
             new FormListTwoColumn();
         </script>        
     </body>

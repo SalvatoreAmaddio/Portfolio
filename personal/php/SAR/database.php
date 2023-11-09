@@ -75,8 +75,7 @@
                         $stmt = $this->conn->prepare($this->model->deleteSQL());
                     break;
                 }
-
-            if (!isset($stmt)) return -1;
+            if (!isset($stmt) || (!$stmt)) return -1;
             $stmt->bind_param($this->model->bindTypeParams($query),...$vars);
             $stmt->execute();
             $id = ($query==0) ? $stmt->insert_id : $stmt->affected_rows;

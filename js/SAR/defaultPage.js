@@ -5,6 +5,7 @@ class NavBar
     #hamburgerIcon;
     #navLogo;
     #links;
+    #enableNavLogo = true;
 
     constructor()
     {
@@ -21,13 +22,30 @@ class NavBar
         this.#hamburgerIcon.addEventListener("click",()=>this.#toggleHamburgerDropDown());
     }
 
+    get #isNavLogoEnabled() 
+    {
+        return this.#enableNavLogo;
+    }
+
     get #navBarAtTop() 
     {
         return this.#me.getBoundingClientRect().top==0;
     }
 
+    set isNavLogoEnabled(val)
+    {
+        this.#enableNavLogo = val;
+        if (!val) 
+            this.#navLogo.style.display = "block";
+    }
+
     #showNavLogo()
     {
+        if (!this.#isNavLogoEnabled) 
+        {
+            this.#navLogo.style.display = (this.isResponsive)  ? "none" : "block";
+            return;
+        }
         this.#navLogo.style.display = "none";
         if (this.#navBarAtTop && (!this.isResponsive)) this.#navLogo.style.display = "block";
     }

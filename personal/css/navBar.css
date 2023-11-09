@@ -1,0 +1,168 @@
+@media screen and (max-width: 1080.5px) and (pointer: coarse) 
+{
+    #centerGroup 
+    {
+         position: absolute;
+         width: fit-content; 
+         margin: auto; 
+    }
+}
+
+@media screen and (max-width: 913.5px) and (pointer: coarse) 
+{
+    #navBarList 
+    {
+        padding: 0;
+    }
+    
+    #hamburgerIcon 
+    {
+        display:none;
+    }
+
+    #navBarList li 
+    {
+        display: block;
+        float: left;
+        width: initial;
+    }   
+
+    #navBarList li a 
+    {
+        padding: 1.1rem 0.9rem;
+    }
+
+    #leftGroup 
+    {
+        width: fit-content;
+    }
+
+    #rightGroup 
+    {
+        display: initial;
+    }
+
+    #rightGroup li a 
+    {
+        padding-top: .6rem;
+        padding-bottom: 0rem;
+    }
+
+    #hamburgerDropDown 
+    {
+        display: flow-root;
+        position: initial;
+        overflow: initial;
+        padding-bottom: initial;
+        z-index: 1;
+    }
+}
+
+@media screen and (max-width: 905.5px) and (pointer: coarse) 
+{
+    #centerGroup 
+    {
+        position: static;
+    }
+}
+
+@media screen and (max-width: 849.5px) and (pointer: coarse) 
+{
+    #navBarLogo 
+    {
+        display: none;
+    }
+
+    #hamburgerDropDown {
+        display: none;
+        position: absolute;
+        overflow: visible;
+        left: 0em;
+        padding-bottom: .5rem;
+        z-index: 1;
+    }
+
+    #navBarList li, #rightGroup, #centerGroup, #leftGroup 
+    {
+        float: none;
+        display: block;
+        width: 100%;
+    }
+    
+    #rightGroup li a
+    {
+        padding: 0 1rem;
+    }
+
+    #centerGroup li a, #leftGroup li a
+    {
+        padding: .5rem 1rem;
+    }
+
+    #hamburgerIcon 
+    {
+        display: block;
+    }
+
+    nav .responsiveImg 
+    {
+        margin-left: initial;
+    }
+}
+
+@media screen and (max-width: 836.5px) and (pointer: fine) 
+{
+    #hamburgerDropDown {
+        display: block;
+        position: absolute;
+        overflow: visible;
+        left: 0em;
+        padding-bottom: .5rem;
+        z-index: 1;
+    }
+
+    #hamburgerIcon 
+    {
+        display: block;
+    }
+
+    nav .responsiveImg 
+    {
+        margin-left: initial;
+    }
+
+    #navBarList li, #rightGroup, #centerGroup, #leftGroup 
+    {
+        float: none;
+        display: block;
+        width: 100%;
+    }
+    
+    #navBarLogo 
+    {
+        display: none;
+    }
+
+    #rightGroup
+    {
+        float: none;
+        display: block;
+        width: 100%;
+    }
+
+    #centerGroup li a, #leftGroup li a
+    {
+        text-align: start;
+        padding: .5rem 1rem;
+    }
+
+    #rightGroup li a
+    {
+        padding: 0 1rem;
+    }
+
+    nav .responsiveImg 
+    {
+        margin-left: initial;
+    }
+}

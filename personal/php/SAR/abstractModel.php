@@ -5,8 +5,6 @@ abstract class AbstractModel {
   protected $row = array();
   protected string $tableName;
 
-  public abstract static function Cast(AbstractModel $model) : AbstractModel;
-
   public abstract function create(array &$row) : AbstractModel;
 
   public abstract function asRow() : array;
@@ -33,5 +31,7 @@ abstract class AbstractModel {
 
   public abstract function matchPK(int $id) : bool;
   public abstract function IsEqual(AbstractModel $model) : bool;
+
+  public abstract static function Cast(AbstractModel $model) : AbstractModel;
 }
 ?>
