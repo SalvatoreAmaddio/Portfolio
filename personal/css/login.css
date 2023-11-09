@@ -18,11 +18,21 @@ form
 
 input[type=submit] 
 {
-    margin-top: 1rem;
+    margin-top: 0rem;
 }
 
+#rememberMeContainer 
+{
+    padding: 1rem;
+}
 
-@media screen and (max-width:500.5px) 
+#rememberMeContainer input, #rememberMeContainer label
+{
+    display: initial;
+    width: fit-content;
+}
+
+@media screen and (max-width:600.5px) 
 {
     #loginContainer  
     {

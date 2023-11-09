@@ -25,6 +25,10 @@
                         <input name="user" type="text" required/>
                     <label>Password</label>
                         <input name="pwd" type="password" required/>
+                    <div id="rememberMeContainer">
+                        <label for="rememberMe">Remember Me </label>
+                        <input name="rmbrM" type="checkbox" id="rememberMe"/>
+                    </div>
                     <input type="submit" value="GET IN"/> 
                 </form>
                 </div>
