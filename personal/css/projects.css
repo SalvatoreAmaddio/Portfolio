@@ -31,7 +31,9 @@ td
 .responsiveRow 
 {
     display: none;
-    width: 50%;
+    float: left;
+    border: none;
+    width: 20%;
     max-width: 100%;
     font-weight: bold;
     background-color: inherit;
@@ -39,7 +41,7 @@ td
     letter-spacing: 1px;
 }
 
-.responsiveRow img
+.headerIcon
 {
     width:1.48rem;
     height: 1.48rem;
@@ -142,19 +144,23 @@ td, th
         width: 100%;
     }
 
-    .responsiveRow, td
+    td
     {
         padding-left: .3rem;
         display: block;
         float: left;
-        width: 70%;
+        width: 80%;
         border-bottom: 1px solid;
     }
 
     .responsiveRow 
     {
-        width: 30%;
-        border: none;
+        display: block;
+    }
+
+    .headerIcon 
+    {
+        margin: initial;
     }
 
     tr 

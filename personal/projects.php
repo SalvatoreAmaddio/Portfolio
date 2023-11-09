@@ -98,12 +98,12 @@
                     <th>OS</th>
                     <th class="proLang">Year</th>
                     <th>Client</th>
-                    <th class="proLang">Lang</th>
+                    <th class="proLang"><img class="headerIcon" src="/img/coding.png"></th>
                     <th class="proLang">Tech</th>
-                    <th class="proLang">DB</th>
-                    <th class="bool">Office Pack</th>
-                    <th class="bool">PDF</th>
-                    <th class="bool">Multi-Users</th> 
+                    <th class="proLang"><img class="headerIcon" src="/img/db.png"></th>
+                    <th class="bool"><img class="headerIcon" src="/img/officeIcon.png"></th>
+                    <th class="bool"><img class="headerIcon" src="/img/pdfIcon.png"></th>
+                    <th class="bool"><img class="headerIcon" src="/img/users.png"></th> 
                     <th colspan="2">COMMANDS</th>
                 </tr>
                 <tr>
@@ -123,29 +123,29 @@
                 </tr>
                 <tr>
                     <td class="selector">➤</td>
-                    <td class="responsiveRow">Type:</td>
+                    <td class="responsiveRow">Type</td>
                     <td>Mobile</td>
-                    <td class="responsiveRow">Name:</td>
+                    <td class="responsiveRow">Name</td>
                     <td>MyPlanogram</td>
-                    <td class="responsiveRow">Ver:</td>
+                    <td class="responsiveRow">Ver</td>
                     <td>1.0.0.0</td>
-                    <td class="responsiveRow">OS:</td>
+                    <td class="responsiveRow">OS</td>
                     <td>Android / IOS</td>
-                    <td class="responsiveRow">Year:</td>
+                    <td class="responsiveRow">Year</td>
                     <td>2023</td>
-                    <td class="responsiveRow">Client:</td>
+                    <td class="responsiveRow">Client</td>
                     <td>Carole Crockett</td>
-                    <td class="responsiveRow"><img src="/img/coding.png"></td>
+                    <td class="responsiveRow"><img class="headerIcon" src="/img/coding.png"></td>
                     <td>C#</td>
-                    <td class="responsiveRow">Tech:</td>
+                    <td class="responsiveRow">Tech</td>
                     <td>MAUI</td>
-                    <td class="responsiveRow"><img src="/img/db.png"></td>
+                    <td class="responsiveRow"><img class="headerIcon" src="/img/db.png"></td>
                     <td>MySQL</td>
-                    <td class="responsiveRow"><img src="/img/officeIcon.png"></td>
+                    <td class="responsiveRow"><img class="headerIcon" src="/img/officeIcon.png"></td>
                     <td>Yes</td>
-                    <td class="responsiveRow"><img src="/img/pdf.png"></td>
+                    <td class="responsiveRow"><img class="headerIcon" src="/img/pdfIcon.png"></td>
                     <td>Yes</td>
-                    <td class="responsiveRow"><img src="/img/users.png"></td>
+                    <td class="responsiveRow"><img class="headerIcon" src="/img/users.png"></td>
                     <td>Yes</td>
                     <td class="command"><button type="button" class="editButton" value="3"><img src="/img/save_blue.png"></button></td>
                     <td class="command"><button type="button" class="deleteButton" value="3"><img src="/img/delete.png"></button></td>
