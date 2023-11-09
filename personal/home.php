@@ -14,6 +14,10 @@
                     <div id="headerTitle">
                         <h1>Home</h1>
                     </div>
+
+                    <div id="exit">
+                        EXIT
+                    </div>
             </header>
             <main>
                 <section id="main">

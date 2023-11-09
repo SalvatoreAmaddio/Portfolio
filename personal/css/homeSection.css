@@ -129,3 +129,26 @@ td:hover:not(.noData)
     max-height: 2rem;
 }
  
+@media screen and (max-width:671.5px) 
+{
+    #addNewButton 
+    {
+        margin-right: 0;
+    }    
+}
+
+@media screen and (max-width:511.5px) 
+{
+    #searchPanel input 
+    {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width:263.5px) 
+{
+    #searchPanel input 
+    {
+        width: 70%;
+    }
+}

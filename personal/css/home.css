@@ -3,14 +3,32 @@
     text-decoration: none;
 }
 
+header 
+{
+    position: relative;
+}
+
 #headerTitle 
 {
     letter-spacing: 3px;
+    font-size: 1rem;
+    position: relative;
+}
+
+#exit 
+{
+    position: absolute;
+    border: 1px solid;
+    font-size: 1rem;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    padding: 1rem;
 }
 
 #main 
 {
-    padding-bottom: 8.1%;
+    padding-bottom: 7.2%;
     position: relative;
 }
 
