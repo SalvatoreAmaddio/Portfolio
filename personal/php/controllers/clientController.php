@@ -1,7 +1,11 @@
 <?php
-abstract class TwoColumnController extends AbstractController
+class ClientController extends AbstractController 
 {
-    protected string $headerTitle;   
+    public function __construct() 
+    {
+        parent::__construct(new Client());
+        $this->formName="client";
+    }
 
     protected function runSearch() 
     {
@@ -10,17 +14,17 @@ abstract class TwoColumnController extends AbstractController
         $this->filterBy(
             function($record) use($search) : bool
             {
-                $rec = AbstractTwoColumns::cast($record);
-                return Sys::contains($search,$rec->Name,true);
+                $rec = Client::cast($record);
+                return Sys::contains($search,$rec->fullName(), true);
             });
     }
 
-    protected function switchSearchValue(AbstractTwoColumns $record) : bool
+    protected function switchSearchValue(Client $record) : bool
     {
         if (isset($_SESSION[$this->searchVal()]) && strlen($_SESSION[$this->searchVal()])>0) 
         {
-            if (!Sys::contains($_SESSION[$this->searchVal()],$record->Name,true))
-                return $_SESSION[$this->searchVal()] = $record->Name; 
+            if (!Sys::contains($_SESSION[$this->searchVal()],$record->fullName(),true))
+                return $_SESSION[$this->searchVal()] = $record->fullName(); 
         }
         return false;
     }
@@ -39,9 +43,9 @@ abstract class TwoColumnController extends AbstractController
         if ($this->isDeleteIDRequested()) 
         {
             $this->model = $this->recordToDelete();
-            $record = AbstractTwoColumns::Cast($this->model);
+            $record = Client::Cast($this->model);
             $this->switchSearchValue($record);
-            $this->db->crud(3, $record->ID);
+            $this->db->crud(3, $record->clientID);
             $this->recordSource->deleteRecord($record);
             $this->runSearch();
             echo $this->drawTable();
@@ -52,10 +56,10 @@ abstract class TwoColumnController extends AbstractController
         {
             if (!$this->isNewValNull()) 
             {
-                $record = AbstractTwoColumns::Cast($this->model);
-                $record->Name = ucfirst($this->requestedNewVal());
+                $record = Client::Cast($this->model);
+                $record->firstName = ucfirst($this->requestedNewVal());
                 $this->switchSearchValue($record);
-                $record->ID = $this->db->crud(0, $record->Name);
+                $record->clientID = $this->db->crud(0, $record->firstName,$record->lastName);
                 $this->recordSource->addRecord($record);
                 $this->runSearch();
                 echo $this->drawTable();
@@ -66,9 +70,9 @@ abstract class TwoColumnController extends AbstractController
         if ($this->isUpdateIDRequested()) 
         {
             $this->model = $this->recordToUpdate();
-            $record = AbstractTwoColumns::Cast($this->model);
+            $record = Client::Cast($this->model);
             $this->storeObj($record);
-            echo $record->Name;
+            echo $record->fullName();
             return;
         }
 
@@ -79,9 +83,9 @@ abstract class TwoColumnController extends AbstractController
                 if ($this->isObjStored()) 
                 {
                     $record = $this->getStoredObj();
-                    $record->Name = ucfirst($this->requestedUpdateVal());
+                    $record->firstName = ucfirst($this->requestedUpdateVal());
                     $this->switchSearchValue($record);
-                    $this->db->crud(2, $record->Name,$record->ID);
+                    $this->db->crud(2, $record->firstName,$record->lastName,$record->ID);
                     $this->recordSource->updateRecord($record);
                     $this->destroyStoredObj();
                     $this->runSearch();
@@ -107,10 +111,9 @@ abstract class TwoColumnController extends AbstractController
     {
         echo "<tr>
               <th></th>
-              <th>" . $this->headerTitle ."</th>
+              <th>Clients</th>
               <th colspan='2'>COMMANDS</th>
              </tr>";
     }
 }
-
 ?>

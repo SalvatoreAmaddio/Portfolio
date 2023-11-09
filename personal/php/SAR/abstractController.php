@@ -22,6 +22,11 @@ abstract class AbstractController
         $this->recordSource =  $this->db->recordSource;
     }
 
+    protected function searchVal() : string 
+    {
+        return $this->formName."search";
+    }
+        
     public function storeObj($db)
     {
         $_SESSION[$this->formName."storedObj"] = serialize($db);

@@ -7,7 +7,7 @@ class Sys
         echo "<br>";
     }
 
-    public static function contains($what, $in, $toLower=false) : bool 
+    public static function contains(string $what, string $in, bool $toLower=false) : bool 
     {
         if ($toLower) 
         {

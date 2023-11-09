@@ -10,6 +10,11 @@ class Client extends AbstractModel
         $this->tableName="client";
     }
 
+    public function fullName() : string 
+    {
+        return $this->firstName . " " . $this->lastName;    
+    }
+    
     public function create(array &$row) : Client
     {
         $os = new Client();
