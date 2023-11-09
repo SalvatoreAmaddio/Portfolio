@@ -51,17 +51,12 @@ class Client extends AbstractModel
 
     public function updateSQL() : string
     {
-        return "update " . $this->tableName . " SET ".$this->tableName."firstName =?, ".$this->tableName."lastName = ? WHERE ".$this->tableName."ID=?;";
+        return "update " . $this->tableName . " SET firstName = ?, lastName = ? WHERE ".$this->tableName."ID=?;";
     }
     
-    public function deleteSQL() : string 
-    {
-        return "delete from " . $this->tableName . " WHERE ".$this->tableName."ID = ?;";
-    }
-
     public function insertSQL() : string 
     {
-        return "insert into " . $this->tableName . " (".$this->tableName."firstName, ".$this->tableName."lastName) VALUES (?,?);";
+        return "insert into " . $this->tableName . " (firstName, lastName) VALUES (?,?);";
     }
     
     public function __toString()

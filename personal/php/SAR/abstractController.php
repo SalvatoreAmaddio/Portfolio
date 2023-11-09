@@ -60,7 +60,7 @@ abstract class AbstractController
     //INSERT 
     protected function requestedNewVal()  
     {
-        return $_REQUEST[$this->formName ."newVal"];
+        return trim($_REQUEST[$this->formName ."newVal"]);
     }
 
     protected function isNewValRequested() : bool 
@@ -96,7 +96,7 @@ abstract class AbstractController
 
     protected function requestedUpdateVal() 
     {
-        return $_REQUEST[$this->formName . "updateVal"];
+        return trim($_REQUEST[$this->formName . "updateVal"]);
     }
     /////
     public abstract function style();

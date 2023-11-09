@@ -57,9 +57,11 @@ class ClientController extends AbstractController
             if (!$this->isNewValNull()) 
             {
                 $record = Client::Cast($this->model);
-                $record->firstName = ucfirst($this->requestedNewVal());
+                $arr = explode(" ", $this->requestedNewVal());
+                $record->firstName = ucfirst(trim($arr[0]));
+                $record->lastName = (count($arr)>1) ? ucfirst(trim($arr[1])) : "";
                 $this->switchSearchValue($record);
-                $record->clientID = $this->db->crud(0, $record->firstName,$record->lastName);
+                $record->clientID = $this->db->crud(0, $record->firstName, $record->lastName);
                 $this->recordSource->addRecord($record);
                 $this->runSearch();
                 echo $this->drawTable();
@@ -83,9 +85,11 @@ class ClientController extends AbstractController
                 if ($this->isObjStored()) 
                 {
                     $record = $this->getStoredObj();
-                    $record->firstName = ucfirst($this->requestedUpdateVal());
+                    $arr = explode(" ", $this->requestedUpdateVal());
+                    $record->firstName = ucfirst($arr[0]);
+                    $record->lastName = (count($arr)>1) ? ucfirst($arr[1]) : "";
                     $this->switchSearchValue($record);
-                    $this->db->crud(2, $record->firstName,$record->lastName,$record->ID);
+                    $this->db->crud(2, $record->firstName,$record->lastName,$record->clientID);
                     $this->recordSource->updateRecord($record);
                     $this->destroyStoredObj();
                     $this->runSearch();
@@ -98,12 +102,12 @@ class ClientController extends AbstractController
 
     public function style() 
     {
-        $obj = AbstractTwoColumns::Cast($this->model);
+        $obj = Client::Cast($this->model);
         echo"<tr>
                 <td class='selector'>➤</td>
                 <td class='col1'>". $obj . "</td>
-                <td class='command'><button type='button' class='editButton' value='" . $obj->ID . "'><img src='/img/save_blue.png'></button></td>
-                <td class='command'><button type='button' class='deleteButton' value='" . $obj->ID . "'><img src='/img/delete.png'></button></td>
+                <td class='command'><button type='button' class='editButton' value='" . $obj->clientID . "'><img src='/img/save_blue.png'></button></td>
+                <td class='command'><button type='button' class='deleteButton' value='" . $obj->clientID . "'><img src='/img/delete.png'></button></td>
             </tr>";
     }
 

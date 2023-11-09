@@ -8,6 +8,9 @@
     $controller;
     switch($path) 
     {
+        case 0:
+            $controller = new ClientController();
+        break;
         case 1:
             $controller = new DBController();
         break;
@@ -43,14 +46,14 @@
                 <div id="hamburgerDropDown">
                     <ul id="navBarList">
                         <div id="navBarLogo" class="responsiveImg">
-                            <a href="#">
+                            <a href="https://salvatoreamaddio.co.uk">
                                 <img src="/img/navBarLogo.png" width="250px">
                             </a>                
                         </div>
 
                         <div id="leftGroup">
                             <li id="home">
-                                <a href="https://salvatoreamaddio.co.uk">HOME</a>
+                                <a href="home.php">HOME</a>
                                 <span></span>
                             </li>
                         </div>
@@ -68,26 +71,26 @@
 
                         <div id="centerGroup">
                             <li>
-                                <a href="desktop.html">PROJECTS</a>
+                                <a href="#">PROJECTS</a>
                                 <span></span>
                             </li>
                             
                             <li>
-                                <a href="mobile.html">CLIENTS</a>
+                                <a href="settings.php?path=0">CLIENTS</a>
                                 <span></span>
                             </li>
 
                             <li>
-                                <a href="web.html">DATABASES</a>
+                                <a href="settings.php?path=1">DATABASES</a>
                                 <span></span>
                             </li>
 
                             <li>
-                                <a href="database.html">OS</a>
+                                <a href="settings.php?path=2">OS</a>
                                 <span></span>
                             </li>
                             <li>
-                                <a href="database.html">PROJECT TYPES</a>
+                                <a href="settings.php?path=3">PROJECT TYPES</a>
                                 <span></span>
                             </li>
                         </div>

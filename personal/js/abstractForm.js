@@ -16,6 +16,10 @@ class FormList
         const id = Number(window.location.href.split("path=")[1]);
         switch(id) 
         {
+            case 0:
+                this.#formName="client";
+                document.title="Clients";
+            break;
             case 1:
                 this.#formName="db";
                 document.title="DB";

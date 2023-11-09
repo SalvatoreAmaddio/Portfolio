@@ -12,8 +12,14 @@ abstract class AbstractModel {
 
   public function selectAll() : string 
   {
-     return "Select * FROM " . $this->tableName . ";";
+     return "select * FROM " . $this->tableName . ";";
   }
+
+  public function deleteSQL() : string 
+  {
+      return "delete from " . $this->tableName . " WHERE ".$this->tableName."ID = ?;";
+  }
+
 
 //  case Insert 0;
 //  case Select 1;
@@ -21,7 +27,6 @@ abstract class AbstractModel {
 //  case Delete 3;
   public abstract function bindTypeParams(int $query) : string;
   public abstract function updateSQL() : string;
-  public abstract function deleteSQL() : string;
   public abstract function insertSQL() : string;
   
   public function printRow() : string 
