@@ -67,6 +67,14 @@
                             </a>
                             <span></span>
                             </li>
+                            <li>
+                            <a href="https://sxb1plzcpnl503651.prod.sxb1.secureserver.net:2083/cpsess5552043358/frontend/paper_lantern/index.html?login=1&post_login=70012263913526" target="_blank">
+                                <div class="responsiveImg">
+                                    <img src="/img/logout.png">
+                                </div>
+                            </a>
+                            <span></span>
+                            </li>
                         </div>
 
                         <div id="centerGroup">

@@ -10,6 +10,7 @@
 
 @media screen and (max-width: 913.5px) and (pointer: coarse) 
 {
+
     #navBarList 
     {
         padding: 0;
@@ -60,14 +61,6 @@
 
 @media screen and (max-width: 905.5px) and (pointer: coarse) 
 {
-    #centerGroup 
-    {
-        position: static;
-    }
-}
-
-@media screen and (max-width: 849.5px) and (pointer: coarse) 
-{
     #navBarLogo 
     {
         display: none;
@@ -82,15 +75,33 @@
         z-index: 1;
     }
 
+    #centerGroup  
+    {
+        top: -3rem;
+    }
+
+    #rightGroup 
+    {
+        top: 13rem;
+    }
+
     #navBarList li, #rightGroup, #centerGroup, #leftGroup 
     {
         float: none;
+        position: relative;
         display: block;
         width: 100%;
     }
     
+    #rightGroup li 
+    {
+        display: inline-block;
+        width: fit-content;
+    }
+
     #rightGroup li a
     {
+        width: fit-content;
         padding: 0 1rem;
     }
 
@@ -110,7 +121,7 @@
     }
 }
 
-@media screen and (max-width: 836.5px) and (pointer: fine) 
+@media screen and (max-width: 881.5px) and (pointer: fine) 
 {
     #hamburgerDropDown {
         display: block;
@@ -135,6 +146,7 @@
     {
         float: none;
         display: block;
+        position: relative;
         width: 100%;
     }
     
@@ -148,6 +160,12 @@
         float: none;
         display: block;
         width: 100%;
+        top: 13rem;
+    }
+
+    #centerGroup  
+    {
+        top: -3rem;
     }
 
     #centerGroup li a, #leftGroup li a
@@ -156,9 +174,16 @@
         padding: .5rem 1rem;
     }
 
+    #rightGroup li
+    {
+        width: fit-content;
+        display: inline-block;
+    }
+
     #rightGroup li a
     {
         padding: 0 1rem;
+        width: fit-content;
     }
 
     nav .responsiveImg 
