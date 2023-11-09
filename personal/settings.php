@@ -32,12 +32,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="css/navBar.css"/>
         <link rel="stylesheet" href="css/homeSection.css"/>
-        <title>DB</title>
+        <title></title>
     </head>
 
     <body>
         <div id="wrapper">
-
             <nav>
                 <a id="hamburgerIcon">
                     <img src="/img/hamburgericon.png">

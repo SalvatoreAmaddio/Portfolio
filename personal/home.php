@@ -27,8 +27,10 @@
                     </div>
                     <div id="mainGroup">
                         <div class="group" id="project">
-                            <p>Projects</p>
-                            <p>Manage</p>
+                            <a href="projects.php">
+                                <p>Projects</p>
+                                <p>Manage</p>
+                            </a>
                         </div>
                         <div class="group" id="client">
                             <a href="settings.php?path=0">

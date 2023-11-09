@@ -1,0 +1,210 @@
+body 
+{
+    background-color: red;
+}
+
+table
+{
+    border-spacing: 0;
+    width: 100%;
+}
+
+th 
+{
+    border: 1px solid;
+    padding: .5rem;
+    font-size: .9rem;
+    letter-spacing: 2px;
+    overflow-wrap: break-word;
+}
+
+td 
+{
+    background-color: white;
+    color: black;
+    border: 1px solid;
+    border-top: none;
+    padding: .5rem .1rem;
+    overflow-wrap: break-word;
+}
+
+.responsiveRow 
+{
+    display: none;
+    width: 50%;
+    max-width: 100%;
+    font-weight: bold;
+    background-color: inherit;
+    color: white;
+    letter-spacing: 1px;
+}
+
+.responsiveRow img
+{
+    width: 2rem;
+    height: 2rem;
+    display: block;
+}
+
+td, th 
+{
+    font-size: .9rem;
+}
+
+.proLang 
+{
+    max-width: 1%;
+}
+
+.bool
+{
+    max-width: 1%;
+}
+
+.selector
+{
+    width: 1rem;
+    background-color: lightgray;
+    border: 1px solid black;
+    color: black;
+    padding: .3rem;
+}
+
+.command 
+{
+    min-width: 1rem;
+    width: 4%;
+    border: none;
+    background-color: transparent;
+}
+
+.command button 
+{
+    display: block;
+    width: 100%;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+}
+
+.command button img
+{
+    background-color: transparent;
+    width: 70%;
+    max-height: 2rem;
+}
+
+@media screen and (max-width:891.5px) and (min-width:624.5px)
+{
+    #dataContainer 
+    {
+        padding: 1rem 0rem;
+    }
+
+    th, td, tr 
+    {
+        font-size: .7rem;
+    }
+}
+
+@media screen and (max-width:752.5px) and (min-width:624.5px)
+{
+    th, td, tr 
+    {
+        font-size: .6rem;
+    }  
+}
+
+@media screen and (max-width:687.5px) and (min-width:624.5px)
+{
+    th, td, tr 
+    {
+        font-size: .5rem;
+    }  
+}
+
+@media screen and (max-width:624.5px)
+{
+
+    .command 
+    {
+        width: 50%;
+        max-width: 100%;
+        border: 1px solid;
+        padding: 0;
+        display: inline-block;
+    }
+
+    table, tbody 
+    {
+        display: flow-root;
+        width: 100%;
+    }
+
+    .responsiveRow, td
+    {
+        padding-left: .3rem;
+        display: inline-block;
+        width: 70%;
+        border-bottom: 1px solid;
+    }
+
+    .responsiveRow 
+    {
+        width: 30%;
+        border: none;
+    }
+
+    tr 
+    {
+        display: flow-root;
+        width: 100%;
+        border: 1px solid;
+        border-radius: 1rem;
+        padding: 1rem;
+        margin: 0 auto;
+        margin-bottom: .5rem;
+        text-align: start;
+    }
+
+    tr:first-child, .selector 
+    {
+        
+        display: none;
+    }
+
+}
+
+@media screen and (max-width:425.5px)
+{
+    tr 
+    {
+        padding: 1rem .5rem;
+    }
+}
+
+@media screen and (max-width:326.5px)
+{
+
+    tr .responsiveRow:nth-of-type(24) 
+    {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+}
+
+@media screen and (max-width:294.5px)
+{
+    .responsiveRow, td 
+    {
+        font-size: .7rem;
+    }
+}
+
+@media screen and (max-width:242.5px)
+{
+    .responsiveRow, td 
+    {
+        font-size: .6rem;
+    }
+}

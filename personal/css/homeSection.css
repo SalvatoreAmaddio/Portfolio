@@ -109,6 +109,13 @@ td:hover:not(.noData)
     border: none;
 }
 
+.command button img
+{
+    background-color: transparent;
+    width: 70%;
+    max-height: 2rem;
+}
+
 .noData 
 {
     border: none;
@@ -122,12 +129,6 @@ td:hover:not(.noData)
     text-align: start;
 }
 
-.command button img
-{
-    background-color: transparent;
-    width: 70%;
-    max-height: 2rem;
-}
  
 @media screen and (max-width:671.5px) 
 {
