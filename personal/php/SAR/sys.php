@@ -7,6 +7,11 @@ class Sys
         echo "<br>";
     }
 
+    public static function yesNo(bool $val) : string
+    {
+        return ($val) ? "Yes" : "No";
+    }
+
     public static function contains(string $what, string $in, bool $toLower=false) : bool 
     {
         if ($toLower) 

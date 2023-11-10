@@ -10,13 +10,17 @@ select
 
 #data 
 {
+}
+
+#groups 
+{
     display: flow-root;
 }
 
 #group1, #group2, #group3 
 {
     border-radius: 1rem;
-    width: 33.33%;
+    min-width: 33.33%;
     float: left;
     margin-bottom: 1rem;
     margin-right: 1rem;
@@ -24,8 +28,9 @@ select
 
 #group3 
 {
-    width: 20.33%;
+    min-width: 30.33%;
     margin-right: 0;
+    border: 1px solid;
 }
 
 table 
@@ -33,23 +38,17 @@ table
     width: 100%;
     border: 1px solid;
     border-radius: 1rem;
-    border-spacing: 0;
-    overflow: hidden;
     padding-bottom: .5rem;
+    overflow: hidden;
 }
 
 th 
 {
-    border-radius: 0,0,1rem,1rem;
-    background-color: rgba(146, 182, 213, .3);
     padding: 1rem;
 }
 
 label, input, select, td
 {
-    min-width: 50%;
-    max-width: 50%;
-    width: 50%;
     text-align: start;
 }
 
@@ -57,10 +56,30 @@ label, input, select, td
 {
     border: 1px solid;
     border-radius: 1rem;
+    padding: .5rem;
     clear: both;
+}
+
+#descriptionContainer p 
+{
+    padding: .5rem;
 }
 
 #descriptionContainer textarea 
 {
     width: 100%;
+}
+
+#saveButton 
+{
+    margin-top: 1rem;
+}
+
+#saveButton button 
+{
+    padding: .5rem;
+    display: block;
+    width: 100%;
+    font-weight: bold;
+    border-radius: 1rem;
 }

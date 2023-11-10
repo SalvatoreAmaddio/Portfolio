@@ -8,10 +8,10 @@
 <?php
     function LoadJS() 
     {
-        echo "<script src='js/sender.js'></script>";
+        echo "<script src='js/SAR/sender.js'></script>";
         echo "<script src='/js/SAR/SAR.js'></script>";
         echo "<script src='/js/SAR/defaultTags.js'></script>";
         echo "<script src='/js/SAR/defaultPage.js'></script>";
-        echo "<script src='js/abstractForm.js'></script>";
+        echo "<script src='js/SAR/abstractForm.js'></script>";
     }
 ?>

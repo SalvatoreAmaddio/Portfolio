@@ -1,6 +1,7 @@
 <?php 
     session_start();
     include 'load.php';
+    $controller = new ProjectController();
 ?>
 
 <!DOCTYPE html>
@@ -8,7 +9,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="css/navBar.css"/>
+        <link rel="stylesheet" href="css/defaults/navBar.css"/>
         <link rel="stylesheet" href="css/projects.css"/>
         <title>Projects</title>
     </head>
@@ -114,44 +115,18 @@
                 </section>
 
                 <section class="container">
-                            <div class="layer" id="searchPanel">
-                                    <input type="text" name="s" id="searchBox" placeholder="Search..."/>
-                            </div>
+                    <div class="layer" id="searchPanel">
+                            <button id="addNewButton" type="button">
+                                <img src="/img/plus.png">
+                            </button>
+                            <input type="text" name="s" id="searchBox" placeholder="Search..."/>
+                    </div>
                 </section>
 
                 <section id="dataContainer" class="container">
+                    <?php $controller->drawTable()?>
+                    <!--
                     <table>
-                        <tr>
-                            <th></th>
-                            <th>Type</th>
-                            <th>Name</th>
-                            <th>Ver.</th>
-                            <th>OS</th>
-                            <th class="proLang">Year</th>
-                            <th>Client</th>
-                            <th class="proLang"><img class="headerIcon" src="/img/coding.png"></th>
-                            <th class="proLang">Tech</th>
-                            <th class="proLang"><img class="headerIcon" src="/img/db.png"></th>
-                            <th class="bool"><img class="headerIcon" src="/img/officeIcon.png"></th>
-                            <th class="bool"><img class="headerIcon" src="/img/pdfIcon.png"></th>
-                            <th class="bool"><img class="headerIcon" src="/img/users.png"></th> 
-                            <th colspan="2">COMMANDS</th>
-                        </tr>
-                        <tr>
-                            <td class="selector">➤</td>
-                            <td>Desktop</td>
-                            <td>Betting</td>
-                            <td>1.0.0.0</td>
-                            <td>Windows</td>
-                            <td>2023</td>
-                            <td>Peter Randall</td>
-                            <td>C#</td>
-                            <td>WPF</td>
-                            <td>SQLite</td>
-                            <td>Yes</td>
-                            <td>Yes</td>
-                            <td>Yes</td>
-                        </tr>
                         <tr>
                             <td class="selector">➤</td>
                             <td class="responsiveRow">Type</td>
@@ -197,6 +172,7 @@
                             <td>No</td>
                         </tr>
                     </table>
+                    -->
                 </section>
             </main>
             <footer>

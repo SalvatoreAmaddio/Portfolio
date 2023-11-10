@@ -28,4 +28,24 @@ class ProjectTypeController extends TwoColumnController
         $this->formName="projecttype";
     }
 }
+
+class ProLangController extends TwoColumnController 
+{
+    public function __construct() 
+    {
+        parent::__construct(new ProLang());
+        $this->headerTitle = "Programming Languages";
+        $this->formName="prolang";
+    }
+}
+
+class TechController extends TwoColumnController 
+{
+    public function __construct() 
+    {
+        parent::__construct(new Tech());
+        $this->headerTitle = "Technologies";
+        $this->formName="tech";
+    }
+}
 ?>

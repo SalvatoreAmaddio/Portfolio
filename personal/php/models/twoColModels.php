@@ -88,4 +88,64 @@ class ProjectType extends AbstractTwoColumns
             return $obj;
     }
 }
+
+class ProLang extends AbstractTwoColumns
+{
+    protected string $tableName = "prolang";
+
+    public function create(array &$row) : ProLang
+    {
+        $newRecord = new ProLang();
+        $newRecord->readAssoc($row);
+        return $newRecord;
+    }
+
+    public function IsEqual(AbstractModel $model) : bool 
+    {
+        if ($model instanceof ProLang) 
+        {
+            /** @var ProLang $obj */
+            $obj = $model;
+            return $this->ID == $obj->ID;
+        }
+        return false;
+    }
+
+    public static function Cast(AbstractModel $model) : ProLang
+    {
+            /** @var ProLang $obj */
+            $obj = $model;
+            return $obj;
+    }
+}
+
+class Tech extends AbstractTwoColumns
+{
+    protected string $tableName = "tech";
+
+    public function create(array &$row) : Tech
+    {
+        $newRecord = new Tech();
+        $newRecord->readAssoc($row);
+        return $newRecord;
+    }
+
+    public function IsEqual(AbstractModel $model) : bool 
+    {
+        if ($model instanceof Tech) 
+        {
+            /** @var Tech $obj */
+            $obj = $model;
+            return $this->ID == $obj->ID;
+        }
+        return false;
+    }
+
+    public static function Cast(AbstractModel $model) : Tech
+    {
+            /** @var Tech $obj */
+            $obj = $model;
+            return $obj;
+    }
+}
 ?>

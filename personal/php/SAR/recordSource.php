@@ -46,7 +46,7 @@ class RecordSource implements Iterator
     {
         for($i=0; $i < $this->recordCount(); $i++) 
         {
-            echo $this[$i];
+            echo $this->source[$i];
             Sys::Enter();
         }
     }

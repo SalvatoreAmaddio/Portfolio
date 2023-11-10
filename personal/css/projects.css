@@ -1,3 +1,32 @@
+#searchPanel
+{
+    text-align: start;
+    display: flow-root;
+}
+
+#searchPanel input 
+{
+    margin: .4rem 0;
+    width: 90%;
+}
+
+#addNewButton 
+{
+    background-color: transparent;
+    border: none;
+    display: block;
+    float: right;
+    margin-right: 1rem;
+    cursor: pointer;
+}
+
+#addNewButton img
+{
+    background-color: transparent;
+    width: 3.1rem;
+    height: 3.1rem;
+}
+
 table
 {
     border-spacing: 0;
