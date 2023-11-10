@@ -93,6 +93,7 @@ td:hover:not(.noData)
     min-width: 1rem;
     width: 4%;
     border: none;
+    cursor: pointer;
 }
 
 .command button 
@@ -102,6 +103,7 @@ td:hover:not(.noData)
     padding: 0;
     background-color: transparent;
     border: none;
+    cursor: pointer;
 }
 
 .command button img
