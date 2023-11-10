@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/defaults/draganddrop.css">
+    <link rel="stylesheet" href="css/defaults/pictureframe.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="dropContainer">
+        <div class="dropInvite">   
+            <p>Drop here</p>
+            <p>or</p>
+            <button>UPLOAD</button>
+        </div>
+    </div>    
+
+    <div class="pictureFrameContainer">
+        <img class="pictureFrame" src="/img/me.png">
+        <span class="removePictureFrame">X</span>
+    </div>
+</body>
+<script>
+    class DragNDrop 
+    {
+        dropContainer;
+        dropInvite;
+        files = [];
+        #filters =[];
+        #forbidenUpload = false;
+        #storeFile;
+        constructor() 
+        {
+            this.dropContainer = document.getElementsByClassName("dropContainer")[0];
+            this.dropInvite = this.dropContainer.getElementsByClassName("dropInvite")[0];
+            
+            this.dropInvite.addEventListener("dragover",(e)=>e.preventDefault());
+            this.dropInvite.addEventListener("drop",(e)=>this.uploadFiles(e));
+        }
+
+        uploadFiles(e) 
+        {
+            e.preventDefault();
+            this.files = e.dataTransfer.files;
+                for(let i=0; i < this.fileCount; i++) 
+                {
+                    let ext=this.#readFileExstention(this.files[i].name);
+                    if (!this.#filters.includes(ext) && this.#filters.length > 0) 
+                        this.#forbidenUpload = true;
+                    else 
+                    {
+                        //store
+                        this.#storeFile(this.files[i]);
+                    }
+                }
+            if (this.#forbidenUpload) 
+            {
+                alert(`You can only upload the following file(s):\n${this.#filters.toString()}`);
+                this.#forbidenUpload = false;
+            }
+        }
+
+        #readFileExstention(fileName) 
+        {
+            try 
+            {
+                return fileName.split(".")[1];
+            }
+            catch
+            {
+                return "";
+            }
+        }
+
+        get fileCount()
+        {
+            return this.files.length;
+        }
+        
+        addFilters(...args) 
+        {
+            this.#filters = args;
+        }
+
+        set storeFile(fn) 
+        {
+            this.#storeFile = fn;
+        }
+
+        get filters()
+        {
+            return this.#filters;
+        }
+    }
+
+    let d = new DragNDrop();
+    d.addFilters("png"," jpeg"," jpg");
+    d.storeFile=(e) => 
+    {
+        alert(e.name);
+    };
+
+</script>
+</html>
