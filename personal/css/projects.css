@@ -64,6 +64,11 @@ td
     font-size: .9rem;
 }
 
+td:hover:not(.noData) 
+{
+    background-color: #DCEAF2;
+}
+
 .responsiveRow 
 {
     display: none;
@@ -127,6 +132,19 @@ td
     background-color: transparent;
     width: 70%;
     max-height: 2rem;
+}
+
+.noData 
+{
+    border: none;
+    font-weight: bold;
+}
+
+.recordTracker 
+{
+    padding: .5rem;
+    margin-top: 1rem;
+    text-align: start;
 }
 
 @media screen and (max-width:891.5px) and (min-width:624.5px)

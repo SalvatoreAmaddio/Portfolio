@@ -13,9 +13,27 @@ class FormList
 
     constructor() 
     {
-        const id = Number(window.location.href.split("path=")[1]);
+        let id = Number(window.location.href.split("path=")[1]);
+        if(isNaN(id) && window.location.href.includes("/projects.php")) 
+        {
+            id=-1;
+        }
+
+        if(isNaN(id) && window.location.href.includes("/projectForm.php")) 
+        {
+            id=-2;
+        }
+
         switch(id) 
         {
+            case -2:
+                this.#formName="project";
+                document.title="Form";
+            break;
+            case -1:
+                this.#formName="project";
+                document.title="Projects";
+            break;
             case 0:
                 this.#formName="client";
                 document.title="Clients";
