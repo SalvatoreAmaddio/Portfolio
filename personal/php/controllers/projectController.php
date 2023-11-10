@@ -2,10 +2,77 @@
 
 class ProjectController extends AbstractController 
 {
+    public DBController $dbController;
+    public TechController $techController;
+    public ProLangController $proLangController;
+    public ProjectTypeController $projectTypeController;
+    public OSController $osController;
+    public ClientController $clientController;
+    public Project $currentProject;
+
     public function __construct() 
     {
         parent::__construct(new Project());
+        $this->dbController = new DBController();
+        $this->techController = new TechController();
+        $this->proLangController = new ProLangController();
+        $this->projectTypeController = new ProjectTypeController();
+        $this->osController = new OSController();
+        $this->clientController = new ClientController();
+        $this->currentProject = new Project();
         $this->formName="project";
+    }
+
+    public function onReceived() 
+    {
+        if (isset($_REQUEST["projectID"])) 
+        {
+            $projectID = $_REQUEST["projectID"];
+            $this->currentProject = Project::Cast($this->getByID($projectID));
+            echo implode(";",$this->currentProject->asRow());
+        }
+    }
+
+    public function getClients() 
+    {
+        echo "<option value='0'></option>";
+        foreach($this->clientController->recordSource as $record) 
+            echo "<option value='".$record->ID."'>".$record."</option>";
+    }
+
+    public function getOS() 
+    {
+        echo "<option value='0'></option>";
+        foreach($this->osController->recordSource as $record) 
+            echo "<option value='".$record->ID."'>".$record."</option>";
+    }
+
+    public function getProjectTypes() 
+    {
+        echo "<option value='0'></option>";
+        foreach($this->projectTypeController->recordSource as $record) 
+            echo "<option value='".$record->ID."'>".$record."</option>";
+    }
+
+    public function getProLangs() 
+    {
+        echo "<option value='0'></option>";
+        foreach($this->proLangController->recordSource as $record) 
+            echo "<option value='".$record->ID."'>".$record."</option>";
+    }
+
+    public function getDBS() 
+    {
+        echo "<option value='0'></option>";
+        foreach($this->dbController->recordSource as $record) 
+            echo "<option value='".$record->ID."'>".$record."</option>";
+    }
+
+    public function getTechs() 
+    {
+        echo "<option value='0'></option>";
+        foreach($this->techController->recordSource as $record) 
+            echo "<option value='".$record->ID."'>".$record."</option>";
     }
 
     public function style() 

@@ -1,6 +1,8 @@
 <?php 
     session_start();
     include 'load.php';
+    $controller = new ProjectController();
+    $controller->readPost();
 ?>
 
 <!DOCTYPE html>
@@ -36,18 +38,17 @@
                                 <td><input type="text" id="projectVersion" name="pVersion" required/></td>
                             </tr>
                             <tr>
-                            <tr>
                                 <td><label for="projectType">Project Type</label></td>
                                 <td>
                                     <select id="projectType" name="pType" required>
-                                        <?php ?>
+                                        <?php $controller->getProjectTypes();?>
                                     </select>
                                 </td>
                             </tr>    
-                            <tr>                
+                            <tr>
                                 <td><label for="projectOS">OS</label></td>
                                 <td><select id="projectOS" name="pOS" required>
-                                        <?php ?>
+                                        <?php $controller->getOS();?>
                                     </select>
                                 <td>
                             </tr>
@@ -59,7 +60,7 @@
                                 <td><label for="projectClient">Client</label></td>
                                 <td>
                                     <select id="projectClient" name="pClient" required>
-                                        <?php ?>
+                                        <?php $controller->getClients();?>
                                     </select>
                                 </td>
                             </tr>
@@ -79,20 +80,14 @@
                                 <td><label for="proLang">Written In</label></td>
                                 <td>
                                     <select id="proLang" name="pProLang" required>
-                                        <option value="0"></option>
-                                        <option value="1">C#</option>
-                                        <option value="2">PHP</option>
-                                        <option value="3">JS</option>
+                                        <?php $controller->getProLangs();?>
                                     </select>
                                 </td>
                             </tr>    
                             <tr>                
                                 <td><label for="technology">Technology</label></td>
                                 <td><select id="technology" name="pTechnology" required>
-                                        <option value="0"></option>
-                                        <option value="1">WPF</option>
-                                        <option value="2">MAUI</option>
-                                        <option value="3">HTML/CSS</option>
+                                        <?php $controller->getTechs();?>
                                     </select>
                                 <td>
                             </tr>
@@ -100,9 +95,7 @@
                                 <td><label for="projectDatabase">Database</label></td>
                                 <td>
                                     <select id="projectDatabase" name="pDatabase" required>
-                                        <option value="0"></option>
-                                        <option value="1">SQLite</option>
-                                        <option value="2">MySQL</option>
+                                       <?php $controller->getDBS();?>
                                     </select>
                                 </td>
                             </tr>
@@ -151,5 +144,18 @@
         <?php echo "Copyright © " . date("Y") . " Salvatore Amaddio Rivolta All rights reserved.";?>
     </footer>
     <?php LoadJS();?>
+    <script>
+       let id = localStorage.getItem("projectID");
+       if (id) 
+       {
+            let sender = new Sender("",
+            (e)=>
+            {
+                alert(e);
+            });
+            sender.send("projectID="+id);
+            localStorage.removeItem("projetID");
+       } 
+    </script>
     </body>
 </html>

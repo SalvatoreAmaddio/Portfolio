@@ -70,7 +70,7 @@ class Project extends AbstractModel
             $this->row = array(
         "projectID" => &$this->projectID, 
         "projectName" => &$this->projectName,
-        "lastVersion" => &$this->projectVersion
+        "projectVersion" => &$this->projectVersion,
         );
         return $this->row;
     }

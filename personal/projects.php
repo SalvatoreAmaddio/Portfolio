@@ -142,7 +142,12 @@
                 }
             }
             new SettingPage();
-            new FormListTwoColumn();
+            let x = new FormListTwoColumn();
+            x.onEditClicked=(e) => 
+            {
+                localStorage.setItem("projectID",e)
+                location.href = "projectForm.php";
+            };
         </script>
     </body>
 </html>
