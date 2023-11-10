@@ -116,63 +116,15 @@
 
                 <section class="container">
                     <div class="layer" id="searchPanel">
-                            <button id="addNewButton" type="button">
-                                <img src="/img/plus.png">
-                            </button>
-                            <input type="text" name="s" id="searchBox" placeholder="Search..."/>
+                        <button id="addNewButton" type="button">
+                            <img src="/img/plus.png">
+                        </button>
+                        <input type="text" name="s" id="searchBox" placeholder="Search..."/>
                     </div>
                 </section>
 
                 <section id="dataContainer" class="container">
                     <?php $controller->drawTable()?>
-                    <!--
-                    <table>
-                        <tr>
-                            <td class="selector">➤</td>
-                            <td class="responsiveRow">Type</td>
-                            <td>Mobile</td>
-                            <td class="responsiveRow">Name</td>
-                            <td>MyPlanogram</td>
-                            <td class="responsiveRow">Ver</td>
-                            <td>1.0.0.0</td>
-                            <td class="responsiveRow">OS</td>
-                            <td>Android / IOS</td>
-                            <td class="responsiveRow">Year</td>
-                            <td>2023</td>
-                            <td class="responsiveRow">Client</td>
-                            <td>Carole Crockett</td>
-                            <td class="responsiveRow"><img class="headerIcon" src="/img/coding.png"></td>
-                            <td>C#</td>
-                            <td class="responsiveRow">Tech</td>
-                            <td>MAUI</td>
-                            <td class="responsiveRow"><img class="headerIcon" src="/img/db.png"></td>
-                            <td>MySQL</td>
-                            <td class="responsiveRow"><img class="headerIcon" src="/img/officeIcon.png"></td>
-                            <td>Yes</td>
-                            <td class="responsiveRow"><img class="headerIcon" src="/img/pdfIcon.png"></td>
-                            <td>Yes</td>
-                            <td class="responsiveRow"><img class="headerIcon" src="/img/users.png"></td>
-                            <td>Yes</td>
-                            <td class="command"><button type="button" class="editButton" value="3"><img src="/img/save_blue.png"></button></td>
-                            <td class="command"><button type="button" class="deleteButton" value="3"><img src="/img/delete.png"></button></td>
-                        </tr>
-                        <tr>
-                            <td class="selector">➤</td>
-                            <td>Web</td>
-                            <td>Dark Star Ink</td>
-                            <td>N/A</td>
-                            <td>N/A</td>
-                            <td>2023</td>
-                            <td>Martin Olah</td>
-                            <td>JS</td>
-                            <td>HTML CSS</td>
-                            <td>N/A</td>
-                            <td>No</td>
-                            <td>No</td>
-                            <td>No</td>
-                        </tr>
-                    </table>
-                    -->
                 </section>
             </main>
             <footer>
