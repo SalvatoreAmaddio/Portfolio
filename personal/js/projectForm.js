@@ -54,11 +54,7 @@ class ProjectFormPage extends DefaultPage
     }
 
     toArray() {
-        return `${this.#projectID};${this.Name};${this.Version};${this.ProjectType};
-         ${this.OS};${this.year};${this.client};${this.sourceCode};
-         ${this.proLang};${this.tech};${this.db};
-         ${this.office};${this.pdf};${this.users};
-         ${this.description}`; 
+        return `${this.#projectID};${this.Name};${this.Version};${this.ProjectType};${this.OS};${this.year};${this.client};${this.sourceCode};${this.proLang};${this.tech};${this.db};${this.office};${this.pdf};${this.users};${this.description}`; 
     }
 
     get Name() 
