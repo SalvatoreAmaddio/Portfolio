@@ -9,8 +9,8 @@ class ClientController extends AbstractController
 
     protected function runSearch() 
     {
-        if (!isset($_SESSION[$this->searchVal()])) return;
-        $search = $_SESSION[$this->searchVal()]; 
+        if (! $this->inSession($this->searchValKey())) return;
+        $search = $_SESSION[$this->searchValKey()]; 
         $this->filterBy(
             function($record) use($search) : bool
             {
@@ -21,26 +21,26 @@ class ClientController extends AbstractController
 
     protected function switchSearchValue(Client $record) : bool
     {
-        if (isset($_SESSION[$this->searchVal()]) && strlen($_SESSION[$this->searchVal()])>0) 
+        if ($this->inSession($this->searchValKey()) && strlen($_SESSION[$this->searchValKey()])>0) 
         {
-            if (!Sys::contains($_SESSION[$this->searchVal()],$record->fullName(),true))
-                return $_SESSION[$this->searchVal()] = $record->fullName(); 
+            if (!Sys::contains($_SESSION[$this->searchValKey()],$record->fullName(),true))
+                return $_SESSION[$this->searchValKey()] = $record->fullName(); 
         }
         return false;
     }
 
     public function onReceived() 
     {
-        if (isset($_REQUEST[$this->searchVal()])) 
+        if ($this->onRequestedSearchVal()) 
         {
-            $search = $_REQUEST[$this->searchVal()];
-            $_SESSION[$this->searchVal()] = $search; 
+            $search = $_REQUEST[$this->searchValKey()];
+            $_SESSION[$this->searchValKey()] = $search; 
             $this->runSearch();
             echo $this->drawTable();
             return;
         } 
 
-        if ($this->isDeleteIDRequested()) 
+        if ($this->onRequestedDeleteID()) 
         {
             $this->model = $this->recordToDelete();
             $record = Client::Cast($this->model);
@@ -52,24 +52,21 @@ class ClientController extends AbstractController
             return;
         }
 
-        if ($this->isNewValRequested()) 
+        if ($this->onRequestedNewVal()) 
         {
-            if (!$this->isNewValNull()) 
-            {
-                $record = Client::Cast($this->model);
-                $arr = explode(" ", $this->requestedNewVal());
-                $record->firstName = ucfirst(trim($arr[0]));
-                $record->lastName = (count($arr)>1) ? ucfirst(trim($arr[1])) : "";
-                $this->switchSearchValue($record);
-                $record->clientID = $this->db->crud(0, $record->firstName, $record->lastName);
-                $this->recordSource->addRecord($record);
-                $this->runSearch();
-                echo $this->drawTable();
-            }
+            $record = Client::Cast($this->model);
+            $arr = explode(" ", $this->requestedNewVal());
+            $record->firstName = ucfirst(trim($arr[0]));
+            $record->lastName = (count($arr)>1) ? ucfirst(trim($arr[1])) : "";
+            $this->switchSearchValue($record);
+            $record->clientID = $this->db->crud(0, $record->firstName, $record->lastName);
+            $this->recordSource->addRecord($record);
+            $this->runSearch();
+            echo $this->drawTable();
             return;
         }
 
-        if ($this->isUpdateIDRequested()) 
+        if ($this->onRequestedUpdateID()) 
         {
             $this->model = $this->recordToUpdate();
             $record = Client::Cast($this->model);
@@ -78,11 +75,9 @@ class ClientController extends AbstractController
             return;
         }
 
-        if ($this->isUpdateValRequested()) 
+        if ($this->onRequestedUpdateVal()) 
         {
-            if (!$this->isUpdateValNull()) 
-            {
-                if ($this->isObjStored()) 
+            if ($this->isObjStored()) 
                 {
                     $record = $this->getStoredObj();
                     $arr = explode(" ", $this->requestedUpdateVal());
@@ -95,7 +90,6 @@ class ClientController extends AbstractController
                     $this->runSearch();
                     echo $this->drawTable();
                 }
-            }
             return;
         }
     }
