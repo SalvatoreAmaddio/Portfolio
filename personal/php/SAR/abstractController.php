@@ -73,6 +73,10 @@ abstract class AbstractController
         return is_null($_REQUEST[$this->formName . "newVal"]);
     }
 
+    public function onRequest(string $key) : bool
+    {
+        return isset($_REQUEST[$key]) && !is_null($_REQUEST[$key]);
+    }
     //UPDATE
     protected function isUpdateIDRequested() : bool
     {

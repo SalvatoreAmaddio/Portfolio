@@ -21,7 +21,7 @@ class ProjectFormPage extends DefaultPage
     constructor()
     {
         super("Salvatore Amaddio Rivolta");
-        this.#projectID = localStorage.getItem("projectID");
+        this.#projectID = localStorage.getItem("updateID");
         this.sender.onDataReceived = (e) => 
         {
             let values = e.split(";");
@@ -47,13 +47,15 @@ class ProjectFormPage extends DefaultPage
         {
             this.sender.onDataReceived = (e) => 
             {
-                document.getElementById("dataContainer").innerHTML = e;
+                alert("Record successfully changed");
+                window.location.href ="projects.php";
             };    
             this.sender.send(`data=${this.toArray()}`);
         });
     }
 
-    toArray() {
+    toArray() 
+    {
         return `${this.#projectID};${this.Name};${this.Version};${this.ProjectType};${this.OS};${this.year};${this.client};${this.sourceCode};${this.proLang};${this.tech};${this.db};${this.office};${this.pdf};${this.users};${this.description}`; 
     }
 

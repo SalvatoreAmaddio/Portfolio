@@ -8,51 +8,10 @@ class FormList
     #onInsertClicked;
     #addNewButton;
     #searchBox;
-    #formName;
     sender;
 
     constructor() 
     {
-        let id = Number(window.location.href.split("path=")[1]);
-        if(isNaN(id) && window.location.href.includes("/projects.php")) 
-        {
-            id=-1;
-        }
-
-        if(isNaN(id) && window.location.href.includes("/projectForm.php")) 
-        {
-            id=-2;
-        }
-
-        switch(id) 
-        {
-            case -2:
-                this.#formName="project";
-                document.title="Form";
-            break;
-            case -1:
-                this.#formName="project";
-                document.title="Projects";
-            break;
-            case 0:
-                this.#formName="client";
-                document.title="Clients";
-            break;
-            case 1:
-                this.#formName="db";
-                document.title="DB";
-            break;
-            case 2:
-                this.#formName="os";
-                document.title="OS";
-            break;
-            case 3:
-                this.#formName="projecttype";
-                document.title="Project Type";
-            break;
-            default:return;
-        }
-
         this.sender = new Sender();
         this.#dataContainer = document.getElementById("dataContainer");
         this.#editButtons = this.#dataContainer.getElementsByClassName("editButton");
@@ -65,53 +24,13 @@ class FormList
             let conf = confirm("Are you sure you want to delete this record?");
             if (!conf) return false;
             this.redispaly();
-            this.sendDeleteID(e);
+            this.sender.sendDeleteID(e);
         };
 
-        if ((this.storedSearchKey) && (this.storedUpdateVal) && !this.storedUpdateVal.toLocaleLowerCase().includes(this.storedSearchKey.toLocaleLowerCase())) 
-            this.storedSearchKey = this.storedUpdateVal;
+        if ((this.sender.storedSearchKey) && (this.sender.storedUpdateVal) && !this.sender.storedUpdateVal.toLocaleLowerCase().includes(this.sender.storedSearchKey.toLocaleLowerCase())) 
+            this.sender.storedSearchKey = this.sender.storedUpdateVal;
 
-        this.#searchBox.value =  this.storedSearchKey;
-    }
-
-    get storedSearchKey() 
-    {
-        return sessionStorage.getItem(`${this.#formName}search`);
-    }
-
-    set storedSearchKey(str) 
-    {
-        sessionStorage.setItem(`${this.#formName}search`,str);
-    }
-
-    get storedUpdateVal() 
-    {
-        return sessionStorage.getItem(`${this.#formName}updateVal`);
-    }
-
-    set storedUpdateVal(str) 
-    {
-        sessionStorage.setItem(`${this.#formName}updateVal`,str);
-    }
-
-    sendUpdateID(id) 
-    {
-        this.sender.send(`${this.#formName}updateID=${id}`)
-    }
-
-    sendNewVal(newValue) 
-    {
-        this.sender.send(`${this.#formName}newVal=${newValue}`);
-    }
-    
-    sendDeleteID(id) 
-    {
-        this.sender.send(`${this.#formName}deleteID=${id}`);
-    }
-
-    deleteStoredUpdateVal() 
-    {
-        sessionStorage.removeItem(`${this.#formName}updateVal`);
+        this.#searchBox.value =  this.sender.storedSearchKey;
     }
 
     redispaly() 
@@ -125,8 +44,8 @@ class FormList
         (e)=>
         {
             this.sender.onDataReceived((e)=> this.displayData(e));       
-            this.storedSearchKey = e.target.value;      
-            this.sender.send(`${this.#formName}search=${this.storedSearchKey}`);
+            this.sender.storedSearchKey = e.target.value;     
+            this.sender.sendSearchKey(); 
         });
 
         this.#addNewButton.addEventListener("click", (e)=> this.#onInsertClicked(e.target.parentNode.value));
@@ -161,11 +80,11 @@ class FormList
 
     canUpdate() 
     {
-        if (this.storedUpdateVal) 
+        if (this.sender.storedUpdateVal) 
         {
             this.sender.onDataReceived((e)=> this.displayData(e));    
-            this.sender.send(`${this.#formName}updateVal=${this.storedUpdateVal}`);            
-            this.deleteStoredUpdateVal();
+            this.sender.sendUpdateValue(); 
+            this.sender.deleteStoredUpdateVal();
         }
     }
 
@@ -176,16 +95,38 @@ class FormListTwoColumn extends FormList
     constructor() 
     {
         super();
+        let id = Number(window.location.href.split("path=")[1]);
+        switch(id) 
+        {
+            case 0:
+                this.sender.formName="client";
+                document.title="Clients";
+            break;
+            case 1:
+                this.sender.formName="db";
+                document.title="DB";
+            break;
+            case 2:
+                this.sender.formName="os";
+                document.title="OS";
+            break;
+            case 3:
+                this.sender.formName="projecttype";
+                document.title="Project Type";
+            break;
+            default:return;
+        }
+
         this.onEditClicked = (e) =>
         {
             this.sender.onDataReceived((e)=>
             {
                 let newValue = prompt("Change Value", e.trim());
                 if (!newValue) return false;                
-                this.storedUpdateVal = newValue;
+                this.sender.storedUpdateVal = newValue;
                 this.canUpdate();
             });
-            this.sendUpdateID(e);
+            this.sender.sendUpdateID(e);
         };
 
         this.onInsertClicked = (e) =>
@@ -193,7 +134,7 @@ class FormListTwoColumn extends FormList
             let newValue = prompt("Add New Record");
             if (!newValue) return false;
             this.redispaly();
-            this.sendNewVal(newValue);
+            this.sender.sendNewVal(newValue);
         };
     }
 
