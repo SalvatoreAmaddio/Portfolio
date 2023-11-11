@@ -82,8 +82,9 @@ class Sender
         this.send(`${this.formName}updateID=${id}`)
     }
 
-    sendUpdateValue() 
+    sendUpdateValue(val="") 
     {
+        if (val) this.storedUpdateVal = val;
         this.send(`${this.formName}updateVal=${this.storedUpdateVal}`);            
     }
 

@@ -31,13 +31,15 @@ class ProjectFormPage extends DefaultPage {
 
         this.#saveButton.addEventListener("click",(e)=>
             {
-                alert(this.projectID);
                 this.sender.onDataReceived = (e) => 
                 {
-                    alert("Record successfully changed");
+                    alert(`Record successfully ${(this.projectID) ? 'changed' : 'added'}`);
                     window.location.href ="projects.php";
-                };    
-                //this.sender.send(`data=${this.toArray()}`);
+                };
+                if (this.projectID)
+                    this.sender.sendUpdateVal(this.toArray());
+                else
+                    this.sender.sendNewVal(this.toArray()); 
         });
     }
 
