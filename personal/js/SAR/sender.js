@@ -50,7 +50,7 @@ class Sender
     {
         this.#http.open("POST",this.pagePath,true);
         this.#http.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-        this.#http.send(data);    
+        this.#http.send(data);
     }
 
     get storedSearchKey() 

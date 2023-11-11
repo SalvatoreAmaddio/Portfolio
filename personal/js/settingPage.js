@@ -29,13 +29,13 @@ class SettingFormList extends FormList
 
         this.onEditClicked = (e) =>
         {
-            this.sender.onDataReceived((e)=>
+            this.sender.onDataReceived= (e) =>
             {
                 let newValue = prompt("Change Value", e.trim());
                 if (!newValue) return false;                
                 this.sender.storedUpdateVal = newValue;
                 this.canUpdate();
-            });
+            };
             this.sender.sendUpdateID(e);
         };
 

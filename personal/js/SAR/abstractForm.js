@@ -82,7 +82,7 @@ class FormList
     {
         if (this.sender.storedUpdateVal) 
         {
-            this.sender.onDataReceived((e)=> this.displayData(e));    
+            this.sender.onDataReceived = (e)=> this.displayData(e);    
             this.sender.sendUpdateValue(); 
             this.sender.deleteStoredUpdateVal();
         }
