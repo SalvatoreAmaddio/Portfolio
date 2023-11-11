@@ -23,8 +23,11 @@ class ProjectFormPage extends DefaultPage
         super("Salvatore Amaddio Rivolta");
         this.projectID = sessionStorage.getItem("projectID");
         sessionStorage.removeItem("projectID");
-        this.sender.onDataReceived = (e) => this.fillData(e);
-        this.sender.sendUpdateID(this.projectID);
+        if (this.projectID) 
+        {
+            this.sender.onDataReceived = (e) => this.fillData(e);
+            this.sender.sendUpdateID(this.projectID);
+        } 
         this.#saveButton.addEventListener("click",(e)=>
             {
                 this.sender.onDataReceived = (e) => 
