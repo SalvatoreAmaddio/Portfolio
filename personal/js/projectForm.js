@@ -1,5 +1,4 @@
-class ProjectFormPage extends DefaultPage
-{
+class ProjectFormPage extends DefaultPage {
     #projectID;
     #projectName = document.getElementById("projectName");
     #projectVersion = document.getElementById("projectVersion");
@@ -23,19 +22,22 @@ class ProjectFormPage extends DefaultPage
         super("Salvatore Amaddio Rivolta");
         this.projectID = sessionStorage.getItem("projectID");
         sessionStorage.removeItem("projectID");
+        this.year = new Date().getFullYear();
         if (this.projectID) 
         {
             this.sender.onDataReceived = (e) => this.fillData(e);
             this.sender.sendUpdateID(this.projectID);
-        } 
+        }
+
         this.#saveButton.addEventListener("click",(e)=>
             {
+                alert(this.projectID);
                 this.sender.onDataReceived = (e) => 
                 {
                     alert("Record successfully changed");
                     window.location.href ="projects.php";
                 };    
-                this.sender.send(`data=${this.toArray()}`);
+                //this.sender.send(`data=${this.toArray()}`);
         });
     }
 

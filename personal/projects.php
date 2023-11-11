@@ -141,6 +141,11 @@
                 sessionStorage.setItem("projectID",e);
                 location.href = "projectForm.php";
             };
+
+            settingPage.settingFormList.onInsertClicked = (e) => 
+            {                
+                location.href = "projectForm.php";
+            };
         </script>
     </body>
 </html>
