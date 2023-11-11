@@ -125,7 +125,7 @@
                 <div id="descriptionContainer">
                     <p>Description</p>
 
-                    <textarea rows="7">
+                    <textarea id="description" rows="7">
 
                     </textarea>
                 </div>
@@ -134,8 +134,8 @@
                     <p>Drop</p>
                 </div>
 
-                <div id="saveButton">
-                    <button>SAVE</button>
+                <div id="saveButtonContainer">
+                    <button id="saveButton">SAVE</button>
                 </div>
             </div>
         </section>        
@@ -144,18 +144,9 @@
         <?php echo "Copyright © " . date("Y") . " Salvatore Amaddio Rivolta All rights reserved.";?>
     </footer>
     <?php LoadJS();?>
+    <script src="js/projectForm.js"></script>
     <script>
-       let id = localStorage.getItem("projectID");
-       if (id) 
-       {
-            let sender = new Sender("",
-            (e)=>
-            {
-                alert(e);
-            });
-            sender.send("projectID="+id);
-            localStorage.removeItem("projetID");
-       } 
+        new ProjectFormPage();
     </script>
     </body>
 </html>

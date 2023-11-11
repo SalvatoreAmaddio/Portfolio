@@ -31,13 +31,46 @@ class ProjectController extends AbstractController
             $this->currentProject = Project::Cast($this->getByID($projectID));
             echo implode(";",$this->currentProject->asRow());
         }
+
+        if (isset($_REQUEST["data"])) 
+        {
+            $data = explode(";",$_REQUEST["data"]);
+            $Project = new Project();
+            $Project->projectID = $data[0];
+            $Project->projectName = $data[1];
+            $Project->projectVersion = $data[2];
+            $Project->projectType->ID = $data[3];
+            $Project->OS->ID = $data[4];
+            $Project->year = $data[5];
+            $Project->client->clientID = $data[6];
+            $Project->sourceCode = $data[7];
+            $Project->proLang->ID = $data[8];
+            $Project->tech->ID = $data[9];
+            $Project->db->ID = $data[10];
+            $Project->office = Sys::trueFalse($data[11]);
+            $Project->pdf =Sys::trueFalse($data[12]);
+            $Project->multiUser = Sys::trueFalse($data[13]);
+            $Project->logoPath = "logoPath";
+            $Project->description = $data[14];
+            $Project->downloadLink = "downLoadLink";
+            $this->db->crud(2, 
+            $Project->projectName,$Project->projectVersion,
+            $Project->projectType->ID,$Project->OS->ID,
+            $Project->year,$Project->client->clientID,
+            $Project->sourceCode, $Project->proLang->ID,
+            $Project->tech->ID, $Project->db->ID,
+            $Project->office,$Project->pdf,$Project->multiUser,
+            $Project->logoPath, $Project->description, $Project->downloadLink,           
+            $Project->projectID
+            );
+        }
     }
 
     public function getClients() 
     {
         echo "<option value='0'></option>";
         foreach($this->clientController->recordSource as $record) 
-            echo "<option value='".$record->ID."'>".$record."</option>";
+            echo "<option value='".$record->clientID."'>".$record."</option>";
     }
 
     public function getOS() 

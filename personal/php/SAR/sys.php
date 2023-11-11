@@ -12,6 +12,11 @@ class Sys
         return ($val) ? "Yes" : "No";
     }
 
+    public static function trueFalse(string $val) : bool
+    {
+        return ($val=="true") ? true : false;
+    }
+
     public static function contains(string $what, string $in, bool $toLower=false) : bool 
     {
         if ($toLower) 

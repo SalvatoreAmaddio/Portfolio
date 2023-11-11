@@ -198,7 +198,14 @@ class DefaultPage
     constructor(websiteName)
     {
         this.#websiteName = websiteName;
-        this.#navBar = new NavBar();
+        try 
+        {
+            this.#navBar = new NavBar();
+        } 
+        catch
+        {
+            
+        }
         this.#updateCopirightYear();
     }
 

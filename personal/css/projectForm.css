@@ -70,12 +70,12 @@ label, input, select, td
     width: 100%;
 }
 
-#saveButton 
+#saveButtonContainer
 {
     margin-top: 1rem;
 }
 
-#saveButton button 
+#saveButton
 {
     padding: .5rem;
     display: block;

@@ -48,7 +48,6 @@ class Project extends AbstractModel
         $this->projectName = &$row["projectName"];
         $this->projectVersion = &$row["projectVersion"];
         $this->projectType->readAssoc($row);
-        $this->projectType->Name = &$row["projecttypeName"];
         $this->OS->readAssoc($row);
         $this->year = &$row["year"];
         $this->client->readAssoc($row);
@@ -56,9 +55,9 @@ class Project extends AbstractModel
         $this->proLang->readAssoc($row);
         $this->tech->readAssoc($row);
         $this->db->readAssoc($row);
-        $this->office = &$row["office"];
-        $this->pdf = &$row["pdf"];
-        $this->multiUser = &$row["multiUser"];
+        $this->office = boolval($row["office"]);
+        $this->pdf = boolval($row["pdf"]);
+        $this->multiUser = boolval($row["multiUser"]);
         $this->logoPath = &$row["logoPath"];
         $this->description = &$row["description"];
         $this->downloadLink = &$row["downloadLink"];
@@ -81,7 +80,7 @@ class Project extends AbstractModel
             case 0:
                 return "ss";
             case 2:
-                return "ssi";
+                return "ssiiiisiiiiiisssi";
             case 3:
                 return "i";
         }
@@ -94,7 +93,7 @@ class Project extends AbstractModel
     
     public function updateSQL() : string
     {
-        return "update " . $this->tableName . " SET firstName = ?, lastName = ? WHERE ".$this->tableName."ID=?;";
+        return "UPDATE project SET projectName=?, projectVersion=?, projecttypeID=?, OSID=?, year=?, clientID=?, sourceCode=?, proLangID=?, techID=?, dbID=?, office=?, pdf=?, multiUser=?, logoPath=?, description=?, downloadLink=? WHERE projectID=?;";    
     }
     
     public function insertSQL() : string 

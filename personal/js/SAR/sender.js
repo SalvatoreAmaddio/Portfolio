@@ -25,7 +25,7 @@ class Sender
         };
     }
 
-    onDataReceived(fn) 
+    set onDataReceived(fn) 
     {
         this.#responseFn = fn;
     }
