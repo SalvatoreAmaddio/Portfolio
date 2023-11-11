@@ -125,16 +125,7 @@
         </div>
     <?php LoadJS();?>
         <script>
-            class SettingPage extends DefaultPage
-            {
-                constructor()
-                {
-                    super("Salvatore Amaddio Rivolta");
-                    this.navBar.isNavLogoEnabled=false;
-                }
-            }
             new SettingPage();
-            new FormListTwoColumn();
         </script>        
     </body>
 </html>
