@@ -5,8 +5,9 @@ abstract class TwoColumnController extends AbstractController
 
     protected function runSearch() 
     {
-        if (!isset($_SESSION[$this->searchVal()])) return;
-        $search = $_SESSION[$this->searchVal()]; 
+
+        if (!$this->inSession($this->searchValKey())) return;
+        $search = $_SESSION[$this->searchValKey()]; 
         $this->filterBy(
             function($record) use($search) : bool
             {
@@ -17,26 +18,26 @@ abstract class TwoColumnController extends AbstractController
 
     protected function switchSearchValue(AbstractTwoColumns $record) : bool
     {
-        if (isset($_SESSION[$this->searchVal()]) && strlen($_SESSION[$this->searchVal()])>0) 
+        if ($this->inSession($this->searchValKey()) && strlen($_SESSION[$this->searchValKey()])>0) 
         {
-            if (!Sys::contains($_SESSION[$this->searchVal()],$record->Name,true))
-                return $_SESSION[$this->searchVal()] = $record->Name; 
+            if (!Sys::contains($_SESSION[$this->searchValKey()],$record->Name,true))
+                return $_SESSION[$this->searchValKey()] = $record->Name; 
         }
         return false;
     }
 
     public function onReceived() 
     {
-        if (isset($_REQUEST[$this->searchVal()])) 
+        if ($this->onRequestedSearchVal()) 
         {
-            $search = $_REQUEST[$this->searchVal()];
-            $_SESSION[$this->searchVal()] = $search; 
+            $search = $_REQUEST[$this->searchValKey()];
+            $_SESSION[$this->searchValKey()] = $search; 
             $this->runSearch();
             echo $this->drawTable();
             return;
         } 
 
-        if ($this->isDeleteIDRequested()) 
+        if ($this->onRequestedDeleteID()) 
         {
             $this->model = $this->recordToDelete();
             $record = AbstractTwoColumns::Cast($this->model);
@@ -48,22 +49,19 @@ abstract class TwoColumnController extends AbstractController
             return;
         }
 
-        if ($this->isNewValRequested()) 
+        if ($this->onRequestedNewVal()) 
         {
-            if (!$this->isNewValNull()) 
-            {
-                $record = AbstractTwoColumns::Cast($this->model);
-                $record->Name = ucfirst($this->requestedNewVal());
-                $this->switchSearchValue($record);
-                $record->ID = $this->db->crud(0, $record->Name);
-                $this->recordSource->addRecord($record);
-                $this->runSearch();
-                echo $this->drawTable();
-            }
+            $record = AbstractTwoColumns::Cast($this->model);
+            $record->Name = ucfirst($this->requestedNewVal());
+            $this->switchSearchValue($record);
+            $record->ID = $this->db->crud(0, $record->Name);
+            $this->recordSource->addRecord($record);
+            $this->runSearch();
+            echo $this->drawTable();
             return;
         }
 
-        if ($this->isUpdateIDRequested()) 
+        if ($this->onRequestedUpdateID()) 
         {
             $this->model = $this->recordToUpdate();
             $record = AbstractTwoColumns::Cast($this->model);
@@ -72,11 +70,9 @@ abstract class TwoColumnController extends AbstractController
             return;
         }
 
-        if ($this->isUpdateValRequested()) 
+        if ($this->onRequestedUpdateVal()) 
         {
-            if (!$this->isUpdateValNull()) 
-            {
-                if ($this->isObjStored()) 
+            if ($this->isObjStored()) 
                 {
                     $record = $this->getStoredObj();
                     $record->Name = ucfirst($this->requestedUpdateVal());
@@ -87,7 +83,6 @@ abstract class TwoColumnController extends AbstractController
                     $this->runSearch();
                     echo $this->drawTable();
                 }
-            }
             return;
         }
     }

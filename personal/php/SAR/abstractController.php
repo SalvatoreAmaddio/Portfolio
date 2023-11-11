@@ -21,12 +21,7 @@ abstract class AbstractController
         $this->originalSource =  &$this->db->recordSource;
         $this->recordSource =  $this->db->recordSource;
     }
-
-    protected function searchVal() : string 
-    {
-        return $this->formName."search";
-    }
-        
+     
     public function storeObj($obj)
     {
         $_SESSION[$this->formName."storedObj"] = serialize($obj);
@@ -57,6 +52,17 @@ abstract class AbstractController
         return isset($_REQUEST[$key]) && !is_null($_REQUEST[$key]);
     }
 
+    //SEARCH
+    protected function onRequestedSearchVal() : bool
+    {
+        return $this->onRequest($this->searchValKey());
+    }
+    
+    protected function searchValKey() : string 
+    {
+        return $this->formName."search";
+    }
+    
     //DELETE
     protected function onRequestedDeleteID() : bool
     {
