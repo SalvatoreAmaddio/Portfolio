@@ -27,9 +27,9 @@ abstract class AbstractController
         return $this->formName."search";
     }
         
-    public function storeObj($db)
+    public function storeObj($obj)
     {
-        $_SESSION[$this->formName."storedObj"] = serialize($db);
+        $_SESSION[$this->formName."storedObj"] = serialize($obj);
     }
 
     public function getStoredObj()
@@ -41,61 +41,68 @@ abstract class AbstractController
     {
         unset($_SESSION[$this->formName."storedObj"]);
     }
-    
+
     public function isObjStored() : bool
     {
-        return isset($_SESSION[$this->formName."storedObj"]);
+        return $this->inSession($this->formName."storedObj");
     }
 
-    //DELETE
-    protected function isDeleteIDRequested() : bool
+    public function inSession(string $key) : bool 
     {
-        return isset($_REQUEST[$this->formName."deleteID"]);
-    }
-    protected function recordToDelete() : AbstractModel 
-    {
-        return $this->getByID((int)$_REQUEST[$this->formName.'deleteID']);
-    }
-
-    //INSERT 
-    protected function requestedNewVal()  
-    {
-        return trim($_REQUEST[$this->formName ."newVal"]);
-    }
-
-    protected function isNewValRequested() : bool 
-    {
-        return isset($_REQUEST[$this->formName . "newVal"]);
-    }
-
-    protected function isNewValNull() : bool 
-    {
-        return is_null($_REQUEST[$this->formName . "newVal"]);
+        return isset($_SESSION[$key]) && !is_null($_SESSION[$key]);
     }
 
     public function onRequest(string $key) : bool
     {
         return isset($_REQUEST[$key]) && !is_null($_REQUEST[$key]);
     }
-    //UPDATE
-    protected function isUpdateIDRequested() : bool
+
+    //DELETE
+    protected function onRequestedDeleteID() : bool
     {
-        return isset($_REQUEST[$this->formName."updateID"]);
+        return $this->onRequest($this->formName."deleteID");
+    }
+
+    protected function requestedDeleteID() 
+    {
+        return $_REQUEST[$this->formName.'deleteID'];
+    }
+
+    protected function recordToDelete() : AbstractModel 
+    {
+        return $this->getByID($this->requestedDeleteID());
+    }
+
+    //INSERT 
+    protected function onRequestedNewVal() : bool 
+    {
+        return $this->onRequest($this->formName."newVal");
+    }
+
+    protected function requestedNewVal()  
+    {
+        return trim($_REQUEST[$this->formName ."newVal"]);
+    }
+
+    //UPDATE
+    protected function onRequestedUpdateID() : bool
+    {
+        return $this->onRequest($this->formName."updateID");
+    }
+
+    protected function onRequestedUpdateVal() : bool 
+    {
+        return $this->onRequest($this->formName."updateVal");
+    }
+
+    protected function requestedUpdateID() 
+    {
+        return $_REQUEST[$this->formName.'updateID'];
     }
 
     protected function recordToUpdate() : AbstractModel 
     {
-        return $this->getByID($_REQUEST[$this->formName.'updateID']);
-    }
-
-    protected function isUpdateValRequested() : bool 
-    {
-        return isset($_REQUEST[$this->formName . "updateVal"]);
-    }
-
-    protected function isUpdateValNull() : bool 
-    {
-        return is_null($_REQUEST[$this->formName . "updateVal"]);
+        return $this->getByID($this->requestedUpdateID());
     }
 
     protected function requestedUpdateVal() 
