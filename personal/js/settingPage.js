@@ -22,7 +22,9 @@ class SettingFormList extends FormList
                 this.sender.formName="projecttype";
                 document.title="Project Type";
             break;
-            default:return;
+            default:
+                this.sender.formName="project";
+                document.title="Projects";
         }
 
         this.onEditClicked = (e) =>
@@ -45,15 +47,15 @@ class SettingFormList extends FormList
             this.sender.sendNewVal(newValue);
         };
     }
-
 }
 
 class SettingPage extends DefaultPage
 {
+    settingFormList;
     constructor()
     {
         super("Salvatore Amaddio Rivolta");
         this.navBar.isNavLogoEnabled=false;
-        new SettingFormList();
+        this.SettingFormList = new SettingFormList();
     }
 }

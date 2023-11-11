@@ -124,6 +124,7 @@
             </footer>
         </div>
     <?php LoadJS();?>
+    <script src="js/settingPage.js"></script>
         <script>
             new SettingPage();
         </script>        

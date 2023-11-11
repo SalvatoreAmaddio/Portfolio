@@ -132,18 +132,10 @@
             </footer>
         </div>
         <?php LoadJS();?>
+        <script src="js/settingPage.js"></script>
         <script>
-            class SettingPage extends DefaultPage
-            {
-                constructor()
-                {
-                    super("Salvatore Amaddio Rivolta");
-                    this.navBar.isNavLogoEnabled=false;
-                }
-            }
-            new SettingPage();
-            let x = new FormListTwoColumn();
-            x.onEditClicked=(e) => 
+            settingPage = new SettingPage();
+            settingPage.settingFormList.onEditClicked=(e) => 
             {
                 localStorage.setItem("projectID",e)
                 location.href = "projectForm.php";
