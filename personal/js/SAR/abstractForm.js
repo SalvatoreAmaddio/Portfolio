@@ -35,7 +35,7 @@ class FormList
 
     redispaly() 
     {
-        this.sender.onDataReceived((e)=>this.displayData(e));
+        this.sender.onDataReceived = (e) => this.displayData(e);
     }
 
     #loadEvents() 
