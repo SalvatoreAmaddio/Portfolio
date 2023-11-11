@@ -56,6 +56,6 @@ class SettingPage extends DefaultPage
     {
         super("Salvatore Amaddio Rivolta");
         this.navBar.isNavLogoEnabled=false;
-        this.SettingFormList = new SettingFormList();
+        this.settingFormList = new SettingFormList();
     }
 }

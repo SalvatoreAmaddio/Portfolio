@@ -16,47 +16,59 @@ class ProjectFormPage extends DefaultPage
     #multiUser = document.getElementById("multiUser");
     #description = document.getElementById("description");
     #saveButton = document.getElementById("saveButton");
-    sender = new Sender();
+    sender = new Sender("project");
 
     constructor()
     {
         super("Salvatore Amaddio Rivolta");
-        this.#projectID = localStorage.getItem("updateID");
-        this.sender.onDataReceived = (e) => 
-        {
-            let values = e.split(";");
-            this.Name = values[1];
-            this.Version = values[2];
-            this.ProjectType = values[3];
-            this.OS = values[5];
-            this.year = Number(values[7]);
-            this.client = values[8];
-            this.sourceCode = values[11];
-            this.proLang = values[12];
-            this.tech = values[14];
-            this.db = values[16];
-            this.office = values[18];
-            this.pdf = values[19];
-            this.users = values[20];
-            this.description = values[22];
-        };
-
-        this.sender.send(`projectID=${this.#projectID}`);
-        localStorage.removeItem("projetID");
+        this.projectID = sessionStorage.getItem("projectID");
+        sessionStorage.removeItem("projectID");
+        this.sender.onDataReceived = (e) => this.fillData(e);
+        this.sender.sendUpdateID(this.projectID);
         this.#saveButton.addEventListener("click",(e)=>
-        {
-            this.sender.onDataReceived = (e) => 
             {
-                alert("Record successfully changed");
-                window.location.href ="projects.php";
-            };    
-            this.sender.send(`data=${this.toArray()}`);
+                this.sender.onDataReceived = (e) => 
+                {
+                    alert("Record successfully changed");
+                    window.location.href ="projects.php";
+                };    
+                this.sender.send(`data=${this.toArray()}`);
         });
     }
 
     toArray() 
     {
         return `${this.#projectID};${this.Name};${this.Version};${this.ProjectType};${this.OS};${this.year};${this.client};${this.sourceCode};${this.proLang};${this.tech};${this.db};${this.office};${this.pdf};${this.users};${this.description}`; 
+    }
+
+    fillData(e) 
+    {
+        let values = e.split(";");
+        this.#projectID = values[0];
+        this.Name = values[1];
+        this.Version = values[2];
+        this.ProjectType = values[3];
+        this.OS = values[5];
+        this.year = Number(values[7]);
+        this.client = values[8];
+        this.sourceCode = values[11];
+        this.proLang = values[12];
+        this.tech = values[14];
+        this.db = values[16];
+        this.office = values[18];
+        this.pdf = values[19];
+        this.users = values[20];
+        this.description = values[22];
+    }
+
+    get projectID() 
+    {
+        return this.#projectID;
+    }
+
+    set projectID(id) 
+    {
+        this.#projectID = id;
     }
 
     get Name() 

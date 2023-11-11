@@ -133,11 +133,12 @@
         </div>
         <?php LoadJS();?>
         <script src="js/settingPage.js"></script>
+        <script src="js/projectForm.js"></script>
         <script>
             settingPage = new SettingPage();
-            settingPage.settingFormList.onEditClicked=(e) => 
-            {
-                localStorage.setItem("projectID",e)
+            settingPage.settingFormList.onEditClicked = (e) => 
+            {                
+                sessionStorage.setItem("projectID",e);
                 location.href = "projectForm.php";
             };
         </script>

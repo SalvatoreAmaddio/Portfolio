@@ -25,9 +25,9 @@ class ProjectController extends AbstractController
 
     public function onReceived() 
     {
-        if ($this->onRequest("projectID")) 
+        if ($this->onRequestedUpdateID()) 
         {
-            $projectID = $_REQUEST["projectID"];
+            $projectID = $this->requestedUpdateID();
             $this->currentProject = Project::Cast($this->getByID($projectID));
             echo implode(";",$this->currentProject->asRow());
         }

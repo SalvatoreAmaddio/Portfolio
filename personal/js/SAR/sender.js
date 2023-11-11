@@ -6,9 +6,9 @@ class Sender
     #responseFn;
     formName;
 
-    constructor(pageUrl="", fn="") 
+    constructor(formName = "") 
     {
-        this.#responseFn = fn;
+        this.formName = formName;
         this.#dataContainer = document.getElementById("dataContainer");
         if (!this.#responseFn) 
         {
@@ -19,7 +19,6 @@ class Sender
             }
         }
 
-        this.#pageUrl = (pageUrl) ? pageUrl : this.currentPath;
         this.#http.onreadystatechange = () => {
             if (this.IsSuccesfull) 
                 this.#responseFn(this.#http.responseText);  
@@ -36,9 +35,14 @@ class Sender
         return window.location.href;
     }
 
+    set pagePath(pageUrl) 
+    {
+        this.#pageUrl = pageUrl;
+    }
+
     get pagePath() 
     {
-        return this.#pageUrl;
+        return (this.#pageUrl) ? this.#pageUrl : this.currentPath;
     }
 
     get IsSuccesfull()
