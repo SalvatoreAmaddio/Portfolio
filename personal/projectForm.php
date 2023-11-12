@@ -134,6 +134,7 @@
             <section class="container">
                 <div id="picturesContainer">
                     <p>Application's Gallery</p>
+                    <!--/img/projects/desktop/betting/betting.ico-->
                 </div>
             </section>
 
