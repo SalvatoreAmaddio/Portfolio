@@ -36,31 +36,33 @@ class ProjectController extends AbstractController
         {
             $Project = new Project();
             $this->fillRecord($Project,2);
-            $this->db->crud(2, 
-            $Project->projectName,$Project->projectVersion,
-            $Project->projectType->ID,$Project->OS->ID,
-            $Project->year,$Project->client->clientID,
-            $Project->sourceCode, $Project->proLang->ID,
-            $Project->tech->ID, $Project->db->ID,
-            $Project->office,$Project->pdf,$Project->multiUser,
-            $Project->logoPath, $Project->description, $Project->downloadLink,           
-            $Project->projectID
+            $this->db->crud(2,
+                $Project->projectName,$Project->projectVersion,
+                $Project->projectType->ID,$Project->OS->ID,
+                $Project->year,$Project->client->clientID,
+                $Project->sourceCode, $Project->proLang->ID,
+                $Project->tech->ID, $Project->db->ID,
+                $Project->office,$Project->pdf,$Project->multiUser,
+                $Project->logoPath, $Project->description, $Project->downloadLink,           
+                $Project->projectID
             );
+            return;
         }
 
         if ($this->onRequestedNewVal()) 
         {
             $Project = new Project();
             $this->fillRecord($Project,0);
-            $this->db->crud(0, 
-            $Project->projectName,$Project->projectVersion,
-            $Project->projectType->ID,$Project->OS->ID,
-            $Project->year,$Project->client->clientID,
-            $Project->sourceCode, $Project->proLang->ID,
-            $Project->tech->ID, $Project->db->ID,
-            $Project->office,$Project->pdf,$Project->multiUser,
-            $Project->logoPath, $Project->description, $Project->downloadLink          
+            $this->db->crud(0,
+                $Project->projectName,$Project->projectVersion,
+                $Project->projectType->ID,$Project->OS->ID,
+                $Project->year,$Project->client->clientID,
+                $Project->sourceCode, $Project->proLang->ID,
+                $Project->tech->ID, $Project->db->ID,
+                $Project->office,$Project->pdf,$Project->multiUser,
+                $Project->logoPath, $Project->description, $Project->downloadLink          
             );
+            return;
         }
     }
 

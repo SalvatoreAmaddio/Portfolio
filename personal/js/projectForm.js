@@ -21,8 +21,8 @@ class ProjectFormPage extends DefaultPage {
     {
         super("Salvatore Amaddio Rivolta");
         this.projectID = sessionStorage.getItem("projectID");
-        sessionStorage.removeItem("projectID");
         this.year = new Date().getFullYear();
+        this.Version = "1.0.0.0";
         if (this.projectID) 
         {
             this.sender.onDataReceived = (e) => this.fillData(e);
@@ -36,8 +36,10 @@ class ProjectFormPage extends DefaultPage {
                     alert(`Record successfully ${(this.projectID) ? 'changed' : 'added'}`);
                     window.location.href ="projects.php";
                 };
-                if (this.projectID)
-                    this.sender.sendUpdateVal(this.toArray());
+                if (this.projectID) 
+                {
+                    this.sender.sendUpdateValue(this.toArray());
+                }
                 else
                     this.sender.sendNewVal(this.toArray()); 
         });

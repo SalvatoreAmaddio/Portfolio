@@ -143,7 +143,8 @@
             };
 
             settingPage.settingFormList.onInsertClicked = (e) => 
-            {                
+            {         
+                sessionStorage.removeItem("projectID");       
                 location.href = "projectForm.php";
             };
         </script>
