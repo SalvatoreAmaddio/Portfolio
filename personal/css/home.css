@@ -141,6 +141,25 @@ header
     background: linear-gradient(180deg, rgba(255,145,0,1) 0%, rgba(255,255,255,1) 100%);
 }
 
+#proLang 
+{
+    margin-left: 1rem;
+    background: rgb(255,145,0);
+    background: linear-gradient(180deg, rgba(255,145,0,1) 0%, rgba(255,255,255,1) 100%);
+}
+
+#proLang p:first-child, #tech p:first-child  
+{
+    padding: 1rem .9rem;
+    font-size: 1.2rem;
+}
+
+#tech
+{
+    background: rgb(255,145,0);
+    background: linear-gradient(180deg, rgba(255,145,0,1) 0%, rgba(255,255,255,1) 100%);
+}
+
 footer 
 {
     margin-top: 1px;

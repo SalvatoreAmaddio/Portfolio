@@ -62,6 +62,20 @@
                                 <p>Manage</p>
                             </a>
                         </div>
+
+                        <div class="group" id="proLang">
+                            <a href="settings.php?path=4" target="_blank">
+                                <p>Programming Languages</p>
+                                <p>Manage</p>
+                            </a>
+                        </div>
+
+                        <div class="group" id="tech">
+                            <a href="settings.php?path=5" target="_blank">
+                                <p>Technologies</p>
+                                <p>Manage</p>
+                            </a>
+                        </div>
                     </div>
                 </section>
             </main>
