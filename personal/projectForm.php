@@ -65,7 +65,7 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td><label for="sourceCode">Source Code</label></td>
+                                    <td><img id="github" src="/img/github.png"></td>
                                     <td><input type="text" id="sourceCode" name="pSourceCode" required/></td>
                                 </tr>
                             </table>

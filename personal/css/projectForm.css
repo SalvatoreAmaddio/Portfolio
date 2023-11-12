@@ -48,6 +48,14 @@ th
     padding: 1rem;
 }
 
+#github
+{
+    width: 2rem;
+    height: 2rem;
+    display: block;
+    margin-left: 0.3rem;
+}
+
 label, input, select, td
 {
     text-align: start;
