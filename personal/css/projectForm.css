@@ -1,3 +1,8 @@
+#headerTitle 
+{
+    letter-spacing: 5px;
+}
+
 select 
 {
     color: black;
@@ -6,10 +11,6 @@ select
     font-size: 1.1rem;
     padding: 0.5rem;
     display: block;
-}
-
-#data 
-{
 }
 
 #groups 
