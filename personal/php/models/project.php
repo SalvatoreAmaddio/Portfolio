@@ -78,7 +78,7 @@ class Project extends AbstractModel
     {
         switch ($query) {
             case 0:
-                return "ss";
+                return "ssiiiisiiiiiisss";
             case 2:
                 return "ssiiiisiiiiiisssi";
             case 3:
@@ -98,7 +98,7 @@ class Project extends AbstractModel
     
     public function insertSQL() : string 
     {
-        return "insert into " . $this->tableName . " (firstName, lastName) VALUES (?,?);";
+        return "INSERT INTO project(projectName, projectVersion, projecttypeID, OSID, year, clientID, sourceCode, proLangID, techID, dbID, office, pdf, multiUser, logoPath, description, downloadLink) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);";
     }
 
     public function __toString()

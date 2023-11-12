@@ -35,7 +35,7 @@ class ProjectController extends AbstractController
         if ($this->onRequestedUpdateVal()) 
         {
             $Project = new Project();
-            $this->fillRecord($Project);
+            $this->fillRecord($Project,2);
             $this->db->crud(2, 
             $Project->projectName,$Project->projectVersion,
             $Project->projectType->ID,$Project->OS->ID,
@@ -47,11 +47,26 @@ class ProjectController extends AbstractController
             $Project->projectID
             );
         }
+
+        if ($this->onRequestedNewVal()) 
+        {
+            $Project = new Project();
+            $this->fillRecord($Project,0);
+            $this->db->crud(0, 
+            $Project->projectName,$Project->projectVersion,
+            $Project->projectType->ID,$Project->OS->ID,
+            $Project->year,$Project->client->clientID,
+            $Project->sourceCode, $Project->proLang->ID,
+            $Project->tech->ID, $Project->db->ID,
+            $Project->office,$Project->pdf,$Project->multiUser,
+            $Project->logoPath, $Project->description, $Project->downloadLink          
+            );
+        }
     }
 
-    public function fillRecord(&$Project) 
+    public function fillRecord(&$Project, $crud) 
     {
-        $data = explode(";",$this->requestedUpdateVal());
+        $data = explode(";",($crud==2) ? $this->requestedUpdateVal() : $this->requestedNewVal());
         $Project->projectID = $data[0];
         $Project->projectName = $data[1];
         $Project->projectVersion = $data[2];
