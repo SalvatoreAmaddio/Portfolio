@@ -1,6 +1,6 @@
 <?php 
-    session_start();
     include 'load.php';
+    if (!Sys::isLogged()) Sys::exit();
     $current_url = $_SERVER['REQUEST_URI'];
     $url_components = parse_url($current_url);
     parse_str($url_components['query'], $params);

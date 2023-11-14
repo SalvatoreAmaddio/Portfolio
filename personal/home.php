@@ -1,4 +1,6 @@
-<?php include 'load.php';?>
+<?php include 'load.php';
+if (!Sys::isLogged()) Sys::exit();
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>

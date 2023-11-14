@@ -1,6 +1,6 @@
 <?php 
-    session_start();
     include 'load.php';
+    if (!Sys::isLogged()) Sys::exit();
     $controller = new ProjectController();
 ?>
 

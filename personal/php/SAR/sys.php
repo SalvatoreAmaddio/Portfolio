@@ -1,7 +1,17 @@
 <?php
-
+session_start();
 class Sys 
 {
+    public static function exit() 
+    {
+        header("Location: /personal/login.php");
+    }
+
+    public static function isLogged() : bool 
+    {
+        return isset($_SESSION["logged"]) && $_SESSION["logged"] == 1;
+    }
+
     public static function enter() 
     {
         echo "<br>";
