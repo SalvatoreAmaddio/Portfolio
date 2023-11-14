@@ -24,6 +24,13 @@ header
     height: var(--logoSize);
 }
 
+#projects .projectType img 
+{
+    width: 9rem;
+    max-width: 100%;
+    height: 9rem;
+}
+
 #x 
 {
     cursor: default;
