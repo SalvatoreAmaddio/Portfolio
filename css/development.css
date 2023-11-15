@@ -93,12 +93,13 @@ main
 {
     float: left;
     border-radius: 1rem;
-    width: 25%;
+    width: 24%;
     min-width: 15rem;
     min-height: 15rem;
     height: 100%;
     margin-right: 1rem;
 }
+
 #featuresContainer section:nth-of-type(2) .feature >img:first-child 
 {
     border: 0.01rem solid;
@@ -140,6 +141,26 @@ main
     text-align: center;
 }
 
+.chunks 
+{
+    padding-bottom: 1rem;
+}
+
+.chunks ul 
+{
+    list-style-position: inside;
+    padding-top: .5rem;
+}
+
+.chunks ul li
+{
+    margin-bottom: .5rem;
+}
+
+.chunks ul li p 
+{
+    display: inline;
+}
 
 /*MEDIA QUERY*/
 @media screen and (max-width: 761.5px) and (min-width: 500.5px) 
