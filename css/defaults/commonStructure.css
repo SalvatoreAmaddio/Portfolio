@@ -458,6 +458,38 @@ form span
     height: 5rem;
 }
 
+.chunks 
+{
+    padding-bottom: 1rem;
+}
+
+.chunks ul 
+{
+    list-style-position: inside;
+    padding-top: .5rem;
+}
+
+.chunks ul li
+{
+    margin-bottom: .5rem;
+}
+
+.chunks ul li p 
+{
+    display: inline;
+}
+
+.checkList 
+{
+    list-style-image: url('img/smallChecked.png');
+}
+
+.checkList li p 
+{
+    position: relative;
+    top: -5px;
+}
+
 /*MEDIA QUERY*/
 @media screen and (max-width:978px) and (min-width:700.5px) 
 {

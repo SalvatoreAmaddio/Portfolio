@@ -141,27 +141,6 @@ main
     text-align: center;
 }
 
-.chunks 
-{
-    padding-bottom: 1rem;
-}
-
-.chunks ul 
-{
-    list-style-position: inside;
-    padding-top: .5rem;
-}
-
-.chunks ul li
-{
-    margin-bottom: .5rem;
-}
-
-.chunks ul li p 
-{
-    display: inline;
-}
-
 /*MEDIA QUERY*/
 @media screen and (max-width: 761.5px) and (min-width: 500.5px) 
 {
