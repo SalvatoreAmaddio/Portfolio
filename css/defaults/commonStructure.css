@@ -296,7 +296,7 @@ footer
 {
     float: right;
     position: relative;
-    width: 60%;
+    width: 85%;
     background-color: inherit;
     text-align: start;
 }
@@ -433,7 +433,6 @@ form span
 #contactDetails 
 {
     float: left;
-    width: 33%;
     border-radius: 1rem;
     text-align: center;
 }
@@ -441,20 +440,11 @@ form span
 .contactContainer
 {
     padding: 0.5rem;
-}
-
-.contactContainer:first-of-type
-{
     float: left;
-    width: 11rem;
-}
-
-.contactContainer:last-of-type
-{
-    float: right;
     width: 8rem;
     letter-spacing: .1rem;
 }
+
 
 .contactContainer img 
 {
@@ -495,12 +485,11 @@ form span
 }
 
 /*MEDIA QUERY*/
-@media screen and (max-width:978px) and (min-width:700.5px) 
+@media screen and (max-width:918.5px) and (min-width:718.5px) 
 {
-    .contactContainer:first-of-type, .contactContainer:last-of-type
+    .contactContainer
     {
         float: none;
-        width: 100%;
     }
 
     #formContainer 
@@ -517,10 +506,22 @@ form span
     {
         padding-left: 0.5rem;
     }
+
+    #contactFormContainer 
+    {
+        width: 80%;
+    }
 }
 
-@media screen and (max-width:700px)
+@media screen and (max-width:718px)
 {
+    .contactContainer
+    {
+        float: none;
+        width: 100%;
+        margin: 0 auto;
+    }
+
     #clientContactInfo, #clientMessage 
     {
         float: none;
@@ -579,7 +580,7 @@ form span
 
 @media screen and (max-width:355.5px) 
 {
-    .contactContainer:first-of-type, .contactContainer:last-of-type 
+    .contactContainer
     {
         float: none;
         width: 100%;
