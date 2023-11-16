@@ -53,7 +53,7 @@ class ProjPresentationGenerator
     #data=
     [
         [ProjectType.Desktop,"1","Betting","2023","Peter Randall","https://github.com/SalvatoreAmaddio/BettingDemo","C#","WPF","SQLite",true,false,false,"img/projects/desktop/betting/betting.ico",this.BettingDescription(),"downloads/Betting.exe"],
-        [ProjectType.Desktop,"2","Meter","2022","Rudy Williams","https://github.com/SalvatoreAmaddio/Meter","C#","WPF","SQLite",true,true,false,"img/projects/desktop/meter/meter.png","lorem","#"],
+        [ProjectType.Desktop,"2","Meter","2022","Rudy Williams","https://github.com/SalvatoreAmaddio/Meter","C#","WPF","SQLite",true,true,false,"img/projects/desktop/meter/meter.png",this.MeterDescription(),"#"],
         [ProjectType.Desktop,"3","FilmFlix","2023","JustIT","https://github.com/SalvatoreAmaddio/FilmFlixPythonProject","Python","Console","SQLite",false,false,false,"img/projects/desktop/filmflix/filmflix.png",this.FilmFlixDescription(),"downloads/FilmFlixPythonProject.zip"],
         [ProjectType.Mobile,"3","MyPlanogram","2022/2023","Carole Crockett","https://github.com/SalvatoreAmaddio/MyPlanogram","C#","MAUI","MySQL",false,false,true,"img/projects/mobile/myplanogram/myplanogram.png",this.MyPlanogramDescription(),"#"]
     ];
@@ -61,7 +61,7 @@ class ProjPresentationGenerator
     #images=
     [
         [ProjectType.Desktop,"1","pic1.png","pic2.png","pic3.png"],
-        [ProjectType.Desktop,"2"],
+        [ProjectType.Desktop,"2","pic1.png","pic2.png","pic3.png","pic4.png"],
         [ProjectType.Desktop,"3","img1.jpg","img2.jpg","img3.jpg"],
         [ProjectType.Mobile,"3","pic1.jpg","pic2.jpg","pic3.jpg","pic4.jpg","pic5.jpg"]
     ];
@@ -129,6 +129,13 @@ class ProjPresentationGenerator
         return "<p>MyPlanogram is a mobile app that I developed during my years as Assistant Store Manager at Poundland. "
         + "This application helps employees to avoid stock misplacement within the store. By scanning the barcode with your phone camera, the app tells where the item should be displayed within the store. "
         + "It also provides information about price and offers (if any). Furthermore, a colleague can also search for an item by typing either its name or the brand. The app is ready-only and its data are managed through a desktop application that is linked to the same online database used by the App.</p>"
+    }
+
+    MeterDescription()
+    {
+        return "<p>Meter is a desktop application that I developed for a client in Mexico. He is a water provider "
+        + "and needed a software that helps him to keep track of the location of his customers and the reading that are taken from time to time. The application also helps him to keep track of what has been paid and what it is still outstanding. "
+        + "The software produces invoices in PDF format and sent them by email using outlook.</p>"
     }
 
     get dataFound() 
