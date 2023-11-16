@@ -38,16 +38,28 @@
                 padding-top: 1rem;
             }
 
-            #ui .layerContent 
-            {
-                padding: 0rem;
-            }
-
             #ui .layerContent > img:first-child 
             {
                 width: 100%;
                 height: 23.5rem;
                 padding: inherit;
+            }
+            #backend h2 span:first-child
+            {
+                font-family: inherit;
+                color: rgb(0,103,140);
+            }
+            #backend h2 span:last-child
+            {
+                font-family: inherit;
+                color: #CE8B2C;
+            }
+            #backend .feature > img 
+            {
+                width: 17%;
+                min-width: 14rem;
+                min-height: 14rem;
+                margin-left: 1rem;
             }
     </style>
 </head>
@@ -180,20 +192,55 @@
                 </div>
             </section>
 
-            <section id="ui" class="container">
-                <div class="layer">
-                    <h2>Hey, I'm working on it</h2>
-                    <div class="layerContent">
-                        <img src="img/work_in_progress.png">
-                    </div>
-                    <h2>Come back later</h2>
-                </div>
-            </section>
+            <section id="featuresContainer">
+                <section id="ui" class="container">
+                    <div class="layer">
+                        <div class="layerContent">
+                            <div class="feature">
+                                <img src="img/design.avif">
+                                <h2>CHOOSE YOUR DESIGN</h2>
+                                <div class="content">
+                                    <div class="chunks">
+                                        <p>The design of your website is fundamental for both your customers and/or employees. Whether you are selling a product or a service, or it is the place where your employees work on, you want your visitor to understand what is looking at and get familiar with it in a few seconds. Therefore, conciseness and clarity are the keywords for a successful website.</p>
+                                    </div>
+                                    <div class="chunks">
+                                        <p>If you have an idea of design in mind I can make it become reality. If you have no idea from where to start, <a href="#getInTouch">get in touch!</a> I can help you to choose your website's design based on your business and targeted audience. I can also help you to choose your domain, hosting provider and get your website live!</p>
+                                    </div>
+                                </div>
 
-            <div class="cIt">
-                <img src="img/pointingFingerRight.png">
-                <a href="webProjects.html">See it yourself</a>
-            </div>
+                                <div class="cIt">
+                                    <img src="img/pointingFingerRight.png">
+                                    <a href="webProjects.html">See it yourself</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="backend" class="container">
+                    <div class="layer">
+                        <div class="layerContent">
+                            <div class="feature">
+                                <img src="img/mysql.svg">
+                                <h2><span>BACKED BY</span> <span>A DATABASE</span></h2>
+                                <div class="content">
+                                    <div class="chunks">
+                                        <p>You might want something more than just a website that shows what you do. You might want to update its content on your own or collect orders from customers. Or maybe you want a platform to which your employees and colleagues can access and conduct daily business operations. If that is the case, you need a <a href="database.html">database</a> behind your website. Here, <a href="database.html#mysql">MySQL</a> is the best choice to store and manage your data online.</p>
+                                    </div>
+                                    <div class="chunks">
+                                        <p>This service requires to rent a hosting provider. <a href="https://cybernews.com/best-web-hosting/mysql-hosting/" target="_blank"><img src="img/pointingFingerRight.png" style="width: 1.4rem; position: relative; top: .3rem;"> Here</a> is a list of well-known providers who dominates the industry to choose from. Feel free to <a href="#getInTouch">get in touch</a> for any clarification.</p>
+                                    </div>
+                                </div>
+
+                                <div class="cIt">
+                                    <img src="img/pointingFingerRight.png">
+                                    <a href="webProjects.html">See it yourself</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </section>
 
             <section id="products" class="container">
                 <div class="layer">

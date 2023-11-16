@@ -115,6 +115,17 @@ header
     margin-left: 1rem;
 }
 
+#mysql h2 span:first-child
+{
+    font-family: inherit;
+    color: rgb(0,103,140);
+}
+#mysql h2 span:last-child
+{
+    font-family: inherit;
+    color: #CE8B2C;
+}
+
 #options 
 {
     color: white;
