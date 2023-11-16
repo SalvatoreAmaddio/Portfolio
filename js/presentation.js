@@ -55,7 +55,7 @@ class ProjPresentationGenerator
         [ProjectType.Desktop,"1","Betting","2023","Peter Randall","https://github.com/SalvatoreAmaddio/BettingDemo","C#","WPF","SQLite",true,false,false,"img/projects/desktop/betting/betting.ico",this.BettingDescription(),"downloads/Betting.exe"],
         [ProjectType.Desktop,"2","Meter","2022","Rudy Williams","https://github.com/SalvatoreAmaddio/Meter","C#","WPF","SQLite",true,true,false,"img/projects/desktop/meter/meter.png","lorem","#"],
         [ProjectType.Desktop,"3","FilmFlix","2023","JustIT","https://github.com/SalvatoreAmaddio/FilmFlixPythonProject","Python","Console","SQLite",false,false,false,"img/projects/desktop/filmflix/filmflix.png",this.FilmFlixDescription(),"downloads/FilmFlixPythonProject.zip"],
-        [ProjectType.Mobile,"3","MyPlanogram","2022/2023","Carole Crockett","https://github.com/SalvatoreAmaddio/MyPlanogram","C#","MAUI","MySQL",false,false,true,"img/projects/mobile/myplanogram/myplanogram.png","lorem","#"]
+        [ProjectType.Mobile,"3","MyPlanogram","2022/2023","Carole Crockett","https://github.com/SalvatoreAmaddio/MyPlanogram","C#","MAUI","MySQL",false,false,true,"img/projects/mobile/myplanogram/myplanogram.png",this.MyPlanogramDescription(),"#"]
     ];
 
     #images=
@@ -63,7 +63,7 @@ class ProjPresentationGenerator
         [ProjectType.Desktop,"1","pic1.png","pic2.png","pic3.png"],
         [ProjectType.Desktop,"2"],
         [ProjectType.Desktop,"3","img1.jpg","img2.jpg","img3.jpg"],
-        [ProjectType.Mobile,"3"]
+        [ProjectType.Mobile,"3","pic1.jpg","pic2.jpg","pic3.jpg","pic4.jpg","pic5.jpg"]
     ];
 
     projectImgs = [];
@@ -122,6 +122,13 @@ class ProjPresentationGenerator
         + "<li>Delete a record</li>"
         +"</ul>"
         +"This file comes as an Executable. To test it you can press the download demo button. You will get a zip folder containing the FlimFixProject folder. Extract that folder onto your desktop, open it and click on the main.exe file to run the program."
+    }
+
+    MyPlanogramDescription()
+    {
+        return "<p>MyPlanogram is a mobile app that I developed during my years as Assistant Store Manager at Poundland. "
+        + "This application helps employees to avoid stock misplacement within the store. By scanning the barcode with your phone camera, the app tells where the item should be displayed within the store. "
+        + "It also provides information about price and offers (if any). Furthermore, a colleague can also search for an item by typing either its name or the brand. The app is ready-only and its data are managed through a desktop application that is linked to the same online database used by the App.</p>"
     }
 
     get dataFound() 
@@ -222,7 +229,7 @@ class ProjPresentationGenerator
 
         if (!this.#isDesktop) 
         {
-            this.#startingPath.replace("desktop/","mobile/");
+            this.#startingPath=this.#startingPath.replace("desktop/","mobile/");
             this.#isDesktop = false;
             this.#downloadContainer.style.display="none";
         }
