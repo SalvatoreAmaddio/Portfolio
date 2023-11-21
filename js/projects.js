@@ -9,7 +9,8 @@ class ProjectPage extends DefaultPage
         [ProjectType.Mobile,"3","MyPlanogram","img/projects/mobile/myplanogram/myplanogram.png"],
         [ProjectType.Web,"1","Dave Smith","img/projects/web/ds.png","https://salvatoreamaddio.github.io/DaveSmith/"],
         [ProjectType.Web,"2","Dark Star Ink","img/projects/web/darkStarInk.ico","https://salvatoreamaddio.github.io/DarkStarInk/"],
-        [ProjectType.Web,"3","Sape","img/projects/web/sape.png","https://salvatoreamaddio.github.io/SAPE/"]
+        [ProjectType.Web,"3","Sape","img/projects/web/sape.png","https://salvatoreamaddio.github.io/SAPE/"],
+        [ProjectType.Web,"4","JustIT Clone","img/projects/web/justitclone.png","https://salvatoreamaddio.github.io/JustITClone/"]
     ];
 
     constructor()
